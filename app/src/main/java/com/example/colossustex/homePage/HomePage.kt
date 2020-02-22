@@ -30,6 +30,8 @@ class HomePage : Fragment() {
 
     private lateinit var viewModel: HomePageViewModel
 
+    //Just adding some comments to check VCS
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
