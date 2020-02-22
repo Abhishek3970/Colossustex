@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/message"
+        android:title="Messages" />
+    <item
+        android:id="@+id/myYarnRequirement"
+        android:title="My Yarn Requirements"/>
+    <item
+        android:id="@+id/allRequirements"
+        android:title="All Requirements"/>
+    <item
+        android:id="@+id/myFavouriteYarnProducts"
+        android:title="My Favourite Yarn Products"/>
+    <item
+        android:id="@+id/notification_Settings"
+        android:title="Notification Settings" />
+    <item
+        android:id="@+id/edit_profile"
+        android:title="Edit Profile" />
+    <item
+        android:id="@+id/change_password"
+        android:title="Change Password" />
+    <item
+        android:id="@+id/support"
+        android:title="Support" />
+    <item
+        android:id="@+id/advertise_with_us"
+        android:title="Advertise With Us" />
+    <item
+        android:id="@+id/rate_this_app"
+        android:title="Rate This App" />
+    <item
+        android:id="@+id/share_app"
+        android:title="Share App" />
+    <item
+        android:id="@+id/home_id"
+        android:icon="@drawable/ic_home"
+        android:menuCategory="container"
+        android:title="Home"
+        app:showAsAction="ifRoom" />
+
+</menu>

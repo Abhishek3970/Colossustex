@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "212705087290",
+    "firebase_url": "https://colossustex-ea17d.firebaseio.com",
+    "project_id": "colossustex-ea17d",
+    "storage_bucket": "colossustex-ea17d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:212705087290:android:639a3bbd6b571de41dca03",
+        "android_client_info": {
+          "package_name": "com.example.colossustex"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "212705087290-f16okgs5b8r7ukgm40ho7690k9fie8oe.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.colossustex",
+            "certificate_hash": "c4b90e2bf9f981e69cc3490b716609aaebf0b3e5"
+          }
+        },
+        {
+          "client_id": "212705087290-mkduapkchj6givpgrdvcqipu1sin3o8c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDM4UGGfbuRj0WS1LFRNqkDVlOk1hCPEgE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "212705087290-mkduapkchj6givpgrdvcqipu1sin3o8c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

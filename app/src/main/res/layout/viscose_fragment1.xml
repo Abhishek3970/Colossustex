@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".SpinningMillOfIndia.Viscose.ViscoseFragment">
+
+
+        <TextView
+            android:id="@+id/spinner_viscose"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/borders_spinner"
+            android:drawableEnd="@drawable/ic_arrow_drop_down_black_24dp"
+            android:gravity="center"
+            android:text="@string/choose"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <TextView
+                android:id="@+id/openend_id"
+                style="@style/viscosetext"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/viscose_text_left"
+                android:gravity="center_horizontal"
+                android:text="@string/openend"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/ringspun_id"
+                style="@style/viscosetext"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/viscose_text_middle"
+                android:gravity="center_horizontal"
+                android:text="@string/ring_spun" />
+
+            <TextView
+                android:id="@+id/vortex_id"
+                style="@style/viscosetext"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/viscose_text_right"
+                android:gravity="center_horizontal"
+                android:text="@string/vortex" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/warp_id"
+                style="@style/viscosetext"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/viscose_text_left"
+                android:gravity="center_horizontal"
+                android:text="@string/warp" />
+
+            <TextView
+                android:id="@+id/weft_id"
+                style="@style/viscosetext"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/viscose_text_right"
+                android:gravity="center_horizontal"
+                android:text="@string/weft" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <TextView
+                android:id="@+id/regular_id"
+                style="@style/viscosetext"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/viscose_text_left"
+                android:gravity="center_horizontal"
+                android:text="@string/regular" />
+
+            <TextView
+                android:id="@+id/dyed_id"
+                style="@style/viscosetext"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/viscose_text_middle"
+                android:gravity="center_horizontal"
+                android:text="@string/dyed" />
+
+            <TextView
+                android:id="@+id/spandex_id"
+                style="@style/viscosetext"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/viscose_text_right"
+                android:gravity="center_horizontal"
+
+                android:text="@string/spandex" />
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/search_id"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:background="#F4511E"
+            android:text="@string/search"
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.colossustex">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".SG.Textile_News"></activity>
+        <activity android:name=".SG.yarn_requirements"/>
+        <activity
+            android:name=".SG.yarn_offers"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".SpinningMillOfIndia.Fancy.FancyActivity"
+            android:label="@string/title_activity_fancy"></activity>
+        <activity
+            android:name=".SpinningMillOfIndia.Texturised.TexturisedActivity"
+            android:label="@string/title_activity_texturised" />
+        <activity
+            android:name=".SpinningMillOfIndia.Viscose.ViscoseActivity"
+            android:label="@string/title_activity_main2"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

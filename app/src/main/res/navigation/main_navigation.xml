@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation.xml"
+    app:startDestination="@id/homePage">
+
+    <fragment
+        android:id="@+id/homePage"
+        android:name="com.example.colossustex.homePage.HomePage"
+        android:label="home_page_fragment"
+        tools:layout="@layout/home_page_fragment" >
+        <action
+            android:id="@+id/action_homePage_to_spinningMillOfIndia"
+            app:destination="@id/spinningMillOfIndia"
+            app:enterAnim="@anim/enter_upwards" />
+    </fragment>
+    <fragment
+        android:id="@+id/spinningMillOfIndia"
+        android:name="com.example.colossustex.SpinningMillOfIndia.SpinningMillOfIndia"
+        android:label="fragment_spinning_mill_of_india"
+        tools:layout="@layout/fragment_spinning_mill_of_india" >
+        <action
+            android:id="@+id/action_spinningMillOfIndia_to_homePage"
+            app:destination="@id/homePage"
+            app:exitAnim="@anim/exit_downwards"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_spinningMillOfIndia_to_searchAgent"
+            app:destination="@id/searchAgent" />
+        <action
+            android:id="@+id/action_spinningMillOfIndia_to_cottonFragment"
+            app:destination="@id/cottonFragment" />
+        <action
+            android:id="@+id/action_spinningMillOfIndia_to_syntheticFragment"
+            app:destination="@id/syntheticFragment" />
+        <action
+            android:id="@+id/action_spinningMillOfIndia_to_texturisedFragment1"
+            app:destination="@id/texturisedFragment1" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchAgent"
+        android:name="com.example.colossustex.SpinningMillOfIndia.SearchAgent"
+        android:label="fragment_search_agent"
+        tools:layout="@layout/fragment_search_agent" />
+    <fragment
+        android:id="@+id/cottonFragment"
+        android:name="com.example.colossustex.SpinningMillOfIndia.Cotton.CottonFragment"
+        android:label="CottonFragment" >
+        <action
+            android:id="@+id/action_cottonFragment_to_homePage"
+            app:destination="@id/homePage" />
+    </fragment>
+    <fragment
+        android:id="@+id/syntheticFragment"
+        android:name="com.example.colossustex.SpinningMillOfIndia.Cotton.SyntheticFragment"
+        android:label="SyntheticFragment" >
+        <action
+            android:id="@+id/action_syntheticFragment_to_homePage"
+            app:destination="@id/homePage" />
+    </fragment>
+    <fragment
+        android:id="@+id/texturisedFragment1"
+        android:name="com.example.colossustex.SpinningMillOfIndia.Texturised.TexturisedFragment1"
+        android:label="TexturisedFragment1" >
+        <action
+            android:id="@+id/action_texturisedFragment1_to_homePage"
+            app:destination="@id/homePage" />
+    </fragment>
+</navigation>

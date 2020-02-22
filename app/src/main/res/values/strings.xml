@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Colossustex</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="spinningMillDescription">
+        If you are a spinning mill, you can display you products on <b>Coloussustex</b> app for free to generate sale and expand you reach to various markets.
+    </string>
+    <string name="supportOptionText">For any assistance, contact us here: 9 am to 9 pm, Monday to Saturday</string>
+    <string-array name="types">
+        <item>Cotton</item>
+        <item>Synthetic</item>
+        <item>Viscose</item>
+        <item>Texturised</item>
+        <item>Fancy</item>
+    </string-array>
+    <string name="openend">OpenEnd</string>
+    <string name="ring_spun">Ring Spun</string>
+    <string name="vortex">Vortex</string>
+    <string name="warp">Warp</string>
+    <string name="weft">Weft</string>
+    <string name="regular">Regular</string>
+    <string name="dyed">Dyed</string>
+    <string name="spandex">Spandex</string>
+    <string name="search">SEARCH</string>
+    <string name="choose">--Select Count--</string>
+    <string name="single">Single</string>
+    <string name="double_text">Double</string>
+    <string name="no_results">NO RESULTS</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="filter">FILTER BY STATE</string>
+    <string name="title_activity_texturised">TexturisedActivity</string>
+    <string name="apply">APPLY</string>
+    <string name="title_activity_fancy">FancyActivity</string>
+</resources>

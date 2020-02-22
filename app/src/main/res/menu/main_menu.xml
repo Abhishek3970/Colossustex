@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <item
+        android:id="@+id/notification_Settings"
+        android:title="Notification Settings" />
+    <item
+        android:id="@+id/edit_profile"
+        android:title="Edit Profile" />
+    <item
+        android:id="@+id/change_password"
+        android:title="Change Password"/>
+    <item
+        android:id="@+id/spinning_mill"
+        android:title="Spinning Mill?"/>
+    <item
+        android:id="@+id/support"
+        android:title="Support"/>
+    <item
+        android:id="@+id/advertise_with_us"
+        android:title="Advertise With Us"/>
+    <item
+        android:id="@+id/rate_this_app"
+        android:title="Rate This App"/>
+    <item
+        android:id="@+id/share_app"
+        android:title="Share App"/>
+
+
+
+</menu>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#20111111"
+        android:layout_marginBottom="3dp" />
+    <TextView
+        android:layout_marginTop="4dp"
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:text="Super Spinning Mills Ltd"
+        android:textStyle="bold"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="2dp"
+        />
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Coimbatore, Tamil Nadu"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="2dp"
+        />
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <TextView
+        android:id="@+id/text3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:text="1 Viscose Yarn Product"
+        android:layout_marginStart="10dp"
+        android:textSize="11.7sp"
+        />
+
+    <TextView
+        android:id="@+id/views"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="18547 Views"
+        android:textSize="10sp"
+
+
+        />
+</RelativeLayout>
+
+    <TextView
+        android:id="@+id/text4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="40/2"
+        android:textColor="#047C0A"
+        android:textSize="10.9sp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginStart="10dp"
+        />
+
+    <TextView
+        android:id="@+id/text5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price Updated: 10 Feb, 11:46"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="4dp"
+        android:textSize="10.2sp"
+        />
+
+</LinearLayout>
+
+
+</layout>

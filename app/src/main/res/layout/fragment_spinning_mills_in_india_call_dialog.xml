@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="380dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical|center_horizontal"
+    android:background="@android:color/transparent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/constraintLayout_call_spinning_mills_in_india"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="7dp"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="-39dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="40dp"
+            android:layout_height="43dp"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:background="@color/colorPrimary"
+            android:padding="5dp"
+            android:src="@drawable/ic_call" />
+
+        <TextView
+            android:id="@+id/textView_call_spinning_mills_in_india_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/back_ground_right_corner_round"
+            android:gravity="center_vertical"
+            android:paddingStart="5dp"
+            android:text="Call the"
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/constraintLayout_mail_spinning_mills_in_india"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="-39dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="40dp"
+            android:layout_height="43dp"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:background="@color/colorPrimary"
+            android:padding="5dp"
+            android:src="@drawable/ic_email" />
+
+        <TextView
+            android:id="@+id/textView_mail_spinning_mills_in_india_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/back_ground_right_corner_round"
+            android:gravity="center_vertical"
+            android:paddingStart="7dp"
+            android:text="Email the"
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
