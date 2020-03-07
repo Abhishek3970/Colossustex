@@ -1,7 +1,7 @@
 package com.example.colossustex.SpinningMillOfIndia.Texturised
 
 
-import android.content.res.ColorStateList
+import android.app.Dialog
 import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,12 +9,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.colossustex.R
 import com.example.colossustex.databinding.TexturisedFragment1Binding
+import com.example.dialogcustom.SpinnerDialogAdapter
 
 class TexturisedFragment1 : Fragment() {
     lateinit var binding: TexturisedFragment1Binding
     override fun onCreateView(
+
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
@@ -30,8 +34,22 @@ class TexturisedFragment1 : Fragment() {
             binding.blackdope,
             binding.stretch
         )
-        val list2= mutableListOf(binding.NIM,binding.GFT,binding.LIM,binding.IM,binding.HIM)
-        val list3= mutableListOf(binding.firstText,binding.PQ,binding.CLQ,binding.STD)
+        val list2 = mutableListOf(binding.NIM, binding.GFT, binding.LIM, binding.IM, binding.HIM)
+        val list3 = mutableListOf(binding.firstText, binding.PQ, binding.CLQ, binding.STD)
+        val data = mutableListOf<Int>()
+        for (i in 1..500) {
+            data.add(i)
+        }
+        val dialog = Dialog(context!!)
+        val dialog2 = Dialog(context!!)
+        dialog.setContentView(R.layout.viscose_dialog)
+        dialog2.setContentView(R.layout.viscose_dialog2)
+        val recycler = dialog.findViewById<RecyclerView>(R.id.viscose_recycler)
+        recycler.layoutManager = GridLayoutManager(context, 4)
+        recycler.adapter = SpinnerDialogAdapter(data, context!!, dialog2,dialog,binding.spinnerViscose)
+        binding.spinnerViscose.setOnClickListener {
+            dialog.show()
+        }
         for (i in list) {
             i.setOnClickListener {
                 i.isSelected = true
@@ -69,15 +87,15 @@ class TexturisedFragment1 : Fragment() {
             }
         }
         binding.regularText.setOnClickListener {
-            binding.regularText.isSelected=true
+            binding.regularText.isSelected = true
             binding.regularText.setTextColor(Color.WHITE)
-            binding.dyedText.isSelected=false
+            binding.dyedText.isSelected = false
             binding.dyedText.setTextColor(Color.BLACK)
         }
         binding.dyedText.setOnClickListener {
-            binding.dyedText.isSelected=true
+            binding.dyedText.isSelected = true
             binding.dyedText.setTextColor(Color.WHITE)
-            binding.regularText.isSelected=false
+            binding.regularText.isSelected = false
             binding.regularText.setTextColor(Color.BLACK)
         }
         return binding.root

@@ -26,7 +26,7 @@ class RecyclerAdapter2(val list: MutableList<AllMillsData>) :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViscoseHolder {
         return ViscoseHolder(
             LayoutInflater.from(parent.context).inflate(
-                R.layout.viscose_recycler2_item,
+                R.layout.mills_list_item,
                 parent,
                 false
             )

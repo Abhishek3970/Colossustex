@@ -19,14 +19,16 @@
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".SpinningMillOfIndia.Fancy.FancyActivity"
-            android:label="@string/title_activity_fancy"></activity>
+            android:label="@string/title_activity_fancy"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".SpinningMillOfIndia.Texturised.TexturisedActivity"
-            android:label="@string/title_activity_texturised" />
+            android:label="@string/title_activity_texturised"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".SpinningMillOfIndia.Viscose.ViscoseActivity"
             android:label="@string/title_activity_main2"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

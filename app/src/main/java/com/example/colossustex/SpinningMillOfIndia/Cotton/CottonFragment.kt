@@ -30,6 +30,7 @@ class CottonFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_cotton, container, false)
         binding.recyclerId.layoutManager = LinearLayoutManager(context)
         firebaseDatabase = FirebaseDatabase.getInstance()
+        binding.progressbar.visibility=View.VISIBLE
         datalist = mutableListOf()
         binding.toolbar.inflateMenu(R.menu.cotton_menu)
         binding.toolbar.setOnMenuItemClickListener {
@@ -56,7 +57,7 @@ class CottonFragment : Fragment() {
                         datalist.add(data!!)
                     }
                 }
-
+                binding.progressbar.visibility=View.GONE
                 binding.recyclerId.adapter = CottonAdapter(datalist)
             }
 
@@ -80,6 +81,7 @@ class CottonFragment : Fragment() {
                         newlist.add(data)
                     }
                 }
+
                 if (newlist.isEmpty()) {
                     binding.recyclerId.visibility = View.GONE
                     binding.resultsId.visibility = View.VISIBLE
