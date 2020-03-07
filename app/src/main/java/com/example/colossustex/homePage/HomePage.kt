@@ -32,6 +32,7 @@ class HomePage : Fragment() {
 
     //Just adding some comments to check VCS
     // SAME AS ABOVE
+    //test
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
