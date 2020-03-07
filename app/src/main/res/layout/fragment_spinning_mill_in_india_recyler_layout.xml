@@ -81,7 +81,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView_mill" />
 
     <LinearLayout
-        android:id="@+id/linearLayout3"
+        android:id="@+id/linearLayout_call"
         android:layout_width="wrap_content"
         android:layout_height="25dp"
         android:layout_marginTop="8dp"
@@ -118,15 +118,15 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout4"
+        android:id="@+id/linearLayout_buy_now"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:background="@drawable/background_call_option_spinning_mills_in_india"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="@+id/linearLayout3"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout_call"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/linearLayout3"
-        app:layout_constraintTop_toTopOf="@+id/linearLayout3">
+        app:layout_constraintStart_toEndOf="@+id/linearLayout_call"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout_call">
 
         <ImageView
             android:layout_width="25dp"
@@ -145,7 +145,7 @@
             android:gravity="center_horizontal|center_vertical"
             android:text="Buy Now"
             android:textColor="@color/colorPrimary"
-            app:layout_constraintStart_toEndOf="@+id/linearLayout3"
+            app:layout_constraintStart_toEndOf="@+id/linearLayout_call"
             app:layout_constraintTop_toBottomOf="@+id/textView_description" />
 
 

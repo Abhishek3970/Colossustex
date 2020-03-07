@@ -85,7 +85,7 @@ class PostAdapter() : RecyclerView.Adapter<PostAdapter.MyViewHolder>() {
                 posts[pos].name.toString() + " has added a new product " + posts[pos].product + " at " + posts[pos].newProductPrice + " per kg(Ex-Mill)"
         }
 
-        holder.call.setOnClickListener {
+        holder.callLayout.setOnClickListener {
             val dialog = Dialog(context)
             dialog.setContentView(R.layout.fragment_spinning_mills_in_india_call_dialog)
             dialog.window!!.attributes.windowAnimations = R.style.DialogScale
@@ -118,6 +118,7 @@ class PostAdapter() : RecyclerView.Adapter<PostAdapter.MyViewHolder>() {
         val description = itemView.findViewById<TextView>(R.id.textView_description)
         val call = itemView.findViewById<TextView>(R.id.textView_call)
         val image = itemView.findViewById<ImageView>(R.id.imageView_status)
+        val callLayout =itemView.findViewById<LinearLayout>(R.id.linearLayout_call)
 
     }
 }
