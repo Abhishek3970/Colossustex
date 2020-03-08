@@ -1,15 +1,15 @@
 package com.example.colossustex.SpinningMillOfIndia
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
-import android.widget.ImageButton
-import android.widget.TextView
+import android.widget.*
+import androidx.annotation.RequiresApi
 import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
@@ -22,6 +22,7 @@ import com.example.colossustex.SpinningMillOfIndia.Fancy.FancyActivity
 import com.example.colossustex.SpinningMillOfIndia.Texturised.TexturisedActivity
 import com.example.colossustex.SpinningMillOfIndia.Viscose.ViscoseActivity
 import com.google.android.material.appbar.AppBarLayout
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.fragment_spinning_mill_of_india.*
 
@@ -35,6 +36,7 @@ class SpinningMillOfIndia : Fragment() {
     private var done = false
 
 
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -166,6 +168,39 @@ class SpinningMillOfIndia : Fragment() {
 
         clearFilter.setOnClickListener {
             filterByName.text.clear()                         //Clear filter text
+        }
+
+        val filterOption = lay.findViewById<TextView>(R.id.textView_filter)
+        filterOption.setOnClickListener {
+            // creating dialog
+            val dialog = BottomSheetDialog(context!!)
+            dialog.setContentView(R.layout.bottom_sheet_dialog_spinning_mills_of_india)
+            dialog.create()
+            dialog.setCancelable(false)
+            dialog.show()
+            val close =
+                dialog.findViewById<ImageView>(R.id.close_dialog_filter_spinning_mills_of_india)
+            close!!.setOnClickListener {
+                dialog.dismiss()
+            }
+            val checkboxCotton = dialog.findViewById<CheckBox>(R.id.checkbox_cotton)
+            val checkboxSynthetic = dialog.findViewById<CheckBox>(R.id.checkbox_synthetic)
+            val checkboxViscose = dialog.findViewById<CheckBox>(R.id.checkbox_viscose)
+            val checkboxTexturized = dialog.findViewById<CheckBox>(R.id.checkbox_texturized)
+            val checkboxFancy = dialog.findViewById<CheckBox>(R.id.checkbox_fancy)
+            val list = mutableListOf(
+                checkboxCotton,
+                checkboxFancy,
+                checkboxSynthetic,
+                checkboxTexturized,
+                checkboxViscose
+            )
+            for(item in list){
+                item!!.setOnClickListener{
+
+                }
+            }
+
         }
 
 

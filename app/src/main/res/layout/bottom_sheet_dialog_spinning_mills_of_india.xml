@@ -15,6 +15,8 @@
             android:id="@+id/close_dialog_filter_spinning_mills_of_india"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="0dp"
             android:padding="10dp"
             android:src="@drawable/ic_close2" />
 
@@ -63,6 +65,7 @@
                 android:id="@+id/checkbox_cotton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:buttonTint="@color/colorPrimary"
                 android:checked="true" />
 
             <TextView
@@ -86,7 +89,8 @@
                 android:id="@+id/checkbox_synthetic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:checked="true"/>
+                android:buttonTint="@color/colorPrimary"
+                android:checked="true" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -105,12 +109,13 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <CheckBox
+                android:id="@+id/checkbox_viscose"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:checked="true"/>
+                android:buttonTint="@color/colorPrimary"
+                android:checked="true" />
 
             <TextView
-                android:id="@+id/checkbox_viscose"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Viscose"
@@ -127,12 +132,13 @@
             app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
             <CheckBox
+                android:id="@+id/checkbox_texturized"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:checked="true"/>
+                android:buttonTint="@color/colorPrimary"
+                android:checked="true" />
 
             <TextView
-                android:id="@+id/checkbox_texturized"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Texturized"
@@ -149,12 +155,13 @@
             app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
 
             <CheckBox
+                android:id="@+id/checkbox_fancy"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:checked="true"/>
+                android:buttonTint="@color/colorPrimary"
+                android:checked="true" />
 
             <TextView
-                android:id="@+id/checkbox_fancy"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Fancy"
