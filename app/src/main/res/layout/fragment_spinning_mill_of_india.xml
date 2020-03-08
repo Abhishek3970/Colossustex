@@ -21,10 +21,9 @@
             android:background="@color/colorPrimary"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:layout_scrollFlags="scroll|enterAlways"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            app:title="Yarn Type"
             app:navigationIcon="@drawable/ic_arrow_back"
-            />
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:title="Yarn Type" />
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -301,9 +300,9 @@
             android:layout_height="match_parent"
             android:layout_below="@id/constraintLayout_search"
             android:layout_centerHorizontal="true"
+            android:paddingBottom="45dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            android:paddingBottom="45dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout_search" />
 
@@ -318,21 +317,46 @@
         android:layout_gravity="bottom"
         android:animateLayoutChanges="true"
         android:background="#383838"
+        tools:visibility="visible"
         android:visibility="gone">
 
         <TextView
+            android:id="@+id/textView_filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="test"
+            android:drawableStart="@drawable/ic_filter_list_black_24dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="Filter"
             android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="1dp"
+            android:layout_height="40dp"
+            android:background="#4BFFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/textView_refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_refresh_black_24dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="Refresh"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/view"
+            app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

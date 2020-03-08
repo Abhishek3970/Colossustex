@@ -45,10 +45,13 @@
         android:label="fragment_search_agent"
         tools:layout="@layout/fragment_search_agent" >
         <action
-            android:id="@+id/action_searchAgent_to_spinningMillOfIndia"
-            app:destination="@id/spinningMillOfIndia"
-            app:popUpTo="@+id/spinningMillOfIndia"
+            android:id="@+id/action_searchAgent_to_homePage"
+            app:destination="@id/homePage"
+            app:popUpTo="@+id/homePage"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_searchAgent_to_spinningMillOfIndia"
+            app:destination="@id/spinningMillOfIndia" />
     </fragment>
     <fragment
         android:id="@+id/cottonFragment"

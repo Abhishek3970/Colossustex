@@ -25,6 +25,16 @@ class SearchAgent : Fragment() {
         toolbar.setNavigationOnClickListener{
             it.findNavController().navigate(SearchAgentDirections.actionSearchAgentToSpinningMillOfIndia())
         }
+        toolbar.inflateMenu(R.menu.menu_spinning_mills_of_india)
+        toolbar.setOnMenuItemClickListener {
+            when (it.itemId) {
+                R.id.home_page -> {
+                    toolbar.findNavController()
+                        .navigate(SearchAgentDirections.actionSearchAgentToHomePage())
+                }
+            }
+            true
+        }
 
         return lay
     }
