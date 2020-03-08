@@ -65,6 +65,8 @@ class PostAdapter() : RecyclerView.Adapter<PostAdapter.MyViewHolder>() {
         } else {
             holder.date.text = posts[pos].date + ","
         }
+
+
         holder.time.text = posts[pos].time
         holder.call.text = posts[pos].name.toString().slice(IntRange(0, 11)) + "..."
 
@@ -73,16 +75,16 @@ class PostAdapter() : RecyclerView.Adapter<PostAdapter.MyViewHolder>() {
         when {
             posts[pos].type == "increase" -> {
                 holder.description.text =
-                    posts[pos].name.toString() + " has increased price of " + posts[pos].product + " by Rs. " + posts[pos].oldPrice + " to Rs. " + posts[pos].newPrice + " per kg(Ex-Mill)"
+                    posts[pos].name.toString() + " has increased price of " + posts[pos].product + " by Rs. " + posts[pos].change + " to Rs. " + posts[pos].newPrice + " per kg(Ex-Mill)"
                 holder.image.setImageResource(R.drawable.ic_arrow_upward)
             }
             posts[pos].type == "decrease" -> {
                 holder.description.text =
-                    posts[pos].name.toString() + " has decreased price of " + posts[pos].product + " by Rs. " + posts[pos].priceReduced + " to Rs. " + posts[pos].newPrice + " per kg(Ex-Mill)"
+                    posts[pos].name.toString() + " has decreased price of " + posts[pos].product + " by Rs. " + posts[pos].change + " to Rs. " + posts[pos].newPrice + " per kg(Ex-Mill)"
                 holder.image.setImageResource(R.drawable.ic_arrow_downward)
             }
             else -> holder.description.text =
-                posts[pos].name.toString() + " has added a new product " + posts[pos].product + " at " + posts[pos].newProductPrice + " per kg(Ex-Mill)"
+                posts[pos].name.toString() + " has added a new product " + posts[pos].product + " at " + posts[pos].newPrice + " per kg(Ex-Mill)"
         }
 
         holder.callLayout.setOnClickListener {
