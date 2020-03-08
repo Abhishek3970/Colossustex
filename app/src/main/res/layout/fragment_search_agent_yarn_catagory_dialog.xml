@@ -7,9 +7,9 @@
 
     <TextView
         android:id="@+id/catagory_cotton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
         android:text="Cotton Yarn"
         android:textColor="@android:color/black"
         android:textSize="16sp" />
@@ -21,9 +21,9 @@
 
     <TextView
         android:id="@+id/catagory_polyester"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:padding="16dp"
         android:text="Polyester Yarn"
         android:textColor="@android:color/black"
         android:textSize="16sp" />
@@ -35,9 +35,9 @@
 
     <TextView
         android:id="@+id/catagory_viscose"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:padding="16dp"
         android:text="Viscose Yarn"
         android:textColor="@android:color/black"
         android:textSize="16sp" />
@@ -49,9 +49,9 @@
 
     <TextView
         android:id="@+id/catagory_texturized"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:padding="16dp"
         android:text="Teaxturised Yarn"
         android:textColor="@android:color/black"
         android:textSize="16sp" />
@@ -63,9 +63,9 @@
 
     <TextView
         android:id="@+id/catagory_blended"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:padding="16dp"
         android:text="Blended Yarn"
         android:textColor="@android:color/black"
         android:textSize="16sp" />
@@ -77,9 +77,9 @@
 
     <TextView
         android:id="@+id/catagory_specialized"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:padding="16dp"
         android:text="Specialized Yarn"
         android:textColor="@android:color/black"
         android:textSize="16sp" />

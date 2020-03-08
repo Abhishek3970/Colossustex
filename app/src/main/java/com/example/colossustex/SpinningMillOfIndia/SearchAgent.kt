@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
@@ -38,7 +39,7 @@ class SearchAgent : Fragment() {
         }
         dialog = Dialog(context!!)
 
-        val catagories = lay.findViewById<TextView>(R.id.textView_yarn_catagory)
+        val catagories = lay.findViewById<TextView>(R.id.textView_yarn_category)
         val yarnType = lay.findViewById<TextView>(R.id.textView_yarn_type)
         val stateTo = lay.findViewById<TextView>(R.id.textView_state_to)
         val stateFrom = lay.findViewById<TextView>(R.id.textView_state_from)
@@ -59,7 +60,7 @@ class SearchAgent : Fragment() {
                 blended,
                 specialized
             )
-            for(item in list){
+            for (item in list) {
                 item.setOnClickListener {
                     catagories.text = item.text
                     dialog.dismiss()
@@ -69,6 +70,13 @@ class SearchAgent : Fragment() {
             dialog.show()
         }
 
+        yarnType.setOnClickListener {
+            if (catagories.text == "-- Select Yarn Category --") {
+                Toast.makeText(context!!, "First enter Yarn Category", Toast.LENGTH_SHORT).show()
+            } else {
+                
+            }
+        }
 
         return lay
     }
