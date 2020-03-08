@@ -1,5 +1,4 @@
 package com.example.colossustex.SpinningMillOfIndia.Viscose
-
 import android.app.Dialog
 import android.graphics.Color
 import android.os.Build
@@ -16,12 +15,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.colossustex.R
 import com.example.colossustex.databinding.ViscoseFragment1Binding
 import com.example.dialogcustom.SpinnerDialogAdapter
-
-lateinit var dialog: Dialog
-
 class ViscoseFragment : Fragment() {
     lateinit var list: MutableList<Int>
     lateinit var binding: ViscoseFragment1Binding
+    lateinit var dialog:Dialog
+    lateinit var dialog2:Dialog
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,11 +31,12 @@ class ViscoseFragment : Fragment() {
         }
         binding = DataBindingUtil.inflate(inflater, R.layout.viscose_fragment1, container, false)
         dialog = Dialog(context!!)
+        dialog2= Dialog(context!!)
+        dialog2.setContentView(R.layout.viscose_dialog2)
         dialog.setContentView(R.layout.viscose_dialog)
         val recycler = dialog.findViewById<RecyclerView>(R.id.viscose_recycler)
-        recycler.layoutManager = GridLayoutManager(context, 4)
-        recycler.adapter = SpinnerDialogAdapter(list)
-        dialog.create()
+        recycler.layoutManager = GridLayoutManager(context,4)
+        recycler.adapter = SpinnerDialogAdapter(list,context!!,dialog2,dialog,binding.spinnerViscose)
         binding.spinnerViscose.setOnClickListener {
             showdialog()
         } //Call for dialog function

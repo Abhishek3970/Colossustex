@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import com.example.colossustex.SpinningMillOfIndia.Viscose.MillsListFragment
+import com.example.colossustex.SpinningMillOfIndia.Common.MillsListFragment
 
 private val TAB_TITLES = arrayOf(
     "Search Mills","ALL MILLS"
@@ -17,7 +17,8 @@ class SectionsPagerAdapter(private val context: Context, fm: FragmentManager) :
         var fragment: Fragment? = null
         when (position) {
             0 -> fragment = TexturisedFragment1()
-            1->fragment=MillsListFragment()
+            1->fragment=
+                MillsListFragment()
         }
         return fragment!!
     }
