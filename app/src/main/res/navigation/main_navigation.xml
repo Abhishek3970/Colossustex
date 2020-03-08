@@ -24,7 +24,8 @@
             android:id="@+id/action_spinningMillOfIndia_to_homePage"
             app:destination="@id/homePage"
             app:exitAnim="@anim/exit_downwards"
-            app:popUpToInclusive="false" />
+            app:popUpTo="@+id/homePage"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_spinningMillOfIndia_to_searchAgent"
             app:destination="@id/searchAgent" />
@@ -45,7 +46,9 @@
         tools:layout="@layout/fragment_search_agent" >
         <action
             android:id="@+id/action_searchAgent_to_homePage"
-            app:destination="@id/homePage" />
+            app:destination="@id/homePage"
+            app:popUpTo="@+id/homePage"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_searchAgent_to_spinningMillOfIndia"
             app:destination="@id/spinningMillOfIndia" />

@@ -10,5 +10,6 @@ data class post (
     var time:String? = "",
     var type: String? = "",
     var phone: String = "",
-    val nameOnly: String = ""
+    val nameOnly: String = "",
+    val productType: String = ""
 )

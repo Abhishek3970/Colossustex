@@ -170,6 +170,14 @@ class SpinningMillOfIndia : Fragment() {
             filterByName.text.clear()                         //Clear filter text
         }
 
+
+
+        var cottonState = true
+        var syntheticState = true
+        var viscoseState = true
+        var texturizedState = true
+        var fancyState = true
+
         val filterOption = lay.findViewById<TextView>(R.id.textView_filter)
         filterOption.setOnClickListener {
             // creating dialog
@@ -188,6 +196,11 @@ class SpinningMillOfIndia : Fragment() {
             val checkboxViscose = dialog.findViewById<CheckBox>(R.id.checkbox_viscose)
             val checkboxTexturized = dialog.findViewById<CheckBox>(R.id.checkbox_texturized)
             val checkboxFancy = dialog.findViewById<CheckBox>(R.id.checkbox_fancy)
+            checkboxCotton!!.isChecked = cottonState
+            checkboxSynthetic!!.isChecked = syntheticState
+            checkboxViscose!!.isChecked = viscoseState
+            checkboxTexturized!!.isChecked = texturizedState
+            checkboxFancy!!.isChecked = fancyState
             val list = mutableListOf(
                 checkboxCotton,
                 checkboxFancy,
@@ -197,6 +210,37 @@ class SpinningMillOfIndia : Fragment() {
             )
             for(item in list){
                 item!!.setOnClickListener{
+                    when(item){
+                        checkboxCotton-> cottonState = checkboxCotton!!.isChecked
+                        checkboxSynthetic-> syntheticState = checkboxSynthetic!!.isChecked
+                        checkboxViscose-> viscoseState = checkboxViscose!!.isChecked
+                        checkboxTexturized-> texturizedState = checkboxTexturized!!.isChecked
+                        checkboxFancy-> fancyState = checkboxFancy!!.isChecked
+
+                    }
+                        // continue by adding filters here.....
+                    var tempList = ArrayList<String>()
+                    if(checkboxCotton!!.isChecked)
+                        tempList.add("Cotton")
+                    if(checkboxFancy!!.isChecked)
+                        tempList.add("Fancy")
+                    if(checkboxSynthetic!!.isChecked)
+                        tempList.add("Synthetic")
+                    if(checkboxViscose!!.isChecked)
+                        tempList.add("Viscose")
+                    if(checkboxTexturized!!.isChecked)
+                        tempList.add("Texturized")
+
+                    val newPostList = ArrayList<post>()
+                    for(i in posts){
+                        if(i.productType in tempList)
+                            newPostList.add(i)
+                    }
+
+                    adapter = PostAdapter(context!!, newPostList)
+                    recyclerView.adapter = adapter
+
+
 
                 }
             }
