@@ -1,9 +1,8 @@
-package com.example.colossustex.SpinningMillOfIndia.Viscose
+package com.example.colossustex.SpinningMillOfIndia.Common
 
 import android.annotation.SuppressLint
 import android.os.Build
 import android.os.Bundle
-import android.os.strictmode.WebViewMethodCalledOnWrongThreadViolation
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
@@ -18,6 +17,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.colossustex.R
+import com.example.colossustex.SpinningMillOfIndia.Viscose.AllMillsData
+import com.example.colossustex.SpinningMillOfIndia.Viscose.RecyclerAdapter2
 import com.example.colossustex.databinding.MillsListFragmentBinding
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.firebase.database.DataSnapshot
@@ -52,9 +53,11 @@ class MillsListFragment : Fragment() {
                     list.add(store!!)
                 }
                 binding.progressLayout.visibility=View.GONE
-                binding.viscoseRecycler2.adapter = RecyclerAdapter2(list)
+                binding.viscoseRecycler2.adapter =
+                    RecyclerAdapter2(
+                        list
+                    )
             }
-
         })
         val dialog = BottomSheetDialog(context!!)
         dialog.setContentView(R.layout.filter_dialog)
@@ -99,7 +102,10 @@ class MillsListFragment : Fragment() {
                 if (!(checkbox1.isChecked or checkbox2.isChecked or checkbox3.isChecked
                             or checkbox4.isChecked or checkbox5.isChecked)
                 ) {
-                    binding.viscoseRecycler2.adapter = RecyclerAdapter2(list)
+                    binding.viscoseRecycler2.adapter =
+                        RecyclerAdapter2(
+                            list
+                        )
 
                 } else {
                     val newlist1 = mutableListOf<AllMillsData>()
@@ -111,7 +117,10 @@ class MillsListFragment : Fragment() {
                         }
 
                     }
-                    binding.viscoseRecycler2.adapter = RecyclerAdapter2(newlist1)
+                    binding.viscoseRecycler2.adapter =
+                        RecyclerAdapter2(
+                            newlist1
+                        )
                 }
                 dialog.dismiss()
             } //Filtering is implemented here
@@ -133,7 +142,10 @@ class MillsListFragment : Fragment() {
                         newlist.add(i)
                     }
                 }
-                binding.viscoseRecycler2.adapter = RecyclerAdapter2(newlist)
+                binding.viscoseRecycler2.adapter =
+                    RecyclerAdapter2(
+                        newlist
+                    )
             }
 
         }) //Searching feature is implemented

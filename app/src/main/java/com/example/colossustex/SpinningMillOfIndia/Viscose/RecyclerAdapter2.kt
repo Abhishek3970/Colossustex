@@ -1,12 +1,15 @@
 package com.example.colossustex.SpinningMillOfIndia.Viscose
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.colossustex.R
+import com.example.colossustex.SpinningMillOfIndia.Common.AllProducts
 import com.google.firebase.database.FirebaseDatabase
 
 class RecyclerAdapter2(val list: MutableList<AllMillsData>) :
@@ -41,11 +44,7 @@ class RecyclerAdapter2(val list: MutableList<AllMillsData>) :
         mdata.child(list[position].id.toString()).child("views").setValue(list[position].views + 1)
         holder.text1.text = list[position].text1
         holder.itemView.setOnClickListener {
-            Toast.makeText(
-                holder.itemView.context,
-                list[position].id.toString(),
-                Toast.LENGTH_SHORT
-            ).show()
+            holder.itemView.context.startActivity(Intent(holder.itemView.context,AllProducts::class.java))
         }
         holder.text2.text = list[position].text2
         holder.text3.text = list[position].text3

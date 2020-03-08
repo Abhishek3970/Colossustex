@@ -112,7 +112,6 @@ class PostAdapter() : RecyclerView.Adapter<PostAdapter.MyViewHolder>() {
 
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
         val date = itemView.findViewById<TextView>(R.id.textView_date)
         val time = itemView.findViewById<TextView>(R.id.textView_time)
         val description = itemView.findViewById<TextView>(R.id.textView_description)

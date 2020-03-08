@@ -35,7 +35,7 @@ class ViscoseFragment : Fragment() {
         dialog2.setContentView(R.layout.viscose_dialog2)
         dialog.setContentView(R.layout.viscose_dialog)
         val recycler = dialog.findViewById<RecyclerView>(R.id.viscose_recycler)
-        recycler.layoutManager = GridLayoutManager(context, 4)
+        recycler.layoutManager = GridLayoutManager(context,4)
         recycler.adapter = SpinnerDialogAdapter(list,context!!,dialog2,dialog,binding.spinnerViscose)
         binding.spinnerViscose.setOnClickListener {
             showdialog()
