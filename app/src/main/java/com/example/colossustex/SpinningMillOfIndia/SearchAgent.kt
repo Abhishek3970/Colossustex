@@ -63,6 +63,7 @@ class SearchAgent : Fragment() {
             for (item in list) {
                 item.setOnClickListener {
                     catagories.text = item.text
+                    yarnType.text = "-- Select Yarn Type --"
                     dialog.dismiss()
                 }
             }
@@ -74,7 +75,33 @@ class SearchAgent : Fragment() {
             if (catagories.text == "-- Select Yarn Category --") {
                 Toast.makeText(context!!, "First enter Yarn Category", Toast.LENGTH_SHORT).show()
             } else {
-                
+                when (catagories.text) {
+                    "Cotton Yarn" -> {
+                        dialog.setContentView(R.layout.fragment_search_agent_yarn_type_cotton)
+                        dialog.show()
+                    }
+                    "Polyester Yarn" -> {
+                        dialog.setContentView(R.layout.fragment_search_agent_yarn_type_polyester)
+                        dialog.show()
+                    }
+                    "Viscose Yarn" -> {
+                        dialog.setContentView(R.layout.fragment_search_agent_yarn_type_viscose)
+                        dialog.show()
+                    }
+                    "Texturised Yarn" -> {
+                        dialog.setContentView(R.layout.fragment_search_agent_yarn_type_texturized)
+                        dialog.show()
+                    }
+                    "Blended Yarn" -> {
+                        dialog.setContentView(R.layout.fragment_search_agent_yarn_type_blened)
+                        dialog.show()
+                    }
+                    "Specialized Yarn" -> {
+//                        dialog.setContentView(R.layout.fragment_search_agent_yarn_type_polyester)
+//                        dialog.show()        would be made using list view
+                    }
+                }
+
             }
         }
 

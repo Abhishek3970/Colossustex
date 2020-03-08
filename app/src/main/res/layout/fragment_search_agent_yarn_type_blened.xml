@@ -6,11 +6,11 @@
     android:orientation="vertical">
 
     <TextView
-
+        android:id="@+id/catagory_cotton"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="16dp"
-        android:text="Cotton Weaving Spun Yarn"
+        android:text="Polyester-Cotton PC Blend"
         android:textColor="@android:color/black"
         android:textSize="16sp" />
 
@@ -20,11 +20,11 @@
         android:background="#BFC0C0C0" />
 
     <TextView
-
+        android:id="@+id/catagory_polyester"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        android:text="Cotton Knitting Spun Yarn"
+        android:text="Polyester-Cotton CP Blend"
         android:textColor="@android:color/black"
         android:textSize="16sp" />
 
@@ -34,11 +34,11 @@
         android:background="#BFC0C0C0" />
 
     <TextView
-
+        android:id="@+id/catagory_viscose"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        android:text="Cotton Open End Yarn"
+        android:text="Polyester-Viscose PV Blend"
         android:textColor="@android:color/black"
         android:textSize="16sp" />
 
@@ -48,11 +48,11 @@
         android:background="#BFC0C0C0" />
 
     <TextView
-
+        android:id="@+id/catagory_texturized"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        android:text="Organic Cotton Yarn"
+        android:text="Cotton-Viscose Blend"
         android:textColor="@android:color/black"
         android:textSize="16sp" />
 
@@ -62,11 +62,11 @@
         android:background="#BFC0C0C0" />
 
     <TextView
-
+        android:id="@+id/catagory_blended"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        android:text="BCI Yarn"
+        android:text="Cotton-Polyester-viscose Blend"
         android:textColor="@android:color/black"
         android:textSize="16sp" />
 
@@ -76,11 +76,11 @@
         android:background="#BFC0C0C0" />
 
     <TextView
-
+        android:id="@+id/catagory_specialized"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        android:text="Australian Cotton yarn"
+        android:text="PC Open End Yarn"
         android:textColor="@android:color/black"
         android:textSize="16sp" />
 

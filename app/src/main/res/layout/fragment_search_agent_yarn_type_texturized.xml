@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="16dp"
-        android:text="Cotton Weaving Spun Yarn"
+        android:text="DTY"
         android:textColor="@android:color/black"
         android:textSize="16sp" />
 
@@ -24,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        android:text="Cotton Knitting Spun Yarn"
+        android:text="POY"
         android:textColor="@android:color/black"
         android:textSize="16sp" />
 
@@ -32,13 +32,27 @@
         android:layout_width="match_parent"
         android:layout_height="0.75dp"
         android:background="#BFC0C0C0" />
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:text="SDY"
+        android:textColor="@android:color/black"
+        android:textSize="16sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.75dp"
+        android:background="#BFC0C0C0" />
+
 
     <TextView
 
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:padding="16dp"
-        android:text="Cotton Open End Yarn"
+        android:text="FDY"
         android:textColor="@android:color/black"
         android:textSize="16sp" />
 
@@ -47,47 +61,8 @@
         android:layout_height="0.75dp"
         android:background="#BFC0C0C0" />
 
-    <TextView
 
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:text="Organic Cotton Yarn"
-        android:textColor="@android:color/black"
-        android:textSize="16sp" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.75dp"
-        android:background="#BFC0C0C0" />
-
-    <TextView
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:text="BCI Yarn"
-        android:textColor="@android:color/black"
-        android:textSize="16sp" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.75dp"
-        android:background="#BFC0C0C0" />
-
-    <TextView
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:text="Australian Cotton yarn"
-        android:textColor="@android:color/black"
-        android:textSize="16sp" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.75dp"
-        android:background="#BFC0C0C0" />
 
 
 </LinearLayout>
