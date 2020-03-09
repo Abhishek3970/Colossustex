@@ -1,19 +1,16 @@
-package com.example.colossustex.SpinningMillOfIndia.Viscose
+package com.example.colossustex.SpinningMillOfIndia.Common
 
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.colossustex.R
-import com.example.colossustex.SpinningMillOfIndia.Common.AllProducts
 import com.google.firebase.database.FirebaseDatabase
 
-class RecyclerAdapter2(val list: MutableList<AllMillsData>) :
-    RecyclerView.Adapter<RecyclerAdapter2.ViscoseHolder>() {
+class MillsListAdapter(val list: MutableList<AllMillsData>) :
+    RecyclerView.Adapter<MillsListAdapter.ViscoseHolder>() {
     var database = FirebaseDatabase.getInstance()
     var mdata = database.getReference("Viscose")
 

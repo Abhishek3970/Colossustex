@@ -17,8 +17,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.colossustex.R
-import com.example.colossustex.SpinningMillOfIndia.Viscose.AllMillsData
-import com.example.colossustex.SpinningMillOfIndia.Viscose.RecyclerAdapter2
 import com.example.colossustex.databinding.MillsListFragmentBinding
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.firebase.database.DataSnapshot
@@ -54,7 +52,7 @@ class MillsListFragment : Fragment() {
                 }
                 binding.progressLayout.visibility=View.GONE
                 binding.viscoseRecycler2.adapter =
-                    RecyclerAdapter2(
+                    MillsListAdapter(
                         list
                     )
             }
@@ -103,7 +101,7 @@ class MillsListFragment : Fragment() {
                             or checkbox4.isChecked or checkbox5.isChecked)
                 ) {
                     binding.viscoseRecycler2.adapter =
-                        RecyclerAdapter2(
+                        MillsListAdapter(
                             list
                         )
 
@@ -118,7 +116,7 @@ class MillsListFragment : Fragment() {
 
                     }
                     binding.viscoseRecycler2.adapter =
-                        RecyclerAdapter2(
+                        MillsListAdapter(
                             newlist1
                         )
                 }
@@ -143,7 +141,7 @@ class MillsListFragment : Fragment() {
                     }
                 }
                 binding.viscoseRecycler2.adapter =
-                    RecyclerAdapter2(
+                    MillsListAdapter(
                         newlist
                     )
             }

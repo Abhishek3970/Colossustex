@@ -1,4 +1,4 @@
-package com.example.colossustex.SpinningMillOfIndia.Viscose
+package com.example.colossustex.SpinningMillOfIndia.Common
 
 data class AllMillsData(
     val id: Int = 0,
