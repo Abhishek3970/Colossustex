@@ -18,6 +18,7 @@
         <activity
             android:name=".SG.yarn_offers"
             android:parentActivityName=".MainActivity" />
+        <activity android:name=".SG.sensex_SG"></activity>
         <activity
             android:name=".SpinningMillOfIndia.Fancy.FancyActivity"
             android:label="@string/title_activity_fancy"

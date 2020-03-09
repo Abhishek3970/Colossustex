@@ -14,6 +14,7 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.colossustex.R
 import com.example.colossustex.SG.Textile_News
+import com.example.colossustex.SG.sensex_SG
 import com.example.colossustex.SG.yarn_offers
 import com.example.colossustex.SG.yarn_requirements
 import com.firebase.ui.database.FirebaseRecyclerAdapter
@@ -61,6 +62,7 @@ class ItemAdapter(options: FirebaseRecyclerOptions<Item>) :
                     }
                     dialog.show()
                 }
+                8-> it.context.startActivity(Intent(it.context, sensex_SG::class.java))
 //                5 -> (AlertDialog.Builder(it.context).setSingleChoiceItems(itemList, -1){dialog, which->
 //                    Toast.makeText(it.context, itemList[which], Toast.LENGTH_SHORT).show()
 //                }
