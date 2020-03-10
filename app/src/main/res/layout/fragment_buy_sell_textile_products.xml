@@ -41,9 +41,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_margin="4dp"
-                    android:layout_weight="1"
+                    android:background="@drawable/background_fibre"
+                    android:drawableStart="@drawable/ic_star_black_24dp"
+                    android:drawableTint="@android:color/holo_red_light"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:paddingTop="6dp"
+                    android:paddingBottom="6dp"
+                    android:textSize="12sp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textColor="@android:color/holo_red_light"
                     android:text="Fibre"
-                    android:textSize="18sp" />
+                    android:layout_weight="1"
+                     />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -51,49 +61,92 @@
                     android:layout_margin="4dp"
                     android:layout_weight="1"
                     android:text="Yarn"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_margin="4dp"
-                    android:textSize="18sp"
-
-                    android:layout_weight="1"
-                    android:text="Fabric" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_margin="4dp"
-                    android:layout_weight="1"
-                    android:text="Garments"
-                    android:textSize="18sp" />
+                    android:background="@drawable/background_yarn"
+                    android:drawableStart="@drawable/ic_star_black_24dp"
+                    android:drawableTint="@color/colorPrimary"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:textSize="12sp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textColor="@color/colorPrimary"
+                    />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_margin="4dp"
                     android:layout_weight="1"
-                    android:textSize="18sp"
-
-                    android:text="Stock Lots" />
+                    android:background="@drawable/background_fabric"
+                    android:drawableStart="@drawable/ic_star_black_24dp"
+                    android:drawableTint="#FDD835"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:textSize="12sp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textColor="#FDD835"
+                    android:text="Fabric"
+                    />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_margin="4dp"
                     android:layout_weight="1"
-                    android:text="Waste"
-                    android:textSize="18sp" />
+                    android:background="@drawable/background_garments"
+                    android:drawableStart="@drawable/ic_star_black_24dp"
+                    android:drawableTint="@android:color/holo_green_dark"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:textSize="12sp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textColor="@android:color/holo_green_dark"
+                    android:text="Garments" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_margin="4dp"
                     android:layout_weight="1"
-                    android:text="Machinery"
-                    android:textSize="18sp" />
+                    android:background="@drawable/background_stoch_lots"
+                    android:drawableStart="@drawable/ic_star_black_24dp"
+                    android:drawableTint="#D2691E"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:textSize="12sp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textColor="#D2691E"
+                    android:text="Stock Lots"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_waste"
+                    android:drawableStart="@drawable/ic_star_black_24dp"
+                    android:drawableTint="@android:color/holo_red_dark"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:textSize="12sp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:text="Waste" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_machinery"
+                    android:drawableStart="@drawable/ic_star_black_24dp"
+                    android:drawableTint="#FFA000"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:textSize="12sp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textColor="#FFA000"
+                    android:text="Machinery" />
 
             </LinearLayout>
         </HorizontalScrollView>
