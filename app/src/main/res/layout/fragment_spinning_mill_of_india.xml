@@ -39,6 +39,7 @@
                 android:layout_marginTop="16dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
+                android:weightSum="5"
                 app:layout_constraintBottom_toTopOf="@+id/cardView_post_yarn_requirement"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -49,10 +50,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
+                    android:layout_weight="1"
                     android:background="@color/colorPrimary"
                     android:paddingStart="3dp"
                     android:paddingEnd="3dp"
                     android:text="Cotton"
+                    android:textAlignment="center"
                     android:textColor="@android:color/white"
                     android:textSize="14sp" />
 
@@ -61,10 +64,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
+                    android:layout_weight="1"
+
                     android:background="@color/colorPrimary"
                     android:paddingStart="3dp"
                     android:paddingEnd="3dp"
                     android:text="Synthetic"
+                    android:textAlignment="center"
                     android:textColor="@android:color/white" />
 
                 <TextView
@@ -76,6 +82,8 @@
                     android:paddingStart="3dp"
                     android:paddingEnd="3dp"
                     android:text="Viscose"
+
+                    android:textAlignment="center"
                     android:textColor="@android:color/white" />
 
                 <TextView
@@ -83,10 +91,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
+                    android:layout_weight="1"
+
                     android:background="@color/colorPrimary"
                     android:paddingStart="3dp"
                     android:paddingEnd="3dp"
                     android:text="Texturised"
+                    android:textAlignment="center"
                     android:textColor="@android:color/white" />
 
                 <TextView
@@ -94,10 +105,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
+                    android:layout_weight="1"
+
                     android:background="@color/colorPrimary"
                     android:paddingStart="3dp"
                     android:paddingEnd="3dp"
                     android:text="Fancy"
+                    android:textAlignment="center"
                     android:textColor="@android:color/white" />
 
             </LinearLayout>
@@ -317,8 +331,8 @@
         android:layout_gravity="bottom"
         android:animateLayoutChanges="true"
         android:background="#383838"
-        tools:visibility="visible"
-        android:visibility="gone">
+        android:visibility="gone"
+        tools:visibility="visible">
 
         <TextView
             android:id="@+id/textView_filter"

@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".buySellTextileProducts.BuySellTextileProducts"
+    android:background="#EEC0C0C0">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_buy_sell_textile_products"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:navigationIcon="@drawable/ic_arrow_back"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:title="Colossustex" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/toolbar_buy_sell_textile_products"
+            android:background="@android:color/white"
+            android:scrollbars="none"
+            app:layout_collapseMode="pin">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal"
+                android:weightSum="7">
+
+                <TextView
+                    android:id="@+id/buy_sell_Fibre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_fibre"
+                    android:drawableStart="@drawable/ic_star_black_24dp"
+                    android:drawableTint="@android:color/holo_red_light"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:paddingStart="20dp"
+                    android:paddingTop="6dp"
+                    android:paddingEnd="20dp"
+                    android:paddingBottom="6dp"
+                    android:text="Fibre"
+                    android:textColor="@android:color/holo_red_light"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/buy_sell_Yarn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_yarn"
+                    android:drawableStart="@drawable/ic_star_black_24dp"
+                    android:drawableTint="@color/colorPrimary"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:text="Yarn"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/buy_sell_Fibric"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_fabric"
+                    android:drawableStart="@drawable/ic_star_black_24dp"
+                    android:drawableTint="#FDD835"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:text="Fabric"
+                    android:textColor="#FDD835"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/buy_sell_Garments"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_garments"
+                    android:drawableStart="@drawable/ic_star_black_24dp"
+                    android:drawableTint="@android:color/holo_green_dark"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:text="Garments"
+                    android:textColor="@android:color/holo_green_dark"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/buy_sell_stock_lots"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_stoch_lots"
+                    android:drawableStart="@drawable/ic_star_black_24dp"
+                    android:drawableTint="#D2691E"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:text="Stock Lots"
+                    android:textColor="#D2691E"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/buy_sell_waste"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_waste"
+                    android:drawableStart="@drawable/ic_star_black_24dp"
+                    android:drawableTint="@android:color/holo_red_dark"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:text="Waste"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/buy_sell_machinary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_machinery"
+                    android:drawableStart="@drawable/ic_star_black_24dp"
+                    android:drawableTint="#FFA000"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:text="Machinery"
+                    android:textColor="#FFA000"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+        </HorizontalScrollView>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView_buy_sell"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="18dp"
+        android:background="@drawable/background_round_corners">
+
+        <TextView
+            android:id="@+id/textView_filter_buy_sell"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_filter_list_black_24dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="Filter By State"
+            android:textSize="14dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="1dp"
+            android:layout_height="40dp"
+            android:background="#4BFFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView_my_products"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_format_list_bulleted_black_24dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="My Products"
+            android:textSize="14dp"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/view"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

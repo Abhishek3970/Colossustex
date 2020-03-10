@@ -218,6 +218,13 @@ class SpinningMillOfIndia : Fragment() {
                         checkboxFancy-> fancyState = checkboxFancy!!.isChecked
 
                     }
+                    if(!cottonState && !syntheticState && !viscoseState && !texturizedState && !fancyState ){
+                        checkboxCotton.isChecked = true
+                        checkboxSynthetic.isChecked = true
+                        checkboxViscose.isChecked = true
+                        checkboxTexturized.isChecked = true
+                        checkboxFancy.isChecked = true
+                    }
                         // continue by adding filters here.....
                     var tempList = ArrayList<String>()
                     if(checkboxCotton!!.isChecked)
