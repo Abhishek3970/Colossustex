@@ -1,15 +1,16 @@
 package com.example.colossustex.SpinningMillOfIndia.Common
 
 data class AllproductsData(
-    val textround: String = "",
-    val text1: String = "",
-    val text2: String = "",
-    val text3: String = "",
-    val text4: String = "",
-    val text5: String = "",
-    val text6: String = "",
-    val text7: String = "",
-    val text8: String = "",
-    val text9: String = "",
-    val text10: String = ""
+    var textround: String = "",
+    var text1: String = "",
+    var text2: String = "",
+    var text3: String = "",
+    var text4: String = "",
+    var text5: String = "",
+    var text6: String = "",
+    var text7: String = "",
+    var text8: String = "",
+    var text9: String = "",
+    var text10: String = "",
+    var text11:String=""
 )

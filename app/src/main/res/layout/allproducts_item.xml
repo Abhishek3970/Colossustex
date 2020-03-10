@@ -47,10 +47,11 @@
         android:layout_marginStart="7dp"
         android:layout_marginTop="10dp"
         android:layout_toEndOf="@+id/textround"
-        android:text="CSP 2800 Actual Count 30.1"
-        android:textColor="#277734"
+        android:drawableStart="@drawable/ic_check_24dp"
+        android:text="CSP 2800 "
+        android:textColor="#266F47"
 
-        />
+        android:textSize="12.5sp" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -70,10 +71,11 @@
             android:background="@drawable/all_products_back2"
             android:orientation="horizontal"
             android:paddingLeft="10dp"
-            android:paddingRight="10dp">
+            android:paddingRight="10dp"
+            android:scrollbarAlwaysDrawHorizontalTrack="false">
 
             <TextView
-                android:id="@+id/text4"
+                android:id="@+id/text5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:maxLines="1"
@@ -81,7 +83,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/text5"
+                android:id="@+id/text6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="9dp"
@@ -91,7 +93,7 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/text6"
+            android:id="@+id/text7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -100,7 +102,7 @@
             android:textColor="#FFF" />
     </LinearLayout>
     <TextView
-        android:id="@+id/text7"
+        android:id="@+id/text8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/linear"
@@ -113,17 +115,9 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_toEndOf="@id/textround"
-        android:layout_below="@id/text7"
+        android:layout_below="@id/text8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
-
-        <TextView
-            android:id="@+id/text8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="7dp"
-            android:alpha="0.8"
-            android:text="60.8" />
 
         <TextView
             android:id="@+id/text9"
@@ -131,10 +125,18 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="7dp"
             android:alpha="0.8"
-            android:text="32" />
+            android:text="60.8" />
 
         <TextView
             android:id="@+id/text10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:alpha="0.8"
+            android:text="32" />
+
+        <TextView
+            android:id="@+id/text11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="7dp"
@@ -143,4 +145,17 @@
 
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/text4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text2"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@id/text3"
+        android:drawableStart="@drawable/ic_check_24dp"
+        android:text="TextView"
+        android:textColor="#266F47"
+        android:textSize="12.5sp" />
 </RelativeLayout>

@@ -95,6 +95,7 @@
         android:background="#FFF"
         />
     <TextView
+        android:id="@+id/sort"
         android:textColor="#FFF"
         android:padding="10dp"
         android:gravity="center_horizontal"
