@@ -34,9 +34,10 @@ class MillsListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        list = mutableListOf()
         binding = DataBindingUtil.inflate(inflater, R.layout.mills_list_fragment, container, false)
         binding.viscoseRecycler2.layoutManager = LinearLayoutManager(context)
-        binding.progressLayout.visibility=View.VISIBLE
+        binding.progressLayout.visibility = View.VISIBLE
         database = FirebaseDatabase.getInstance()
         val mdata = database.getReference("Viscose")
         mdata.addListenerForSingleValueEvent(object : ValueEventListener {
@@ -50,13 +51,33 @@ class MillsListFragment : Fragment() {
                     val store = snapshot.getValue(AllMillsData::class.java)
                     list.add(store!!)
                 }
-                binding.progressLayout.visibility=View.GONE
+                binding.progressLayout.visibility = View.GONE
                 binding.viscoseRecycler2.adapter =
                     MillsListAdapter(
                         list
                     )
             }
         })
+//        binding.run {
+//            mdata.addListenerForSingleValueEvent(object : ValueEventListener {
+//                override fun onCancelled(p0: DatabaseError) {
+//
+//                }
+//
+//                override fun onDataChange(p0: DataSnapshot) {
+//                    list = mutableListOf()
+//                    for (snapshot in p0.children) {
+//                        val store = snapshot.getValue(AllMillsData::class.java)
+//                        list.add(store!!)
+//                    }
+//                    progressLayout.visibility=View.GONE
+//                    viscoseRecycler2.adapter =
+//                        MillsListAdapter(
+//                            list
+//                        )
+//                }
+//            })
+
         val dialog = BottomSheetDialog(context!!)
         dialog.setContentView(R.layout.filter_dialog)
         dialog.create()

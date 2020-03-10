@@ -28,6 +28,7 @@ class AllProductAdapter(val context: Context, val list: MutableList<AllproductsD
         val text7 = itemview.findViewById<TextView>(R.id.text7)
         val text8 = itemview.findViewById<TextView>(R.id.text8)
         val text9 = itemview.findViewById<TextView>(R.id.text9)
+        val text11 = itemview.findViewById<TextView>(R.id.text11)
         val text10 = itemview.findViewById<TextView>(R.id.text10)
     }
 
@@ -63,6 +64,7 @@ class AllProductAdapter(val context: Context, val list: MutableList<AllproductsD
         holder.text8.text = list[position].text8
         holder.text9.text = list[position].text9
         holder.text10.text = list[position].text10
+        holder.text11.text = list[position].text11
         holder.textround.text = list[position].textround
 
 
