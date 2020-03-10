@@ -63,7 +63,8 @@
                 <TextView
                     android:id="@+id/textView_yarn_category"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
                     android:layout_centerInParent="true"
                     android:drawableEnd="@drawable/ic_arrow_drop_down_black_24dp"
                     android:text="-- Select Yarn Category --"
@@ -88,7 +89,8 @@
                 <TextView
                     android:id="@+id/textView_yarn_type"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
                     android:drawableEnd="@drawable/ic_arrow_drop_down_black_24dp"
                     android:text="-- Select Yarn Type --"
                     android:layout_centerInParent="true"
@@ -141,7 +143,8 @@
                 <TextView
                     android:id="@+id/textView_state_to"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
                     android:drawableEnd="@drawable/ic_arrow_drop_down_black_24dp"
                     android:text="-- Select State --"
                     android:layout_centerInParent="true"
@@ -179,7 +182,8 @@
                 <TextView
                     android:id="@+id/textView_state_from"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
                     android:drawableEnd="@drawable/ic_arrow_drop_down_black_24dp"
                     android:text="-- Select State --"
                     android:layout_centerInParent="true"

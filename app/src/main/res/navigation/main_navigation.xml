@@ -14,6 +14,9 @@
             android:id="@+id/action_homePage_to_spinningMillOfIndia"
             app:destination="@id/spinningMillOfIndia"
             app:enterAnim="@anim/enter_upwards" />
+        <action
+            android:id="@+id/action_homePage_to_buySellTextileProducts"
+            app:destination="@id/buySellTextileProducts" />
     </fragment>
     <fragment
         android:id="@+id/spinningMillOfIndia"
@@ -76,4 +79,9 @@
             app:popUpTo="@+id/homePage"
             app:popUpToInclusive="true" />
     </fragment>
+    <fragment
+        android:id="@+id/buySellTextileProducts"
+        android:name="com.example.colossustex.buySellTextileProducts.BuySellTextileProducts"
+        android:label="fragment_buy_sell_textile_products"
+        tools:layout="@layout/fragment_buy_sell_textile_products" />
 </navigation>
