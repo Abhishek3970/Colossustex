@@ -73,7 +73,7 @@
                     android:textSize="12sp" />
 
                 <TextView
-                    android:id="@+id/buy_sell_Fibric"
+                    android:id="@+id/buy_sell_Fabric"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_margin="4dp"
