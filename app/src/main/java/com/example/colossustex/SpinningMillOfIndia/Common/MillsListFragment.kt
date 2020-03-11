@@ -5,7 +5,6 @@ import android.os.Build
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -58,25 +57,6 @@ class MillsListFragment : Fragment() {
                     )
             }
         })
-//        binding.run {
-//            mdata.addListenerForSingleValueEvent(object : ValueEventListener {
-//                override fun onCancelled(p0: DatabaseError) {
-//
-//                }
-//
-//                override fun onDataChange(p0: DataSnapshot) {
-//                    list = mutableListOf()
-//                    for (snapshot in p0.children) {
-//                        val store = snapshot.getValue(AllMillsData::class.java)
-//                        list.add(store!!)
-//                    }
-//                    progressLayout.visibility=View.GONE
-//                    viscoseRecycler2.adapter =
-//                        MillsListAdapter(
-//                            list
-//                        )
-//                }
-//            })
 
         val dialog = BottomSheetDialog(context!!)
         dialog.setContentView(R.layout.filter_dialog)
@@ -96,8 +76,6 @@ class MillsListFragment : Fragment() {
             }
             apply.setOnClickListener {
                 val filterlist = mutableListOf<String>()
-                Log.i("Apply", "Entered")
-                //Toast.makeText(context,"hello",Toast.LENGTH_SHORT).show()
                 if (checkbox1.isChecked) {
                     filterlist.add(checkbox1.text.toString())
 

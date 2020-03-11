@@ -1,6 +1,7 @@
 package com.example.colossustex.SpinningMillOfIndia.Viscose
 
 import android.app.Dialog
+import android.content.Intent
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
@@ -15,6 +16,8 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.colossustex.R
+import com.example.colossustex.SpinningMillOfIndia.Common.AllProducts
+import com.example.colossustex.SpinningMillOfIndia.Common.AllproductsData
 import com.example.colossustex.databinding.ViscoseFragment1Binding
 import com.example.dialogcustom.SpinnerDialogAdapter
 import com.google.android.material.snackbar.Snackbar
@@ -148,9 +151,14 @@ class ViscoseFragment : Fragment() {
                 val key = ref.push().key
                 val history_ref2 = history_ref.child("Search History").child(key!!)
                 history_ref2.setValue(data)
+                val intent = Intent(context, AllProducts::class.java)
+                intent.putExtra("First", first_seg).putExtra("Second", second_seg)
+                    .putExtra("Third", third_seg)
+                startActivity(intent)
             } else {
                 Toast.makeText(context, "Select All options", Toast.LENGTH_SHORT).show()
             }
+
         }// When Search Button is pressed
         binding.searchHistoryViscose.setOnClickListener {
             val ref3 = history_ref.child("Search History")
