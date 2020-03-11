@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.Toolbar
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -29,6 +31,21 @@ class BuySellTextileProducts : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val lay = inflater.inflate(R.layout.fragment_buy_sell_textile_products, container, false)
+        val toolbar = lay.findViewById<Toolbar>(R.id.toolbar_buy_sell_textile_products)
+        toolbar.inflateMenu(R.menu.menu_buy_sell)
+        toolbar.setOnMenuItemClickListener {
+            when (it.itemId) {
+                R.id.home_page -> {
+
+                }
+            }
+            true
+        }
+        toolbar.setNavigationOnClickListener {
+
+        }
+
+
 
         posts = ArrayList()
 
@@ -38,6 +55,7 @@ class BuySellTextileProducts : Fragment() {
         adapter = ItemAdapterBuySell(context!!, posts)
         recyclerView.adapter = adapter
         mDb = FirebaseDatabase.getInstance().reference.child("buySell/Item")
+
 
         mDb.addValueEventListener(
             object : ValueEventListener {
@@ -57,4 +75,18 @@ class BuySellTextileProducts : Fragment() {
         return lay
     }
 
+    val valueEventListener = object : ValueEventListener {
+        override fun onCancelled(p0: DatabaseError) {}
+
+        override fun onDataChange(data: DataSnapshot) {
+            posts.clear()
+            for (dataSnapshot in data.children) {
+                val p = dataSnapshot.getValue(ItemBuySell::class.java)
+                posts.add(p!!)
+            }
+            posts.reverse()
+            adapter.notifyDataSetChanged()
+        }
+
+    }   //to notify changes to adapter
 }
