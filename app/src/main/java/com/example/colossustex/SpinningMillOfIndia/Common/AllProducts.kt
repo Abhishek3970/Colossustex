@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.colossustex.MainActivity
 import com.example.colossustex.R
+import com.example.colossustex.SpinningMillOfIndia.Viscose.ViewedHistoryData
 import com.example.colossustex.databinding.FragmentAllProductsBinding
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.firebase.database.DataSnapshot
@@ -21,6 +22,7 @@ import com.google.firebase.database.ValueEventListener
 @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 class AllProducts : AppCompatActivity() {
     lateinit var newlist: MutableList<AllproductsData>
+    lateinit var list2:MutableList<ViewedHistoryData>
     lateinit var firebaseDatabase: FirebaseDatabase
     lateinit var binding: FragmentAllProductsBinding
     lateinit var list: MutableList<AllproductsData>
@@ -55,6 +57,24 @@ class AllProducts : AppCompatActivity() {
                 }
             }
         })
+        val mref=FirebaseDatabase.getInstance().getReference("Search History")
+        mref.addValueEventListener(object :ValueEventListener{
+            override fun onCancelled(p0: DatabaseError) {
+
+            }
+
+            override fun onDataChange(p0: DataSnapshot) {
+                if (p0.exists()) {
+                    list2 = mutableListOf()
+                    for (datasnap in p0.children) {
+                        val data = datasnap.getValue(ViewedHistoryData::class.java)
+                        list2.add(data!!)
+                    }
+                   list2.reverse()
+                }
+            }
+
+        })
         binding.allProductsRecycler.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                 super.onScrollStateChanged(recyclerView, newState)
@@ -66,7 +86,6 @@ class AllProducts : AppCompatActivity() {
                 }
             }
         })
-
         binding.toolbar.setOnMenuItemClickListener {
             when (it.itemId) {
                 R.id.home_id -> {
@@ -223,30 +242,6 @@ class AllProducts : AppCompatActivity() {
                     Toast.makeText(this, "NO RESULTS", Toast.LENGTH_SHORT).show()
                 }
             }
-        }
-    }
-
-    override fun onStart() {
-        super.onStart()
-        if (intent.getStringExtra("First") != null && intent.getStringExtra("Second") != null && intent.getStringExtra(
-                "Third"
-            ) != null
-        ) {
-            Log.i("Hello", "Now")
-            val f = intent.getStringExtra("First")
-            val s = intent.getStringExtra("Second")
-            val t = intent.getStringExtra("Third")
-            val newlist = mutableListOf<AllproductsData>()
-            for (i in list) {
-                if (i.text2.toLowerCase().trim().contains(f) && i.text2.toLowerCase().trim().contains(
-                        s
-                    )
-                ) {
-                    newlist.add(i)
-                }
-            }
-            binding.allProductsRecycler.adapter = AllProductAdapter(this, newlist)
-
         }
     }
 

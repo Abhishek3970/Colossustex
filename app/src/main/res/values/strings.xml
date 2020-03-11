@@ -34,4 +34,6 @@
     <string name="title_activity_texturised">TexturisedActivity</string>
     <string name="apply">APPLY</string>
     <string name="title_activity_fancy">FancyActivity</string>
+    <string name="title_activity_cotton_tabbed">CottonTabbed</string>
+    <string name="title_activity_synthetic_tabbed">SyntheticTabbed</string>
 </resources>
