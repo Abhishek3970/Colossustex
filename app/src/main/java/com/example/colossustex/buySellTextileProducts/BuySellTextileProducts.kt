@@ -2,18 +2,23 @@ package com.example.colossustex.buySellTextileProducts
 
 import android.annotation.SuppressLint
 import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.colossustex.R
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.firebase.database.*
+import kotlinx.android.synthetic.main.fragment_spinning_mill_of_india.*
 
 
 class BuySellTextileProducts : Fragment() {
@@ -24,6 +29,7 @@ class BuySellTextileProducts : Fragment() {
     private lateinit var adapter: ItemAdapterBuySell
     private lateinit var manager: LinearLayoutManager
 
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     @SuppressLint("ResourceAsColor")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -167,6 +173,20 @@ class BuySellTextileProducts : Fragment() {
                 adapter = ItemAdapterBuySell(context!!, newPostList)
                 recyclerView.adapter = adapter
             }
+        }       //Filtering basis of category
+
+
+        filterByState.setOnClickListener {
+            val dialog = BottomSheetDialog(context!!)
+            dialog.setContentView(R.layout.bottom_sheet_buy_sell)
+            dialog.create()
+            dialog.setCancelable(false)
+            dialog.show()
+            val close = dialog.findViewById<ImageView>(R.id.close_dialog_buy_sell)
+            close!!.setOnClickListener{
+                dialog.dismiss()
+            }
+
         }
 
 
