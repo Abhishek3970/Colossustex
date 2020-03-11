@@ -1,23 +1,24 @@
-package com.example.colossustex.SpinningMillOfIndia.Viscose
+package com.example.colossustex.SpinningMillOfIndia.Synthetic
 
-import android.annotation.TargetApi
 import android.content.Intent
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import androidx.annotation.RequiresApi
-import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.snackbar.Snackbar
+import com.google.android.material.tabs.TabLayout
 import androidx.viewpager.widget.ViewPager
+import androidx.appcompat.app.AppCompatActivity
 import com.example.colossustex.MainActivity
 import com.example.colossustex.R
-import com.google.android.material.tabs.TabLayout
 
-class ViscoseActivity : AppCompatActivity() {
-    @TargetApi(Build.VERSION_CODES.M)
-    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
+class SyntheticTabbed : AppCompatActivity() {
+
+    @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.viscose_activity)
+        setContentView(R.layout.activity_synthetic_tabbed)
         val sectionsPagerAdapter =
             SectionsPagerAdapter(
                 this,
@@ -30,7 +31,6 @@ class ViscoseActivity : AppCompatActivity() {
         tabs.setSelectedTabIndicatorColor(Color.WHITE)
         tabs.setTabTextColors(getColor(R.color.tabunselected), Color.WHITE)
         tabs.setupWithViewPager(viewPager)
-        //val fab: FloatingActionButton = findViewById(R.id.fab)
         toolbar.inflateMenu(R.menu.viscose_menu)
         toolbar.setNavigationOnClickListener {
             onBackPressed()
@@ -51,4 +51,5 @@ class ViscoseActivity : AppCompatActivity() {
         }
 
     }
+
 }

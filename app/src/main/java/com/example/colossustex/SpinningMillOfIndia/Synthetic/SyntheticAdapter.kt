@@ -4,6 +4,7 @@ import com.example.colossustex.SpinningMillOfIndia.Cotton.SyntheticData
 
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -79,7 +80,7 @@ class SyntheticAdapter(var list: MutableList<SyntheticData>) :
             holder.sliderLayout.visibility = View.GONE
         }
         holder.itemView.setOnClickListener {
-            Toast.makeText(holder.itemView.context, "Hello", Toast.LENGTH_SHORT).show()
+            holder.itemView.context.startActivity(Intent(holder.itemView.context,SyntheticTabbed::class.java))
         }
     }
 

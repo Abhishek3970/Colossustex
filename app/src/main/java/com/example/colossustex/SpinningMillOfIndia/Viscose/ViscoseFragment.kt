@@ -17,7 +17,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.colossustex.R
 import com.example.colossustex.SpinningMillOfIndia.Common.AllProducts
-import com.example.colossustex.SpinningMillOfIndia.Common.AllproductsData
 import com.example.colossustex.databinding.ViscoseFragment1Binding
 import com.example.dialogcustom.SpinnerDialogAdapter
 import com.google.android.material.snackbar.Snackbar
@@ -25,8 +24,11 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import kotlinx.android.synthetic.main.texturised_fragment1.*
 
 class ViscoseFragment : Fragment() {
+
+
     lateinit var list: MutableList<Int>
     lateinit var binding: ViscoseFragment1Binding
     lateinit var dialog: Dialog
@@ -152,8 +154,6 @@ class ViscoseFragment : Fragment() {
                 val history_ref2 = history_ref.child("Search History").child(key!!)
                 history_ref2.setValue(data)
                 val intent = Intent(context, AllProducts::class.java)
-                intent.putExtra("First", first_seg).putExtra("Second", second_seg)
-                    .putExtra("Third", third_seg)
                 startActivity(intent)
             } else {
                 Toast.makeText(context, "Select All options", Toast.LENGTH_SHORT).show()

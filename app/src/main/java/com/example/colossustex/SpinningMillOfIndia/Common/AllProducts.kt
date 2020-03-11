@@ -26,7 +26,7 @@ class AllProducts : AppCompatActivity() {
     lateinit var list: MutableList<AllproductsData>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.i("Hello", "First")
+        Log.i("Hello","First")
         binding = DataBindingUtil.setContentView(this, R.layout.fragment_all_products)
         binding.toolbar.inflateMenu(R.menu.viscose_menu)
         binding.progressbarAllproducts.visibility = View.VISIBLE
@@ -36,7 +36,7 @@ class AllProducts : AppCompatActivity() {
         }
         firebaseDatabase = FirebaseDatabase.getInstance()
         val ref = firebaseDatabase.getReference("AllProducts")
-        Log.i("Hello", "Oncreatebeforelist")
+        Log.i("Hello","Oncreatebeforelist")
         ref.addValueEventListener(object : ValueEventListener {
             override fun onCancelled(p0: DatabaseError) {
 
@@ -228,29 +228,28 @@ class AllProducts : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-//        if (intent.getStringExtra("First") != null && intent.getStringExtra("Second") != null && intent.getStringExtra(
-//                "Third"
-//            ) != null
-//        ) {
-//            Log.i("Hello", "Now")
-//            val f = intent.getStringExtra("First")
-//            val s = intent.getStringExtra("Second")
-//            val t = intent.getStringExtra("Third")
-//            val newlist = mutableListOf<AllproductsData>()
-//            for (i in list) {
-//                if (i.text2.toLowerCase().trim().contains(f) && i.text2.toLowerCase().trim().contains(
-//                        s
-//                    )
-//                ) {
-//                    newlist.add(i)
-//                }
-//            }
-//            binding.allProductsRecycler.adapter = AllProductAdapter(this, newlist)
-//
-//        }
-//    }
+        if (intent.getStringExtra("First") != null && intent.getStringExtra("Second") != null && intent.getStringExtra(
+                "Third"
+            ) != null
+        ) {
+            Log.i("Hello", "Now")
+            val f = intent.getStringExtra("First")
+            val s = intent.getStringExtra("Second")
+            val t = intent.getStringExtra("Third")
+            val newlist = mutableListOf<AllproductsData>()
+            for (i in list) {
+                if (i.text2.toLowerCase().trim().contains(f) && i.text2.toLowerCase().trim().contains(
+                        s
+                    )
+                ) {
+                    newlist.add(i)
+                }
+            }
+            binding.allProductsRecycler.adapter = AllProductAdapter(this, newlist)
 
+        }
     }
+
 }
 
 
