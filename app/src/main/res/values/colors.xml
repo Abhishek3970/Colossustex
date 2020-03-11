@@ -5,4 +5,11 @@
     <color name="colorAccent">#4a7bed</color>
     <color name="orange">#FFA200</color>
     <color name="tabunselected">#80FFFFFF</color>
+    <color name="fabricBackground">#FDD835</color>
+    <color name="fiberBackground">@android:color/holo_red_light</color>
+    <color name="yarnBackground">@color/colorPrimary</color>
+    <color name="garmentBackground">@android:color/holo_green_dark</color>
+    <color name="stocklotsBackground">#D2691E</color>
+    <color name="wastesBackground">@android:color/holo_red_dark</color>
+    <color name="machineryBackground">#FFA000</color>
 </resources>
