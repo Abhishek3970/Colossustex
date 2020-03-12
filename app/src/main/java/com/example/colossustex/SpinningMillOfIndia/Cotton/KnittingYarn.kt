@@ -1,4 +1,5 @@
-package com.example.colossustex.SpinningMillOfIndia.Common
+package com.example.colossustex.SpinningMillOfIndia.Cotton
+
 
 import android.annotation.SuppressLint
 import android.os.Build
@@ -16,48 +17,43 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.colossustex.R
+import com.example.colossustex.SpinningMillOfIndia.Common.AllMillsData
+import com.example.colossustex.SpinningMillOfIndia.Common.MillsListAdapter
+import com.example.colossustex.SpinningMillOfIndia.Common.list_all
 import com.example.colossustex.databinding.MillsListFragmentBinding
 import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
-lateinit var list_all: MutableList<AllMillsData>
-class MillsListFragment : Fragment() {
+
+class KnittingYarn : Fragment() {
+
     lateinit var database: FirebaseDatabase
     lateinit var binding: MillsListFragmentBinding
-
     lateinit var data: AllMillsData
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        list_all = mutableListOf()
         binding = DataBindingUtil.inflate(inflater, R.layout.mills_list_fragment, container, false)
         binding.viscoseRecycler2.layoutManager = LinearLayoutManager(context)
         binding.progressLayout.visibility = View.VISIBLE
         database = FirebaseDatabase.getInstance()
-        val mdata = database.getReference("Viscose")
-        mdata.addListenerForSingleValueEvent(object : ValueEventListener {
-            override fun onCancelled(p0: DatabaseError) {
-
-            }
-
-            override fun onDataChange(p0: DataSnapshot) {
-                list_all = mutableListOf()
-                for (snapshot in p0.children) {
-                    val store = snapshot.getValue(AllMillsData::class.java)
-                    list_all.add(store!!)
-                }
-                binding.progressLayout.visibility = View.GONE
-                binding.viscoseRecycler2.adapter =
-                    MillsListAdapter(
-                        list_all
-                    )
-            }
-        })
-
+        binding.allYarn.text = "Knitting Yarn"
+//        val mdata = database.getReference("Viscose")
+//        mdata.addListenerForSingleValueEvent(object : ValueEventListener {
+//            override fun onCancelled(p0: DatabaseError) {
+//
+//            }
+//
+//            override fun onDataChange(p0: DataSnapshot) {
+//                list = mutableListOf()
+//                for (snapshot in p0.children) {
+//                    val store = snapshot.getValue(AllMillsData::class.java)
+//                    list.add(store!!)
+//                }
+//                binding.progressLayout.visibility = View.GONE
+//            }
+//        })
         val dialog = BottomSheetDialog(context!!)
         dialog.setContentView(R.layout.filter_dialog)
         dialog.create()
@@ -145,7 +141,20 @@ class MillsListFragment : Fragment() {
             }
 
         }) //Searching feature is implemented
+
         return binding.root
 
+    }
+
+    override fun onStart() {
+        super.onStart()
+        val newlist = mutableListOf<AllMillsData>()
+        for (i in list_all) {
+            if (i.text1.toLowerCase().trim().contains("anubhav")) {
+                newlist.add(i)
+            }
+        }
+        binding.progressLayout.visibility = View.GONE
+        binding.viscoseRecycler2.adapter = MillsListAdapter(newlist)
     }
 }

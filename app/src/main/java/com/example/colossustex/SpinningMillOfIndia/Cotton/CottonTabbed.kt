@@ -4,16 +4,18 @@ import android.content.Intent
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
 import com.example.colossustex.MainActivity
 import com.example.colossustex.R
+import com.example.colossustex.SpinningMillOfIndia.Common.MillsListFragment
 import com.google.android.material.tabs.TabLayout
-import kotlinx.android.synthetic.main.mills_list_fragment.*
+import com.google.android.material.tabs.TabLayout.Tab
+lateinit var tab:TabLayout
 
 class CottonTabbed : AppCompatActivity() {
-
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +30,7 @@ class CottonTabbed : AppCompatActivity() {
         val tabs: TabLayout = findViewById(R.id.tabs)
         val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
         tabs.setSelectedTabIndicatorColor(Color.WHITE)
+        tab=tabs
         tabs.setTabTextColors(getColor(R.color.tabunselected), Color.WHITE)
         tabs.setupWithViewPager(viewPager)
         toolbar.inflateMenu(R.menu.viscose_menu)
@@ -50,5 +53,4 @@ class CottonTabbed : AppCompatActivity() {
         }
 
     }
-
 }

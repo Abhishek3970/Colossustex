@@ -27,8 +27,6 @@ import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.texturised_fragment1.*
 
 class ViscoseFragment : Fragment() {
-
-
     lateinit var list: MutableList<Int>
     lateinit var binding: ViscoseFragment1Binding
     lateinit var dialog: Dialog
