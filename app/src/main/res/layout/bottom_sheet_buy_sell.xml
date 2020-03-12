@@ -49,7 +49,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
-                android:buttonTint="@color/colorPrimary"
+                android:buttonTint="@android:color/black"
                 android:paddingStart="4dp"
                 android:text="Andaman and Nicobar Island"
                 android:textSize="14sp" />
@@ -64,9 +64,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
-                android:buttonTint="@color/colorPrimary"
+                android:buttonTint="@android:color/black"
                 android:paddingStart="4dp"
-                android:text="Andra Pradeh"
+                android:text="Andra Pradesh"
                 android:textSize="14sp" />
 
             <View
@@ -80,7 +80,7 @@
 
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
-                android:buttonTint="@color/colorPrimary"
+                android:buttonTint="@android:color/black"
                 android:paddingStart="4dp"
                 android:text="Arunachal Pradesh"
                 android:textSize="14sp" />
@@ -96,7 +96,7 @@
                 android:layout_height="wrap_content"
 
                 android:layout_margin="4dp"
-                android:buttonTint="@color/colorPrimary"
+                android:buttonTint="@android:color/black"
                 android:paddingStart="4dp"
                 android:text="Assam"
                 android:textSize="14sp" />
@@ -111,7 +111,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
-                android:buttonTint="@color/colorPrimary"
+                android:buttonTint="@android:color/black"
 
 
                 android:paddingStart="4dp"
@@ -129,7 +129,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
 
-                android:buttonTint="@color/colorPrimary"
+                android:buttonTint="@android:color/black"
                 android:paddingStart="4dp"
                 android:text="Chandighar"
                 android:textSize="14sp" />
@@ -145,7 +145,7 @@
 
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
-                android:buttonTint="@color/colorPrimary"
+                android:buttonTint="@android:color/black"
                 android:paddingStart="4dp"
                 android:text="Daman and Diu"
                 android:textSize="14sp" />
@@ -161,7 +161,7 @@
                 android:layout_height="wrap_content"
 
                 android:layout_margin="4dp"
-                android:buttonTint="@color/colorPrimary"
+                android:buttonTint="@android:color/black"
                 android:paddingStart="4dp"
                 android:text="Dadar and Nagar Haveli"
                 android:textSize="14sp" />
@@ -175,10 +175,14 @@
     </ScrollView>
 
     <Button
+        android:id="@+id/button_apply"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/colorPrimary"
-        android:text="APPLY"
+        android:background="@color/colorPrimary"
+        android:text="APPLy"
         android:textColor="@android:color/white"
-        android:textSize="20sp" />
+        android:textSize="16dp">
+
+
+    </Button>
 </LinearLayout>

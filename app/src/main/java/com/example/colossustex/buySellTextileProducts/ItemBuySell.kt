@@ -12,5 +12,6 @@ data class ItemBuySell(
     var shareButton: String? = "",
     var countViews: String? = "",
     var count: Int? = 0,
-    var itemID: String? = ""
+    var itemID: String? = "",
+    var state: String? = ""
 )

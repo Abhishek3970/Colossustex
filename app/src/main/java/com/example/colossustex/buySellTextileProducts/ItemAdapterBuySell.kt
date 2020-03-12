@@ -16,7 +16,7 @@ import java.util.*
 class ItemAdapterBuySell() : RecyclerView.Adapter<ItemAdapterBuySell.MyViewHolder>() {
 
     private lateinit var context: Context
-    private lateinit var posts: ArrayList<ItemBuySell>
+    lateinit var posts: ArrayList<ItemBuySell>
     private val db = FirebaseDatabase.getInstance().getReference("buySell/Item")
 
     constructor(c: Context, p: ArrayList<ItemBuySell>) : this() {
