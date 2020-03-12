@@ -57,7 +57,6 @@ class MillsListFragment : Fragment() {
                     )
             }
         })
-
         val dialog = BottomSheetDialog(context!!)
         dialog.setContentView(R.layout.filter_dialog)
         dialog.create()
