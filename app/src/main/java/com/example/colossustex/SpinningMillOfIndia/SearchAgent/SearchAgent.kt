@@ -1,11 +1,11 @@
-package com.example.colossustex.SpinningMillOfIndia
+package com.example.colossustex.SpinningMillOfIndia.SearchAgent
 
 import android.app.AlertDialog
-import android.app.Dialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
@@ -13,9 +13,9 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.example.colossustex.R
 
+
 class SearchAgent : Fragment() {
 
-    private lateinit var dialog: Dialog
 
     private val states = arrayOf(
         "Andhra Pradesh",
@@ -93,6 +93,37 @@ class SearchAgent : Fragment() {
         "Cotton-Polyester-viscose Blend",
         "PC Open End Yarn"
     )
+    private val specializedType = arrayOf(
+        "Supima Yarn",
+        "Pima Yarn",
+        "Nylon Yarn",
+        "Bamboo Yarn",
+        "Banana Yarn",
+        "Flax Yarn",
+        "Cotton-Flax Yarn",
+        "Woollen Yarn",
+        "Acrylic Yarn",
+        "Suvin Yarn",
+        "Egypt Yarn",
+        "Jute Yarn",
+        "Embroidary Yarn",
+        "Baby Soft Yarn",
+        "Industrial Yarn",
+        "Sewing Yarn",
+        "Dyed Yarn",
+        "Indigo Dyed Yarn",
+        "Gassed Yarn",
+        "Mercerised Yarn",
+        "Gassed Mercerised Yarn",
+        "Melange Yarn",
+        "Double-Plu Yarn",
+        "Multiple-Ply Yarn",
+        "SHPR / SHCR Yarn",
+        "DHCR / DHPR / HFCR / FHPR Yarn",
+        "Hank Yarn",
+        "Cheese Yarn",
+        "Ring Double Yarn"
+    )
 
 
     override fun onCreateView(
@@ -117,20 +148,20 @@ class SearchAgent : Fragment() {
             }
             true
         }
-        dialog = Dialog(context!!)
 
-        val catagories = lay.findViewById<TextView>(R.id.textView_yarn_category)
+        val categories = lay.findViewById<TextView>(R.id.textView_yarn_category)
         val yarnType = lay.findViewById<TextView>(R.id.textView_yarn_type)
         val stateTo = lay.findViewById<TextView>(R.id.textView_state_to)
         val stateFrom = lay.findViewById<TextView>(R.id.textView_state_from)
-
+        val search = lay.findViewById<Button>(R.id.button_search)
 
 
         yarnType.setOnClickListener {
-            if (catagories.text == "-- Select Yarn Category --") {
+            it.setBackgroundResource(R.drawable.background_spinner_in_search_agent)
+            if (categories.text == "-- Select Yarn Category --") {
                 Toast.makeText(context!!, "First enter Yarn Category", Toast.LENGTH_SHORT).show()
             } else {
-                when (catagories.text) {
+                when (categories.text) {
                     "Cotton Yarn" -> {
                         val builder = AlertDialog.Builder(context!!)
                         builder.setItems(cottonType) { dialog, which ->
@@ -172,18 +203,23 @@ class SearchAgent : Fragment() {
                         dialog.show()
                     }
                     "Specialized Yarn" -> {
-//                        dialog.setContentView(R.layout.fragment_search_agent_yarn_type_polyester)
-//                        dialog.show()        would be made using list view
+                        val builder = AlertDialog.Builder(context!!)
+                        builder.setItems(specializedType) { dialog, which ->
+                            yarnType.text = specializedType[which]
+                        }
+                        val dialog = builder.create()
+                        dialog.show()
                     }
                 }
 
             }
         }
 
-        catagories.setOnClickListener {
+        categories.setOnClickListener {
+            it.setBackgroundResource(R.drawable.background_spinner_in_search_agent)
             val builder = AlertDialog.Builder(context!!)
             builder.setItems(category) { dialog, which ->
-                catagories.text = category[which]
+                categories.text = category[which]
                 yarnType.text = "-- Select Yarn Type --"
             }
             val dialog = builder.create()
@@ -191,6 +227,7 @@ class SearchAgent : Fragment() {
         }
 
         stateTo.setOnClickListener {
+            it.setBackgroundResource(R.drawable.background_spinner_in_search_agent)
             val builder = AlertDialog.Builder(context!!)
             builder.setItems(states) { dialog, which ->
                 stateTo.text = states[which]
@@ -199,6 +236,7 @@ class SearchAgent : Fragment() {
             dialog.show()
         }
         stateFrom.setOnClickListener {
+            it.setBackgroundResource(R.drawable.background_spinner_in_search_agent)
             val builder = AlertDialog.Builder(context!!)
             builder.setItems(states) { dialog, which ->
                 stateFrom.text = states[which]
@@ -207,8 +245,39 @@ class SearchAgent : Fragment() {
             dialog.show()
         }
 
+        search.setOnClickListener {
+            var ct = 0
+            if (categories.text == "-- Select Yarn Category --") {
+                ct++
+                categories.setBackgroundResource(R.drawable.error_background)
+            }
+            if (yarnType.text == "-- Select Yarn Type --") {
+                ct++
+                yarnType.setBackgroundResource(R.drawable.error_background)
+            }
+            if (stateTo.text == "-- Select State --") {
+                ct++
+                stateTo.setBackgroundResource(R.drawable.error_background)
+            }
+            if (stateFrom.text == "-- Select State --") {
+                ct++
+                stateFrom.setBackgroundResource(R.drawable.error_background)
+            }
+            if (ct != 0) {
+                Toast.makeText(context!!, "Please enter all highlighted fields", Toast.LENGTH_SHORT)
+                    .show()
+            } else {
+                var action = SearchAgentDirections.actionSearchAgentToAgents(
+                    stateFrom = stateFrom.text as String,
+                    stateTo = stateTo.text as String,
+                    type = yarnType.text as String
+                )
+                it.findNavController().navigate(action)
+            }
+        }
+
 
         return lay
-    }
 
+    }
 }
