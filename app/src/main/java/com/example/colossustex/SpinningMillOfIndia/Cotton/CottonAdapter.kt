@@ -78,7 +78,7 @@ class CottonAdapter(var list: MutableList<SyntheticData>) :
             holder.sliderLayout.visibility = View.GONE
         }
         holder.itemView.setOnClickListener {
-            holder.itemView.context.startActivity(Intent(holder.itemView.context,CottonTabbed::class.java))
+            holder.itemView.context.startActivity(Intent(holder.itemView.context,CottonTabbed::class.java).putExtra("Position",position))
         }
     }
 

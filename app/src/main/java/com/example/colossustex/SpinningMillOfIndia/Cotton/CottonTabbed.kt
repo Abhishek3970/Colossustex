@@ -21,6 +21,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import kotlinx.android.synthetic.main.activity_cotton_tabbed.*
 
 class CottonTabbed : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.M)
@@ -51,6 +52,7 @@ class CottonTabbed : AppCompatActivity() {
             }
 
             override fun onDataChange(p0: DataSnapshot) {
+                Log.i("Inside","Inside")
                 list_all = mutableListOf()
                 for (snapshot in p0.children) {
                     val store = snapshot.getValue(AllMillsData::class.java)
@@ -72,6 +74,13 @@ class CottonTabbed : AppCompatActivity() {
             }
             true
         }
+
+    }
+
+    override fun onStart() {
+        super.onStart()
+        val pos=intent.getIntExtra("Position",0)
+        tabs.selectTab(tabs.getTabAt(pos))
 
     }
 }

@@ -80,7 +80,7 @@ class SyntheticAdapter(var list: MutableList<SyntheticData>) :
             holder.sliderLayout.visibility = View.GONE
         }
         holder.itemView.setOnClickListener {
-            holder.itemView.context.startActivity(Intent(holder.itemView.context,SyntheticTabbed::class.java))
+            holder.itemView.context.startActivity(Intent(holder.itemView.context,SyntheticTabbed::class.java).putExtra("Position",position))
         }
     }
 

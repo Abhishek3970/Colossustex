@@ -20,7 +20,7 @@ class SectionsPagerAdapter(private val context: Context, fm: FragmentManager) :
         when(position){
             0->frag=SyntheticTab()
             1->frag=MillsListFragment()
-            2->frag=MillsListFragment()
+            2->frag=PSFYarn()
         }
         return frag!!
     }
