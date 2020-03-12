@@ -51,6 +51,14 @@ class Weaving : Fragment() {
         val checkbox3 = dialog.findViewById<CheckBox>(R.id.checkBox3)!!
         val checkbox4 = dialog.findViewById<CheckBox>(R.id.checkBox4)!!
         val checkbox5 = dialog.findViewById<CheckBox>(R.id.checkBox5)!!
+        val newlist = mutableListOf<AllMillsData>()
+        for (i in list_all) {
+            if (i.text1.toLowerCase().trim().contains("bh")) {
+                newlist.add(i)
+            }
+        } //Newlist for fragment
+        binding.progressLayout.visibility = View.GONE
+        binding.viscoseRecycler2.adapter = MillsListAdapter(newlist)
         binding.filter.setOnClickListener {
             dialog.show()
             close.setOnClickListener {
@@ -83,12 +91,12 @@ class Weaving : Fragment() {
                 ) {
                     binding.viscoseRecycler2.adapter =
                         MillsListAdapter(
-                            list_all
+                            newlist
                         )
 
                 } else {
                     val newlist1 = mutableListOf<AllMillsData>()
-                    for (i in list_all) {
+                    for (i in newlist) {
                         for (j in filterlist) {
                             if (i.text1.toLowerCase().trim().contains(j.toLowerCase().trim())) {
                                 newlist1.add(i)
@@ -114,19 +122,20 @@ class Weaving : Fragment() {
 
             @SuppressLint("DefaultLocale")
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                val newlist = mutableListOf<AllMillsData>()
-                for (i in list_all) {
+                val newlist_search = mutableListOf<AllMillsData>()
+                for (i in newlist) {
                     if (i.text1.toLowerCase().trim().contains(s.toString().toLowerCase().trim())) {
-                        newlist.add(i)
+                        newlist_search.add(i)
                     }
                 }
                 binding.viscoseRecycler2.adapter =
                     MillsListAdapter(
-                        newlist
+                        newlist_search
                     )
             }
 
         }) //Searching feature is implemented
+
         return binding.root
 
     }
@@ -135,11 +144,11 @@ class Weaving : Fragment() {
         super.onStart()
         val newlist = mutableListOf<AllMillsData>()
         for (i in list_all) {
-            if (i.text1.toLowerCase().trim().contains("deepak")) {
+            if (i.text1.toLowerCase().trim().contains("bh")) {
                 Log.i("Check", i.text1)
                 newlist.add(i)
             }
-        }
+        } //Newlist for fragment
         binding.progressLayout.visibility = View.GONE
         binding.viscoseRecycler2.adapter = MillsListAdapter(newlist)
     }

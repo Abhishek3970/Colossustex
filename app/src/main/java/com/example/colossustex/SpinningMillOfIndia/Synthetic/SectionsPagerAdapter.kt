@@ -9,7 +9,7 @@ import com.example.colossustex.SpinningMillOfIndia.Common.MillsListFragment
 import com.example.colossustex.SpinningMillOfIndia.Cotton.SyntheticFragment
 
 private val TAB_TITLES = arrayOf(
-   "Synthetic","View All Mills","Mills1"
+   "Synthetic","View All Mills","PSF Mills"
 )
 
 class SectionsPagerAdapter(private val context: Context, fm: FragmentManager) :

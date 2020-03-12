@@ -8,6 +8,7 @@
         android:layout_height="match_parent">
 
         <LinearLayout
+            style="@style/texturised_text_style"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
@@ -16,6 +17,7 @@
 
             <TextView
                 android:id="@+id/spinner_viscose"
+                style="@style/texturised_text_style"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_gravity="center_horizontal"
@@ -40,7 +42,7 @@
 
                 <TextView
                     android:id="@+id/openend_id"
-                    style="@style/viscosetext"
+                    style="@style/texturised_text_style"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -50,7 +52,7 @@
 
                 <TextView
                     android:id="@+id/ringspun_id"
-                    style="@style/viscosetext"
+                    style="@style/texturised_text_style"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -60,7 +62,7 @@
 
                 <TextView
                     android:id="@+id/vortex_id"
-                    style="@style/viscosetext"
+                    style="@style/texturised_text_style"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -81,7 +83,7 @@
 
                 <TextView
                     android:id="@+id/warp_id"
-                    style="@style/viscosetext"
+                    style="@style/texturised_text_style"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -91,7 +93,7 @@
 
                 <TextView
                     android:id="@+id/weft_id"
-                    style="@style/viscosetext"
+                    style="@style/texturised_text_style"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -113,7 +115,7 @@
 
                 <TextView
                     android:id="@+id/regular_id"
-                    style="@style/viscosetext"
+                    style="@style/texturised_text_style"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -123,7 +125,7 @@
 
                 <TextView
                     android:id="@+id/dyed_id"
-                    style="@style/viscosetext"
+                    style="@style/texturised_text_style"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -133,7 +135,7 @@
 
                 <TextView
                     android:id="@+id/spandex_id"
-                    style="@style/viscosetext"
+                    style="@style/texturised_text_style"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -163,7 +165,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:alpha="0.8"
             android:background="#111"
             android:weightSum="2">
 
