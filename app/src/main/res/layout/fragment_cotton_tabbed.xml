@@ -1,8 +1,252 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/constraintLayout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/colorPrimary">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:id="@+id/coordinator"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context=".SpinningMillOfIndia.Fancy.ui.main.PlaceholderFragment">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="10dp"
+                android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/weaving"
+                    style="@style/texturised_text_style"
+                    android:layout_weight="1"
+                    android:background="@drawable/left_texturised"
+                    android:gravity="center"
+                    android:text="Weaving" />
+
+                <TextView
+                    android:id="@+id/hosiery"
+                    style="@style/texturised_text_style"
+                    android:layout_weight="1"
+                    android:background="@drawable/right_texturised"
+                    android:gravity="center"
+                    android:text="Hosiery" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/spinner_viscose"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/borders_spinner"
+                android:drawableEnd="@drawable/ic_arrow_drop_down_black_24dp"
+                android:gravity="center"
+                android:text="@string/choose"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="10dp"
+                android:weightSum="3">
+
+                <TextView
+                    android:id="@+id/openend"
+                    style="@style/texturised_text_style"
+                    android:layout_weight="1"
+                    android:background="@drawable/left_texturised"
+                    android:gravity="center"
+                    android:text="Open End" />
+
+                <TextView
+                    android:id="@+id/ringspun"
+                    style="@style/texturised_text_style"
+                    android:layout_weight="1"
+                    android:background="@drawable/middle_texturised"
+                    android:gravity="center"
+                    android:text="Ring Spun" />
+
+                <TextView
+                    android:id="@+id/vortex"
+                    style="@style/texturised_text_style"
+                    android:layout_weight="1"
+                    android:background="@drawable/right_texturised"
+                    android:gravity="center"
+                    android:text="Vortex" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="10dp"
+                android:weightSum="4">
+
+                <TextView
+                    android:id="@+id/combed"
+                    style="@style/texturised_text_style"
+                    android:layout_weight="1"
+                    android:background="@drawable/top_left_corner_texturised"
+                    android:gravity="center"
+                    android:text="Combed" />
+
+                <TextView
+                    android:id="@+id/carded"
+                    style="@style/texturised_text_style"
+                    android:layout_weight="1"
+                    android:background="@drawable/middle_texturised"
+                    android:gravity="center"
+                    android:text="Carded" />
+
+                <TextView
+                    android:id="@+id/virgin"
+                    style="@style/texturised_text_style"
+                    android:layout_weight="1"
+                    android:background="@drawable/middle_texturised"
+                    android:gravity="center"
+                    android:text="Virgin" />
+
+                <TextView
+                    android:id="@+id/giza"
+                    style="@style/texturised_text_style"
+                    android:layout_weight="1"
+                    android:background="@drawable/top_right_corner_texturised"
+                    android:gravity="center"
+                    android:text="Giza" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/combedcompact"
+                    style="@style/texturised_text_style"
+                    android:layout_weight="1"
+                    android:background="@drawable/bottom_left_corner_texturised"
+                    android:gravity="center"
+                    android:text="Combedc Compact" />
+
+                <TextView
+                    android:id="@+id/cardedcompact"
+                    style="@style/texturised_text_style"
+                    android:layout_weight="1"
+                    android:background="@drawable/bottom_right_corner_texturised"
+                    android:gravity="center"
+                    android:text="Carded Compact" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <TextView
+                        android:id="@+id/regular"
+                        style="@style/texturised_text_style"
+                        android:layout_weight="1"
+                        android:background="@drawable/top_left_corner_texturised"
+                        android:gravity="center"
+                        android:text="Regular" />
+
+                    <TextView
+                        android:id="@+id/dyed"
+                        style="@style/texturised_text_style"
+                        android:layout_weight="1"
+                        android:background="@drawable/middle_texturised"
+                        android:gravity="center"
+                        android:text="Dyed" />
+
+                    <TextView
+                        android:id="@+id/spandex"
+                        style="@style/texturised_text_style"
+                        android:layout_weight="1"
+                        android:background="@drawable/top_right_corner_texturised"
+                        android:gravity="center"
+                        android:text="Spandex" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <TextView
+                        android:id="@+id/bci"
+                        android:layout_width="wrap_content"
+                        style="@style/texturised_text_style"
+                        android:layout_weight="0.9"
+                        android:background="@drawable/bottom_left_corner_texturised"
+                        android:gravity="center"
+                        android:text="BCI" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:id="@+id/importedcotton"
+                        style="@style/texturised_text_style"
+                        android:layout_weight="1.2"
+                        android:background="@drawable/middle_texturised"
+                        android:gravity="center"
+                        android:text="Imported Cotton" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:id="@+id/organic"
+                        style="@style/texturised_text_style"
+                        android:layout_weight="0.9"
+                        android:background="@drawable/bottom_right_corner_texturised"
+                        android:gravity="center"
+                        android:text="Organic" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/search_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="10dp"
+                android:background="#F4511E"
+                android:text="@string/search"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+        <TextView
+            android:alpha="0.8"
+            android:background="#111"
+            android:layout_gravity="bottom"
+            android:id="@+id/viewed_history_viscose"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:padding="10dp"
+            android:text="VIEWED HISTORY"
+            android:textColor="#FFF" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
