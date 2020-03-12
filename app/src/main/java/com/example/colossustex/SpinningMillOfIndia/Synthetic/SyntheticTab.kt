@@ -2,18 +2,20 @@ package com.example.colossustex.SpinningMillOfIndia.Synthetic
 
 
 import android.app.Dialog
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-
 import com.example.colossustex.R
+import com.example.colossustex.SpinningMillOfIndia.Common.AllProducts
 import com.example.colossustex.SpinningMillOfIndia.Viscose.ViewedHistoryAdapter
 import com.example.colossustex.SpinningMillOfIndia.Viscose.ViewedHistoryData
 import com.example.colossustex.databinding.FragmentSyntheticTabBinding
@@ -33,11 +35,12 @@ class SyntheticTab : Fragment() {
     ): View? {
 
         // Inflate the layout for this fragment =
-        binding=DataBindingUtil.inflate(inflater,R.layout.fragment_synthetic_tab,container,false)
-        val list1= mutableListOf(binding.psf,binding.pv,binding.pc)
-        val list2= mutableListOf(binding.openendId,binding.ringspunId,binding.vortexId)
-        val list3= mutableListOf(binding.warpId,binding.weftId)
-        val list4= mutableListOf(binding.regularId,binding.dyedId,binding.spandexId)
+        binding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_synthetic_tab, container, false)
+        val list1 = mutableListOf(binding.psf, binding.pv, binding.pc)
+        val list2 = mutableListOf(binding.openendId, binding.ringspunId, binding.vortexId)
+        val list3 = mutableListOf(binding.warpId, binding.weftId)
+        val list4 = mutableListOf(binding.regularId, binding.dyedId, binding.spandexId)
         val list = mutableListOf<Int>()
         for (i in 1..200) {
             list.add(i)
@@ -45,21 +48,23 @@ class SyntheticTab : Fragment() {
         var first_seg = ""
         var second_seg = ""
         var third_seg = ""
-        var fourth_seg=""
+        var fourth_seg = ""
         val dialog = Dialog(context!!)
         val dialog2 = Dialog(context!!)
         dialog.setContentView(R.layout.viscose_dialog)
         dialog2.setContentView(R.layout.viscose_dialog2)
         val recycler = dialog.findViewById<RecyclerView>(R.id.viscose_recycler)
         recycler.layoutManager = GridLayoutManager(context, 4)
-        recycler.adapter = SpinnerDialogAdapter(list, context!!, dialog2,dialog,binding.spinnerViscose)
+        recycler.adapter =
+            SpinnerDialogAdapter(list, context!!, dialog2, dialog, binding.spinnerViscose)
         binding.spinnerViscose.setOnClickListener {
             dialog.show()
         }
-        for (i in list1){
+        for (i in list1) {
             i.setOnClickListener {
+                first_seg = i.text.toString()
                 i.isSelected = true
-                first_seg=i.text.toString()
+                first_seg = i.text.toString()
                 i.setTextColor(Color.WHITE)
                 for (j in list1) {
                     if (j != i) {
@@ -69,9 +74,9 @@ class SyntheticTab : Fragment() {
                 }
             }
         }
-        for (i in list2){
-            second_seg=i.text.toString()
+        for (i in list2) {
             i.setOnClickListener {
+                second_seg = i.text.toString()
                 i.isSelected = true
                 i.setTextColor(Color.WHITE)
                 for (j in list2) {
@@ -82,10 +87,11 @@ class SyntheticTab : Fragment() {
                 }
             }
         }
-        for (i in list3){
+        for (i in list3) {
             i.setOnClickListener {
+                third_seg = i.text.toString()
                 i.isSelected = true
-                third_seg=i.text.toString()
+                third_seg = i.text.toString()
                 i.setTextColor(Color.WHITE)
                 for (j in list3) {
                     if (j != i) {
@@ -95,10 +101,11 @@ class SyntheticTab : Fragment() {
                 }
             }
         }
-        for (i in list4){
+        for (i in list4) {
             i.setOnClickListener {
+                fourth_seg = i.text.toString()
                 i.isSelected = true
-                fourth_seg=i.text.toString()
+                fourth_seg = i.text.toString()
                 i.setTextColor(Color.WHITE)
                 for (j in list4) {
                     if (j != i) {
@@ -114,7 +121,8 @@ class SyntheticTab : Fragment() {
             dialog_search_history.findViewById<RecyclerView>(R.id.recycler_search_history)
         recycler2.layoutManager = LinearLayoutManager(context)
         binding.viewedHistoryViscose.setOnClickListener {
-            val ref3 = FirebaseDatabase.getInstance().getReference("ViscoseHistory").child("ViewedHistory")
+            val ref3 =
+                FirebaseDatabase.getInstance().getReference("ViscoseHistory").child("ViewedHistory")
             ref3.addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onCancelled(p0: DatabaseError) {
 
@@ -143,9 +151,18 @@ class SyntheticTab : Fragment() {
 
             })
         }
-
-
-
+        binding.searchId.setOnClickListener {
+            if (first_seg != "" && second_seg != "" && third_seg != "" && fourth_seg != "" && binding.spinnerViscose.text.toString() != "--Select Count--") {
+                Toast.makeText(context, "Search History Updated", Toast.LENGTH_SHORT).show()
+                val intent = Intent(context, AllProducts::class.java).putExtra("f", first_seg)
+                    .putExtra("s", second_seg).putExtra("t", third_seg).putExtra("f", fourth_seg)
+                    .putExtra("c", binding.spinnerViscose.text.toString())
+                startActivity(intent)
+            } else {
+                Toast.makeText(context, "Select All options", Toast.LENGTH_SHORT).show()
+            }
+        }
+        // When Search Button is pressed
         return binding.root
     }
 

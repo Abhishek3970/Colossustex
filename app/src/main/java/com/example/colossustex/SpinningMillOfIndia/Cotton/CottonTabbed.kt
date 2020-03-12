@@ -5,18 +5,14 @@ import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
 import com.example.colossustex.MainActivity
 import com.example.colossustex.R
 import com.example.colossustex.SpinningMillOfIndia.Common.AllMillsData
-import com.example.colossustex.SpinningMillOfIndia.Common.MillsListAdapter
-import com.example.colossustex.SpinningMillOfIndia.Common.MillsListFragment
-import com.example.colossustex.SpinningMillOfIndia.Common.list_all
+import com.example.colossustex.SpinningMillOfIndia.Common.list_all_mill
 import com.google.android.material.tabs.TabLayout
-import com.google.android.material.tabs.TabLayout.Tab
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -53,10 +49,10 @@ class CottonTabbed : AppCompatActivity() {
 
             override fun onDataChange(p0: DataSnapshot) {
                 Log.i("Inside","Inside")
-                list_all = mutableListOf()
+                list_all_mill = mutableListOf()
                 for (snapshot in p0.children) {
                     val store = snapshot.getValue(AllMillsData::class.java)
-                    list_all.add(store!!)
+                    list_all_mill.add(store!!)
                 }
             }
         })
