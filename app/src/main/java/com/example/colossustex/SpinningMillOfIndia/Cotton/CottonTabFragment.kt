@@ -2,17 +2,20 @@ package com.example.colossustex.SpinningMillOfIndia.Cotton
 
 
 import android.app.Dialog
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.colossustex.R
+import com.example.colossustex.SpinningMillOfIndia.Common.AllProducts
 import com.example.colossustex.SpinningMillOfIndia.Viscose.ViewedHistoryAdapter
 import com.example.colossustex.SpinningMillOfIndia.Viscose.ViewedHistoryData
 import com.example.colossustex.databinding.FragmentCottonTabbedBinding
@@ -155,6 +158,19 @@ class CottonTabFragment : Fragment() {
 
             })
         }
+
+        binding.searchId.setOnClickListener {
+            if (first_seg != "" && second_seg != "" && third_seg != "" && fourth_seg != "" && binding.spinnerViscose.text.toString() != "--Select Count--") {
+                Toast.makeText(context, "Search History Updated", Toast.LENGTH_SHORT).show()
+                val intent = Intent(context, AllProducts::class.java).putExtra("f", first_seg)
+                    .putExtra("s", second_seg).putExtra("t", third_seg).putExtra("f", fourth_seg)
+                    .putExtra("c", binding.spinnerViscose.text.toString())
+                startActivity(intent)
+            } else {
+                Toast.makeText(context, "Select All options", Toast.LENGTH_SHORT).show()
+            }
+        }
+        // When Search Button is pressed
         return binding.root
     }
 

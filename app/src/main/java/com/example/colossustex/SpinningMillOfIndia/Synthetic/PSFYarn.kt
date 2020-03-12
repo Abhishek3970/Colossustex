@@ -20,7 +20,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.colossustex.R
 import com.example.colossustex.SpinningMillOfIndia.Common.AllMillsData
 import com.example.colossustex.SpinningMillOfIndia.Common.MillsListAdapter
-import com.example.colossustex.SpinningMillOfIndia.Common.list_all
+import com.example.colossustex.SpinningMillOfIndia.Common.list_all_mill
 import com.example.colossustex.databinding.MillsListFragmentBinding
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.firebase.database.FirebaseDatabase
@@ -40,7 +40,6 @@ class PSFYarn : Fragment() {
         binding.progressLayout.visibility = View.VISIBLE
         database = FirebaseDatabase.getInstance()
         binding.allYarn.text = "PSF Yarn Mills"
-
         val dialog = BottomSheetDialog(context!!)
         dialog.setContentView(R.layout.filter_dialog)
         dialog.create()
@@ -53,7 +52,7 @@ class PSFYarn : Fragment() {
         val checkbox4 = dialog.findViewById<CheckBox>(R.id.checkBox4)!!
         val checkbox5 = dialog.findViewById<CheckBox>(R.id.checkBox5)!!
         val newlist = mutableListOf<AllMillsData>()
-        for (i in list_all) {
+        for (i in list_all_mill) {
             if (i.text1.toLowerCase().trim().contains("bh")) {
                 newlist.add(i)
             }
@@ -143,7 +142,7 @@ class PSFYarn : Fragment() {
     override fun onStart() {
         super.onStart()
         val newlist = mutableListOf<AllMillsData>()
-        for (i in list_all) {
+        for (i in list_all_mill) {
             if (i.text1.toLowerCase().trim().contains("bh")) {
                 Log.i("Check", i.text1)
                 newlist.add(i)

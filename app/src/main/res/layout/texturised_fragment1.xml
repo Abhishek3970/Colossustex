@@ -267,6 +267,7 @@
         </LinearLayout>
 
         <Button
+            android:id="@+id/search_id"
             android:textColor="#fff"
             android:layout_marginTop="14dp"
             android:layout_gravity="center_horizontal"

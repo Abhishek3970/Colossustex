@@ -19,13 +19,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.colossustex.R
 import com.example.colossustex.SpinningMillOfIndia.Common.AllMillsData
 import com.example.colossustex.SpinningMillOfIndia.Common.MillsListAdapter
-import com.example.colossustex.SpinningMillOfIndia.Common.list_all
+import com.example.colossustex.SpinningMillOfIndia.Common.list_all_mill
 import com.example.colossustex.databinding.MillsListFragmentBinding
 import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
 
 class Weaving : Fragment() {
 
@@ -55,7 +52,7 @@ class Weaving : Fragment() {
         val checkbox4 = dialog.findViewById<CheckBox>(R.id.checkBox4)!!
         val checkbox5 = dialog.findViewById<CheckBox>(R.id.checkBox5)!!
         val newlist = mutableListOf<AllMillsData>()
-        for (i in list_all) {
+        for (i in list_all_mill) {
             if (i.text1.toLowerCase().trim().contains("bh")) {
                 newlist.add(i)
             }
@@ -146,7 +143,7 @@ class Weaving : Fragment() {
     override fun onStart() {
         super.onStart()
         val newlist = mutableListOf<AllMillsData>()
-        for (i in list_all) {
+        for (i in list_all_mill) {
             if (i.text1.toLowerCase().trim().contains("bh")) {
                 Log.i("Check", i.text1)
                 newlist.add(i)

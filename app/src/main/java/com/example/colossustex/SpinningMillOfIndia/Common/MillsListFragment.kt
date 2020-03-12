@@ -22,7 +22,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-lateinit var list_all: MutableList<AllMillsData>
+lateinit var list_all_mill: MutableList<AllMillsData>
 class MillsListFragment : Fragment() {
     lateinit var database: FirebaseDatabase
     lateinit var binding: MillsListFragmentBinding
@@ -33,7 +33,7 @@ class MillsListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        list_all = mutableListOf()
+        list_all_mill = mutableListOf()
         binding = DataBindingUtil.inflate(inflater, R.layout.mills_list_fragment, container, false)
         binding.viscoseRecycler2.layoutManager = LinearLayoutManager(context)
         binding.progressLayout.visibility = View.VISIBLE
@@ -45,15 +45,15 @@ class MillsListFragment : Fragment() {
             }
 
             override fun onDataChange(p0: DataSnapshot) {
-                list_all = mutableListOf()
+                list_all_mill = mutableListOf()
                 for (snapshot in p0.children) {
                     val store = snapshot.getValue(AllMillsData::class.java)
-                    list_all.add(store!!)
+                    list_all_mill.add(store!!)
                 }
                 binding.progressLayout.visibility = View.GONE
                 binding.viscoseRecycler2.adapter =
                     MillsListAdapter(
-                        list_all
+                        list_all_mill
                     )
             }
         })
@@ -100,12 +100,12 @@ class MillsListFragment : Fragment() {
                 ) {
                     binding.viscoseRecycler2.adapter =
                         MillsListAdapter(
-                            list_all
+                            list_all_mill
                         )
 
                 } else {
                     val newlist1 = mutableListOf<AllMillsData>()
-                    for (i in list_all) {
+                    for (i in list_all_mill) {
                         for (j in filterlist) {
                             if (i.text1.toLowerCase().trim().contains(j.toLowerCase().trim())) {
                                 newlist1.add(i)
@@ -132,7 +132,7 @@ class MillsListFragment : Fragment() {
             @SuppressLint("DefaultLocale")
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 val newlist = mutableListOf<AllMillsData>()
-                for (i in list_all) {
+                for (i in list_all_mill) {
                     if (i.text1.toLowerCase().trim().contains(s.toString().toLowerCase().trim())) {
                         newlist.add(i)
                     }

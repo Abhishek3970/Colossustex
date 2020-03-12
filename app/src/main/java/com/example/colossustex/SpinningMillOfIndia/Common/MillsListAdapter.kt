@@ -41,7 +41,10 @@ class MillsListAdapter(val list: MutableList<AllMillsData>) :
         mdata.child(list[position].id.toString()).child("views").setValue(list[position].views + 1)
         holder.text1.text = list[position].text1
         holder.itemView.setOnClickListener {
-            holder.itemView.context.startActivity(Intent(holder.itemView.context,AllProducts::class.java))
+            val intent = Intent(holder.itemView.context, AllProducts::class.java)
+            intent.putExtra("Head", list[position].text1).putExtra("Location", list[position].text2)
+                .putExtra("Type", list[position].text3)
+            holder.itemView.context.startActivity(intent)
         }
         holder.text2.text = list[position].text2
         holder.text3.text = list[position].text3
@@ -50,9 +53,5 @@ class MillsListAdapter(val list: MutableList<AllMillsData>) :
         holder.text5.text = list[position].text5
 
     }
-    /* fun filter( data:MutableList<AllMillsData> ){
-         this.list=data
-         notifyDataSetChanged()
 
-     }*/
 }
