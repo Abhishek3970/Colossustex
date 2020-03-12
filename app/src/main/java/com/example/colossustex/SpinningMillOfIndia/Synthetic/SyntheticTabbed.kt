@@ -4,6 +4,7 @@ import android.content.Intent
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import androidx.annotation.RequiresApi
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
@@ -12,6 +13,13 @@ import androidx.viewpager.widget.ViewPager
 import androidx.appcompat.app.AppCompatActivity
 import com.example.colossustex.MainActivity
 import com.example.colossustex.R
+import com.example.colossustex.SpinningMillOfIndia.Common.AllMillsData
+import com.example.colossustex.SpinningMillOfIndia.Common.list_all
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
+import kotlinx.android.synthetic.main.activity_cotton_tabbed.*
 
 class SyntheticTabbed : AppCompatActivity() {
 
@@ -35,6 +43,22 @@ class SyntheticTabbed : AppCompatActivity() {
         toolbar.setNavigationOnClickListener {
             onBackPressed()
         }
+        val database = FirebaseDatabase.getInstance()
+        val mdata = database.getReference("Viscose")
+        mdata.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onCancelled(p0: DatabaseError) {
+
+            }
+
+            override fun onDataChange(p0: DataSnapshot) {
+                Log.i("Inside","Inside")
+                list_all = mutableListOf()
+                for (snapshot in p0.children) {
+                    val store = snapshot.getValue(AllMillsData::class.java)
+                    list_all.add(store!!)
+                }
+            }
+        })
         toolbar.setOnMenuItemClickListener {
             when (it.itemId) {
                 R.id.home_id -> {
@@ -51,5 +75,9 @@ class SyntheticTabbed : AppCompatActivity() {
         }
 
     }
-
+    override fun onStart() {
+        super.onStart()
+        val pos=intent.getIntExtra("Position",0)
+        tabs.selectTab(tabs.getTabAt(pos))
+    }
 }
