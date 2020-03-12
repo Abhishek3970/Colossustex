@@ -4,7 +4,8 @@
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:id="@+id/coordinator">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -166,5 +167,16 @@
                 android:text="@string/search"
                 android:textColor="#FFFFFF" />
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/viewed_history_viscose"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="#111"
+            android:gravity="center_horizontal"
+            android:padding="10dp"
+            android:text="VIEWED HISTORY"
+            android:textColor="#FFF" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

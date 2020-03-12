@@ -38,22 +38,15 @@ class KnittingYarn : Fragment() {
         binding.viscoseRecycler2.layoutManager = LinearLayoutManager(context)
         binding.progressLayout.visibility = View.VISIBLE
         database = FirebaseDatabase.getInstance()
-        binding.allYarn.text = "Knitting Yarn"
-//        val mdata = database.getReference("Viscose")
-//        mdata.addListenerForSingleValueEvent(object : ValueEventListener {
-//            override fun onCancelled(p0: DatabaseError) {
-//
-//            }
-//
-//            override fun onDataChange(p0: DataSnapshot) {
-//                list = mutableListOf()
-//                for (snapshot in p0.children) {
-//                    val store = snapshot.getValue(AllMillsData::class.java)
-//                    list.add(store!!)
-//                }
-//                binding.progressLayout.visibility = View.GONE
-//            }
-//        })
+        binding.allYarn.text = "Knitting Yarn"  //Changing title
+        val newlist = mutableListOf<AllMillsData>()
+        for (i in list_all) {
+            if (i.text1.toLowerCase().trim().contains("i")) {
+                newlist.add(i)
+            }
+        } //Condition for filtering the data from all mills for each fragment(newlist)
+        binding.progressLayout.visibility = View.GONE
+        binding.viscoseRecycler2.adapter = MillsListAdapter(newlist)
         val dialog = BottomSheetDialog(context!!)
         dialog.setContentView(R.layout.filter_dialog)
         dialog.create()
@@ -97,12 +90,12 @@ class KnittingYarn : Fragment() {
                 ) {
                     binding.viscoseRecycler2.adapter =
                         MillsListAdapter(
-                            list_all
+                            newlist
                         )
 
                 } else {
                     val newlist1 = mutableListOf<AllMillsData>()
-                    for (i in list_all) {
+                    for (i in newlist) {
                         for (j in filterlist) {
                             if (i.text1.toLowerCase().trim().contains(j.toLowerCase().trim())) {
                                 newlist1.add(i)
@@ -128,15 +121,15 @@ class KnittingYarn : Fragment() {
 
             @SuppressLint("DefaultLocale")
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                val newlist = mutableListOf<AllMillsData>()
-                for (i in list_all) {
+                val search_list = mutableListOf<AllMillsData>()
+                for (i in newlist) {
                     if (i.text1.toLowerCase().trim().contains(s.toString().toLowerCase().trim())) {
-                        newlist.add(i)
+                        search_list.add(i)
                     }
                 }
                 binding.viscoseRecycler2.adapter =
                     MillsListAdapter(
-                        newlist
+                        search_list
                     )
             }
 
@@ -150,10 +143,10 @@ class KnittingYarn : Fragment() {
         super.onStart()
         val newlist = mutableListOf<AllMillsData>()
         for (i in list_all) {
-            if (i.text1.toLowerCase().trim().contains("anubhav")) {
+            if (i.text1.toLowerCase().trim().contains("i")) {
                 newlist.add(i)
             }
-        }
+        }   //Condition for filtering the data from all mills for each fragment(newlist
         binding.progressLayout.visibility = View.GONE
         binding.viscoseRecycler2.adapter = MillsListAdapter(newlist)
     }

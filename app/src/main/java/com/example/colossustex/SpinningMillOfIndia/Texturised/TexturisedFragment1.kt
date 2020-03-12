@@ -11,13 +11,22 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.colossustex.R
+import com.example.colossustex.SpinningMillOfIndia.Viscose.ViewedHistoryAdapter
+import com.example.colossustex.SpinningMillOfIndia.Viscose.ViewedHistoryData
 import com.example.colossustex.databinding.TexturisedFragment1Binding
 import com.example.dialogcustom.SpinnerDialogAdapter
+import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class TexturisedFragment1 : Fragment() {
     lateinit var binding: TexturisedFragment1Binding
+    lateinit var viewed_list: MutableList<ViewedHistoryData>
     override fun onCreateView(
 
         inflater: LayoutInflater, container: ViewGroup?,
@@ -99,8 +108,42 @@ class TexturisedFragment1 : Fragment() {
             binding.regularText.isSelected = false
             binding.regularText.setTextColor(Color.BLACK)
         }
-        return binding.root
+        val dialog_search_history = Dialog(context!!)
+        dialog_search_history.setContentView(R.layout.dialog_viewed_history)
+        val recycler2 =
+            dialog_search_history.findViewById<RecyclerView>(R.id.recycler_search_history)
+        recycler2.layoutManager = LinearLayoutManager(context)
+        binding.viewedHistoryViscose.setOnClickListener {
+            val ref3 = FirebaseDatabase.getInstance().getReference("ViscoseHistory").child("ViewedHistory")
+            ref3.addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onCancelled(p0: DatabaseError) {
 
+                }
+
+                override fun onDataChange(p0: DataSnapshot) {
+                    if (p0.exists()) {
+                        dialog_search_history.findViewById<androidx.appcompat.widget.Toolbar>(R.id.search_his_toolbar)
+                            .title = "Viewed History"
+                        viewed_list = mutableListOf()
+                        for (datasnap in p0.children) {
+                            val data2 = datasnap.getValue(ViewedHistoryData::class.java)
+                            viewed_list.add(data2!!)
+                        }
+                        viewed_list.reverse()
+                        recycler2.adapter = ViewedHistoryAdapter(viewed_list)
+                        dialog_search_history.show()
+                    } else {
+                        Snackbar.make(
+                            binding.coordinator,
+                            "NO HISTORY",
+                            Snackbar.LENGTH_SHORT
+                        ).setTextColor(Color.WHITE).show()
+                    }
+                }
+
+            })
+        }
+        return binding.root
     }
 
 
