@@ -12,7 +12,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.example.colossustex.R
-import com.example.colossustex.SpinningMillOfIndia.SearchAgentDirections
+
 
 class SearchAgent : Fragment() {
 
@@ -266,8 +266,13 @@ class SearchAgent : Fragment() {
             if (ct != 0) {
                 Toast.makeText(context!!, "Please enter all highlighted fields", Toast.LENGTH_SHORT)
                     .show()
-            }else{
-
+            } else {
+                var action = SearchAgentDirections.actionSearchAgentToAgents(
+                    stateFrom = stateFrom.text as String,
+                    stateTo = stateTo.text as String,
+                    type = yarnType.text as String
+                )
+                it.findNavController().navigate(action)
             }
         }
 
