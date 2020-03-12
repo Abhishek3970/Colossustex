@@ -47,7 +47,7 @@
     </fragment>
     <fragment
         android:id="@+id/searchAgent"
-        android:name="com.example.colossustex.SpinningMillOfIndia.SearchAgent"
+        android:name="com.example.colossustex.SpinningMillOfIndia.SearchAgent.SearchAgent"
         android:label="fragment_search_agent"
         tools:layout="@layout/fragment_search_agent" >
         <action
