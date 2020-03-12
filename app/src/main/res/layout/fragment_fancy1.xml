@@ -1,16 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-<LinearLayout
-    android:id="@+id/constraintLayout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".SpinningMillOfIndia.Fancy.ui.main.PlaceholderFragment">
 
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-
-</LinearLayout>
-
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context=".SpinningMillOfIndia.Fancy.ui.main.PlaceholderFragment">
+        <LinearLayout
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:weightSum="3">
+            <TextView
+                android:id="@+id/cotton"
+                style="@style/texturised_text_style"
+                android:text="Cotton"
+                android:gravity="center"
+                android:background="@drawable/top_left_corner_texturised"
+                android:layout_weight="1"
+                />
+            <TextView style="@style/texturised_text_style"
+                android:id="@+id/pv"
+                android:text="PV"
+                android:gravity="center"
+                android:background="@drawable/middle_texturised"
+                android:layout_weight="1"
+                />
+            <TextView style="@style/texturised_text_style"
+                android:text="PC"
+                android:id="@+id/pc"
+                android:gravity="center"
+                android:background="@drawable/top_right_corner_texturised"
+                android:layout_weight="1"
+                />
+        </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:weightSum="3">
+                <TextView style="@style/texturised_text_style"
+                    android:text="PSF"
+                    android:id="@+id/psf"
+                    android:gravity="center"
+                    android:background="@drawable/bottom_left_corner_texturised"
+                    android:layout_weight="1"
+                    />
+                <TextView style="@style/texturised_text_style"
+                    android:text="VSF"
+                    android:id="@+id/vsf"
+                    android:gravity="center"
+                    android:background="@drawable/middle_texturised"
+                    android:layout_weight="1"
+                    />
+                <TextView style="@style/texturised_text_style"
+                    android:text="Texturised"
+                    android:gravity="center"
+                    android:id="@+id/texturised"
+                    android:background="@drawable/bottom_right_corner_texturised"
+                    android:layout_weight="1"
+                    />
+            </LinearLayout>
+            <TextView
+                android:id="@+id/spinner_viscose"
+                android:layout_width="match_parent"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/borders_spinner"
+                android:drawableEnd="@drawable/ic_arrow_drop_down_black_24dp"
+                android:gravity="center"
+                android:text="@string/choose"
+                android:textSize="15sp" />
+            <LinearLayout
+                android:layout_marginTop="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:weightSum="3">
+                <TextView style="@style/texturised_text_style"
+                    android:text="Slub"
+                    android:gravity="center"
+                    android:id="@+id/slub"
+                    android:background="@drawable/bottom_left_corner_texturised"
+                    android:layout_weight="1"
+                    />
+                <TextView style="@style/texturised_text_style"
+                    android:text="Modal"
+                    android:id="@+id/modal"
+                    android:gravity="center"
+                    android:background="@drawable/middle_texturised"
+                    android:layout_weight="1"
+                    />
+                <TextView style="@style/texturised_text_style"
+                    android:text="Excel"
+                    android:id="@+id/excel"
+                    android:gravity="center"
+                    android:background="@drawable/bottom_right_corner_texturised"
+                    android:layout_weight="1"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:weightSum="2">
+                <TextView style="@style/texturised_text_style"
+                    android:text="Tencel"
+                    android:id="@+id/tencel"
+                    android:gravity="center"
+                    android:background="@drawable/bottom_left_corner_texturised"
+                    android:layout_weight="1"
+                    />
+                <TextView style="@style/texturised_text_style"
+                    android:text="Multi Color"
+                    android:id="@+id/multicolor"
+                    android:gravity="center"
+                    android:background="@drawable/middle_texturised"
+                    android:layout_weight="1"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:weightSum="2">
+                <TextView style="@style/texturised_text_style"
+                    android:text="Regular"
+                    android:id="@+id/regular"
+                    android:gravity="center"
+                    android:background="@drawable/bottom_left_corner_texturised"
+                    android:layout_weight="1"
+                    />
+                <TextView style="@style/texturised_text_style"
+                    android:text="Dyed"
+                    android:id="@+id/dyed"
+                    android:gravity="center"
+                    android:background="@drawable/middle_texturised"
+                    android:layout_weight="1"
+                    />
+            </LinearLayout>
+            <Button
+                android:id="@+id/search_id"
+                android:layout_width="match_parent"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:background="#F4511E"
+                android:text="@string/search"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

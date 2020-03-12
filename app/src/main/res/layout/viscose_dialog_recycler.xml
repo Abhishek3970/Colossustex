@@ -5,7 +5,7 @@
     android:orientation="horizontal">
 
     <TextView
-        android:background="@drawable/border_dialog_text"
+        android:background="@drawable/dialog_text_pressed"
         android:id="@+id/viscose_recycler_text"
         android:layout_width="85dp"
         android:layout_height="wrap_content"

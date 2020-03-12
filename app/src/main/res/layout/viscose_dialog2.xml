@@ -13,7 +13,11 @@
         android:textSize="16sp"
         android:layout_height="wrap_content"
         android:text="@string/single" />
-
+<View
+    android:layout_width="match_parent"
+    android:layout_height="0.7dp"
+    android:background="#2C111111">
+</View>
     <TextView
         android:gravity="center_horizontal"
         android:padding="15dp"

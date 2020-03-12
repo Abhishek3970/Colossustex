@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Filter"
+        android:textColor="#FFF"
+        android:textSize="19dp" />
+    <LinearLayout
+        android:weightSum="3"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_weight="0.8"
+            android:layout_marginStart="20dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Type"
+            android:textSize="17sp" />
+        <RadioGroup
+            android:id="@+id/rg_filter"
+            android:layout_weight="2.2"
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/warp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Warp" />
+
+            <RadioButton
+                android:id="@+id/weft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Weft" />
+        </RadioGroup>
+
+
+    </LinearLayout>
+<LinearLayout
+    android:layout_marginTop="15dp"
+    android:weightSum="3"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_weight="0.8"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Delivery"
+        android:textSize="17sp"
+        android:layout_marginStart="20dp"
+        />
+
+    <Spinner
+        android:id="@+id/allproducts_spinner"
+        android:layout_weight="1.3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        />
+
+
+
+</LinearLayout>
+
+    <TextView
+        android:id="@+id/go_filter"
+        android:textColor="#FFF"
+        android:layout_marginTop="29dp"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:padding="10dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="GO"/>
+</LinearLayout>

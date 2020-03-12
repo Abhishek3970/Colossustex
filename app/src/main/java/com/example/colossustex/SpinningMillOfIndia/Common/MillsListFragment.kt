@@ -1,12 +1,10 @@
-package com.example.colossustex.SpinningMillOfIndia.Viscose
+package com.example.colossustex.SpinningMillOfIndia.Common
 
 import android.annotation.SuppressLint
 import android.os.Build
 import android.os.Bundle
-import android.os.strictmode.WebViewMethodCalledOnWrongThreadViolation
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -35,9 +33,10 @@ class MillsListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        list = mutableListOf()
         binding = DataBindingUtil.inflate(inflater, R.layout.mills_list_fragment, container, false)
         binding.viscoseRecycler2.layoutManager = LinearLayoutManager(context)
-        binding.progressLayout.visibility=View.VISIBLE
+        binding.progressLayout.visibility = View.VISIBLE
         database = FirebaseDatabase.getInstance()
         val mdata = database.getReference("Viscose")
         mdata.addListenerForSingleValueEvent(object : ValueEventListener {
@@ -51,11 +50,14 @@ class MillsListFragment : Fragment() {
                     val store = snapshot.getValue(AllMillsData::class.java)
                     list.add(store!!)
                 }
-                binding.progressLayout.visibility=View.GONE
-                binding.viscoseRecycler2.adapter = RecyclerAdapter2(list)
+                binding.progressLayout.visibility = View.GONE
+                binding.viscoseRecycler2.adapter =
+                    MillsListAdapter(
+                        list
+                    )
             }
-
         })
+
         val dialog = BottomSheetDialog(context!!)
         dialog.setContentView(R.layout.filter_dialog)
         dialog.create()
@@ -74,8 +76,6 @@ class MillsListFragment : Fragment() {
             }
             apply.setOnClickListener {
                 val filterlist = mutableListOf<String>()
-                Log.i("Apply", "Entered")
-                //Toast.makeText(context,"hello",Toast.LENGTH_SHORT).show()
                 if (checkbox1.isChecked) {
                     filterlist.add(checkbox1.text.toString())
 
@@ -99,7 +99,10 @@ class MillsListFragment : Fragment() {
                 if (!(checkbox1.isChecked or checkbox2.isChecked or checkbox3.isChecked
                             or checkbox4.isChecked or checkbox5.isChecked)
                 ) {
-                    binding.viscoseRecycler2.adapter = RecyclerAdapter2(list)
+                    binding.viscoseRecycler2.adapter =
+                        MillsListAdapter(
+                            list
+                        )
 
                 } else {
                     val newlist1 = mutableListOf<AllMillsData>()
@@ -111,7 +114,10 @@ class MillsListFragment : Fragment() {
                         }
 
                     }
-                    binding.viscoseRecycler2.adapter = RecyclerAdapter2(newlist1)
+                    binding.viscoseRecycler2.adapter =
+                        MillsListAdapter(
+                            newlist1
+                        )
                 }
                 dialog.dismiss()
             } //Filtering is implemented here
@@ -133,7 +139,10 @@ class MillsListFragment : Fragment() {
                         newlist.add(i)
                     }
                 }
-                binding.viscoseRecycler2.adapter = RecyclerAdapter2(newlist)
+                binding.viscoseRecycler2.adapter =
+                    MillsListAdapter(
+                        newlist
+                    )
             }
 
         }) //Searching feature is implemented

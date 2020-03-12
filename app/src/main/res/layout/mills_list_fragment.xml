@@ -52,26 +52,28 @@
                 android:id="@+id/progressbar"
                 />
         </LinearLayout>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/viscose_recycler2"
-            android:layout_below="@+id/edit_search"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_above="@+id/filter"
+            android:layout_below="@+id/edit_search"
             />
-
+        <TextView
+            android:id="@+id/filter"
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:alpha="0.8"
+            android:background="#111111"
+            android:gravity="center"
+            android:layout_gravity="bottom"
+            android:text="@string/filter"
+            android:textColor="#fff" />
     </RelativeLayout>
-    <TextView
-        android:id="@+id/filter"
-        android:layout_width="match_parent"
-        android:padding="10dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:alpha="0.8"
-        android:background="#111111"
-        android:gravity="center"
-        android:layout_gravity="bottom"
-        android:text="@string/filter"
-        android:textColor="#fff" />
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </layout>

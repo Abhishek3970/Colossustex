@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -10,15 +12,17 @@
         android:layout_height="match_parent">
 <LinearLayout
     android:layout_gravity="center_horizontal"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:layout_marginTop="53dp">
+    android:layout_marginTop="25dp">
     <LinearLayout
-            android:layout_width="330dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:layout_gravity="center_horizontal"
-                        android:weightSum="4">
+        android:weightSum="4">
 
         <TextView
             android:id="@+id/bright_text"
@@ -56,8 +60,10 @@
 
 
         <LinearLayout
-            android:layout_width="330dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:layout_gravity="center_horizontal"
             android:weightSum="2">
 
@@ -79,8 +85,10 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="330dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:layout_gravity="center_horizontal"
             android:weightSum="2">
 
@@ -88,7 +96,7 @@
                 android:id="@+id/airtex"
                 style="@style/texturised_text_style"
                 android:layout_weight="1"
-                android:background="@drawable/bottom_left_corner_textrurised"
+                android:background="@drawable/bottom_left_corner_texturised"
                 android:gravity="center"
                 android:text="Airtex/Cooltex" />
 
@@ -103,8 +111,10 @@
 </LinearLayout>
 
         <LinearLayout
-            android:layout_width="330dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="12dp"
 
@@ -136,8 +146,10 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="330dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:layout_gravity="center_horizontal"
 
             android:weightSum="2">
@@ -146,7 +158,7 @@
                 android:id="@+id/IM"
                 style="@style/texturised_text_style"
                 android:layout_weight="1"
-                android:background="@drawable/bottom_left_corner_textrurised"
+                android:background="@drawable/bottom_left_corner_texturised"
                 android:gravity="center"
                 android:text="IM/ROTO" />
 
@@ -160,18 +172,24 @@
         </LinearLayout>
 
         <TextView
-            android:layout_width="330dp"
-            android:layout_height="wrap_content"
+            android:id="@+id/spinner_viscose"
+            android:layout_width="match_parent"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_height="40dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="12dp"
-            android:background="@drawable/middle_texturised"
+            android:background="@drawable/borders_spinner"
+            android:drawableEnd="@drawable/ic_arrow_drop_down_black_24dp"
             android:gravity="center"
-            android:padding="9dp"
-            android:text="Select Count" />
+            android:text="@string/choose"
+            android:textSize="15sp" />
 
         <LinearLayout
-            android:layout_width="330dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="12dp"
             android:weightSum="2">
@@ -195,8 +213,10 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="330dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:layout_gravity="center_horizontal"
             android:weightSum="2">
 
@@ -204,7 +224,7 @@
                 android:id="@+id/CLQ"
                 style="@style/texturised_text_style"
                 android:layout_weight="1"
-                android:background="@drawable/bottom_left_corner_textrurised"
+                android:background="@drawable/bottom_left_corner_texturised"
                 android:gravity="center"
                 android:text="CLQ" />
 
@@ -219,8 +239,10 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="330dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="12dp"
             android:weightSum="2">
@@ -247,8 +269,10 @@
             android:textColor="#fff"
             android:layout_marginTop="14dp"
             android:layout_gravity="center_horizontal"
-            android:layout_width="330dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:text="@string/search"
             android:background="#F35D2E"
             />
