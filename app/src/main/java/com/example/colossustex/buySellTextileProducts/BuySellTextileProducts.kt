@@ -7,6 +7,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.RequiresApi
@@ -18,7 +20,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.colossustex.R
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.firebase.database.*
-import kotlinx.android.synthetic.main.fragment_spinning_mill_of_india.*
 
 
 class BuySellTextileProducts : Fragment() {
@@ -123,8 +124,7 @@ class BuySellTextileProducts : Fragment() {
                         if (stateMachinery) {
                             machinery.setBackgroundColor(resources.getColor(R.color.machineryBackground))
                             machinery.setTextColor(Color.WHITE)
-                        }
-                        else{
+                        } else {
                             machinery.setBackgroundResource(R.drawable.background_machinery)
                             machinery.setTextColor(resources.getColor(R.color.machineryBackground))
                         }
@@ -134,8 +134,7 @@ class BuySellTextileProducts : Fragment() {
                         if (stateWaste) {
                             waste.setBackgroundColor(resources.getColor(R.color.wastesBackground))
                             waste.setTextColor(Color.WHITE)
-                        }
-                        else{
+                        } else {
                             waste.setBackgroundResource(R.drawable.background_waste)
                             waste.setTextColor(resources.getColor(R.color.wastesBackground))
                         }
@@ -176,6 +175,17 @@ class BuySellTextileProducts : Fragment() {
         }       //Filtering basis of category
 
 
+        var stateAndamanAndNicobar = false
+        var stateAndraPradesh = false
+        var stateArunachalPradesh = false
+        var stateAssam = false
+        var stateBihar = false
+        var stateChandighar = false
+        var stateDamanAndDiu = false
+        var stateDadatAndNagarHaveil = false
+
+
+
         filterByState.setOnClickListener {
             val dialog = BottomSheetDialog(context!!)
             dialog.setContentView(R.layout.bottom_sheet_buy_sell)
@@ -183,10 +193,93 @@ class BuySellTextileProducts : Fragment() {
             dialog.setCancelable(false)
             dialog.show()
             val close = dialog.findViewById<ImageView>(R.id.close_dialog_buy_sell)
-            close!!.setOnClickListener{
+            close!!.setOnClickListener {
                 dialog.dismiss()
             }
+            val andamanAndNicobar = dialog.findViewById<CheckBox>(R.id.checkBox_andaman_and_nicobar)
+            val andraPradesh = dialog.findViewById<CheckBox>(R.id.checkBox_andra_pradesh)
+            val arunachalPradesh = dialog.findViewById<CheckBox>(R.id.checkBox_arunachal_pradesh)
+            val assam = dialog.findViewById<CheckBox>(R.id.checkBox_assam)
+            val bihar = dialog.findViewById<CheckBox>(R.id.checkBox_bihar)
+            val chandighar = dialog.findViewById<CheckBox>(R.id.checkBox_chandigarh)
+            val damanAndDiu = dialog.findViewById<CheckBox>(R.id.checkBox_daman_and_diu)
+            val dadarAndNagarHaveil =
+                dialog.findViewById<CheckBox>(R.id.checkBox_dader_and_nagar_haveli)
+            val apply = dialog.findViewById<Button>(R.id.button_apply)
 
+
+            val list = arrayOf(
+                andamanAndNicobar,
+                arunachalPradesh,
+                andraPradesh,
+                assam,
+                bihar,
+                chandighar,
+                damanAndDiu,
+                dadarAndNagarHaveil
+            )
+
+            andamanAndNicobar!!.isChecked = stateAndamanAndNicobar
+            arunachalPradesh!!.isChecked = stateArunachalPradesh
+            andraPradesh!!.isChecked = stateAndraPradesh
+            assam!!.isChecked = stateAssam
+            bihar!!.isChecked = stateBihar
+            chandighar!!.isChecked = stateChandighar
+            damanAndDiu!!.isChecked = stateDamanAndDiu
+            dadarAndNagarHaveil!!.isChecked = stateDadatAndNagarHaveil
+
+            var newList = ArrayList<ItemBuySell>()
+
+            for (item in list) {
+                item!!.setOnClickListener {
+                    when (item) {
+                        andamanAndNicobar -> stateAndamanAndNicobar = andamanAndNicobar.isChecked
+                        andraPradesh -> stateAndraPradesh = andraPradesh.isChecked
+                        arunachalPradesh -> stateArunachalPradesh = arunachalPradesh.isChecked
+                        assam -> stateAssam = assam.isChecked
+                        bihar -> stateBihar = bihar.isChecked
+                        chandighar -> stateChandighar = chandighar.isChecked
+                        damanAndDiu -> stateDamanAndDiu = damanAndDiu.isChecked
+                        dadarAndNagarHaveil -> stateDadatAndNagarHaveil =
+                            dadarAndNagarHaveil.isChecked
+                    }
+
+
+                    var checkArray = ArrayList<String>()
+                    if (stateAndamanAndNicobar)
+                        checkArray.add(andamanAndNicobar!!.text as String)
+                    if (stateAndraPradesh)
+                        checkArray.add(andraPradesh!!.text as String)
+                    if (stateArunachalPradesh)
+                        checkArray.add(arunachalPradesh!!.text as String)
+                    if (stateAssam)
+                        checkArray.add(assam!!.text as String)
+                    if (stateBihar)
+                        checkArray.add(bihar!!.text as String)
+                    if (stateChandighar)
+                        checkArray.add(chandighar!!.text as String)
+                    if (stateDamanAndDiu)
+                        checkArray.add(damanAndDiu!!.text as String)
+                    if (stateDadatAndNagarHaveil)
+                        checkArray.add(dadarAndNagarHaveil!!.text as String)
+                    newList.clear()
+                    for (item in posts) {
+                        if (item.state in checkArray)
+                            newList.add(item)
+                    }
+
+                }
+            }
+            apply!!.setOnClickListener {
+                if (newList.isNotEmpty()) {
+                    adapter = ItemAdapterBuySell(context!!, newList)
+                    recyclerView.adapter = adapter
+                }else{
+                    adapter = ItemAdapterBuySell(context!!, posts)
+                    recyclerView.adapter = adapter
+                }
+                dialog.dismiss()
+            }
         }
 
 
