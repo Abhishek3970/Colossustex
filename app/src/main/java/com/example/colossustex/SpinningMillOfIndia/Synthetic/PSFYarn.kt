@@ -39,7 +39,7 @@ class PSFYarn : Fragment() {
         binding.viscoseRecycler2.layoutManager = LinearLayoutManager(context)
         binding.progressLayout.visibility = View.VISIBLE
         database = FirebaseDatabase.getInstance()
-        binding.allYarn.text = "Weaving Yarn"
+        binding.allYarn.text = "PSF Yarn Mills"
 
         val dialog = BottomSheetDialog(context!!)
         dialog.setContentView(R.layout.filter_dialog)
