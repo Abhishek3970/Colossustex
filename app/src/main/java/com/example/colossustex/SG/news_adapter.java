@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,14 +19,14 @@ import java.util.ArrayList;
 
 public class news_adapter extends RecyclerView.Adapter<news_adapter.Viewholder>{
     private static final String TAG = "ProgrammingAdapter";
-    private ArrayList<String> desk = new ArrayList<>();
+    private ArrayList<String>  heading = new ArrayList<>();
     private ArrayList<String> place = new ArrayList<>();
     private ArrayList<String> news = new ArrayList<>();
     private ArrayList<String> time = new ArrayList<>();
     private Context context;
 
     public news_adapter(ArrayList<String> desk, ArrayList<String> place, ArrayList<String> news, ArrayList<String> time, Context context) {
-        this.desk = desk;
+        this.heading = desk;
         this.place = place;
         this.news = news;
         this.time = time;
@@ -44,7 +45,7 @@ public class news_adapter extends RecyclerView.Adapter<news_adapter.Viewholder>{
     @Override
     public void onBindViewHolder(@NonNull Viewholder holder, int position) {
 
-        holder.desk.setText(desk.get(position));
+        holder.heading.setText(heading.get(position));
         holder.place.setText(place.get(position));
         holder.news.setText(news.get(position));
         holder.time.setText(time.get(position));
@@ -63,14 +64,14 @@ public class news_adapter extends RecyclerView.Adapter<news_adapter.Viewholder>{
 
     @Override
     public int getItemCount() {
-        return desk.size();
+        return heading.size();
     }
 
 
     public class Viewholder extends RecyclerView.ViewHolder {
 
         ImageView img, image, img4;
-        TextView desk, place, news, txt9, time;
+        TextView heading, place, news, txt9, time;
 
 
         public Viewholder(@NonNull View itemView) {
@@ -79,7 +80,7 @@ public class news_adapter extends RecyclerView.Adapter<news_adapter.Viewholder>{
             image = itemView.findViewById(R.id.imageView2);
             img4 = itemView.findViewById(R.id.imageView4);
             news = itemView.findViewById(R.id.textView3);
-            desk = itemView.findViewById(R.id.textView6);
+            heading = itemView.findViewById(R.id.news_heading);
             place = itemView.findViewById(R.id.textView7);
             txt9 = itemView.findViewById(R.id.textView9);
             time = itemView.findViewById(R.id.textView10);
