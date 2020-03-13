@@ -60,7 +60,7 @@
 
     <ImageView
         android:id="@+id/imageView_image"
-        android:layout_width="418dp"
+        android:layout_width="0dp"
         android:layout_height="293dp"
         android:layout_marginTop="20dp"
         android:scaleType="fitCenter"
@@ -71,7 +71,7 @@
 
     <TextView
         android:id="@+id/textView_description_heading"
-        android:layout_width="356dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
@@ -97,7 +97,7 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="411dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:background="#40C0C0C0"
