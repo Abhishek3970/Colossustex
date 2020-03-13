@@ -139,15 +139,4 @@ class KnittingYarn : Fragment() {
 
     }
 
-    override fun onStart() {
-        super.onStart()
-        val newlist = mutableListOf<AllMillsData>()
-        for (i in list_all_mill) {
-            if (i.text1.toLowerCase().trim().contains("i")) {
-                newlist.add(i)
-            }
-        }   //Condition for filtering the data from all mills for each fragment(newlist
-        binding.progressLayout.visibility = View.GONE
-        binding.viscoseRecycler2.adapter = MillsListAdapter(newlist)
-    }
 }

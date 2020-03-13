@@ -28,7 +28,6 @@ class SpinnerDialogAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.viscose_dialog_recycler, parent, false)
-        dialog2.setContentView(R.layout.viscose_dialog2)
         return MyViewHolder(view)
     }
 
@@ -43,13 +42,13 @@ class SpinnerDialogAdapter(
         holder.itemView.setOnClickListener {
             dialog2.show()
             dialog2.findViewById<TextView>(R.id.single).setOnClickListener {
-                spinner.text = "${list[position]} Single"
+                spinner.text = "${list[position]}s"
                 Toast.LENGTH_SHORT
                 dialog.dismiss()
                 dialog2.dismiss()
             }
             dialog2.findViewById<TextView>(R.id.double_text).setOnClickListener {
-                spinner.text = "${list[position]} Double"
+                spinner.text = "${list[position]}/2"
                 dialog2.dismiss()
                 dialog.dismiss()
             }

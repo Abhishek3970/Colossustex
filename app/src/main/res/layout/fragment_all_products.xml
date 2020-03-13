@@ -1,108 +1,190 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout  xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
-    <ProgressBar
-        android:id="@+id/progressbar_allproducts"
-        android:layout_centerInParent="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        />
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        android:elevation="4dp"
-        app:navigationIcon="@drawable/ic_arrow_back"
-        app:title="All Products"
-        app:titleTextColor="#FAF6F6"
-        android:background="@color/colorPrimary"
-        />
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/constraint"
-        >
-        <TextView
-            android:id="@+id/mainhead"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:id="@+id/progressbar_allproducts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="GHCL Ltd(Unit:Sree Meenakshi Mills)"
-            android:textSize="23sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/location"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Madurai"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/type" />
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@color/colorPrimary"
+                android:elevation="4dp"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:navigationIcon="@drawable/ic_arrow_back"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:title="All Products"
+                app:titleTextColor="#FAF6F6" />
 
-        <TextView
-            android:id="@+id/type"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="3 Viscose Yarn Products"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/mainhead" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:id="@+id/all_products_recycler"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/filter_allproducts"
-        android:layout_below="@+id/constraint"
-        android:layout_marginTop="5dp"/>
-<LinearLayout
-    android:background="#111"
-    android:alpha="0.8"
-    android:id="@+id/filter_allproducts"
-    android:layout_alignParentBottom="true"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:weightSum="2">
-    <TextView
-        android:textColor="#FFF"
-        android:padding="10dp"
-        android:layout_weight="1"
-        android:layout_width="0dp"
-        android:gravity="center_horizontal"
-        android:layout_height="wrap_content"
-        android:text="FILTER"
-        />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/results_allpro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#25000000"
+                android:padding="10dp">
 
-    <View
-        android:layout_gravity="center_vertical"
-        android:layout_width="1dp"
-        android:layout_height="25dp"
-        android:background="#FFF"
-        />
-    <TextView
-        android:id="@+id/sort"
-        android:textColor="#FFF"
-        android:padding="10dp"
-        android:gravity="center_horizontal"
-        android:layout_weight="1"
-        android:layout_width="0dp"
-        android:text="SORT"
-        android:layout_height="wrap_content" />
-</LinearLayout>
-</RelativeLayout>
+
+                <TextView
+                    android:id="@+id/nores"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="Showing results for:"
+                    android:textSize="15sp"
+                    app:layout_constraintBottom_toTopOf="@+id/third"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/first"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/search_allpro"
+                    android:padding="2.7dp"
+                    android:text="TextView"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/third"
+                    app:layout_constraintEnd_toStartOf="@+id/second"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/second"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/search_allpro"
+                    android:padding="2.7dp"
+                    android:text="TextView"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/third"
+                    app:layout_constraintEnd_toStartOf="@+id/third"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/first" />
+
+                <TextView
+                    android:id="@+id/third"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/search_allpro"
+                    android:padding="2.7dp"
+                    android:text="TextView"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/fourth"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/second"
+                    app:layout_constraintTop_toBottomOf="@+id/nores" />
+
+                <TextView
+                    android:id="@+id/fourth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/search_allpro"
+                    android:padding="2.7dp"
+                    android:text="TextView"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/third"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/third" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/toolbar"
+                android:layout_marginTop="10dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/mainhead"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="GHCL Ltd(Unit:Sree Meenakshi Mills)"
+                    android:textSize="23sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Madurai"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/type" />
+
+                <TextView
+                    android:id="@+id/type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="3 Viscose Yarn Products"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mainhead" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/all_products_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/filter_allproducts"
+                android:layout_below="@+id/constraint"
+                android:layout_marginTop="5dp" />
+
+            <LinearLayout
+                android:id="@+id/filter_allproducts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:alpha="0.8"
+                android:background="#111"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:padding="10dp"
+                    android:text="FILTER"
+                    android:textColor="#FFF" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="#FFF" />
+
+                <TextView
+                    android:id="@+id/sort"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:padding="10dp"
+                    android:text="SORT"
+                    android:textColor="#FFF" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
 </layout>

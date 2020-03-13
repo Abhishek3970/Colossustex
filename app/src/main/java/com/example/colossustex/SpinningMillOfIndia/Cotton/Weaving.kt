@@ -140,16 +140,4 @@ class Weaving : Fragment() {
 
     }
 
-    override fun onStart() {
-        super.onStart()
-        val newlist = mutableListOf<AllMillsData>()
-        for (i in list_all_mill) {
-            if (i.text1.toLowerCase().trim().contains("bh")) {
-                Log.i("Check", i.text1)
-                newlist.add(i)
-            }
-        } //Newlist for fragment
-        binding.progressLayout.visibility = View.GONE
-        binding.viscoseRecycler2.adapter = MillsListAdapter(newlist)
-    }
 }

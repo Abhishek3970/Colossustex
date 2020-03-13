@@ -53,6 +53,7 @@ class ViscoseFragment : Fragment() {
         val history_ref = firebaseDatabase.getReference("ViscoseHistory")
         dialog2.setContentView(R.layout.viscose_dialog2)
         dialog.setContentView(R.layout.viscose_dialog)
+        dialog2.setContentView(R.layout.viscose_dialog2)
         val dialog_search_history = Dialog(context!!)
         dialog_search_history.setContentView(R.layout.dialog_viewed_history)
         val recycler2 =
@@ -72,7 +73,6 @@ class ViscoseFragment : Fragment() {
             }
 
             override fun onDataChange(p0: DataSnapshot) {
-                Log.i("Fello", "Listupdated")
                 if (p0.exists()) {
                     allpro_list = mutableListOf()
                     for (datasnap in p0.children) {
@@ -167,7 +167,7 @@ class ViscoseFragment : Fragment() {
         }
         binding.searchId.setOnClickListener {
             val data = ViewedHistoryData(first_seg, second_seg, third_seg)
-            if (data.first != "" && data.second != "" && data.third != ""&&binding.spinnerViscose.text.toString()!="--Select Count--") {
+            if (data.first != "" && data.second != "" && data.third != "" && binding.spinnerViscose.text.toString() != "--Select Count--") {
                 Toast.makeText(context, "Search History Updated", Toast.LENGTH_SHORT).show()
                 val key = ref.push().key
                 val history_ref2 = history_ref.child("Search History").child(key!!)
