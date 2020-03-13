@@ -1,6 +1,8 @@
 package com.example.colossustex.SpinningMillOfIndia.Common
 
+import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import android.widget.*
@@ -49,16 +51,25 @@ class AllProducts : AppCompatActivity() {
                     selectedlist.add(i)
                 }
             }
+            binding.resultsAllpro.visibility=View.VISIBLE
+            binding.constraint.visibility=View.GONE
             binding.progressbarAllproducts.visibility = View.GONE
             if (selectedlist.isNotEmpty()) {
-                binding.mainhead.text = "SHOWING RESULTS"
-                binding.type.text = "${f}   ${s}"
-                binding.location.text = "${t}   ${c}"
+                binding.nores.text="Showing results for:"
+                binding.nores.setTextColor(Color.BLACK)
+                binding.first.text = c
+                binding.second.text = f
+                binding.third.text=s
+                binding.fourth.text=t
                 binding.allProductsRecycler.adapter = AllProductAdapter(this, selectedlist)
             } else {
-                binding.mainhead.text = "NO RESULT"
-                binding.type.text = "${f}   ${s}"
-                binding.location.text = "${t}  ${c}"
+                binding.nores.text="NO RESULTS"
+                binding.nores.setTextColor(Color.RED)
+                binding.first.text = c
+                binding.second.text = f
+                binding.third.text=s
+                binding.fourth.text=t
+
             }
         } else {
             val ref = FirebaseDatabase.getInstance().getReference("AllProducts")
@@ -82,6 +93,8 @@ class AllProducts : AppCompatActivity() {
             })
         }
         if (head != null && type != null && loc != null) {
+            binding.resultsAllpro.visibility=View.GONE
+            binding.constraint.visibility=View.VISIBLE
             binding.mainhead.text = head
             binding.type.text = type
             binding.location.text = loc
