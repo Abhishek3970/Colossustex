@@ -103,7 +103,6 @@ public class yarn_offers_adapter extends RecyclerView.Adapter<yarn_offers_adapte
             share = itemView.findViewById(R.id.textView5);
             Contact = itemView.findViewById(R.id.imageView2);
             Share = itemView.findViewById(R.id.imageView3);
-            parentlayout = itemView.findViewById(R.id.parent_layout);
         }
     }
 
