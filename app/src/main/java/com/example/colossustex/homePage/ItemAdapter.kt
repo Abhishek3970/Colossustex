@@ -14,6 +14,7 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.colossustex.R
 import com.example.colossustex.SG.Textile_News
+import com.example.colossustex.SG.sensex_SG
 import com.example.colossustex.SG.yarn_offers
 import com.example.colossustex.SG.yarn_requirements
 import com.firebase.ui.database.FirebaseRecyclerAdapter
@@ -44,8 +45,8 @@ class ItemAdapter(options: FirebaseRecyclerOptions<Item>) :
             when (position) {
                 0 -> holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToSpinningMillOfIndia())
                 2-> holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToBuySellTextileProducts())
-                4-> it.context.startActivity(Intent(it.context, yarn_offers::class.java))
-                5-> {
+                3-> it.context.startActivity(Intent(it.context, yarn_offers::class.java))
+                4-> {
                     var dialog = Dialog(it.context)
                     dialog.setContentView(R.layout.buy_yarn_offers_dialog1)
                     val cotton = dialog.findViewById<TextView>(R.id.dialog_cotton)
@@ -62,13 +63,14 @@ class ItemAdapter(options: FirebaseRecyclerOptions<Item>) :
                     }
                     dialog.show()
                 }
+                7-> it.context.startActivity(Intent(it.context, sensex_SG::class.java))
 //                5 -> (AlertDialog.Builder(it.context).setSingleChoiceItems(itemList, -1){dialog, which->
 //                    Toast.makeText(it.context, itemList[which], Toast.LENGTH_SHORT).show()
 //                }
 //                val alertDialog = builder.create()
 //                alertDialog.show())
-                6 -> it.context.startActivity(Intent(it.context, yarn_requirements::class.java))
-                7 -> it.context.startActivity(Intent(it.context, Textile_News::class.java))
+                5 -> it.context.startActivity(Intent(it.context, yarn_requirements::class.java))
+                6 -> it.context.startActivity(Intent(it.context, Textile_News::class.java))
                 else -> Toast.makeText(it.context, model.description, Toast.LENGTH_SHORT).show()
             }
         }

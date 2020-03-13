@@ -1,8 +1,9 @@
 package com.example.colossustex.SpinningMillOfIndia.Common
 
+import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -11,6 +12,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.colossustex.MainActivity
 import com.example.colossustex.R
+import com.example.colossustex.SpinningMillOfIndia.Viscose.ViewedHistoryData
+import com.example.colossustex.SpinningMillOfIndia.Viscose.allpro_list
 import com.example.colossustex.databinding.FragmentAllProductsBinding
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.firebase.database.DataSnapshot
@@ -21,39 +24,101 @@ import com.google.firebase.database.ValueEventListener
 @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 class AllProducts : AppCompatActivity() {
     lateinit var newlist: MutableList<AllproductsData>
+    lateinit var list2: MutableList<ViewedHistoryData>
     lateinit var firebaseDatabase: FirebaseDatabase
     lateinit var binding: FragmentAllProductsBinding
-    lateinit var list: MutableList<AllproductsData>
+    lateinit var selectedlist: MutableList<AllproductsData>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.i("Hello", "First")
         binding = DataBindingUtil.setContentView(this, R.layout.fragment_all_products)
         binding.toolbar.inflateMenu(R.menu.viscose_menu)
         binding.progressbarAllproducts.visibility = View.VISIBLE
         binding.allProductsRecycler.layoutManager = LinearLayoutManager(this)
+        val f = intent.getStringExtra("f")
+        val s = intent.getStringExtra("s")
+        val t = intent.getStringExtra("t")
+        val c = intent.getStringExtra("c")
+        val head = intent.getStringExtra("Head")
+        val type = intent.getStringExtra("Type")
+        val loc = intent.getStringExtra("Location")
+        if (f != null && s != null && t != null && c != null) {
+            selectedlist = mutableListOf()
+            for (i in allpro_list) {
+                if (i.text2.toLowerCase().trim().contains(f.toLowerCase().trim()) || i.text2.toLowerCase().trim().contains(
+                        s.toLowerCase().trim()
+                    )
+                ) {
+                    selectedlist.add(i)
+                }
+            }
+            binding.resultsAllpro.visibility=View.VISIBLE
+            binding.constraint.visibility=View.GONE
+            binding.progressbarAllproducts.visibility = View.GONE
+            if (selectedlist.isNotEmpty()) {
+                binding.nores.text="Showing results for:"
+                binding.nores.setTextColor(Color.BLACK)
+                binding.first.text = c
+                binding.second.text = f
+                binding.third.text=s
+                binding.fourth.text=t
+                binding.allProductsRecycler.adapter = AllProductAdapter(this, selectedlist)
+            } else {
+                binding.nores.text="NO RESULTS"
+                binding.nores.setTextColor(Color.RED)
+                binding.first.text = c
+                binding.second.text = f
+                binding.third.text=s
+                binding.fourth.text=t
+
+            }
+        } else {
+            val ref = FirebaseDatabase.getInstance().getReference("AllProducts")
+            ref.addValueEventListener(object : ValueEventListener {
+                override fun onCancelled(p0: DatabaseError) {
+
+                }
+
+                override fun onDataChange(p0: DataSnapshot) {
+                    if (p0.exists()) {
+                        selectedlist = mutableListOf()
+                        for (datasnap in p0.children) {
+                            val data = datasnap.getValue(AllproductsData::class.java)
+                            selectedlist.add(data!!)
+                        }
+                        binding.progressbarAllproducts.visibility = View.GONE
+                        binding.allProductsRecycler.adapter =
+                            AllProductAdapter(this@AllProducts, selectedlist)
+                    }
+                }
+            })
+        }
+        if (head != null && type != null && loc != null) {
+            binding.resultsAllpro.visibility=View.GONE
+            binding.constraint.visibility=View.VISIBLE
+            binding.mainhead.text = head
+            binding.type.text = type
+            binding.location.text = loc
+        }
         binding.toolbar.setNavigationOnClickListener {
             onBackPressed()
         }
-        firebaseDatabase = FirebaseDatabase.getInstance()
-        val ref = firebaseDatabase.getReference("AllProducts")
-        Log.i("Hello", "Oncreatebeforelist")
-        ref.addValueEventListener(object : ValueEventListener {
+        val mref = FirebaseDatabase.getInstance().getReference("Search History")
+        mref.addValueEventListener(object : ValueEventListener {
             override fun onCancelled(p0: DatabaseError) {
 
             }
 
             override fun onDataChange(p0: DataSnapshot) {
-                Log.i("Hello", "Listupdated")
                 if (p0.exists()) {
-                    list = mutableListOf()
+                    list2 = mutableListOf()
                     for (datasnap in p0.children) {
-                        val data = datasnap.getValue(AllproductsData::class.java)
-                        list.add(data!!)
+                        val data = datasnap.getValue(ViewedHistoryData::class.java)
+                        list2.add(data!!)
                     }
-                    binding.progressbarAllproducts.visibility = View.GONE
-                    binding.allProductsRecycler.adapter = AllProductAdapter(this@AllProducts, list)
+                    list2.reverse()
                 }
             }
+
         })
         binding.allProductsRecycler.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
@@ -66,7 +131,6 @@ class AllProducts : AppCompatActivity() {
                 }
             }
         })
-
         binding.toolbar.setOnMenuItemClickListener {
             when (it.itemId) {
                 R.id.home_id -> {
@@ -95,14 +159,14 @@ class AllProducts : AppCompatActivity() {
                     R.id.price -> {
                         when (id2) {
                             R.id.lth -> {
-                                for (i in 0 until list.size) {
-                                    for (j in i until list.size) {
-                                        val s1 = list[i].text6.replace(".00/kg", "")
-                                        val s2 = list[j].text6.replace(".00/kg", "")
+                                for (i in 0 until selectedlist.size) {
+                                    for (j in i until selectedlist.size) {
+                                        val s1 = selectedlist[i].text6.replace(".00/kg", "")
+                                        val s2 = selectedlist[j].text6.replace(".00/kg", "")
                                         if (s1.toInt() > s2.toInt()) {
-                                            val t = list[i]
-                                            list[i] = list[j]
-                                            list[j] = t
+                                            val t = selectedlist[i]
+                                            selectedlist[i] = selectedlist[j]
+                                            selectedlist[j] = t
                                         }
                                     }
                                 }
@@ -111,14 +175,14 @@ class AllProducts : AppCompatActivity() {
 
                             } //Sorting of Price low to high Algorithm implemented here
                             R.id.htl -> {
-                                for (i in 0 until list.size) {
-                                    for (j in i until list.size) {
-                                        val s1 = list[i].text6.replace(".00/kg", "")
-                                        val s2 = list[j].text6.replace(".00/kg", "")
+                                for (i in 0 until selectedlist.size) {
+                                    for (j in i until selectedlist.size) {
+                                        val s1 = selectedlist[i].text6.replace(".00/kg", "")
+                                        val s2 = selectedlist[j].text6.replace(".00/kg", "")
                                         if (s1.toInt() < s2.toInt()) {
-                                            val t = list[i]
-                                            list[i] = list[j]
-                                            list[j] = t
+                                            val t = selectedlist[i]
+                                            selectedlist[i] = selectedlist[j]
+                                            selectedlist[j] = t
                                         }
                                     }
                                 }
@@ -131,12 +195,12 @@ class AllProducts : AppCompatActivity() {
                     R.id.count -> {
                         when (id2) {
                             R.id.lth -> {
-                                for (i in 0 until list.size) {
-                                    for (j in i until list.size) {
-                                        if (list[i].text10.toInt() > list[j].text10.toInt()) {
-                                            val t = list[i]
-                                            list[i] = list[j]
-                                            list[j] = t
+                                for (i in 0 until selectedlist.size) {
+                                    for (j in i until selectedlist.size) {
+                                        if (selectedlist[i].text10.toInt() > selectedlist[j].text10.toInt()) {
+                                            val t = selectedlist[i]
+                                            selectedlist[i] = selectedlist[j]
+                                            selectedlist[j] = t
                                         }
                                     }
                                 }
@@ -144,12 +208,12 @@ class AllProducts : AppCompatActivity() {
 
                             } //Sorting of count low to high
                             R.id.htl -> {
-                                for (i in 0 until list.size) {
-                                    for (j in i until list.size) {
-                                        if (list[i].text10.toInt() < list[j].text10.toInt()) {
-                                            val t = list[i]
-                                            list[i] = list[j]
-                                            list[j] = t
+                                for (i in 0 until selectedlist.size) {
+                                    for (j in i until selectedlist.size) {
+                                        if (selectedlist[i].text10.toInt() < selectedlist[j].text10.toInt()) {
+                                            val t = selectedlist[i]
+                                            selectedlist[i] = selectedlist[j]
+                                            selectedlist[j] = t
                                         }
                                     }
                                 }
@@ -185,7 +249,7 @@ class AllProducts : AppCompatActivity() {
                     id: Long
                 ) {
                     newlist = mutableListOf()
-                    for (i in list) {
+                    for (i in selectedlist) {
                         val s = i.text11.replace(" days", "")
                         if (s == a[position]) {
                             newlist.add(i)
@@ -219,38 +283,13 @@ class AllProducts : AppCompatActivity() {
                     binding.allProductsRecycler.adapter =
                         AllProductAdapter(this, newlist2)
                 } else {
-                    binding.allProductsRecycler.adapter = AllProductAdapter(this, list)
+                    binding.allProductsRecycler.adapter = AllProductAdapter(this, selectedlist)
                     Toast.makeText(this, "NO RESULTS", Toast.LENGTH_SHORT).show()
                 }
             }
         }
     }
 
-    override fun onStart() {
-        super.onStart()
-//        if (intent.getStringExtra("First") != null && intent.getStringExtra("Second") != null && intent.getStringExtra(
-//                "Third"
-//            ) != null
-//        ) {
-//            Log.i("Hello", "Now")
-//            val f = intent.getStringExtra("First")
-//            val s = intent.getStringExtra("Second")
-//            val t = intent.getStringExtra("Third")
-//            val newlist = mutableListOf<AllproductsData>()
-//            for (i in list) {
-//                if (i.text2.toLowerCase().trim().contains(f) && i.text2.toLowerCase().trim().contains(
-//                        s
-//                    )
-//                ) {
-//                    newlist.add(i)
-//                }
-//            }
-//            binding.allProductsRecycler.adapter = AllProductAdapter(this, newlist)
-//
-//        }
-//    }
-
-    }
 }
 
 

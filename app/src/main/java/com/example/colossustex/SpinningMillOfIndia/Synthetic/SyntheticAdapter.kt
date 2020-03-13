@@ -1,7 +1,5 @@
 package com.example.colossustex.SpinningMillOfIndia.Synthetic
 
-import com.example.colossustex.SpinningMillOfIndia.Cotton.SyntheticData
-
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -11,11 +9,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.colossustex.R
+import com.example.colossustex.SpinningMillOfIndia.Cotton.SyntheticData
 import com.smarteist.autoimageslider.DefaultSliderView
 import com.smarteist.autoimageslider.IndicatorAnimations
 import com.smarteist.autoimageslider.SliderAnimations
@@ -58,7 +56,8 @@ class SyntheticAdapter(var list: MutableList<SyntheticData>) :
     }   //ViewHolder
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.synthetic_item, parent, false)
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.synthetic_item, parent, false)
         return MyViewHolder(view)
 
     }
@@ -80,7 +79,12 @@ class SyntheticAdapter(var list: MutableList<SyntheticData>) :
             holder.sliderLayout.visibility = View.GONE
         }
         holder.itemView.setOnClickListener {
-            holder.itemView.context.startActivity(Intent(holder.itemView.context,SyntheticTabbed::class.java))
+            holder.itemView.context.startActivity(
+                Intent(
+                    holder.itemView.context,
+                    SyntheticTabbed::class.java
+                ).putExtra("Position", position)
+            )
         }
     }
 

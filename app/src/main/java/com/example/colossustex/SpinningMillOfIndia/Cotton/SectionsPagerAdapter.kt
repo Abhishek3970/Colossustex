@@ -8,26 +8,24 @@ import com.example.colossustex.SpinningMillOfIndia.Common.MillsListFragment
 
 
 private val TAB_TITLES = arrayOf(
-  "Cotton","View All Mills","Mills1","Mills2","Mills3"
+    "Cotton", "" +
+            "All Mills", "Weaving Yarn", "Knitting Yarn", "Open End"
 )
+
 class SectionsPagerAdapter(private val context: Context, fm: FragmentManager) :
     FragmentPagerAdapter(fm) {
 
     override fun getItem(position: Int): Fragment {
         // getItem is called to instantiate the fragment for the given page.
         // Return a PlaceholderFragment (defined as a static inner class below).
-        var fragment:Fragment?=null
-        when(position){
+        var fragment: Fragment? = null
+        when (position) {
 
-            0->fragment=CottonTabFragment()
-            1->fragment=MillsListFragment()
-            2->{
-                fragment=MillsListFragment()
-            }
-            3->{
-                fragment=MillsListFragment()
-            }
-            4->fragment=MillsListFragment()
+            0 -> fragment = CottonTabFragment()
+            1 -> fragment = MillsListFragment()
+            2 -> fragment = Weaving()
+            3 -> fragment = KnittingYarn()
+            4 -> fragment = MillsListFragment()
         }
         return fragment!!
     }

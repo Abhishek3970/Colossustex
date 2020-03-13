@@ -47,7 +47,7 @@
     </fragment>
     <fragment
         android:id="@+id/searchAgent"
-        android:name="com.example.colossustex.SpinningMillOfIndia.SearchAgent"
+        android:name="com.example.colossustex.SpinningMillOfIndia.SearchAgent.SearchAgent"
         android:label="fragment_search_agent"
         tools:layout="@layout/fragment_search_agent" >
         <action
@@ -60,6 +60,9 @@
             app:destination="@id/spinningMillOfIndia"
             app:popUpTo="@+id/spinningMillOfIndia"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_searchAgent_to_agents"
+            app:destination="@id/agents" />
     </fragment>
     <fragment
         android:id="@+id/cottonFragment"
@@ -88,6 +91,31 @@
         tools:layout="@layout/fragment_buy_sell_textile_products" >
         <action
             android:id="@+id/action_buySellTextileProducts_to_homePage"
+            app:destination="@id/homePage"
+            app:popUpTo="@+id/homePage"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/agents"
+        android:name="com.example.colossustex.SpinningMillOfIndia.SearchAgent.Agents.Agents"
+        android:label="agents_fragment"
+        tools:layout="@layout/agents_fragment" >
+        <argument
+            android:name="type"
+            app:argType="string" />
+        <argument
+            android:name="stateFrom"
+            app:argType="string" />
+        <argument
+            android:name="stateTo"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_agents_to_searchAgent"
+            app:destination="@id/searchAgent"
+            app:popUpTo="@+id/searchAgent"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_agents_to_homePage"
             app:destination="@id/homePage"
             app:popUpTo="@+id/homePage"
             app:popUpToInclusive="true" />

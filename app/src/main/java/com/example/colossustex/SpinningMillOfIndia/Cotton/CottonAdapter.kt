@@ -8,8 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -78,7 +76,12 @@ class CottonAdapter(var list: MutableList<SyntheticData>) :
             holder.sliderLayout.visibility = View.GONE
         }
         holder.itemView.setOnClickListener {
-            holder.itemView.context.startActivity(Intent(holder.itemView.context,CottonTabbed::class.java))
+            holder.itemView.context.startActivity(
+                Intent(
+                    holder.itemView.context,
+                    CottonTabbed::class.java
+                ).putExtra("Position", position)
+            )
         }
     }
 

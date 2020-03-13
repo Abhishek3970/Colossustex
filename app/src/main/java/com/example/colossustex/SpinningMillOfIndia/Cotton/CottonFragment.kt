@@ -2,6 +2,7 @@ package com.example.colossustex.SpinningMillOfIndia.Cotton
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +12,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.colossustex.R
+import com.example.colossustex.SpinningMillOfIndia.Common.AllproductsData
+import com.example.colossustex.SpinningMillOfIndia.Viscose.allpro_list
 import com.example.colossustex.databinding.FragmentCottonBinding
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -21,7 +24,6 @@ class CottonFragment : Fragment() {
     lateinit var datalist: MutableList<SyntheticData>
     lateinit var binding: FragmentCottonBinding
     lateinit var search: SearchView
-    lateinit var datalist1: MutableList<SyntheticData>
     lateinit var firebaseDatabase: FirebaseDatabase
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,7 +32,7 @@ class CottonFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_cotton, container, false)
         binding.recyclerId.layoutManager = LinearLayoutManager(context)
         firebaseDatabase = FirebaseDatabase.getInstance()
-        binding.progressbar.visibility=View.VISIBLE
+        binding.progressbar.visibility = View.VISIBLE
         datalist = mutableListOf()
         binding.toolbar.inflateMenu(R.menu.cotton_menu)
         binding.toolbar.setOnMenuItemClickListener {
@@ -57,7 +59,7 @@ class CottonFragment : Fragment() {
                         datalist.add(data!!)
                     }
                 }
-                binding.progressbar.visibility=View.GONE
+                binding.progressbar.visibility = View.GONE
                 binding.recyclerId.adapter = CottonAdapter(datalist)
             }
 

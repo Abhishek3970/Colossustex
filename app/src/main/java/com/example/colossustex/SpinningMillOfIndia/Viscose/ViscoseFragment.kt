@@ -5,6 +5,7 @@ import android.content.Intent
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,6 +18,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.colossustex.R
 import com.example.colossustex.SpinningMillOfIndia.Common.AllProducts
+import com.example.colossustex.SpinningMillOfIndia.Common.AllproductsData
 import com.example.colossustex.databinding.ViscoseFragment1Binding
 import com.example.dialogcustom.SpinnerDialogAdapter
 import com.google.android.material.snackbar.Snackbar
@@ -24,11 +26,10 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import kotlinx.android.synthetic.main.texturised_fragment1.*
+
+lateinit var allpro_list: MutableList<AllproductsData>
 
 class ViscoseFragment : Fragment() {
-
-
     lateinit var list: MutableList<Int>
     lateinit var binding: ViscoseFragment1Binding
     lateinit var dialog: Dialog
@@ -52,6 +53,7 @@ class ViscoseFragment : Fragment() {
         val history_ref = firebaseDatabase.getReference("ViscoseHistory")
         dialog2.setContentView(R.layout.viscose_dialog2)
         dialog.setContentView(R.layout.viscose_dialog)
+        dialog2.setContentView(R.layout.viscose_dialog2)
         val dialog_search_history = Dialog(context!!)
         dialog_search_history.setContentView(R.layout.dialog_viewed_history)
         val recycler2 =
@@ -64,6 +66,23 @@ class ViscoseFragment : Fragment() {
         binding.spinnerViscose.setOnClickListener {
             showdialog()
         } //Call for dialog function
+        val all_ref = FirebaseDatabase.getInstance().getReference("AllProducts")
+        all_ref.addValueEventListener(object : ValueEventListener {
+            override fun onCancelled(p0: DatabaseError) {
+
+            }
+
+            override fun onDataChange(p0: DataSnapshot) {
+                if (p0.exists()) {
+                    allpro_list = mutableListOf()
+                    for (datasnap in p0.children) {
+                        val data = datasnap.getValue(AllproductsData::class.java)
+                        allpro_list.add(data!!)
+                    }
+
+                }
+            }
+        })
         var first_seg = ""
         var second_seg = ""
         var third_seg = ""
@@ -148,12 +167,14 @@ class ViscoseFragment : Fragment() {
         }
         binding.searchId.setOnClickListener {
             val data = ViewedHistoryData(first_seg, second_seg, third_seg)
-            if (data.first != "" && data.second != "" && data.third != "") {
+            if (data.first != "" && data.second != "" && data.third != "" && binding.spinnerViscose.text.toString() != "--Select Count--") {
                 Toast.makeText(context, "Search History Updated", Toast.LENGTH_SHORT).show()
                 val key = ref.push().key
                 val history_ref2 = history_ref.child("Search History").child(key!!)
                 history_ref2.setValue(data)
-                val intent = Intent(context, AllProducts::class.java)
+                val intent = Intent(context, AllProducts::class.java).putExtra("f", first_seg)
+                    .putExtra("s", second_seg).putExtra("t", third_seg)
+                    .putExtra("c", binding.spinnerViscose.text.toString())
                 startActivity(intent)
             } else {
                 Toast.makeText(context, "Select All options", Toast.LENGTH_SHORT).show()

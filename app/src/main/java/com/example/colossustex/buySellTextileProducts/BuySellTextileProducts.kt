@@ -95,7 +95,7 @@ class BuySellTextileProducts : Fragment() {
                             fiber.setBackgroundColor(resources.getColor(R.color.fiberBackground))
                             fiber.setTextColor(Color.WHITE)
                         } else {
-                            fiber.setBackgroundResource(R.drawable.background_fibre)
+                            fiber.setBackgroundResource(R.drawable.error_background)
                             fiber.setTextColor(resources.getColor(R.color.fiberBackground))
                         }
                     }
