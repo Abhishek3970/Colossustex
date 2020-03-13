@@ -109,5 +109,15 @@
         <argument
             android:name="stateTo"
             app:argType="string" />
+        <action
+            android:id="@+id/action_agents_to_searchAgent"
+            app:destination="@id/searchAgent"
+            app:popUpTo="@+id/searchAgent"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_agents_to_homePage"
+            app:destination="@id/homePage"
+            app:popUpTo="@+id/homePage"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>

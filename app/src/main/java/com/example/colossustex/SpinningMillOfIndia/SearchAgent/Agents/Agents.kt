@@ -4,9 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import com.example.colossustex.R
+import com.example.colossustex.databinding.AgentsFragmentBinding
 
 class Agents : Fragment() {
 
@@ -14,14 +16,31 @@ class Agents : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val lay = inflater.inflate(R.layout.agents_fragment, container, false)
+        val binding: AgentsFragmentBinding =
+            DataBindingUtil.inflate(inflater, R.layout.agents_fragment, container, false)
         val arg = arguments?.let { AgentsArgs.fromBundle(it) }
-        Toast.makeText(
-            context!!,
-            "type=${arg!!.type} StateFrom=${arg!!.stateFrom} StateTo=${arg!!.stateTo}",
-            Toast.LENGTH_LONG
-        ).show()
-        return lay
+
+        binding.yarnType.text = arg!!.type
+        binding.stateFrom.text = arg.stateFrom
+        binding.stateTo.text = arg.stateTo
+
+        binding.toolbarAgents.setNavigationOnClickListener {
+            it.findNavController().navigate(AgentsDirections.actionAgentsToSearchAgent())
+        }
+
+        binding.toolbarAgents.inflateMenu(R.menu.menu_spinning_mills_of_india)
+        binding.toolbarAgents.setOnMenuItemClickListener {
+            when (it.itemId) {
+                R.id.home_page -> {
+                    binding.toolbarAgents.findNavController()
+                        .navigate(AgentsDirections.actionAgentsToHomePage())
+                }
+            }
+            true
+        }
+
+
+        return binding.root
     }
 
 }
