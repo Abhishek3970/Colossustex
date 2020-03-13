@@ -1,7 +1,6 @@
 package com.example.colossustex.SpinningMillOfIndia.Cotton
 
 import android.annotation.SuppressLint
-import android.icu.util.ValueIterator
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -31,7 +30,7 @@ class SyntheticFragment : Fragment() {
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_cotton, container, false)
         binding.recyclerId.layoutManager = LinearLayoutManager(context)
-        binding.progressbar.visibility=View.VISIBLE
+        binding.progressbar.visibility = View.VISIBLE
         firebaseDatabase = FirebaseDatabase.getInstance()
         datalist = mutableListOf()
         binding.toolbar.inflateMenu(R.menu.cotton_menu)
@@ -60,7 +59,7 @@ class SyntheticFragment : Fragment() {
                         datalist.add(data!!)
                     }
                 }
-                binding.progressbar.visibility=View.GONE
+                binding.progressbar.visibility = View.GONE
                 binding.recyclerId.adapter = SyntheticAdapter(datalist)
             }
 

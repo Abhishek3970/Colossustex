@@ -5,12 +5,12 @@ import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import androidx.annotation.RequiresApi
-import com.google.android.material.tabs.TabLayout
-import androidx.viewpager.widget.ViewPager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.viewpager.widget.ViewPager
 import com.example.colossustex.MainActivity
 import com.example.colossustex.R
+import com.google.android.material.tabs.TabLayout
 
 class FancyActivity : AppCompatActivity() {
 
@@ -27,7 +27,7 @@ class FancyActivity : AppCompatActivity() {
         viewPager.adapter = sectionsPagerAdapter
         val tabs: TabLayout = findViewById(R.id.tabs)
         tabs.setupWithViewPager(viewPager)
-        val toolbar=findViewById<Toolbar>(R.id.fancy_toolbar)
+        val toolbar = findViewById<Toolbar>(R.id.fancy_toolbar)
         toolbar.inflateMenu(R.menu.viscose_menu)
         toolbar.setNavigationOnClickListener {
             onBackPressed()
@@ -35,7 +35,7 @@ class FancyActivity : AppCompatActivity() {
         tabs.setSelectedTabIndicatorColor(Color.WHITE)
         tabs.setTabTextColors(getColor(R.color.tabunselected), Color.WHITE)
         toolbar.setOnMenuItemClickListener {
-            when(it.itemId) {
+            when (it.itemId) {
                 R.id.home_id -> {
                     val intent = Intent(applicationContext, MainActivity::class.java)
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)

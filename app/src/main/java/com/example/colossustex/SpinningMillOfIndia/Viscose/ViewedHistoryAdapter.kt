@@ -21,6 +21,7 @@ class ViewedHistoryAdapter(val list: MutableList<ViewedHistoryData>) :
             LayoutInflater.from(parent.context).inflate(R.layout.viewed_history_item, parent, false)
         return MyViewHolder(view)
     }
+
     override fun getItemCount(): Int {
         return if (list.size > 10) {
             10

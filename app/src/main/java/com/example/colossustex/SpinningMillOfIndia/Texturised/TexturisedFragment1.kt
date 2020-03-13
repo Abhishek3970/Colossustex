@@ -178,7 +178,7 @@ class TexturisedFragment1 : Fragment() {
         }
         binding.searchId.setOnClickListener {
             val selec = ViewedHistoryData(first_seg, second_seg, third_seg)
-            if (fourth_seg!=""&&selec.first != "" && selec.second != "" && selec.third != ""&&binding.spinnerViscose.text.toString()!="--Select Count--") {
+            if (fourth_seg != "" && selec.first != "" && selec.second != "" && selec.third != "" && binding.spinnerViscose.text.toString() != "--Select Count--") {
                 val intent = Intent(context, AllProducts::class.java).putExtra("f", first_seg)
                     .putExtra("s", second_seg).putExtra("t", third_seg)
                     .putExtra("c", binding.spinnerViscose.text.toString())

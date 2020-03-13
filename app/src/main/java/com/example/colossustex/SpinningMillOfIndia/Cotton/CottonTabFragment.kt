@@ -16,8 +16,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.colossustex.R
 import com.example.colossustex.SpinningMillOfIndia.Common.AllProducts
+import com.example.colossustex.SpinningMillOfIndia.Common.AllproductsData
 import com.example.colossustex.SpinningMillOfIndia.Viscose.ViewedHistoryAdapter
 import com.example.colossustex.SpinningMillOfIndia.Viscose.ViewedHistoryData
+import com.example.colossustex.SpinningMillOfIndia.Viscose.allpro_list
 import com.example.colossustex.databinding.FragmentCottonTabbedBinding
 import com.example.dialogcustom.SpinnerDialogAdapter
 import com.google.android.material.snackbar.Snackbar
@@ -57,24 +59,41 @@ class CottonTabFragment : Fragment() {
         for (i in 1..200) {
             list.add(i)
         }
+        val ref = FirebaseDatabase.getInstance().getReference("AllProducts")
+        ref.addValueEventListener(object : ValueEventListener {
+            override fun onCancelled(p0: DatabaseError) {
+
+            }
+
+            override fun onDataChange(p0: DataSnapshot) {
+                if (p0.exists()) {
+                    allpro_list = mutableListOf()
+                    for (datasnap in p0.children) {
+                        val data2 = datasnap.getValue(AllproductsData::class.java)
+                        allpro_list.add(data2!!)
+                    }
+                }
+            }
+        })
         var first_seg = ""
         var second_seg = ""
         var third_seg = ""
-        var fourth_seg=""
+        var fourth_seg = ""
         val dialog = Dialog(context!!)
         val dialog2 = Dialog(context!!)
         dialog.setContentView(R.layout.viscose_dialog)
         dialog2.setContentView(R.layout.viscose_dialog2)
         val recycler = dialog.findViewById<RecyclerView>(R.id.viscose_recycler)
         recycler.layoutManager = GridLayoutManager(context, 4)
-        recycler.adapter = SpinnerDialogAdapter(list, context!!, dialog2,dialog,binding.spinnerViscose)
+        recycler.adapter =
+            SpinnerDialogAdapter(list, context!!, dialog2, dialog, binding.spinnerViscose)
         binding.spinnerViscose.setOnClickListener {
             dialog.show()
         }
-        for (i in list1){
+        for (i in list1) {
             i.setOnClickListener {
                 i.isSelected = true
-                first_seg=i.text.toString()
+                first_seg = i.text.toString()
                 i.setTextColor(Color.WHITE)
                 for (j in list1) {
                     if (j != i) {
@@ -84,8 +103,8 @@ class CottonTabFragment : Fragment() {
                 }
             }
         }
-        for (i in list2){
-            second_seg=i.text.toString()
+        for (i in list2) {
+            second_seg = i.text.toString()
             i.setOnClickListener {
                 i.isSelected = true
                 i.setTextColor(Color.WHITE)
@@ -97,10 +116,10 @@ class CottonTabFragment : Fragment() {
                 }
             }
         }
-        for (i in list3){
+        for (i in list3) {
             i.setOnClickListener {
                 i.isSelected = true
-                third_seg=i.text.toString()
+                third_seg = i.text.toString()
                 i.setTextColor(Color.WHITE)
                 for (j in list3) {
                     if (j != i) {
@@ -110,10 +129,10 @@ class CottonTabFragment : Fragment() {
                 }
             }
         }
-        for (i in list4){
+        for (i in list4) {
             i.setOnClickListener {
                 i.isSelected = true
-                fourth_seg=i.text.toString()
+                fourth_seg = i.text.toString()
                 i.setTextColor(Color.WHITE)
                 for (j in list4) {
                     if (j != i) {
@@ -129,7 +148,8 @@ class CottonTabFragment : Fragment() {
             dialog_search_history.findViewById<RecyclerView>(R.id.recycler_search_history)
         recycler2.layoutManager = LinearLayoutManager(context)
         binding.viewedHistoryViscose.setOnClickListener {
-            val ref3 =FirebaseDatabase.getInstance().getReference("ViscoseHistory").child("ViewedHistory")
+            val ref3 =
+                FirebaseDatabase.getInstance().getReference("ViscoseHistory").child("ViewedHistory")
             ref3.addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onCancelled(p0: DatabaseError) {
 

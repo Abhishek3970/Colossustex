@@ -48,7 +48,7 @@ class CottonTabbed : AppCompatActivity() {
             }
 
             override fun onDataChange(p0: DataSnapshot) {
-                Log.i("Inside","Inside")
+                Log.i("Inside", "Inside")
                 list_all_mill = mutableListOf()
                 for (snapshot in p0.children) {
                     val store = snapshot.getValue(AllMillsData::class.java)
@@ -75,7 +75,7 @@ class CottonTabbed : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        val pos=intent.getIntExtra("Position",0)
+        val pos = intent.getIntExtra("Position", 0)
         tabs.selectTab(tabs.getTabAt(pos))
 
     }

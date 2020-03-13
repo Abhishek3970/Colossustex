@@ -34,7 +34,7 @@ class TexturisedActivity : AppCompatActivity() {
         toolbar.inflateMenu(R.menu.viscose_menu)
         toolbar.setNavigationOnClickListener { onBackPressed() }
         toolbar.setOnMenuItemClickListener {
-            when(it.itemId) {
+            when (it.itemId) {
                 R.id.home_id -> {
                     val intent = Intent(applicationContext, MainActivity::class.java)
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)

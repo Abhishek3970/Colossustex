@@ -22,7 +22,9 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+
 lateinit var list_all_mill: MutableList<AllMillsData>
+
 class MillsListFragment : Fragment() {
     lateinit var database: FirebaseDatabase
     lateinit var binding: MillsListFragmentBinding
