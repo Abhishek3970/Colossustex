@@ -24,12 +24,13 @@ import com.google.firebase.database.ValueEventListener
 @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 class AllProducts : AppCompatActivity() {
     lateinit var newlist: MutableList<AllproductsData>
-    lateinit var list2: MutableList<ViewedHistoryData>
+    lateinit var list2:MutableList<ViewedHistoryData>
     lateinit var firebaseDatabase: FirebaseDatabase
     lateinit var binding: FragmentAllProductsBinding
+    lateinit var list: MutableList<AllproductsData>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.i("Hello", "First")
+        Log.i("Hello","First")
         binding = DataBindingUtil.setContentView(this, R.layout.fragment_all_products)
         binding.toolbar.inflateMenu(R.menu.viscose_menu)
         binding.progressbarAllproducts.visibility = View.VISIBLE
@@ -37,8 +38,8 @@ class AllProducts : AppCompatActivity() {
         binding.toolbar.setNavigationOnClickListener {
             onBackPressed()
         }
-        val mref = FirebaseDatabase.getInstance().getReference("Search History")
-        mref.addValueEventListener(object : ValueEventListener {
+        val mref=FirebaseDatabase.getInstance().getReference("Search History")
+        mref.addValueEventListener(object :ValueEventListener{
             override fun onCancelled(p0: DatabaseError) {
 
             }
@@ -50,7 +51,7 @@ class AllProducts : AppCompatActivity() {
                         val data = datasnap.getValue(ViewedHistoryData::class.java)
                         list2.add(data!!)
                     }
-                    list2.reverse()
+                   list2.reverse()
                 }
             }
 
@@ -94,14 +95,14 @@ class AllProducts : AppCompatActivity() {
                     R.id.price -> {
                         when (id2) {
                             R.id.lth -> {
-                                for (i in 0 until allpro_list.size) {
-                                    for (j in i until allpro_list.size) {
-                                        val s1 = allpro_list[i].text6.replace(".00/kg", "")
-                                        val s2 = allpro_list[j].text6.replace(".00/kg", "")
+                                for (i in 0 until list.size) {
+                                    for (j in i until list.size) {
+                                        val s1 = list[i].text6.replace(".00/kg", "")
+                                        val s2 = list[j].text6.replace(".00/kg", "")
                                         if (s1.toInt() > s2.toInt()) {
-                                            val t = allpro_list[i]
-                                            allpro_list[i] = allpro_list[j]
-                                            allpro_list[j] = t
+                                            val t = list[i]
+                                            list[i] = list[j]
+                                            list[j] = t
                                         }
                                     }
                                 }
@@ -110,14 +111,14 @@ class AllProducts : AppCompatActivity() {
 
                             } //Sorting of Price low to high Algorithm implemented here
                             R.id.htl -> {
-                                for (i in 0 until allpro_list.size) {
-                                    for (j in i until allpro_list.size) {
-                                        val s1 = allpro_list[i].text6.replace(".00/kg", "")
-                                        val s2 = allpro_list[j].text6.replace(".00/kg", "")
+                                for (i in 0 until list.size) {
+                                    for (j in i until list.size) {
+                                        val s1 = list[i].text6.replace(".00/kg", "")
+                                        val s2 = list[j].text6.replace(".00/kg", "")
                                         if (s1.toInt() < s2.toInt()) {
-                                            val t = allpro_list[i]
-                                            allpro_list[i] = allpro_list[j]
-                                            allpro_list[j] = t
+                                            val t = list[i]
+                                            list[i] = list[j]
+                                            list[j] = t
                                         }
                                     }
                                 }
@@ -130,12 +131,12 @@ class AllProducts : AppCompatActivity() {
                     R.id.count -> {
                         when (id2) {
                             R.id.lth -> {
-                                for (i in 0 until allpro_list.size) {
-                                    for (j in i until allpro_list.size) {
-                                        if (allpro_list[i].text10.toInt() > allpro_list[j].text10.toInt()) {
-                                            val t = allpro_list[i]
-                                            allpro_list[i] = allpro_list[j]
-                                            allpro_list[j] = t
+                                for (i in 0 until list.size) {
+                                    for (j in i until list.size) {
+                                        if (list[i].text10.toInt() > list[j].text10.toInt()) {
+                                            val t = list[i]
+                                            list[i] = list[j]
+                                            list[j] = t
                                         }
                                     }
                                 }
@@ -143,12 +144,12 @@ class AllProducts : AppCompatActivity() {
 
                             } //Sorting of count low to high
                             R.id.htl -> {
-                                for (i in 0 until allpro_list.size) {
-                                    for (j in i until allpro_list.size) {
-                                        if (allpro_list[i].text10.toInt() < allpro_list[j].text10.toInt()) {
-                                            val t = allpro_list[i]
-                                            allpro_list[i] = allpro_list[j]
-                                            allpro_list[j] = t
+                                for (i in 0 until list.size) {
+                                    for (j in i until list.size) {
+                                        if (list[i].text10.toInt() < list[j].text10.toInt()) {
+                                            val t = list[i]
+                                            list[i] = list[j]
+                                            list[j] = t
                                         }
                                     }
                                 }
@@ -184,7 +185,7 @@ class AllProducts : AppCompatActivity() {
                     id: Long
                 ) {
                     newlist = mutableListOf()
-                    for (i in allpro_list) {
+                    for (i in list) {
                         val s = i.text11.replace(" days", "")
                         if (s == a[position]) {
                             newlist.add(i)
@@ -218,14 +219,12 @@ class AllProducts : AppCompatActivity() {
                     binding.allProductsRecycler.adapter =
                         AllProductAdapter(this, newlist2)
                 } else {
-                    binding.allProductsRecycler.adapter = AllProductAdapter(this, allpro_list)
+                    binding.allProductsRecycler.adapter = AllProductAdapter(this, list)
                     Toast.makeText(this, "NO RESULTS", Toast.LENGTH_SHORT).show()
                 }
-                d.dismiss()
             }
         }
     }
-
     @SuppressLint("SetTextI18n")
     override fun onStart() {
         super.onStart()
