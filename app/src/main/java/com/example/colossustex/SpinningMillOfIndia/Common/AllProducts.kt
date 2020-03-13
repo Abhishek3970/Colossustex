@@ -55,20 +55,18 @@ class AllProducts : AppCompatActivity() {
             binding.constraint.visibility=View.GONE
             binding.progressbarAllproducts.visibility = View.GONE
             if (selectedlist.isNotEmpty()) {
-                binding.nores.text="Showing results for:"
-                binding.nores.setTextColor(Color.BLACK)
+                binding.allProductsRecycler.visibility=View.VISIBLE
+                binding.noresConstaint.visibility=View.GONE
                 binding.first.text = c
                 binding.second.text = f
                 binding.third.text=s
                 binding.fourth.text=t
                 binding.allProductsRecycler.adapter = AllProductAdapter(this, selectedlist)
             } else {
-                binding.nores.text="NO RESULTS"
-                binding.nores.setTextColor(Color.RED)
-                binding.first.text = c
-                binding.second.text = f
-                binding.third.text=s
-                binding.fourth.text=t
+
+                binding.filterAllproducts.visibility=View.GONE
+                binding.allProductsRecycler.visibility=View.GONE
+                binding.noresConstaint.visibility=View.VISIBLE
 
             }
         } else {
