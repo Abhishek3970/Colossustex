@@ -48,5 +48,9 @@
         <item name="android:textSize">15sp</item>
     </style>
 
+    <style name="textSize">
+        <item name="android:textSize">12sp</item>
+    </style>
+
 
 </resources>
