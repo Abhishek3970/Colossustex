@@ -52,7 +52,6 @@ class AllProductAdapter(val context: Context, val list: MutableList<AllproductsD
                 list[position].textround
             )
             mref.child(key!!).setValue(data)
-            Toast.makeText(context, "Viewed History Updated", Toast.LENGTH_SHORT).show()
         }
         holder.text1.text = list[position].text1
         holder.text2.text = list[position].text2

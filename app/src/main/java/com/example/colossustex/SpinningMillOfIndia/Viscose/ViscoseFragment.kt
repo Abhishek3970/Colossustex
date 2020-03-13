@@ -168,7 +168,6 @@ class ViscoseFragment : Fragment() {
         binding.searchId.setOnClickListener {
             val data = ViewedHistoryData(first_seg, second_seg, third_seg)
             if (data.first != "" && data.second != "" && data.third != "" && binding.spinnerViscose.text.toString() != "--Select Count--") {
-                Toast.makeText(context, "Search History Updated", Toast.LENGTH_SHORT).show()
                 val key = ref.push().key
                 val history_ref2 = history_ref.child("Search History").child(key!!)
                 history_ref2.setValue(data)
