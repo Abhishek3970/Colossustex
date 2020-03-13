@@ -10,6 +10,7 @@ import androidx.navigation.findNavController
 import com.example.colossustex.R
 import com.example.colossustex.databinding.AgentsFragmentBinding
 
+
 class Agents : Fragment() {
 
     override fun onCreateView(
@@ -38,6 +39,20 @@ class Agents : Fragment() {
             }
             true
         }
+
+
+        val pagerAdapter =
+            PagerAdapter(
+                context!!,
+                childFragmentManager,
+                arg.type,
+                arg.stateFrom,
+                arg.stateTo
+            )
+
+        binding.viewPager.adapter = pagerAdapter
+        binding.tabView.setupWithViewPager(binding.viewPager)
+//        binding.tabView.setTabTextColors(getColor(context!!,R.color.tabunselected), Color.BLACK)
 
 
         return binding.root
