@@ -21,7 +21,7 @@ class SectionsPagerAdapter(private val context: Context, fm: FragmentManager) :
         when (position) {
             0 -> fragment = ViscoseFragment()
             1 -> fragment =
-                MillsListFragment()
+                 MillsListFragment()
         }
         return fragment!!
     }
