@@ -63,7 +63,10 @@ class AllProducts : AppCompatActivity() {
                 binding.fourth.text=t
                 binding.allProductsRecycler.adapter = AllProductAdapter(this, selectedlist)
             } else {
-
+                binding.first.text = c
+                binding.second.text = f
+                binding.third.text=s
+                binding.fourth.text=t
                 binding.filterAllproducts.visibility=View.GONE
                 binding.allProductsRecycler.visibility=View.GONE
                 binding.noresConstaint.visibility=View.VISIBLE
@@ -91,6 +94,8 @@ class AllProducts : AppCompatActivity() {
             })
         }
         if (head != null && type != null && loc != null) {
+            binding.allProductsRecycler.visibility=View.VISIBLE
+            binding.noresConstaint.visibility=View.GONE
             binding.resultsAllpro.visibility=View.GONE
             binding.constraint.visibility=View.VISIBLE
             binding.mainhead.text = head
