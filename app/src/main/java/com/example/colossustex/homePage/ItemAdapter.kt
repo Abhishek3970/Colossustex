@@ -24,6 +24,7 @@ import com.smarteist.autoimageslider.IndicatorAnimations
 import com.smarteist.autoimageslider.SliderAnimations
 import com.smarteist.autoimageslider.SliderLayout
 import com.squareup.picasso.Picasso
+import org.w3c.dom.Text
 
 
 class ItemAdapter(options: FirebaseRecyclerOptions<Item>) :
@@ -51,16 +52,50 @@ class ItemAdapter(options: FirebaseRecyclerOptions<Item>) :
                     dialog.setContentView(R.layout.buy_yarn_offers_dialog1)
                     val cotton = dialog.findViewById<TextView>(R.id.dialog_cotton)
                     val synthetic = dialog.findViewById<TextView>(R.id.dialog_synthetic)
+                    val viscose = dialog.findViewById<TextView>(R.id.dialog_viscose)
+                    val Texturised = dialog.findViewById<TextView>(R.id.dialog_texturised)
+                    val fancy = dialog.findViewById<TextView>(R.id.dialog_fancy)
+
                     cotton.setOnClickListener {
                         //start an activity cotton
-                        it.context.startActivity(Intent(it.context, yarn_offers::class.java))
+                        dialog.dismiss()
+                        holder.constraintLayout.findNavController().navigate(R.id.action_homePage_to_cottonTabFragment)
 
                     }
+
                     synthetic.setOnClickListener {
                         //start synthic activity
-                        it.context.startActivity(Intent(it.context, yarn_offers::class.java))
+                        dialog.dismiss()
+                        holder.constraintLayout.findNavController().navigate(R.id.action_homePage_to_syntheticTab)
 
                     }
+
+
+                    viscose.setOnClickListener {
+                        //start an activity cotton
+                        dialog.dismiss()
+                        holder.constraintLayout.findNavController().navigate(R.id.action_homePage_to_viscoseFragment)
+
+                    }
+
+
+                    Texturised.setOnClickListener {
+                        //start an activity cotton
+                        dialog.dismiss()
+                        holder.constraintLayout.findNavController().navigate(R.id.action_homePage_to_texturisedFragment1)
+
+                    }
+
+
+                    fancy.setOnClickListener {
+                        //start an activity cotton
+                        dialog.dismiss()
+                        holder.constraintLayout.findNavController().navigate(R.id.action_homePage_to_fancyFragment1)
+
+                    }
+
+
+
                     dialog.show()
                 }
                 7-> it.context.startActivity(Intent(it.context, sensex_SG::class.java))

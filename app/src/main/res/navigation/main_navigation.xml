@@ -17,6 +17,21 @@
         <action
             android:id="@+id/action_homePage_to_buySellTextileProducts"
             app:destination="@id/buySellTextileProducts" />
+        <action
+            android:id="@+id/action_homePage_to_cottonTabFragment"
+            app:destination="@id/cottonTabFragment" />
+        <action
+            android:id="@+id/action_homePage_to_texturisedFragment1"
+            app:destination="@id/texturisedFragment1" />
+        <action
+            android:id="@+id/action_homePage_to_fancyFragment1"
+            app:destination="@id/fancyFragment1" />
+        <action
+            android:id="@+id/action_homePage_to_syntheticTab"
+            app:destination="@id/syntheticTab" />
+        <action
+            android:id="@+id/action_homePage_to_viscoseFragment"
+            app:destination="@id/viscoseFragment" />
     </fragment>
     <fragment
         android:id="@+id/spinningMillOfIndia"
@@ -120,4 +135,24 @@
             app:popUpTo="@+id/homePage"
             app:popUpToInclusive="true" />
     </fragment>
+    <fragment
+        android:id="@+id/cottonTabFragment"
+        android:name="com.example.colossustex.SpinningMillOfIndia.Cotton.CottonTabFragment"
+        android:label="CottonTabFragment" />
+    <fragment
+        android:id="@+id/texturisedFragment1"
+        android:name="com.example.colossustex.SpinningMillOfIndia.Texturised.TexturisedFragment1"
+        android:label="TexturisedFragment1" />
+    <fragment
+        android:id="@+id/fancyFragment1"
+        android:name="com.example.colossustex.SpinningMillOfIndia.Fancy.FancyFragment1"
+        android:label="FancyFragment1" />
+    <fragment
+        android:id="@+id/syntheticTab"
+        android:name="com.example.colossustex.SpinningMillOfIndia.Synthetic.SyntheticTab"
+        android:label="SyntheticTab" />
+    <fragment
+        android:id="@+id/viscoseFragment"
+        android:name="com.example.colossustex.SpinningMillOfIndia.Viscose.ViscoseFragment"
+        android:label="ViscoseFragment" />
 </navigation>

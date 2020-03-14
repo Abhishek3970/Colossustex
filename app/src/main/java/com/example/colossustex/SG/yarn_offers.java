@@ -32,7 +32,6 @@ public class yarn_offers extends AppCompatActivity {
     ArrayList<String> headings = new ArrayList<>();
     ArrayList<String> contents = new ArrayList<>();
     ImageView back;
-    ImageView button;
 
 
     @Override
@@ -100,14 +99,6 @@ public class yarn_offers extends AppCompatActivity {
             }
         });
         initializeRV();
-        button = findViewById(R.id.yarn_offers_menu);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                System.out.println("Here we go");
-                registerForContextMenu(button);
-            }
-        });
     }
 //
 //    @Override
