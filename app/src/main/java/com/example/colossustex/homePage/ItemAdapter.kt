@@ -14,6 +14,7 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.colossustex.R
 import com.example.colossustex.SG.Textile_News
+import com.example.colossustex.SG.sensex_SG
 import com.example.colossustex.SG.yarn_offers
 import com.example.colossustex.SG.yarn_requirements
 import com.smarteist.autoimageslider.DefaultSliderView
@@ -39,10 +40,11 @@ class ItemAdapter(var list: MutableList<Item>) :
         holder.constraintLayout.setOnClickListener {
             when (position) {
                 0 -> holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToSpinningMillOfIndia())
-                2 -> holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToBuySellTextileProducts())
-                4 -> it.context.startActivity(Intent(it.context, yarn_offers::class.java))
-                5 -> {
-                    val dialog = Dialog(it.context)
+                1 -> holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToImportYarn())
+                2-> holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToBuySellTextileProducts())
+                3-> it.context.startActivity(Intent(it.context, yarn_offers::class.java))
+                4-> {
+                    var dialog = Dialog(it.context)
                     dialog.setContentView(R.layout.buy_yarn_offers_dialog1)
                     val cotton = dialog.findViewById<TextView>(R.id.dialog_cotton)
                     val synthetic = dialog.findViewById<TextView>(R.id.dialog_synthetic)
@@ -68,7 +70,7 @@ class ItemAdapter(var list: MutableList<Item>) :
             }
         }
 
-        if (position == 9) {
+        if (position == 7) {
             holder.view2.visibility = View.INVISIBLE
         }
 

@@ -58,9 +58,7 @@ class HomePage : Fragment() {
         val item6=Item("Post Yarn Requirement","Mills and agents will contact you directly")
         val item7=Item("Latest Textile News","News that affents your textile business")
         val item8=Item("Live Cotton, Crude, Currencies","ICE, MCX, NCDEX futures, crude and currencies")
-        val item9=Item("Cotton Ginners of India","Live cotton rates, contact details and quality")
-        val item10=Item("Indian Looms on Job Work","Find looms in textile markets to give job work")
-        val mainlist= mutableListOf<Item>(item1,item2,item3,item4,item5,item6,item7,item8,item9,item10)
+        val mainlist= mutableListOf<Item>(item1,item2,item3,item4,item5,item6,item7,item8)
         adapter = ItemAdapter(mainlist)
         recyclerView.adapter = adapter
         val toolbar = lay.findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
