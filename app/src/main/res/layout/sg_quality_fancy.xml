@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/cotton_quality_f_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:layout_margin="5dp"
+            android:text="Cotton" />
+
+        <TextView
+            android:id="@+id/pv_quality_f_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:textSize="30dp"
+            android:text="PV" />
+
+        <TextView
+            android:id="@+id/pc_quality_f_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:layout_margin="5dp"
+            android:text="PC" />
+
+        <TextView
+            android:id="@+id/psf_quality_f_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:layout_margin="5dp"
+            android:text="PSF" />
+
+        <TextView
+            android:id="@+id/vsf_quality_f_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="VSF"
+            android:textSize="30dp"
+            android:layout_margin="5dp"/>
+
+        <TextView
+            android:id="@+id/texturised_quality_f_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Texturised"
+            android:textSize="30dp"
+            android:layout_margin="5dp"/>
+    </LinearLayout>
+</LinearLayout>

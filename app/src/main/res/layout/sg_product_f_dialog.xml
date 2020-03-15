@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_gravity="center"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/Slub"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:layout_margin="5dp"
+            android:layout_gravity="center"
+            android:text="Slub" />
+
+        <TextView
+            android:id="@+id/multicolor_product_f_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:layout_margin="5dp"
+            android:layout_gravity="center"
+            android:text="Multi Color" />
+        <TextView
+            android:id="@+id/modal_product_f_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:layout_margin="5dp"
+            android:layout_gravity="center"
+            android:text="Modal" />
+        <TextView
+            android:id="@+id/excel_product_f_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:layout_margin="5dp"
+            android:layout_gravity="center"
+            android:text="Excel" />
+        <TextView
+            android:id="@+id/tencel_product_f_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:layout_margin="5dp"
+            android:layout_gravity="center"
+            android:text="Tencel" />
+
+    </LinearLayout>
+</LinearLayout>
