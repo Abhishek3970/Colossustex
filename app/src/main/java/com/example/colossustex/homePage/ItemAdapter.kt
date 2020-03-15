@@ -69,7 +69,7 @@ class ItemAdapter(var list: MutableList<Item>) :
             }
         }
 
-        if (position == 9) {
+        if (position == 7) {
             holder.view2.visibility = View.INVISIBLE
         }
 
