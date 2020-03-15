@@ -64,8 +64,9 @@ class ItemAdapter(var list: MutableList<Item>) :
 //                }
 //                val alertDialog = builder.create()
 //                alertDialog.show())
-                6 -> it.context.startActivity(Intent(it.context, yarn_requirements::class.java))
-                7 -> it.context.startActivity(Intent(it.context, Textile_News::class.java))
+                5 -> it.context.startActivity(Intent(it.context, yarn_requirements::class.java))
+                6 -> it.context.startActivity(Intent(it.context, Textile_News::class.java))
+                7 -> it.context.startActivity(Intent(it.context, sensex_SG::class.java))
                 else -> Toast.makeText(it.context,list[position].description, Toast.LENGTH_SHORT).show()
             }
         }
