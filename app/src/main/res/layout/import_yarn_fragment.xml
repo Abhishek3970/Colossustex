@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="ImportYarnViewModel"
+            type="com.example.colossustex.importYarn.ImportYarnViewModel" />
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#BFC0C0C0"
+        tools:context=".importYarn.ImportYarn">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar_spinning_mills_in_india"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_import"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:navigationIcon="@drawable/ic_arrow_back"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:title="Yarn Type" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                app:layout_scrollFlags="scroll|enterAlways|exitUntilCollapsed">
+
+                <LinearLayout
+                    android:id="@+id/linearLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:weightSum="5"
+                    app:layout_constraintBottom_toTopOf="@+id/cardView_post_yarn_requirement"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/cotton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="@{()->ImportYarnViewModel.toCotton()}"
+                        android:paddingStart="3dp"
+                        android:paddingEnd="3dp"
+                        android:text="Cotton"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/Synthetic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="@{()->ImportYarnViewModel.toSynthetic()}"
+                        android:paddingStart="3dp"
+                        android:paddingEnd="3dp"
+                        android:text="Synthetic"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white" />
+
+                    <TextView
+                        android:id="@+id/viscose"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:background="@color/colorPrimary"
+                        android:onClick="@{()->ImportYarnViewModel.toViscose()}"
+                        android:paddingStart="3dp"
+                        android:paddingEnd="3dp"
+                        android:text="Viscose"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white" />
+
+                    <TextView
+                        android:id="@+id/texturised"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="@{()->ImportYarnViewModel.toTexturized()}"
+                        android:paddingStart="3dp"
+                        android:paddingEnd="3dp"
+                        android:text="Texturised"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white" />
+
+                    <TextView
+                        android:id="@+id/fancy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="@{()->ImportYarnViewModel.toFancy()}"
+                        android:paddingStart="3dp"
+                        android:paddingEnd="3dp"
+                        android:text="Fancy"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white" />
+
+                </LinearLayout>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/postYarnRequirements"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="6dp"
+                    app:cardElevation="5dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraint_layout_post_yarn_requirement"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:padding="4dp"
+                        app:layout_constraintEnd_toEndOf="@+id/constraint_layout_direct_mill_agent_and_traders"
+                        app:layout_constraintStart_toStartOf="@+id/constraint_layout_direct_mill_agent_and_traders"
+                        app:layout_constraintTop_toTopOf="parent">
+
+
+                        <ImageView
+                            android:id="@+id/imageView2a"
+                            android:layout_width="19dp"
+                            android:layout_height="18dp"
+                            android:src="@drawable/ic_arrow_blue"
+                            app:layout_constraintBottom_toBottomOf="@+id/textView8a"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/textView7a" />
+
+                        <ImageView
+                            android:id="@+id/imageViewa"
+                            android:layout_width="23dp"
+                            android:layout_height="26dp"
+                            android:layout_marginStart="4dp"
+                            android:src="@drawable/ic_menu_add"
+                            app:layout_constraintBottom_toBottomOf="@+id/textView8a"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/textView7a" />
+
+                        <TextView
+                            android:id="@+id/textView7a"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="55dp"
+                            android:fontFamily="sans-serif"
+                            android:text="Post Yarn Requiements"
+                            android:textColor="@android:color/black"
+                            android:textSize="16sp"
+                            app:layout_constraintEnd_toStartOf="@+id/imageView2a"
+                            app:layout_constraintHorizontal_bias="0.45"
+                            app:layout_constraintStart_toEndOf="@+id/imageViewa"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/textView8a"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Send requirements to mills and agents"
+                            android:textSize="10sp"
+                            app:layout_constraintStart_toStartOf="@+id/textView7a"
+                            app:layout_constraintTop_toBottomOf="@+id/textView7a" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout_1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="visible">
+
+                <EditText
+                    android:id="@+id/editText_search_spinning_mills_in_india"
+                    android:layout_width="375dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="5dp"
+                    android:background="@android:color/white"
+                    android:cursorVisible="true"
+                    android:drawableStart="@drawable/ic_search_gray"
+                    android:gravity="start|center_vertical"
+                    android:hint="Type mill name to filter list below"
+                    android:inputType="text"
+                    android:textAlignment="inherit"
+                    android:textColorHint="#BFC0C0C0"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageButton
+                    android:id="@+id/imageButton_clear_search_spinning_mills_of_india"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/background_round_white"
+                    android:src="@drawable/ic_close_gray"
+                    app:layout_constraintBottom_toBottomOf="@+id/editText_search_spinning_mills_in_india"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/editText_search_spinning_mills_in_india"
+                    app:layout_constraintTop_toTopOf="@+id/editText_search_spinning_mills_in_india" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recylerView_spinning_mills_of_india"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/constraintLayout_search"
+                android:layout_centerHorizontal="true"
+                android:paddingBottom="45dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout_search" />
+
+
+        </RelativeLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/filter"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_gravity="bottom"
+            android:animateLayoutChanges="true"
+            android:background="#383838"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <TextView
+                android:id="@+id/textView_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_filter_list_black_24dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="Filter"
+                android:textColor="@android:color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/view"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="1dp"
+                android:layout_height="40dp"
+                android:background="#4BFFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView_refresh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_refresh_black_24dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="Refresh"
+                android:textColor="@android:color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/view"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

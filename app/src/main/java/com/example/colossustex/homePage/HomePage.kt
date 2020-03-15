@@ -50,9 +50,19 @@ class HomePage : Fragment() {
         val options = FirebaseRecyclerOptions.Builder<Item>()
             .setQuery(FirebaseDatabase.getInstance().reference.child("Item"), Item::class.java)
             .build()
-        adapter = ItemAdapter(options)
+        val item1=Item("Spinning Mills of India","Mill's rate in USD,contact details andd product range")
+        val item2= Item("Import Yarn from India","Mill's rate in USD, contact details and product range")
+        val item3=Item("But-Sell Textile Products","Fabrics,garments,stock-lots, waste")
+        val item4=Item("Yarn Offers","Special offers directly from spinning mills")
+        val item5=Item("Buy Yarn Online","Colossustex will coordinate your purchars")
+        val item6=Item("Post Yarn Requirement","Mills and agents will contact you directly")
+        val item7=Item("Latest Textile News","News that affents your textile business")
+        val item8=Item("Live Cotton, Crude, Currencies","ICE, MCX, NCDEX futures, crude and currencies")
+        val item9=Item("Cotton Ginners of India","Live cotton rates, contact details and quality")
+        val item10=Item("Indian Looms on Job Work","Find looms in textile markets to give job work")
+        val mainlist= mutableListOf<Item>(item1,item2,item3,item4,item5,item6,item7,item8,item9,item10)
+        adapter = ItemAdapter(mainlist)
         recyclerView.adapter = adapter
-
         val toolbar = lay.findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
         toolbar.inflateMenu(R.menu.main_menu)
         toolbar.setOnMenuItemClickListener {
@@ -413,16 +423,5 @@ class HomePage : Fragment() {
         }
         mDialog1.show()
     }      //code for advertise with us option in main menu
-
-    override fun onStart() {
-        super.onStart()
-        adapter.startListening()
-    }                //start adapter listening for recyclerView
-
-    override fun onStop() {
-        super.onStop()
-        adapter.stopListening()
-    }                 //stop adapter listening for recyclerView
-
 
 }
