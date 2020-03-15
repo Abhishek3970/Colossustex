@@ -16,43 +16,38 @@ import com.example.colossustex.R
 import com.example.colossustex.SG.Textile_News
 import com.example.colossustex.SG.yarn_offers
 import com.example.colossustex.SG.yarn_requirements
-import com.firebase.ui.database.FirebaseRecyclerAdapter
-import com.firebase.ui.database.FirebaseRecyclerOptions
 import com.smarteist.autoimageslider.DefaultSliderView
 import com.smarteist.autoimageslider.IndicatorAnimations
 import com.smarteist.autoimageslider.SliderAnimations
 import com.smarteist.autoimageslider.SliderLayout
 import com.squareup.picasso.Picasso
 
-
-class ItemAdapter(options: FirebaseRecyclerOptions<Item>) :
-    FirebaseRecyclerAdapter<Item, ItemAdapter.ItemViewHolder>(options) {
+class ItemAdapter(var list: MutableList<Item>) :
+    RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         return ItemViewHolder(
             LayoutInflater.from(parent.context)
                 .inflate(R.layout.home_page_items, parent, false)
         )
     }
-
-    override fun onBindViewHolder(holder: ItemViewHolder, position: Int, model: Item) {
-        holder.description.text = model.description
-        holder.heading.text = model.heading
-        Picasso.get().load(model.image).into(holder.image)
+    override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
+        holder.description.text = list[position].description
+        holder.heading.text = list[position].heading
+//       holder.image.setImageResource(R.drawable.yarn)
         //   val itemList : ArrayList<String> = {"Cotton", "Synthetic", "Viscose", "Texturised", "Fancy"}
 
         holder.constraintLayout.setOnClickListener {
             when (position) {
                 0 -> holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToSpinningMillOfIndia())
-                2-> holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToBuySellTextileProducts())
-                4-> it.context.startActivity(Intent(it.context, yarn_offers::class.java))
-                5-> {
-                    var dialog = Dialog(it.context)
+                2 -> holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToBuySellTextileProducts())
+                4 -> it.context.startActivity(Intent(it.context, yarn_offers::class.java))
+                5 -> {
+                    val dialog = Dialog(it.context)
                     dialog.setContentView(R.layout.buy_yarn_offers_dialog1)
                     val cotton = dialog.findViewById<TextView>(R.id.dialog_cotton)
                     val synthetic = dialog.findViewById<TextView>(R.id.dialog_synthetic)
                     cotton.setOnClickListener {
                         //start an activity cotton
-                        it.context.startActivity(Intent(it.context, yarn_offers::class.java))
 
                     }
                     synthetic.setOnClickListener {
@@ -69,11 +64,11 @@ class ItemAdapter(options: FirebaseRecyclerOptions<Item>) :
 //                alertDialog.show())
                 6 -> it.context.startActivity(Intent(it.context, yarn_requirements::class.java))
                 7 -> it.context.startActivity(Intent(it.context, Textile_News::class.java))
-                else -> Toast.makeText(it.context, model.description, Toast.LENGTH_SHORT).show()
+                else -> Toast.makeText(it.context,list[position].description, Toast.LENGTH_SHORT).show()
             }
         }
 
-        if(position == 9){
+        if (position == 9) {
             holder.view2.visibility = View.INVISIBLE
         }
 
@@ -87,6 +82,9 @@ class ItemAdapter(options: FirebaseRecyclerOptions<Item>) :
 
     }
 
+    override fun getItemCount(): Int {
+        return list.size
+    }
 
     class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
@@ -111,14 +109,14 @@ class ItemAdapter(options: FirebaseRecyclerOptions<Item>) :
                 val sliderView = DefaultSliderView(constraintLayout.context)
 
                 when (i) {
-                    0 -> sliderView.imageUrl =
-                        "https://images.pexels.com/photos/547114/pexels-photo-547114.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-                    1 -> sliderView.imageUrl =
-                        "https://images.pexels.com/photos/218983/pexels-photo-218983.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-                    2 -> sliderView.imageUrl =
-                        "https://images.pexels.com/photos/747964/pexels-photo-747964.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
-                    3 -> sliderView.imageUrl =
-                        "https://images.pexels.com/photos/929778/pexels-photo-929778.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                    0 -> sliderView.setImageDrawable(R.drawable.yarn)
+
+                    1 ->sliderView.setImageDrawable(R.drawable.yarn)
+
+                    2 ->sliderView.setImageDrawable(R.drawable.yarn)
+
+                    3 -> sliderView.setImageDrawable(R.drawable.yarn)
+
                 }
 
                 sliderView.setImageScaleType(ImageView.ScaleType.CENTER_CROP)
@@ -134,12 +132,11 @@ class ItemAdapter(options: FirebaseRecyclerOptions<Item>) :
                 sliderLayout.addSliderView(sliderView)
             }
 
+
+
         }
 
-
     }
-
-
 }
 
 
