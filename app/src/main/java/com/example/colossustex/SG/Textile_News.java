@@ -38,6 +38,7 @@ public class Textile_News extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Textile_News.this, MainActivity.class));
+                finishAffinity();
             }
         });
 

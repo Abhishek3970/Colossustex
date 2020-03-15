@@ -198,6 +198,7 @@ public class yarn_requirements extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(yarn_requirements.this, MainActivity.class));
+                finishAffinity();
             }
         });
 

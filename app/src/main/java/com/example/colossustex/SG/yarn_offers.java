@@ -96,6 +96,7 @@ public class yarn_offers extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(yarn_offers.this, MainActivity.class));
+                finishAffinity();
             }
         });
         initializeRV();
