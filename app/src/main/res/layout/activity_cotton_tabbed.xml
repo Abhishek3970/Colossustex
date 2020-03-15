@@ -14,7 +14,7 @@
         <androidx.appcompat.widget.Toolbar
 
             android:id="@+id/toolbar"
-
+            android:background="@color/colorPrimary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:title="Cotton"
@@ -28,7 +28,7 @@
             android:id="@+id/tabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary"
+            android:background="@color/colorPrimary"
             app:tabMinWidth="100dp"
             app:tabMode="auto" />
     </com.google.android.material.appbar.AppBarLayout>

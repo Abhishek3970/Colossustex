@@ -12,7 +12,7 @@
         >
 
         <androidx.appcompat.widget.Toolbar
-
+            android:background="@color/colorPrimary"
             android:id="@+id/toolbar"
 
             android:layout_width="match_parent"
@@ -28,7 +28,7 @@
             android:id="@+id/tabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary"
+            android:background="@color/colorPrimary"
             app:tabIndicatorHeight="2dp"
             app:tabMinWidth="100dp"
             app:tabMode="auto" />
