@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/nim_quality_t_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:text="NIM"
+            android:textSize="30dp" />
+
+        <TextView
+            android:id="@+id/gft_quality_t_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GFT"
+            android:layout_margin="5dp"
+            android:layout_gravity="center"
+            android:textSize="30dp"
+            />
+
+        <TextView
+            android:id="@+id/lim_sim_quality_t_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:layout_margin="5dp"
+            android:layout_gravity="center"
+            android:text="LIM/SIM" />
+
+        <TextView
+            android:id="@+id/im_roto_quality_t_dialog"
+            android:layout_width="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:layout_gravity="center"
+            android:text="IM/ROTO" />
+
+        <TextView
+            android:id="@+id/him_roto_quality_t_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_gravity="center"
+            android:text="HIM/ROTO"
+            android:textSize="30dp"/>
+    </LinearLayout>
+</LinearLayout>

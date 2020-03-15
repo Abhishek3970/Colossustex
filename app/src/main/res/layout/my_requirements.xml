@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#C3807676"
     android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
@@ -96,11 +97,11 @@
                             android:textSize="12sp" />
 
                         <TextView
+                            android:id="@+id/f"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="5"
                             android:text="--Select--"
-                            android:id="@+id/f"
                             android:textSize="30sp" />
 
                         <ImageView
@@ -134,11 +135,11 @@
                             android:textSize="12sp" />
 
                         <TextView
+                            android:id="@+id/p"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="5"
                             android:text="--Select--"
-                            android:id="@+id/p"
                             android:textSize="30sp" />
 
                         <ImageView
@@ -155,8 +156,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="12dp"
-                    app:cardCornerRadius="12dp"
-                    >
+                    app:cardCornerRadius="12dp">
 
                     <LinearLayout
                         android:id="@+id/Count"
@@ -172,11 +172,11 @@
                             android:textSize="12sp" />
 
                         <TextView
+                            android:id="@+id/c"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="5"
                             android:text="--Select--"
-                            android:id="@+id/c"
                             android:textSize="30sp" />
 
                         <ImageView
@@ -193,11 +193,86 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="12dp"
-                    app:cardCornerRadius="12dp"
-                    >
+                    app:cardCornerRadius="12dp">
 
                     <LinearLayout
-                        android:id="@+id/Range"
+                        android:id="@+id/Quality_Range_texturised"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:text="Quality Range"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/qrt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:text="--Select--"
+                            android:textSize="30sp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/ic_keyboard_arrow_down_color_primary"
+                            tools:ignore="VectorDrawableCompat" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="12dp"
+                    app:cardCornerRadius="12dp">
+
+                    <LinearLayout
+                        android:id="@+id/Quality_Range_fancy"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:text="Quality Range"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/qrf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:text="--Select--"
+                            android:textSize="30sp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/ic_keyboard_arrow_down_color_primary"
+                            tools:ignore="VectorDrawableCompat" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="12dp"
+                    android:visibility="gone"
+                    app:cardCornerRadius="12dp">
+
+                    <LinearLayout
+                        android:id="@+id/Product_Range_texturised"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         android:orientation="horizontal">
@@ -210,11 +285,11 @@
                             android:textSize="12sp" />
 
                         <TextView
+                            android:id="@+id/rt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="5"
                             android:text="--Select--"
-                            android:id="@+id/r"
                             android:textSize="30sp" />
 
                         <ImageView
@@ -231,8 +306,45 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="12dp"
-                    app:cardCornerRadius="12dp"
-                    >
+                    app:cardCornerRadius="12dp">
+
+                    <LinearLayout
+                        android:id="@+id/Product_Range_fancy"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:text="Product Range"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/rf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:text="--Select--"
+                            android:textSize="30sp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/ic_keyboard_arrow_down_color_primary"
+                            tools:ignore="VectorDrawableCompat" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="12dp"
+                    app:cardCornerRadius="12dp">
 
                     <LinearLayout
                         android:id="@+id/Quality"
@@ -248,11 +360,11 @@
                             android:textSize="12sp" />
 
                         <TextView
+                            android:id="@+id/q"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="5"
                             android:text="--Select--"
-                            android:id="@+id/q"
                             android:textSize="30sp" />
 
                         <ImageView
@@ -269,8 +381,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="12dp"
-                    app:cardCornerRadius="12dp"
-                    >
+                    app:cardCornerRadius="12dp">
 
                     <LinearLayout
                         android:id="@+id/Variety"
@@ -286,10 +397,10 @@
                             android:textSize="12sp" />
 
                         <TextView
+                            android:id="@+id/v"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="5"
-                            android:id="@+id/v"
                             android:text="--Select--"
                             android:textSize="30sp" />
 
@@ -307,8 +418,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="12dp"
-                    app:cardCornerRadius="12dp"
-                    >
+                    app:cardCornerRadius="12dp">
 
                     <LinearLayout
                         android:id="@+id/Type"
@@ -324,11 +434,11 @@
                             android:textSize="12sp" />
 
                         <TextView
+                            android:id="@+id/t"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="5"
                             android:text="--Select--"
-                            android:id="@+id/t"
                             android:textSize="30sp" />
 
                         <ImageView
@@ -345,14 +455,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="12dp"
-                    app:cardCornerRadius="12dp"
-                    >
+                    app:cardCornerRadius="12dp">
 
                     <LinearLayout
+                        android:id="@+id/Nature"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
-                        android:orientation="horizontal"
-                        android:id="@+id/Nature">
+                        android:orientation="horizontal">
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -361,10 +470,10 @@
                             android:text="Nature" />
 
                         <TextView
+                            android:id="@+id/n"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="5"
-                            android:id="@+id/n"
                             android:text="--Select--"
                             android:textSize="30sp" />
 
@@ -382,15 +491,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_margin="12dp"
-                    app:cardCornerRadius="12dp"
-                    >
+                    app:cardCornerRadius="12dp">
 
                     <LinearLayout
+                        android:id="@+id/Grade"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="horizontal"
-                        android:id="@+id/Grade"
-                        >
+                        android:orientation="horizontal">
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -399,11 +506,11 @@
                             android:text="Grade" />
 
                         <TextView
+                            android:id="@+id/g"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="5"
                             android:text="--Select--"
-                            android:id="@+id/g"
                             android:textSize="30sp" />
 
                         <ImageView
@@ -420,10 +527,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="12dp"
-                    app:cardCornerRadius="12dp"
-                    >
+                    app:cardCornerRadius="12dp">
 
                     <LinearLayout
+                        android:id="@+id/denier"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         android:orientation="horizontal">
@@ -435,11 +542,11 @@
                             android:text="Denier/Filament" />
 
                         <TextView
+                            android:id="@+id/df"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="5"
                             android:text="--Select--"
-                            android:id="@+id/df"
                             android:textSize="30sp" />
 
                         <ImageView
@@ -455,28 +562,28 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
+                    android:layout_height="wrap_content"
                     android:layout_margin="12dp"
-                    app:cardCornerRadius="12dp"
-                    >
+                    app:cardCornerRadius="12dp">
 
                     <LinearLayout
+                        android:id="@+id/sendto"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="60dp"
                         android:orientation="horizontal">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="5"
-                            android:text="Denier/Filament" />
+                            android:text="Yarn Delivery" />
 
                         <TextView
+                            android:id="@+id/sendto_text"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="5"
                             android:text="--Select--"
-                            android:id="@+id/d"
                             android:textSize="30sp" />
 
                         <ImageView
@@ -493,10 +600,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="12dp"
-                    app:cardCornerRadius="12dp"
-                    >
+                    app:cardCornerRadius="12dp">
 
                     <LinearLayout
+                        android:id="@+id/noofbags"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         android:orientation="horizontal">
@@ -508,11 +615,11 @@
                             android:text="No.of Bags" />
 
                         <EditText
+                            android:id="@+id/n2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="5"
-                            android:text="--Select--"
-                            android:id="@+id/n2"
+                            android:hint="--Select--"
                             android:textSize="30sp" />
 
                     </LinearLayout>
@@ -523,10 +630,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="12dp"
-                    app:cardCornerRadius="12dp"
-                    >
+                    app:cardCornerRadius="12dp">
 
                     <LinearLayout
+                        android:id="@+id/desc"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         android:orientation="horizontal">
@@ -538,11 +645,11 @@
                             android:text="Description" />
 
                         <EditText
+                            android:id="@+id/des"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="5"
-                            android:text="--Type--"
-                            android:id="@+id/des"
+                            android:hint="--Type--"
                             android:textSize="30sp" />
 
                     </LinearLayout>
