@@ -17,6 +17,7 @@ android {
         minSdkVersion 19
         targetSdkVersion 29
         versionCode 1
+        multiDexEnabled true
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -40,6 +41,7 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0'
+    implementation 'com.google.firebase:firebase-auth:16.0.5'
     implementation 'com.google.firebase:firebase-core:16.0.4'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'
@@ -60,8 +62,9 @@ dependencies {
 
     //noinspection GradleCompatible
     implementation 'com.android.support:cardview-v7:28.0.0'
-
+    implementation 'com.android.support:multidex:1.0.3'
     //noinspection GradleCompatible
+    implementation 'com.google.firebase:firebase-auth:19.3.0'
     implementation 'com.android.support:design:28.0.0'
     //noinspection GradleCompatible
     implementation 'com.android.support:design:28.0.0-alpha1'
