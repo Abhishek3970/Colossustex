@@ -238,7 +238,6 @@
         </LinearLayout>
 
         <TextView
-            android:alpha="0.8"
             android:background="#111"
             android:layout_gravity="bottom"
             android:id="@+id/viewed_history_viscose"
