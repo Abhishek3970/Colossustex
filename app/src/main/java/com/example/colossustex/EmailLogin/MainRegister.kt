@@ -55,6 +55,7 @@ class MainRegister : AppCompatActivity() {
             binding.emailEt.requestFocus()
             return
         }
+        binding.progresslayout.visibility=View.VISIBLE
         auth.createUserWithEmailAndPassword(binding.emailEt.text.toString(), binding.passEt.text.toString())
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
@@ -62,15 +63,17 @@ class MainRegister : AppCompatActivity() {
                     user?.sendEmailVerification()
                         ?.addOnCompleteListener { task ->
                             if (task.isSuccessful) {
+                                binding.progresslayout.visibility=View.GONE
                                 Snackbar.make(binding.registerLayout,"Email Sent",Snackbar.LENGTH_SHORT).show()
                                 startActivity(Intent(this,MainLogin::class.java))
                                 finish()
                             }else{
+                                binding.progresslayout.visibility=View.GONE
                                 Toast.makeText(this,"Please check your network",Toast.LENGTH_SHORT).show()
                             }
                         }
-
                 } else {
+                    binding.progresslayout.visibility=View.GONE
                     Toast.makeText(baseContext, "Sign Up Failed.",
                         Toast.LENGTH_SHORT).show()
                 }
