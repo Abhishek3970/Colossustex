@@ -36,15 +36,18 @@ public class ItemGroupAdapter extends RecyclerView.Adapter<ItemGroupAdapter.MyVi
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
-        MyViewHolder.headtitle.setText(dataList.get(position).getHeadTitle());
+
         List<ItemData> itemData = dataList.get(position).getListelements();
         MyItemAdapter itemListAdapter = new MyItemAdapter(context, itemData);
-        MyViewHolder.recycler_view_item_list.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false));
-        MyViewHolder.recycler_view_item_list.setAdapter(itemListAdapter);
+        holder.recycler_view_item_list.setHasFixedSize(true);
+        holder.recycler_view_item_list.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false));
+        holder.recycler_view_item_list.setAdapter(itemListAdapter);
 
-        MyViewHolder.recycler_view_item_list.setNestedScrollingEnabled(false);
+        holder.recycler_view_item_list.setNestedScrollingEnabled(false);
 
-        MyViewHolder.Live_sensex.setText(dataList.get(position).getLivesensex());
+        holder.Live_sensex.setText(dataList.get(position).getLivesensex());
+        holder.headtitle.setText(dataList.get(position).getHeadTitle());
+
 
     }
 
@@ -55,9 +58,9 @@ public class ItemGroupAdapter extends RecyclerView.Adapter<ItemGroupAdapter.MyVi
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
-        static TextView headtitle;
-        static TextView Live_sensex;
-        static RecyclerView recycler_view_item_list;
+        TextView headtitle;
+        TextView Live_sensex;
+        RecyclerView recycler_view_item_list;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);

@@ -1,14 +1,13 @@
 package com.example.colossustex.SG.model;
 
 public class ItemData {
-    private String sub_heading, sub_time, sub_title, sub_change, sub_ultimate;
-    private Long sub_price;
+    private String sub_heading, sub_time, sub_title, sub_change, sub_ultimate, sub_price;
 
     public ItemData(){
 
     }
 
-    public ItemData(String sub_change, String sub_heading, Long sub_price, String sub_time, String sub_title, String sub_ultimate) {
+    public ItemData(String sub_change, String sub_heading, String sub_price, String sub_time, String sub_title, String sub_ultimate) {
         this.sub_heading = sub_heading;
         this.sub_price = sub_price;
         this.sub_time = sub_time;
@@ -25,11 +24,11 @@ public class ItemData {
         this.sub_heading = sub_heading;
     }
 
-    public Long getSub_price() {
+    public String getSub_price() {
         return sub_price;
     }
 
-    public void setSub_price(Long sub_price) {
+    public void setSub_price(String sub_price) {
         this.sub_price = sub_price;
     }
 

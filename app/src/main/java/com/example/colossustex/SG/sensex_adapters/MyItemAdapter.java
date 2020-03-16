@@ -34,12 +34,12 @@ public class MyItemAdapter extends RecyclerView.Adapter<MyItemAdapter.MyViewHold
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        MyViewHolder.sub_heading.setText(itemDataList.get(position).getSub_heading());
-        MyViewHolder.sub_price.setText(itemDataList.get(position).getSub_price().toString());
-        MyViewHolder.sub_time.setText(itemDataList.get(position).getSub_time());
-        MyViewHolder.sub_title.setText(itemDataList.get(position).getSub_title());
-        MyViewHolder.sub_change.setText(itemDataList.get(position).getSub_change());
-        MyViewHolder.sub_ultimate.setText(itemDataList.get(position).getSub_ultimate());
+        holder.sub_heading.setText(itemDataList.get(position).getSub_heading());
+        holder.sub_price.setText(itemDataList.get(position).getSub_price().toString());
+        holder.sub_time.setText(itemDataList.get(position).getSub_time());
+        holder.sub_title.setText(itemDataList.get(position).getSub_title());
+        holder.sub_change.setText(itemDataList.get(position).getSub_change());
+        holder.sub_ultimate.setText(itemDataList.get(position).getSub_ultimate());
     }
 
     @Override
@@ -47,18 +47,14 @@ public class MyItemAdapter extends RecyclerView.Adapter<MyItemAdapter.MyViewHold
         return (itemDataList != null ? itemDataList.size() : 0);
     }
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        static TextView sub_heading;
-        static TextView sub_price;
-        static TextView sub_time;
-        static TextView sub_title;
-        static TextView sub_change;
-        static TextView sub_ultimate;
-        ItemClickListener itemClickListener;
+    public class MyViewHolder extends RecyclerView.ViewHolder {
+        TextView sub_heading;
+        TextView sub_price;
+        TextView sub_time;
+        TextView sub_title;
+        TextView sub_change;
+        TextView sub_ultimate;
 
-        public void getitemClickListener(ItemClickListener itemClickListener){
-            this.itemClickListener = itemClickListener;
-        }
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -70,13 +66,7 @@ public class MyItemAdapter extends RecyclerView.Adapter<MyItemAdapter.MyViewHold
             sub_change = itemView.findViewById(R.id.sub_change);
             sub_ultimate = itemView.findViewById(R.id.sub_ultimate_change);
 
-            itemView.setOnClickListener(this);
 
-        }
-
-        @Override
-        public void onClick(View v) {
-        itemClickListener.onItemClickListener(v, getAdapterPosition());
         }
     }
 }

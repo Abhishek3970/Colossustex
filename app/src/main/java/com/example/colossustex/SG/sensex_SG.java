@@ -46,7 +46,7 @@ public class sensex_SG extends AppCompatActivity implements FirebaseLoadListener
 
         myRecyclerView = findViewById(R.id.sensex);
         myRecyclerView.setHasFixedSize(true);
-        myRecyclerView.setLayoutManager(new LinearLayoutManager(sensex_SG.this));
+        myRecyclerView.setLayoutManager(new LinearLayoutManager(sensex_SG.this, LinearLayoutManager.VERTICAL, false));
 
         myData = FirebaseDatabase.getInstance().getReference("sensex_data");
         dialog = new SpotsDialog.Builder().setContext(sensex_SG.this).build();
