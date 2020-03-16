@@ -71,7 +71,7 @@ class MainRegister : AppCompatActivity() {
                         }
 
                 } else {
-                    Toast.makeText(baseContext, "Sign Up Failed.Try After some time.",
+                    Toast.makeText(baseContext, "Sign Up Failed.",
                         Toast.LENGTH_SHORT).show()
                 }
             }
