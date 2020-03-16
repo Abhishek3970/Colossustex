@@ -295,4 +295,5 @@ class SpinningMillOfIndia : Fragment() {
     }   //to notify changes to adapter
 
 
+
 }
