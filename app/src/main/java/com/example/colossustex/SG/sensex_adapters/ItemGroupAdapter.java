@@ -29,7 +29,7 @@ public class ItemGroupAdapter extends RecyclerView.Adapter<ItemGroupAdapter.MyVi
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(context).inflate(R.layout.activity_sensex, parent, false);
+        View itemView = LayoutInflater.from(context).inflate(R.layout.sensex_card, parent, false);
         return new MyViewHolder(itemView);
     }
 
@@ -68,7 +68,6 @@ public class ItemGroupAdapter extends RecyclerView.Adapter<ItemGroupAdapter.MyVi
             headtitle = itemView.findViewById(R.id.head_sensex);
             Live_sensex = itemView.findViewById(R.id.Live_sensex);
             recycler_view_item_list = itemView.findViewById(R.id.sub_list);
-
         }
     }
 }

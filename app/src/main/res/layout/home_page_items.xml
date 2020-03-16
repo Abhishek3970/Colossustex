@@ -65,7 +65,8 @@
             app:layout_constraintBottom_toBottomOf="@+id/textView_description"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/textView_heading"
-            app:srcCompat="@drawable/yarn" />
+            android:src="@drawable/yarn"
+             />
 
         <View
             android:id="@+id/view2"
