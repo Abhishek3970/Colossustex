@@ -91,6 +91,15 @@ class ImportYarn : Fragment() {
         binding.toolbarImport.setNavigationOnClickListener {
             it.findNavController().navigate(ImportYarnDirections.actionImportYarnToHomePage())
         }
+        binding.toolbarImport.setOnMenuItemClickListener {
+            when (it.itemId) {
+                R.id.home_page -> {
+                    binding.toolbarImport.findNavController()
+                        .navigate(ImportYarnDirections.actionImportYarnToHomePage())
+                }
+            }
+            true
+        }
 
         posts = ArrayList()
 
@@ -154,13 +163,13 @@ class ImportYarn : Fragment() {
 
                 override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
                 override fun afterTextChanged(p0: Editable?) {
-                    if (  binding.editTextSearchSpinningMillsInIndia.text.trim().isEmpty()) {
+                    if (binding.editTextSearchSpinningMillsInIndia.text.trim().isEmpty()) {
                         mDb.addListenerForSingleValueEvent(valueEventListener)    //display all
                     } else {
                         val query = mDb
                             .orderByChild("sname")
-                            .startAt(  binding.editTextSearchSpinningMillsInIndia.text.toString().toLowerCase())
-                            .endAt("${  binding.editTextSearchSpinningMillsInIndia.text.toString().toLowerCase()}\uf8ff")
+                            .startAt(binding.editTextSearchSpinningMillsInIndia.text.toString().toLowerCase())
+                            .endAt("${binding.editTextSearchSpinningMillsInIndia.text.toString().toLowerCase()}\uf8ff")
                         query.addListenerForSingleValueEvent(valueEventListener)  //query selected
                     }
                 }

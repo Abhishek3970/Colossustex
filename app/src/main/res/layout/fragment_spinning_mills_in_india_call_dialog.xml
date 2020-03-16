@@ -22,7 +22,7 @@
             android:layout_width="40dp"
             android:layout_height="43dp"
             android:layout_gravity="center_vertical|center_horizontal"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorAccent"
             android:padding="5dp"
             android:src="@drawable/ic_call" />
 
@@ -53,7 +53,7 @@
             android:layout_width="40dp"
             android:layout_height="43dp"
             android:layout_gravity="center_vertical|center_horizontal"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorAccent"
             android:padding="5dp"
             android:src="@drawable/ic_email" />
 
