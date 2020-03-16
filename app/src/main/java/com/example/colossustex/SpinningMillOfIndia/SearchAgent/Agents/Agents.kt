@@ -26,7 +26,7 @@ class Agents : Fragment() {
         binding.stateTo.text = arg.stateTo
 
         binding.toolbarAgents.setNavigationOnClickListener {
-            it.findNavController().navigate(AgentsDirections.actionAgentsToSearchAgent())
+            it.findNavController().navigateUp()
         }
 
         binding.toolbarAgents.inflateMenu(R.menu.menu_spinning_mills_of_india)

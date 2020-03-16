@@ -89,13 +89,12 @@ class ImportYarn : Fragment() {
 
         binding.toolbarImport.inflateMenu(R.menu.menu_import_yarn)
         binding.toolbarImport.setNavigationOnClickListener {
-            it.findNavController().navigate(ImportYarnDirections.actionImportYarnToHomePage())
+            it.findNavController().navigateUp()
         }
         binding.toolbarImport.setOnMenuItemClickListener {
             when (it.itemId) {
                 R.id.home_page -> {
-                    binding.toolbarImport.findNavController()
-                        .navigate(ImportYarnDirections.actionImportYarnToHomePage())
+                    binding.toolbarImport.findNavController().navigateUp()
                 }
             }
             true

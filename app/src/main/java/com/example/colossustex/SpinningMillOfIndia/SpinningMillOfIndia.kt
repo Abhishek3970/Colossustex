@@ -91,15 +91,13 @@ class SpinningMillOfIndia : Fragment() {
         toolbar.setOnMenuItemClickListener {
             when (it.itemId) {
                 R.id.home_page -> {
-                    toolbar.findNavController()
-                        .navigate(SpinningMillOfIndiaDirections.actionSpinningMillOfIndiaToHomePage())
+                    toolbar.findNavController().navigateUp()
                 }
             }
             true
         }
         toolbar.setNavigationOnClickListener {
-            it.findNavController()
-                .navigate(SpinningMillOfIndiaDirections.actionSpinningMillOfIndiaToHomePage())
+            it.findNavController().navigateUp()
         }
 
         posts = ArrayList()
@@ -171,7 +169,6 @@ class SpinningMillOfIndia : Fragment() {
         }
 
 
-
         var cottonState = true
         var syntheticState = true
         var viscoseState = true
@@ -208,45 +205,44 @@ class SpinningMillOfIndia : Fragment() {
                 checkboxTexturized,
                 checkboxViscose
             )
-            for(item in list){
-                item!!.setOnClickListener{
-                    when(item){
-                        checkboxCotton-> cottonState = checkboxCotton!!.isChecked
-                        checkboxSynthetic-> syntheticState = checkboxSynthetic!!.isChecked
-                        checkboxViscose-> viscoseState = checkboxViscose!!.isChecked
-                        checkboxTexturized-> texturizedState = checkboxTexturized!!.isChecked
-                        checkboxFancy-> fancyState = checkboxFancy!!.isChecked
+            for (item in list) {
+                item!!.setOnClickListener {
+                    when (item) {
+                        checkboxCotton -> cottonState = checkboxCotton!!.isChecked
+                        checkboxSynthetic -> syntheticState = checkboxSynthetic!!.isChecked
+                        checkboxViscose -> viscoseState = checkboxViscose!!.isChecked
+                        checkboxTexturized -> texturizedState = checkboxTexturized!!.isChecked
+                        checkboxFancy -> fancyState = checkboxFancy!!.isChecked
 
                     }
-                    if(!cottonState && !syntheticState && !viscoseState && !texturizedState && !fancyState ){
+                    if (!cottonState && !syntheticState && !viscoseState && !texturizedState && !fancyState) {
                         checkboxCotton.isChecked = true
                         checkboxSynthetic.isChecked = true
                         checkboxViscose.isChecked = true
                         checkboxTexturized.isChecked = true
                         checkboxFancy.isChecked = true
                     }
-                        // continue by adding filters here.....
+                    // continue by adding filters here.....
                     var tempList = ArrayList<String>()
-                    if(checkboxCotton!!.isChecked)
+                    if (checkboxCotton!!.isChecked)
                         tempList.add("Cotton")
-                    if(checkboxFancy!!.isChecked)
+                    if (checkboxFancy!!.isChecked)
                         tempList.add("Fancy")
-                    if(checkboxSynthetic!!.isChecked)
+                    if (checkboxSynthetic!!.isChecked)
                         tempList.add("Synthetic")
-                    if(checkboxViscose!!.isChecked)
+                    if (checkboxViscose!!.isChecked)
                         tempList.add("Viscose")
-                    if(checkboxTexturized!!.isChecked)
+                    if (checkboxTexturized!!.isChecked)
                         tempList.add("Texturized")
 
                     val newPostList = ArrayList<post>()
-                    for(i in posts){
-                        if(i.productType in tempList)
+                    for (i in posts) {
+                        if (i.productType in tempList)
                             newPostList.add(i)
                     }
 
                     adapter = PostAdapter(context!!, newPostList)
                     recyclerView.adapter = adapter
-
 
 
                 }
@@ -293,7 +289,6 @@ class SpinningMillOfIndia : Fragment() {
         }
 
     }   //to notify changes to adapter
-
 
 
 }

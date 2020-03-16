@@ -135,8 +135,7 @@ class SearchAgent : Fragment() {
         var lay = inflater.inflate(R.layout.fragment_search_agent, container, false)
         val toolbar = lay.findViewById<Toolbar>(R.id.toolbar_spinning_mills_in_india_search_agent)
         toolbar.setNavigationOnClickListener {
-            it.findNavController()
-                .navigate(SearchAgentDirections.actionSearchAgentToSpinningMillOfIndia())
+            it.findNavController().navigateUp()
         }
         toolbar.inflateMenu(R.menu.menu_spinning_mills_of_india)
         toolbar.setOnMenuItemClickListener {
