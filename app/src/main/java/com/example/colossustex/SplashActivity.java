@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
 
+import com.example.colossustex.EmailLogin.MainLogin;
+
 public class SplashActivity extends AppCompatActivity {
 
     private static final int SPLASH_DELAY = 2000;
@@ -26,7 +28,7 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void start() {
-        startActivity(new Intent(this, MainActivity.class));
+        startActivity(new Intent(this, MainLogin.class));
         finish();
     }
 
