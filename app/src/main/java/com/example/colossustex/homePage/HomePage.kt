@@ -1,7 +1,6 @@
 package com.example.colossustex.homePage
 
 
-import android.app.Activity
 import android.app.Dialog
 import android.content.Intent
 import android.net.Uri
@@ -22,16 +21,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.colossustex.EmailLogin.MainLogin
 import com.example.colossustex.EmailLogin.googleSignInClient
-import com.example.colossustex.MainActivity
 import com.example.colossustex.R
 import com.firebase.ui.database.FirebaseRecyclerOptions
 import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-import kotlinx.android.synthetic.main.fragment_fancy1.*
-
 
 class HomePage : Fragment() {
 
@@ -40,7 +35,6 @@ class HomePage : Fragment() {
     private lateinit var mDialog1: Dialog
     private lateinit var mDialog2: Dialog
     private lateinit var mDb: DatabaseReference
-
     private lateinit var viewModel: HomePageViewModel
 
 
@@ -99,7 +93,7 @@ class HomePage : Fragment() {
                 R.id.logout_menu -> {
                     val auth = FirebaseAuth.getInstance()
                     auth.signOut()
-                    if(GoogleSignIn.getLastSignedInAccount(context)!=null) {
+                    if (GoogleSignIn.getLastSignedInAccount(context) != null) {
                         googleSignInClient.signOut()
                     }
                     val intent = Intent(context, MainLogin::class.java).apply {
@@ -314,6 +308,7 @@ class HomePage : Fragment() {
                     } else {
                         count1 = 0
                     }
+
                 }
 
                 mDialog2.show()
