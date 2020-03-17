@@ -14,6 +14,8 @@ import android.widget.Button
 import android.widget.Switch
 import android.widget.TextView
 import android.widget.Toast
+import android.view.*
+import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -175,7 +177,7 @@ class HomePage : Fragment() {
         var count = 0
 
         val editTextCountry = mDialog1.findViewById<TextInputLayout>(R.id.editText_country)
-        val editTextMobile = mDialog1.findViewById<TextInputLayout>(R.id.editText_mobile)
+        val editTextMobile = mDialog1.findViewById<TextInputLayout>(R.id.editTextMobile)
         val editTextName = mDialog1.findViewById<TextInputLayout>(R.id.editText_name)
         val editTextEmail = mDialog1.findViewById<TextInputLayout>(R.id.editText_Email)
         val editTextCity = mDialog1.findViewById<TextInputLayout>(R.id.editText_city)

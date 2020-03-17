@@ -136,7 +136,9 @@ class MainLogin : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "Verify your email", Toast.LENGTH_SHORT).show()
             }
-
+        }else{
+            Toast.makeText(baseContext, "Login Failed.",
+                Toast.LENGTH_SHORT).show()
         }
     }
 }
