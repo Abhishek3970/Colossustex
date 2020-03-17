@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:id="@+id/register_layout"
     android:layout_height="match_parent"
-    android:background="#AF8CF1"
+    android:background="@drawable/loginbg"
     tools:context=".EmailLogin.MainRegister">
 
     <TextView
