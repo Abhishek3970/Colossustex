@@ -26,7 +26,7 @@ class VerifyNumber : AppCompatActivity() {
     lateinit var binding: ActivityVerifyNumberBinding
     lateinit var mAuth: FirebaseAuth
     lateinit var progressBar: ProgressBar
-    lateinit var edit: EditText
+    lateinit var editText: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +34,7 @@ class VerifyNumber : AppCompatActivity() {
 
         mAuth = FirebaseAuth.getInstance()
         progressBar = binding.progressBar
-        edit = binding.editOTP
+        editText = binding.editOTP
 
         val phoneNo = intent.getStringExtra("number")
         sendVerificationCode(phoneNo)
