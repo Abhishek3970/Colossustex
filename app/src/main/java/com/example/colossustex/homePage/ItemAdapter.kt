@@ -48,15 +48,35 @@ class ItemAdapter(var list: MutableList<Item>) :
                     dialog.setContentView(R.layout.buy_yarn_offers_dialog1)
                     val cotton = dialog.findViewById<TextView>(R.id.dialog_cotton)
                     val synthetic = dialog.findViewById<TextView>(R.id.dialog_synthetic)
+                    val viscose = dialog.findViewById<TextView>(R.id.dialog_viscose)
+                    val texturised = dialog.findViewById<TextView>(R.id.dialog_texturised)
+                    val fancy = dialog.findViewById<TextView>(R.id.dialog_fancy)
+
                     cotton.setOnClickListener {
                         //start an activity cotton
-
+                        dialog.dismiss()
+                        holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToCottonTabFragment())
                     }
                     synthetic.setOnClickListener {
                         //start synthic activity
-                        it.context.startActivity(Intent(it.context, yarn_offers::class.java))
+                        dialog.dismiss()
+                        holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToSyntheticTab())
 
                     }
+                    viscose.setOnClickListener{
+                        dialog.dismiss()
+                        holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToViscoseFragment())
+                    }
+                    texturised.setOnClickListener{
+                        dialog.dismiss()
+                        holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToTexturisedFragment1())
+                    }
+                    texturised.setOnClickListener{
+                        dialog.dismiss()
+                        holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToFancyFragment1())
+                    }
+
+
                     dialog.show()
                 }
 //                5 -> (AlertDialog.Builder(it.context).setSingleChoiceItems(itemList, -1){dialog, which->

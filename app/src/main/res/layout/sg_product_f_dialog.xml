@@ -11,45 +11,77 @@
 
         <TextView
             android:id="@+id/Slub"
-            android:layout_width="match_parent"
+            android:layout_width="275dp"
             android:layout_height="wrap_content"
-            android:textSize="30dp"
-            android:layout_margin="5dp"
             android:layout_gravity="center"
-            android:text="Slub" />
+            android:layout_margin="5dp"
+            android:paddingLeft="10dp"
+            android:text="Slub"
+            android:textSize="24sp" />
+
+        <View
+            android:id="@+id/divider34"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#858080" />
 
         <TextView
             android:id="@+id/multicolor_product_f_dialog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="30dp"
-            android:layout_margin="5dp"
             android:layout_gravity="center"
-            android:text="Multi Color" />
+            android:layout_margin="5dp"
+            android:paddingLeft="10dp"
+            android:text="Multi Color"
+            android:textSize="24sp" />
+
+        <View
+            android:id="@+id/divider35"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#858080" />
+
         <TextView
             android:id="@+id/modal_product_f_dialog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="30dp"
-            android:layout_margin="5dp"
             android:layout_gravity="center"
-            android:text="Modal" />
+            android:layout_margin="5dp"
+            android:paddingLeft="10dp"
+            android:text="Modal"
+            android:textSize="24sp" />
+
+        <View
+            android:id="@+id/divider36"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#858080" />
+
         <TextView
             android:id="@+id/excel_product_f_dialog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="30dp"
-            android:layout_margin="5dp"
             android:layout_gravity="center"
-            android:text="Excel" />
+            android:layout_margin="5dp"
+            android:paddingLeft="10dp"
+            android:text="Excel"
+            android:textSize="24sp" />
+
+        <View
+            android:id="@+id/divider37"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#858080" />
+
         <TextView
             android:id="@+id/tencel_product_f_dialog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="30dp"
-            android:layout_margin="5dp"
             android:layout_gravity="center"
-            android:text="Tencel" />
+            android:layout_margin="5dp"
+            android:paddingLeft="10dp"
+            android:text="Tencel"
+            android:textSize="24sp" />
 
     </LinearLayout>
 </LinearLayout>

@@ -11,26 +11,41 @@
 
         <TextView
             android:id="@+id/psf_variety_dialog"
-            android:layout_width="match_parent"
+            android:layout_width="275dp"
             android:layout_height="wrap_content"
-            android:textSize="30dp"
             android:layout_margin="5dp"
-            android:text="PSF" />
+            android:paddingLeft="10dp"
+            android:text="PSF"
+            android:textSize="24sp" />
+
+        <View
+            android:id="@+id/divider8"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#858080" />
 
         <TextView
             android:id="@+id/pv_variety_dialog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:paddingLeft="10dp"
             android:text="PV"
-            android:textSize="30dp"
-            android:layout_margin="5dp"/>
+            android:textSize="24sp" />
+
+        <View
+            android:id="@+id/divider9"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#858080" />
 
         <TextView
             android:id="@+id/pc_variety_dialog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="PC"
             android:layout_margin="5dp"
-            android:textSize="30dp"/>
+            android:paddingLeft="10dp"
+            android:text="PC"
+            android:textSize="24sp" />
     </LinearLayout>
 </LinearLayout>

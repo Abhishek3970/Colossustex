@@ -11,26 +11,41 @@
 
         <TextView
             android:id="@+id/open_end_nature_dialog"
-            android:layout_width="match_parent"
+            android:layout_width="275dp"
             android:layout_height="wrap_content"
-            android:text="Open End"
             android:layout_margin="5dp"
-            android:textSize="30dp"/>
+            android:paddingLeft="10dp"
+            android:text="Open End"
+            android:textSize="24sp" />
+
+        <View
+            android:id="@+id/divider39"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#858080" />
 
         <TextView
             android:id="@+id/ring_span_nature_dialog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:textSize="30dp"
-            android:text="Ring Span" />
+            android:paddingLeft="10dp"
+            android:text="Ring Span"
+            android:textSize="24sp" />
+
+        <View
+            android:id="@+id/divider38"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#858080" />
 
         <TextView
             android:id="@+id/vortex_nature_dialog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Vortex"
             android:layout_margin="5dp"
-            android:textSize="30dp"/>
+            android:paddingLeft="10dp"
+            android:text="Vortex"
+            android:textSize="24sp" />
     </LinearLayout>
 </LinearLayout>
