@@ -10,12 +10,12 @@
         tools:context=".EmailLogin.MainLogin">
 
         <ImageView
-            android:contentDescription="Colossustex"
             android:id="@+id/head"
-            android:src="@drawable/logotemp"
-            android:layout_width="167dp"
-            android:layout_height="57dp"
+            android:layout_width="202dp"
+            android:layout_height="69dp"
             android:layout_marginTop="32dp"
+            android:contentDescription="Colossustex"
+            android:src="@drawable/col"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
