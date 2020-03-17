@@ -1,5 +1,6 @@
 package com.example.colossustex.EmailLogin
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
@@ -26,6 +27,9 @@ class MobileLogin : AppCompatActivity() {
                 return@setOnClickListener
             }
             val phoneNo = "+$code$number"
+            val intent = Intent(this ,  VerifyNumber::class.java)
+            intent.putExtra("number" , phoneNo)
+            startActivity(intent)
         }
 
     }

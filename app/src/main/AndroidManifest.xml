@@ -13,6 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".EmailLogin.VerifyNumber"></activity>
+        <activity android:name=".EmailLogin.Verify" />
         <activity android:name=".EmailLogin.MobileLogin" />
         <activity android:name=".SplashActivity">
             <intent-filter>
