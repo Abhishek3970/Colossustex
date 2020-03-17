@@ -10,15 +10,15 @@
         tools:context=".EmailLogin.MainLogin">
 
         <ImageView
+            android:contentDescription="Colossustex"
             android:id="@+id/head"
+            android:src="@drawable/logotemp"
             android:layout_width="167dp"
             android:layout_height="57dp"
-            android:layout_marginTop="28dp"
-            android:src="@drawable/logo_temp"
+            android:layout_marginTop="32dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
 
         <LinearLayout
             android:id="@+id/linearLayout6"

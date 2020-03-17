@@ -62,7 +62,7 @@
         <item name="android:textColor">@android:color/black</item>
     </style>
 <style name="loginstatusbar" parent="AppTheme">
-    <item name="colorPrimaryDark">#CE7EE4</item>
+    <item name="colorPrimaryDark">#63584E</item>
 </style>
 
 </resources>
