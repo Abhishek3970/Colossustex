@@ -36,6 +36,9 @@ class MainLogin : AppCompatActivity() {
         binding.loginBtn.setOnClickListener {
             dologin()
         }
+        binding.mobile.setOnClickListener {
+            startActivity(Intent(this, MobileLogin::class.java))
+        }
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail()

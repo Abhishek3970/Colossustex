@@ -21,7 +21,7 @@ class MobileLogin : AppCompatActivity() {
         binding.buttonSubmit.setOnClickListener{
             val code = countryCode[ binding.spinnerCountry.selectedItemPosition ]
             val number = binding.editTextMobile.text.toString().trim()
-            if(number.isEmpty()){
+            if(number.isEmpty() || number.length < 10){
                 binding.editTextMobile.error = "valid number is required"
                 binding.editTextMobile.requestFocus()
                 return@setOnClickListener
