@@ -31,7 +31,7 @@
                 android:layout_height="73dp"
                 android:layout_marginTop="16dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/logo"
+                android:src="@drawable/logo_temp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
