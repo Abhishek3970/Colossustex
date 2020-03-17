@@ -63,7 +63,7 @@ class HomePage : Fragment() {
             Item("Spinning Mills of India", "Mill's rate in INR,contact details and product range")
         val item2 =
             Item("Import Yarn from India", "Mill's rate in USD, contact details and product range")
-        val item3 = Item("But-Sell Textile Products", "Fabrics,garments,stock-lots, waste")
+        val item3 = Item("Buy-Sell Textile Products", "Fabrics,garments,stock-lots, waste")
         val item4 = Item("Yarn Offers", "Special offers directly from spinning mills")
         val item5 = Item("Buy Yarn Online", "Colossustex will coordinate your purchase")
         val item6 = Item("Post Yarn Requirement", "Mills and agents will contact you directly")
