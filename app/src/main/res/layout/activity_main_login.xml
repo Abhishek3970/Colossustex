@@ -38,11 +38,13 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/login_face"
-            android:gravity="center"
+            android:background="@android:color/white"
+            android:layout_margin="3dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:drawableStart="@drawable/ic_call_black_24dp"
             android:padding="15dp"
             android:text="Mobile"
-            android:textColor="#FFF" />
+            android:textColor="@android:color/black" />
 
             <com.google.android.gms.common.SignInButton
                 android:id="@+id/google_signin_btn"

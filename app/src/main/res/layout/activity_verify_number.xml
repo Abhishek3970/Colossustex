@@ -71,7 +71,7 @@
                 android:background="@drawable/login_but"
                 android:backgroundTint="@android:color/white"
                 android:text="Submit"
-                android:textColor="@android:color/black"
+                android:textColor="#5128A7"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.512"
                 app:layout_constraintStart_toStartOf="parent"
