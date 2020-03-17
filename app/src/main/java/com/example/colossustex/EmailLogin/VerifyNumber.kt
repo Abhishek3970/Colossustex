@@ -3,6 +3,8 @@ package com.example.colossustex.EmailLogin
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -24,6 +26,7 @@ class VerifyNumber : AppCompatActivity() {
     lateinit var binding: ActivityVerifyNumberBinding
     lateinit var mAuth: FirebaseAuth
     lateinit var progressBar: ProgressBar
+    lateinit var edit: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +34,7 @@ class VerifyNumber : AppCompatActivity() {
 
         mAuth = FirebaseAuth.getInstance()
         progressBar = binding.progressBar
+        edit = binding.editOTP
 
         val phoneNo = intent.getStringExtra("number")
         sendVerificationCode(phoneNo)
@@ -71,7 +75,6 @@ class VerifyNumber : AppCompatActivity() {
     }
 
     private fun sendVerificationCode(number: String) {
-
         PhoneAuthProvider.getInstance().verifyPhoneNumber(
             number,
             60,
