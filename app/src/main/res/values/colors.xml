@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#ea6059</color>
     <color name="colorPrimaryDark">#ea6059</color>
-    <color name="colorAccent">#00fe78</color>
+    <color name="colorAccent">#009ABD</color>
     <color name="orange">#FFA200</color>
     <color name="tabunselected">#80FFFFFF</color>
     <color name="fabricBackground">#FDD835</color>
