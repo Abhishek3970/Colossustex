@@ -418,7 +418,7 @@ class HomePage : Fragment() {
             intent.putExtra(Intent.EXTRA_SUBJECT, "")
             intent.putExtra(Intent.EXTRA_TEXT, "")
             intent.type = "message/rfc822"
-            startActivity(Intent.createChooser(intent, "Chose Email Clint:"))
+            startActivity(Intent.createChooser(intent, "Choose Email Client:"))
         }
         mDialog1.show()
     }                //code for support option in main menu
@@ -442,7 +442,7 @@ class HomePage : Fragment() {
             intent.putExtra(Intent.EXTRA_SUBJECT, "")
             intent.putExtra(Intent.EXTRA_TEXT, "")
             intent.type = "message/rfc822"
-            startActivity(Intent.createChooser(intent, "Chose Email Clint:"))
+            startActivity(Intent.createChooser(intent, "Choose Email Client:"))
         }
         mDialog1.show()
     }      //code for advertise with us option in main menu
