@@ -11,8 +11,8 @@
 
         <ImageView
             android:id="@+id/head"
-            android:layout_width="202dp"
-            android:layout_height="69dp"
+            android:layout_width="249dp"
+            android:layout_height="73dp"
             android:layout_marginTop="32dp"
             android:contentDescription="Colossustex"
             android:src="@drawable/col"

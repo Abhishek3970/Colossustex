@@ -22,7 +22,7 @@ import java.util.concurrent.TimeUnit
 
 class VerifyNumber : AppCompatActivity() {
 
-    lateinit var verificationID: String
+    var verificationID: String? = null
     lateinit var binding: ActivityVerifyNumberBinding
     lateinit var mAuth: FirebaseAuth
     lateinit var progressBar: ProgressBar
@@ -53,8 +53,10 @@ class VerifyNumber : AppCompatActivity() {
     }
 
     fun verifyCode(code: String) {
-        val credential = PhoneAuthProvider.getCredential(verificationID, code)
-        signInWithCredential(credential)
+        val credential = verificationID?.let { PhoneAuthProvider.getCredential(it, code) }
+        if (credential != null) {
+            signInWithCredential(credential)
+        }
     }
 
     private fun signInWithCredential(credential: PhoneAuthCredential) {
@@ -100,6 +102,8 @@ class VerifyNumber : AppCompatActivity() {
         }
 
         override fun onVerificationFailed(e: FirebaseException) {
+            binding.progressBar.visibility = View.INVISIBLE
+            finish()
             Toast.makeText(this@VerifyNumber, e.message, Toast.LENGTH_LONG).show()
         }
 
