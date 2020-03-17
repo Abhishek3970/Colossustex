@@ -795,7 +795,7 @@ public class yarn_requirements extends AppCompatActivity{
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    Toast.makeText(yarn_requirements.this, "minimum 10 requirements!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(yarn_requirements.this, "order recorded successfully", Toast.LENGTH_SHORT).show();
             }
         });
         add_more.setOnClickListener(new View.OnClickListener() {
