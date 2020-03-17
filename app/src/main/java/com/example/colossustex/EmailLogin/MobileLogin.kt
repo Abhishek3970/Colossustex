@@ -17,7 +17,7 @@ class MobileLogin : AppCompatActivity() {
 //        setContentView(R.layout.activity_mobile_login)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_mobile_login)
         binding.spinnerCountry.adapter =
-            ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, countryNames)
+            ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, countryNames)
         binding.buttonSubmit.setOnClickListener{
             val code = countryCode[ binding.spinnerCountry.selectedItemPosition ]
             val number = binding.editTextMobile.text.toString().trim()

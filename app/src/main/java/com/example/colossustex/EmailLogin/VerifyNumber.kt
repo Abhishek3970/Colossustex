@@ -56,6 +56,9 @@ class VerifyNumber : AppCompatActivity() {
         val credential = verificationID?.let { PhoneAuthProvider.getCredential(it, code) }
         if (credential != null) {
             signInWithCredential(credential)
+        } else {
+            Toast.makeText(this@VerifyNumber, "Invalid Code" , Toast.LENGTH_LONG).show()
+
         }
     }
 
