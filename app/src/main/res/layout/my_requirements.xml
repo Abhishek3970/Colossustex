@@ -68,6 +68,14 @@
         android:background="#00585050"
         android:orientation="vertical">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Requirement 1"
+            android:id="@+id/requirement"
+            android:textSize="20dp"
+            />
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -80,13 +88,13 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
                     app:cardCornerRadius="12dp">
 
                     <LinearLayout
                         android:id="@+id/Fibre"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
+                        android:layout_margin="20dp"
                         android:orientation="horizontal">
 
                         <TextView
@@ -102,7 +110,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="5"
                             android:text="--Select--"
-                            android:textSize="30sp" />
+                            android:textSize="24sp" />
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -118,13 +126,13 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
                     app:cardCornerRadius="12dp">
 
                     <LinearLayout
                         android:id="@+id/Purpose"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
+                        android:layout_margin="20dp"
                         android:orientation="horizontal">
 
                         <TextView
@@ -140,7 +148,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="5"
                             android:text="--Select--"
-                            android:textSize="30sp" />
+                            android:textSize="24sp" />
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -151,33 +159,62 @@
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
-
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
                     app:cardCornerRadius="12dp">
 
                     <LinearLayout
                         android:id="@+id/Count"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
+                        android:layout_margin="12dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="  Count" />
+
+                        <EditText
+                            android:id="@+id/c"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:textSize="24sp"
+                            android:inputType="number"
+                            />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="12dp">
+
+                    <LinearLayout
+                        android:id="@+id/SingDub"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_margin="20dp"
                         android:orientation="horizontal">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="5"
-                            android:text="Count"
+                            android:text="Type of Text"
                             android:textSize="12sp" />
 
                         <TextView
-                            android:id="@+id/c"
+                            android:id="@+id/singdub"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="5"
                             android:text="--Select--"
-                            android:textSize="30sp" />
+                            android:textSize="24sp" />
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -189,16 +226,17 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
+
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
                     app:cardCornerRadius="12dp">
 
                     <LinearLayout
                         android:id="@+id/Quality_Range_texturised"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
+                        android:layout_margin="20dp"
                         android:orientation="horizontal">
 
                         <TextView
@@ -214,7 +252,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="5"
                             android:text="--Select--"
-                            android:textSize="30sp" />
+                            android:textSize="24sp" />
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -229,13 +267,13 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
                     app:cardCornerRadius="12dp">
 
                     <LinearLayout
                         android:id="@+id/Quality_Range_fancy"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
+                        android:layout_margin="20dp"
                         android:orientation="horizontal">
 
                         <TextView
@@ -251,7 +289,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="5"
                             android:text="--Select--"
-                            android:textSize="30sp" />
+                            android:textSize="24sp" />
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -267,14 +305,13 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
-                    android:visibility="gone"
                     app:cardCornerRadius="12dp">
 
                     <LinearLayout
                         android:id="@+id/Product_Range_texturised"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
+                        android:layout_margin="20dp"
                         android:orientation="horizontal">
 
                         <TextView
@@ -290,7 +327,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="5"
                             android:text="--Select--"
-                            android:textSize="30sp" />
+                            android:textSize="24sp" />
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -305,13 +342,13 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
                     app:cardCornerRadius="12dp">
 
                     <LinearLayout
                         android:id="@+id/Product_Range_fancy"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
+                        android:layout_margin="20dp"
                         android:orientation="horizontal">
 
                         <TextView
@@ -327,7 +364,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="5"
                             android:text="--Select--"
-                            android:textSize="30sp" />
+                            android:textSize="24sp" />
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -343,13 +380,13 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
                     app:cardCornerRadius="12dp">
 
                     <LinearLayout
                         android:id="@+id/Quality"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
+                        android:layout_margin="20dp"
                         android:orientation="horizontal">
 
                         <TextView
@@ -365,7 +402,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="5"
                             android:text="--Select--"
-                            android:textSize="30sp" />
+                            android:textSize="24sp" />
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -380,13 +417,13 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
                     app:cardCornerRadius="12dp">
 
                     <LinearLayout
                         android:id="@+id/Variety"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
+                        android:layout_margin="20dp"
                         android:orientation="horizontal">
 
                         <TextView
@@ -402,7 +439,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="5"
                             android:text="--Select--"
-                            android:textSize="30sp" />
+                            android:textSize="24sp" />
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -417,13 +454,13 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
                     app:cardCornerRadius="12dp">
 
                     <LinearLayout
                         android:id="@+id/Type"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
+                        android:layout_margin="20dp"
                         android:orientation="horizontal">
 
                         <TextView
@@ -439,7 +476,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="5"
                             android:text="--Select--"
-                            android:textSize="30sp" />
+                            android:textSize="24sp" />
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -454,13 +491,13 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
                     app:cardCornerRadius="12dp">
 
                     <LinearLayout
                         android:id="@+id/Nature"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
+                        android:layout_margin="20dp"
                         android:orientation="horizontal">
 
                         <TextView
@@ -475,7 +512,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="5"
                             android:text="--Select--"
-                            android:textSize="30sp" />
+                            android:textSize="24sp" />
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -489,14 +526,14 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_margin="12dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/Grade"
                     app:cardCornerRadius="12dp">
 
                     <LinearLayout
-                        android:id="@+id/Grade"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:layout_margin="20dp"
                         android:orientation="horizontal">
 
                         <TextView
@@ -511,43 +548,73 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="5"
                             android:text="--Select--"
-                            android:textSize="30sp" />
+                            android:textSize="24sp" />
 
                         <ImageView
                             android:layout_width="wrap_content"
-                            android:layout_height="60dp"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             app:srcCompat="@drawable/ic_keyboard_arrow_down_color_primary"
                             tools:ignore="VectorDrawableCompat" />
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
-
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
                     app:cardCornerRadius="12dp">
 
                     <LinearLayout
                         android:id="@+id/denier"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
+                        android:layout_margin="12dp"
                         android:orientation="horizontal">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="5"
-                            android:text="Denier/Filament" />
+                            android:text="No.of Bags" />
 
-                        <TextView
+                        <EditText
                             android:id="@+id/df"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="5"
+                            android:hint="e.g. : 200/300"
+                            android:textSize="24sp" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="12dp">
+
+                    <LinearLayout
+                        android:id="@+id/sendmill"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:text="Send Requirement To"
+                            />
+
+                        <TextView
+                            android:id="@+id/send_mill"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
                             android:text="--Select--"
-                            android:textSize="30sp" />
+                            android:textSize="24sp" />
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -560,16 +627,17 @@
                 </androidx.cardview.widget.CardView>
 
 
+
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
                     app:cardCornerRadius="12dp">
 
                     <LinearLayout
                         android:id="@+id/sendto"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
+                        android:layout_margin="12dp"
                         android:orientation="horizontal">
 
                         <TextView
@@ -584,7 +652,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="5"
                             android:text="--Select--"
-                            android:textSize="30sp" />
+                            android:textSize="24sp" />
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -599,13 +667,13 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
                     app:cardCornerRadius="12dp">
 
                     <LinearLayout
                         android:id="@+id/noofbags"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
+                        android:layout_margin="12dp"
                         android:orientation="horizontal">
 
                         <TextView
@@ -620,7 +688,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="5"
                             android:hint="--Select--"
-                            android:textSize="30sp" />
+                            android:textSize="24sp" />
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -629,13 +697,13 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
                     app:cardCornerRadius="12dp">
 
                     <LinearLayout
                         android:id="@+id/desc"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
+                        android:layout_margin="12dp"
                         android:orientation="horizontal">
 
                         <TextView
@@ -650,7 +718,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="5"
                             android:hint="--Type--"
-                            android:textSize="30sp" />
+                            android:textSize="24sp" />
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>

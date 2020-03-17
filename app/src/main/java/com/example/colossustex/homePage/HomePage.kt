@@ -3,22 +3,30 @@ package com.example.colossustex.homePage
 
 import android.app.Dialog
 import android.content.Intent
-import android.graphics.Color
 import android.net.Uri
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
+import android.view.KeyEvent
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.Button
+import android.widget.Switch
+import android.widget.TextView
+import android.widget.Toast
 import android.view.*
 import android.widget.*
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.firebase.ui.database.FirebaseRecyclerOptions
+import com.example.colossustex.EmailLogin.MainLogin
+import com.example.colossustex.EmailLogin.googleSignInClient
 import com.example.colossustex.R
+import com.firebase.ui.database.FirebaseRecyclerOptions
+import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.material.textfield.TextInputLayout
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-import org.w3c.dom.Text
-
 
 class HomePage : Fragment() {
 
@@ -27,7 +35,6 @@ class HomePage : Fragment() {
     private lateinit var mDialog1: Dialog
     private lateinit var mDialog2: Dialog
     private lateinit var mDb: DatabaseReference
-
     private lateinit var viewModel: HomePageViewModel
 
 
@@ -50,15 +57,21 @@ class HomePage : Fragment() {
         val options = FirebaseRecyclerOptions.Builder<Item>()
             .setQuery(FirebaseDatabase.getInstance().reference.child("Item"), Item::class.java)
             .build()
-        val item1=Item("Spinning Mills of India","Mill's rate in USD,contact details andd product range")
-        val item2= Item("Import Yarn from India","Mill's rate in USD, contact details and product range")
-        val item3=Item("But-Sell Textile Products","Fabrics,garments,stock-lots, waste")
-        val item4=Item("Yarn Offers","Special offers directly from spinning mills")
-        val item5=Item("Buy Yarn Online","Colossustex will coordinate your purchars")
-        val item6=Item("Post Yarn Requirement","Mills and agents will contact you directly")
-        val item7=Item("Latest Textile News","News that affents your textile business")
-        val item8=Item("Live Cotton, Crude, Currencies","ICE, MCX, NCDEX futures, crude and currencies")
-        val mainlist= mutableListOf<Item>(item1,item2,item3,item4,item5,item6,item7,item8)
+        val item0 =
+            Item("Global Spinning Mills", "Mill's rate in USD,contact details and product range")
+        val item1 =
+            Item("Spinning Mills of India", "Mill's rate in INR,contact details and product range")
+        val item2 =
+            Item("Import Yarn from India", "Mill's rate in USD, contact details and product range")
+        val item3 = Item("But-Sell Textile Products", "Fabrics,garments,stock-lots, waste")
+        val item4 = Item("Yarn Offers", "Special offers directly from spinning mills")
+        val item5 = Item("Buy Yarn Online", "Colossustex will coordinate your purchase")
+        val item6 = Item("Post Yarn Requirement", "Mills and agents will contact you directly")
+        val item7 = Item("Latest Textile News", "News that affects your textile business")
+        val item8 =
+            Item("Live Cotton, Crude, Currencies", "ICE, MCX, NCDEX futures, crude and currencies")
+        val mainlist =
+            mutableListOf<Item>(item0, item1, item2, item3, item4, item5, item6, item7, item8)
         adapter = ItemAdapter(mainlist)
         recyclerView.adapter = adapter
         val toolbar = lay.findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
@@ -77,6 +90,17 @@ class HomePage : Fragment() {
                     Toast.LENGTH_SHORT
                 ).show()
                 R.id.share_app -> Toast.makeText(context, "Share App", Toast.LENGTH_SHORT).show()
+                R.id.logout_menu -> {
+                    val auth = FirebaseAuth.getInstance()
+                    auth.signOut()
+                    if (GoogleSignIn.getLastSignedInAccount(context) != null) {
+                        googleSignInClient.signOut()
+                    }
+                    val intent = Intent(context, MainLogin::class.java).apply {
+                        flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                    }
+                    startActivity(intent)
+                }
             }
             true
         }        //menu items on click listeners
@@ -147,7 +171,7 @@ class HomePage : Fragment() {
         var count = 0
 
         val editTextCountry = mDialog1.findViewById<TextInputLayout>(R.id.editText_country)
-        val editTextMobile = mDialog1.findViewById<TextInputLayout>(R.id.editText_mobile)
+        val editTextMobile = mDialog1.findViewById<TextInputLayout>(R.id.editTextMobile)
         val editTextName = mDialog1.findViewById<TextInputLayout>(R.id.editText_name)
         val editTextEmail = mDialog1.findViewById<TextInputLayout>(R.id.editText_Email)
         val editTextCity = mDialog1.findViewById<TextInputLayout>(R.id.editText_city)
@@ -284,6 +308,7 @@ class HomePage : Fragment() {
                     } else {
                         count1 = 0
                     }
+
                 }
 
                 mDialog2.show()
@@ -345,10 +370,10 @@ class HomePage : Fragment() {
                         .show()
                 } else {
                     Toast.makeText(
-                        context,
-                        "New password do not match with confirm password!! Please try again",
-                        Toast.LENGTH_LONG
-                    )
+                            context,
+                            "New password do not match with confirm password!! Please try again",
+                            Toast.LENGTH_LONG
+                        )
                         .show()
                 }
 
@@ -389,11 +414,11 @@ class HomePage : Fragment() {
         }
         email.setOnClickListener {
             val intent = Intent(Intent.ACTION_SEND)
-            intent.putExtra(Intent.EXTRA_EMAIL,"support@coloussustex.com")
-            intent.putExtra(Intent.EXTRA_SUBJECT,"")
-            intent.putExtra(Intent.EXTRA_TEXT,"")
+            intent.putExtra(Intent.EXTRA_EMAIL, "support@coloussustex.com")
+            intent.putExtra(Intent.EXTRA_SUBJECT, "")
+            intent.putExtra(Intent.EXTRA_TEXT, "")
             intent.type = "message/rfc822"
-            startActivity(Intent.createChooser(intent,"Chose Email Clint:"))
+            startActivity(Intent.createChooser(intent, "Chose Email Clint:"))
         }
         mDialog1.show()
     }                //code for support option in main menu
@@ -413,11 +438,11 @@ class HomePage : Fragment() {
         }
         email.setOnClickListener {
             val intent = Intent(Intent.ACTION_SEND)
-            intent.putExtra(Intent.EXTRA_EMAIL,"support@coloussustex.com")
-            intent.putExtra(Intent.EXTRA_SUBJECT,"")
-            intent.putExtra(Intent.EXTRA_TEXT,"")
+            intent.putExtra(Intent.EXTRA_EMAIL, "support@coloussustex.com")
+            intent.putExtra(Intent.EXTRA_SUBJECT, "")
+            intent.putExtra(Intent.EXTRA_TEXT, "")
             intent.type = "message/rfc822"
-            startActivity(Intent.createChooser(intent,"Chose Email Clint:"))
+            startActivity(Intent.createChooser(intent, "Chose Email Clint:"))
         }
         mDialog1.show()
     }      //code for advertise with us option in main menu

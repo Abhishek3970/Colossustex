@@ -8,7 +8,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
         android:layout_width="match_parent"
-        android:layout_height="609dp"
+        android:layout_height="677dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
@@ -20,7 +20,7 @@
         android:layout_marginTop="54dp"
         android:layout_marginEnd="0dp"
         android:layout_marginRight="0dp"
-        android:layout_marginBottom="68dp" />
+        android:layout_marginBottom="0dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -84,27 +84,6 @@
 
 
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="-327dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginRight="0dp"
-        android:layout_marginBottom="0dp"
-        android:background="#7C7575"
-        android:foregroundGravity="center"
-        android:gravity="center"
-        android:text="🔃 Refresh"
-        android:textSize="18sp" />
 
 
 </RelativeLayout>

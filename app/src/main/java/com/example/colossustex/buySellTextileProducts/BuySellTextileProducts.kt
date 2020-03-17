@@ -287,16 +287,13 @@ class BuySellTextileProducts : Fragment() {
         toolbar.setOnMenuItemClickListener {
             when (it.itemId) {
                 R.id.home_page -> {
-                    toolbar.findNavController()
-                        .navigate(BuySellTextileProductsDirections.actionBuySellTextileProductsToHomePage())
+                    toolbar.findNavController().navigateUp()
                 }
             }
             true
         }
         toolbar.setNavigationOnClickListener {
-            toolbar.findNavController()
-                .navigate(BuySellTextileProductsDirections.actionBuySellTextileProductsToHomePage())
-
+            toolbar.findNavController().navigateUp()
         }
 
 

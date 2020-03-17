@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Cotton"
-            android:textSize="30sp"
+            android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.378"
@@ -31,8 +31,8 @@
         <View
             android:id="@+id/divider"
             android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="?android:attr/listDivider" />
+            android:layout_height="1dp"
+            android:background="#858080" />
 
         <TextView
             android:id="@+id/dialog_synthetic"
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="synthetic"
-            android:textSize="30sp"
+            android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.378"
@@ -51,8 +51,8 @@
         <View
             android:id="@+id/divider2"
             android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="?android:attr/listDivider" />
+            android:layout_height="1dp"
+            android:background="#858080" />
 
         <TextView
             android:id="@+id/dialog_viscose"
@@ -60,13 +60,13 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Viscose"
-            android:textSize="30sp" />
+            android:textSize="24sp" />
 
         <View
-            android:id="@+id/divider3"
+            android:id="@+id/divider45"
             android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="?android:attr/listDivider" />
+            android:layout_height="1dp"
+            android:background="#858080" />
 
         <TextView
             android:id="@+id/dialog_texturised"
@@ -74,13 +74,13 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Texturised"
-            android:textSize="30sp" />
+            android:textSize="24sp" />
 
         <View
             android:id="@+id/divider4"
             android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="?android:attr/listDivider" />
+            android:layout_height="1dp"
+            android:background="#858080" />
 
         <TextView
             android:id="@+id/dialog_fancy"
@@ -88,6 +88,6 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Fancy"
-            android:textSize="30sp" />
+            android:textSize="24sp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
