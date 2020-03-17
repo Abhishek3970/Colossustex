@@ -20,7 +20,6 @@
     <style name="viscosetext">
         <item name="android:padding">10dp</item>
     </style>
-
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -62,6 +61,8 @@
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@android:color/black</item>
     </style>
-
+<style name="loginstatusbar" parent="AppTheme">
+    <item name="colorPrimaryDark">#63584E</item>
+</style>
 
 </resources>
