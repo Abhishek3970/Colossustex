@@ -11,18 +11,21 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/login_bg"
-        tools:context=".EmailLogin.VerifyNumber">
+        tools:context=".EmailLogin.MobileLogin">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
 
-            android:padding="16dp"
+            android:paddingStart="4dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="4dp"
+            android:paddingBottom="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.2">
+            app:layout_constraintVertical_bias="0.19999999">
 
             <ImageView
                 android:id="@+id/imageView9"
@@ -40,53 +43,57 @@
                 android:id="@+id/textView29"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:text="Enter OTP:"
+                android:layout_marginTop="75dp"
+                android:text="Enter Region and Mobile Number:"
                 android:textColor="@android:color/white"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="@+id/imageView9"
                 app:layout_constraintStart_toStartOf="@+id/imageView9"
                 app:layout_constraintTop_toBottomOf="@+id/imageView9" />
 
+            <Spinner
+                android:id="@+id/spinnerCountry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:backgroundTint="@android:color/white"
+                android:popupBackground="@android:color/white"
+                app:layout_constraintEnd_toEndOf="@+id/textView29"
+                app:layout_constraintStart_toStartOf="@+id/textView29"
+                app:layout_constraintTop_toBottomOf="@+id/textView29" />
 
             <EditText
-                android:id="@+id/editOTP"
-                android:layout_width="200dp"
+                android:id="@+id/editTextMobile"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
                 android:backgroundTint="@android:color/white"
-                android:hint="Enter Code"
+                android:hint="Enter Mobile Number"
                 android:inputType="phone"
+                android:textAlignment="center"
                 android:textColor="@android:color/white"
                 android:textColorHint="@android:color/white"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView29" />
+                app:layout_constraintTop_toBottomOf="@+id/spinnerCountry" />
 
             <Button
                 android:id="@+id/buttonSubmit"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginStart="60dp"
+                android:layout_marginEnd="60dp"
                 android:background="@drawable/login_but"
                 android:backgroundTint="@android:color/white"
-                android:text="Submit"
+                android:text="Verify"
                 android:textColor="#5128A7"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.512"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/progressBar" />
-
-            <ProgressBar
-                android:id="@+id/progressBar"
-                style="?android:attr/progressBarStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editOTP" />
+                app:layout_constraintTop_toBottomOf="@+id/editTextMobile" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

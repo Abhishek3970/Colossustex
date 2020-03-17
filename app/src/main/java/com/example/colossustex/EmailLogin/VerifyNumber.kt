@@ -3,6 +3,8 @@ package com.example.colossustex.EmailLogin
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -20,10 +22,11 @@ import java.util.concurrent.TimeUnit
 
 class VerifyNumber : AppCompatActivity() {
 
-    lateinit var verificationID: String
+    var verificationID: String? = null
     lateinit var binding: ActivityVerifyNumberBinding
     lateinit var mAuth: FirebaseAuth
     lateinit var progressBar: ProgressBar
+    lateinit var editText: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +34,7 @@ class VerifyNumber : AppCompatActivity() {
 
         mAuth = FirebaseAuth.getInstance()
         progressBar = binding.progressBar
+        editText = binding.editOTP
 
         val phoneNo = intent.getStringExtra("number")
         sendVerificationCode(phoneNo)
@@ -49,8 +53,13 @@ class VerifyNumber : AppCompatActivity() {
     }
 
     fun verifyCode(code: String) {
-        val credential = PhoneAuthProvider.getCredential(verificationID, code)
-        signInWithCredential(credential)
+        val credential = verificationID?.let { PhoneAuthProvider.getCredential(it, code) }
+        if (credential != null) {
+            signInWithCredential(credential)
+        } else {
+            Toast.makeText(this@VerifyNumber, "Invalid Code" , Toast.LENGTH_LONG).show()
+
+        }
     }
 
     private fun signInWithCredential(credential: PhoneAuthCredential) {
@@ -71,7 +80,6 @@ class VerifyNumber : AppCompatActivity() {
     }
 
     private fun sendVerificationCode(number: String) {
-
         PhoneAuthProvider.getInstance().verifyPhoneNumber(
             number,
             60,
@@ -97,6 +105,8 @@ class VerifyNumber : AppCompatActivity() {
         }
 
         override fun onVerificationFailed(e: FirebaseException) {
+            binding.progressBar.visibility = View.INVISIBLE
+            finish()
             Toast.makeText(this@VerifyNumber, e.message, Toast.LENGTH_LONG).show()
         }
 
