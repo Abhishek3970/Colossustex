@@ -57,16 +57,11 @@
             android:text="Facebook"
             android:textColor="#FFF" />
 
-        <TextView
-            android:background="@drawable/login_google"
-            android:id="@+id/google"
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/google_signin_btn"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:padding="15dp"
-            android:text="Google"
-            android:textColor="#FFF" />
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
     </LinearLayout>
 
     <EditText
