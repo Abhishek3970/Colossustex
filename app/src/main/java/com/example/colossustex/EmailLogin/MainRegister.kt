@@ -12,6 +12,7 @@ import com.example.colossustex.R
 import com.example.colossustex.databinding.ActivityMainRegisterBinding
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.texturised_fragment1.*
 
 class MainRegister : AppCompatActivity() {
@@ -33,6 +34,9 @@ class MainRegister : AppCompatActivity() {
     }
 
     private fun signup() {
+        val name=binding.nameEt.text.toString()
+        val email=binding.emailEt.text.toString()
+        val pass=binding.passEt.text.toString()
         if(binding.nameEt.text.toString()==""){
             binding.nameEt.error="Enter Name"
             binding.nameEt.requestFocus()
@@ -62,7 +66,11 @@ class MainRegister : AppCompatActivity() {
                         ?.addOnCompleteListener { task ->
                             if (task.isSuccessful) {
                                 binding.progresslayout.visibility=View.GONE
-                                Snackbar.make(binding.registerLayout,"Email Sent",Snackbar.LENGTH_SHORT).show()
+                                val mref= FirebaseDatabase.getInstance().getReference("User").child(
+                                    user.uid
+                                )
+                                val useref=UserRegister(user.uid,user.email.toString(),name,pass)
+                                mref.setValue(useref)
                                 startActivity(Intent(this,MainLogin::class.java))
                                 finish()
                             }else{
