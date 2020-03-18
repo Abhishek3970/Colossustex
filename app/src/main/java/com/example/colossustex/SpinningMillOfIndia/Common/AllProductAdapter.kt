@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.colossustex.R
 import com.example.colossustex.SpinningMillOfIndia.Viscose.ViewedHistoryData
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
@@ -33,8 +34,9 @@ class AllProductAdapter(val context: Context, val list: MutableList<AllproductsD
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
+        val user=FirebaseAuth.getInstance().currentUser
         firebaseDatabase = FirebaseDatabase.getInstance()
-        mref = firebaseDatabase.getReference("ViscoseHistory").child("ViewedHistory")
+        mref = firebaseDatabase.getReference("User").child(user?.uid.toString()).child("Viewed History")
         val view = LayoutInflater.from(context).inflate(R.layout.allproducts_item, parent, false)
         return MyViewHolder(view)
     }
