@@ -40,9 +40,10 @@ class ItemAdapter(var list: MutableList<Item>) :
         holder.constraintLayout.setOnClickListener {
             when (position) {
                 0 -> holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToSpinningMillOfIndia())
-                1 -> holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToImportYarn())
-                2-> holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToBuySellTextileProducts())
-                4 -> it.context.startActivity(Intent(it.context, yarn_offers::class.java))
+                1 -> holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToSpinningMillOfIndia())
+                2 -> holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToImportYarn())
+                3-> holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToBuySellTextileProducts())
+                4-> it.context.startActivity(Intent(it.context, yarn_offers::class.java))
                 5-> {
                     var dialog = Dialog(it.context)
                     dialog.setContentView(R.layout.buy_yarn_offers_dialog1)
