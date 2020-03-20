@@ -45,6 +45,9 @@ class MainLogin : AppCompatActivity() {
         signinbt.setOnClickListener {
             signin()
         }
+        binding.forgotPass.setOnClickListener {
+            startActivity(Intent(this,ForgotPassword::class.java))
+        }
     }
 
     private fun dologin() {
@@ -72,6 +75,7 @@ class MainLogin : AppCompatActivity() {
                     val user = auth.currentUser
                     updateUI(user)
                 } else {
+                    Toast.makeText(this,"Failed...Please sign up",Toast.LENGTH_SHORT).show()
                     updateUI(null)
                 }
             }

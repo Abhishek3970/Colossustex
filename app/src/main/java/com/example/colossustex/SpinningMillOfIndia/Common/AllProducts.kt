@@ -1,8 +1,6 @@
 package com.example.colossustex.SpinningMillOfIndia.Common
 
-import android.content.Context
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import android.widget.*
@@ -25,7 +23,6 @@ import com.google.firebase.database.ValueEventListener
 class AllProducts : AppCompatActivity() {
     lateinit var newlist: MutableList<AllproductsData>
     lateinit var list2: MutableList<ViewedHistoryData>
-    lateinit var firebaseDatabase: FirebaseDatabase
     lateinit var binding: FragmentAllProductsBinding
     lateinit var selectedlist: MutableList<AllproductsData>
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,32 +41,33 @@ class AllProducts : AppCompatActivity() {
         if (f != null && s != null && t != null && c != null) {
             selectedlist = mutableListOf()
             for (i in allpro_list) {
-                if (i.text2.toLowerCase().trim().contains(f.toLowerCase().trim()) || i.text2.toLowerCase().trim().contains(
+                if (i.text2.toLowerCase().trim()
+                        .contains(f.toLowerCase().trim()) || i.text2.toLowerCase().trim().contains(
                         s.toLowerCase().trim()
                     )
                 ) {
                     selectedlist.add(i)
                 }
             }
-            binding.resultsAllpro.visibility=View.VISIBLE
-            binding.constraint.visibility=View.GONE
+            binding.resultsAllpro.visibility = View.VISIBLE
+            binding.constraint.visibility = View.GONE
             binding.progressbarAllproducts.visibility = View.GONE
             if (selectedlist.isNotEmpty()) {
-                binding.allProductsRecycler.visibility=View.VISIBLE
-                binding.noresConstaint.visibility=View.GONE
+                binding.allProductsRecycler.visibility = View.VISIBLE
+                binding.noresConstaint.visibility = View.GONE
                 binding.first.text = c
                 binding.second.text = f
-                binding.third.text=s
-                binding.fourth.text=t
+                binding.third.text = s
+                binding.fourth.text = t
                 binding.allProductsRecycler.adapter = AllProductAdapter(this, selectedlist)
             } else {
                 binding.first.text = c
                 binding.second.text = f
-                binding.third.text=s
-                binding.fourth.text=t
-                binding.filterAllproducts.visibility=View.GONE
-                binding.allProductsRecycler.visibility=View.GONE
-                binding.noresConstaint.visibility=View.VISIBLE
+                binding.third.text = s
+                binding.fourth.text = t
+                binding.filterAllproducts.visibility = View.GONE
+                binding.allProductsRecycler.visibility = View.GONE
+                binding.noresConstaint.visibility = View.VISIBLE
 
             }
         } else {
@@ -94,10 +92,10 @@ class AllProducts : AppCompatActivity() {
             })
         }
         if (head != null && type != null && loc != null) {
-            binding.allProductsRecycler.visibility=View.VISIBLE
-            binding.noresConstaint.visibility=View.GONE
-            binding.resultsAllpro.visibility=View.GONE
-            binding.constraint.visibility=View.VISIBLE
+            binding.allProductsRecycler.visibility = View.VISIBLE
+            binding.noresConstaint.visibility = View.GONE
+            binding.resultsAllpro.visibility = View.GONE
+            binding.constraint.visibility = View.VISIBLE
             binding.mainhead.text = head
             binding.type.text = type
             binding.location.text = loc

@@ -57,6 +57,13 @@ class MainRegister : AppCompatActivity() {
             binding.emailEt.requestFocus()
             return
         }
+        if(!binding.passEt.text.equals(binding.confPassEt.text)){
+            binding.passEt.setText("")
+            binding.confPassEt.setText("")
+            binding.passEt.error="Password doesn't match"
+            binding.passEt.requestFocus()
+            return
+        }
         binding.progresslayout.visibility=View.VISIBLE
         auth.createUserWithEmailAndPassword(binding.emailEt.text.toString(), binding.passEt.text.toString())
             .addOnCompleteListener(this) { task ->
