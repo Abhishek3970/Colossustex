@@ -1,7 +1,6 @@
 package com.example.colossustex.homePage
 
 
-import android.app.Activity
 import android.app.Dialog
 import android.content.Intent
 import android.net.Uri
@@ -22,16 +21,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.colossustex.EmailLogin.MainLogin
 import com.example.colossustex.EmailLogin.googleSignInClient
-import com.example.colossustex.MainActivity
 import com.example.colossustex.R
 import com.firebase.ui.database.FirebaseRecyclerOptions
 import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-import kotlinx.android.synthetic.main.fragment_fancy1.*
-
 
 class HomePage : Fragment() {
 
@@ -40,7 +35,6 @@ class HomePage : Fragment() {
     private lateinit var mDialog1: Dialog
     private lateinit var mDialog2: Dialog
     private lateinit var mDb: DatabaseReference
-
     private lateinit var viewModel: HomePageViewModel
 
 
@@ -69,7 +63,7 @@ class HomePage : Fragment() {
             Item("Spinning Mills of India", "Mill's rate in INR,contact details and product range")
         val item2 =
             Item("Import Yarn from India", "Mill's rate in USD, contact details and product range")
-        val item3 = Item("But-Sell Textile Products", "Fabrics,garments,stock-lots, waste")
+        val item3 = Item("Buy-Sell Textile Products", "Fabrics,garments,stock-lots, waste")
         val item4 = Item("Yarn Offers", "Special offers directly from spinning mills")
         val item5 = Item("Buy Yarn Online", "Colossustex will coordinate your purchase")
         val item6 = Item("Post Yarn Requirement", "Mills and agents will contact you directly")
@@ -99,7 +93,7 @@ class HomePage : Fragment() {
                 R.id.logout_menu -> {
                     val auth = FirebaseAuth.getInstance()
                     auth.signOut()
-                    if(GoogleSignIn.getLastSignedInAccount(context)!=null) {
+                    if (GoogleSignIn.getLastSignedInAccount(context) != null) {
                         googleSignInClient.signOut()
                     }
                     val intent = Intent(context, MainLogin::class.java).apply {
@@ -314,6 +308,7 @@ class HomePage : Fragment() {
                     } else {
                         count1 = 0
                     }
+
                 }
 
                 mDialog2.show()
@@ -423,7 +418,7 @@ class HomePage : Fragment() {
             intent.putExtra(Intent.EXTRA_SUBJECT, "")
             intent.putExtra(Intent.EXTRA_TEXT, "")
             intent.type = "message/rfc822"
-            startActivity(Intent.createChooser(intent, "Chose Email Clint:"))
+            startActivity(Intent.createChooser(intent, "Choose Email Client:"))
         }
         mDialog1.show()
     }                //code for support option in main menu
@@ -447,7 +442,7 @@ class HomePage : Fragment() {
             intent.putExtra(Intent.EXTRA_SUBJECT, "")
             intent.putExtra(Intent.EXTRA_TEXT, "")
             intent.type = "message/rfc822"
-            startActivity(Intent.createChooser(intent, "Chose Email Clint:"))
+            startActivity(Intent.createChooser(intent, "Choose Email Client:"))
         }
         mDialog1.show()
     }      //code for advertise with us option in main menu

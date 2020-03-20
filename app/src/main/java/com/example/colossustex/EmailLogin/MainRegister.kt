@@ -71,6 +71,11 @@ class MainRegister : AppCompatActivity() {
                                 )
                                 val useref=UserRegister(user.uid,user.email.toString(),name,pass)
                                 mref.setValue(useref)
+
+                                val sharedPreferences = getSharedPreferences("SHARED_PREFERRENCE", MODE_PRIVATE)
+                                val editor = sharedPreferences.edit()
+                                editor.putInt("state" , 0)
+
                                 startActivity(Intent(this,MainLogin::class.java))
                                 finish()
                             }else{

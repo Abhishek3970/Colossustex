@@ -69,7 +69,31 @@ class MillsListFragment : Fragment() {
         val checkbox2 = dialog.findViewById<CheckBox>(R.id.checkBox2)!!
         val checkbox3 = dialog.findViewById<CheckBox>(R.id.checkBox3)!!
         val checkbox4 = dialog.findViewById<CheckBox>(R.id.checkBox4)!!
-        val checkbox5 = dialog.findViewById<CheckBox>(R.id.checkBox5)!!
+        val checkbox5=  dialog.findViewById<CheckBox>(R.id.checkBox5)!!
+        val checkbox6 = dialog.findViewById<CheckBox>(R.id.checkBox6)!!
+        val checkbox7 = dialog.findViewById<CheckBox>(R.id.checkBox7)!!
+        val checkbox8 = dialog.findViewById<CheckBox>(R.id.checkBox8)!!
+        val checkbox9 = dialog.findViewById<CheckBox>(R.id.checkBox9)!!
+        val checkbox10 = dialog.findViewById<CheckBox>(R.id.checkBox10)!!
+        val checkbox11 = dialog.findViewById<CheckBox>(R.id.checkBox11)!!
+        val checkbox12 = dialog.findViewById<CheckBox>(R.id.checkBox12)!!
+        val checkbox13 = dialog.findViewById<CheckBox>(R.id.checkBox13)!!
+        val checkbox14 = dialog.findViewById<CheckBox>(R.id.checkBox14)!!
+        val checkbox15 = dialog.findViewById<CheckBox>(R.id.checkBox15)!!
+        val checkbox16 = dialog.findViewById<CheckBox>(R.id.checkBox16)!!
+        val checkbox17 = dialog.findViewById<CheckBox>(R.id.checkBox17)!!
+        val checkbox18 = dialog.findViewById<CheckBox>(R.id.checkBox18)!!
+        val checkbox19 = dialog.findViewById<CheckBox>(R.id.checkBox19)!!
+        val checkbox20 = dialog.findViewById<CheckBox>(R.id.checkBox20)!!
+        val checkbox21 = dialog.findViewById<CheckBox>(R.id.checkBox21)!!
+        val checkbox22 = dialog.findViewById<CheckBox>(R.id.checkBox22)!!
+        val checkbox23 = dialog.findViewById<CheckBox>(R.id.checkBox23)!!
+        val checkbox24 = dialog.findViewById<CheckBox>(R.id.checkBox24)!!
+        val checkbox25 = dialog.findViewById<CheckBox>(R.id.checkBox25)!!
+        val checkbox26 = dialog.findViewById<CheckBox>(R.id.checkBox26)!!
+        val checkbox27 = dialog.findViewById<CheckBox>(R.id.checkBox27)!!
+        val checkbox28 = dialog.findViewById<CheckBox>(R.id.checkBox28)!!
+        val checkbox29 = dialog.findViewById<CheckBox>(R.id.checkBox29)!!
         binding.filter.setOnClickListener {
             dialog.show()
             close.setOnClickListener {
@@ -97,9 +121,104 @@ class MillsListFragment : Fragment() {
                     filterlist.add(checkbox5.text.toString())
 
                 }
-                if (!(checkbox1.isChecked or checkbox2.isChecked or checkbox3.isChecked
-                            or checkbox4.isChecked or checkbox5.isChecked)
-                ) {
+                if (checkbox6.isChecked) {
+                    filterlist.add(checkbox6.text.toString())
+
+                }
+                if (checkbox7.isChecked) {
+                    filterlist.add(checkbox7.text.toString())
+
+                }
+                if (checkbox8.isChecked) {
+                    filterlist.add(checkbox8.text.toString())
+
+                }
+                if (checkbox9.isChecked) {
+                    filterlist.add(checkbox9.text.toString())
+
+                }
+                if (checkbox10.isChecked) {
+                    filterlist.add(checkbox10.text.toString())
+
+                }
+                if (checkbox11.isChecked) {
+                    filterlist.add(checkbox11.text.toString())
+
+                }
+                if (checkbox12.isChecked) {
+                    filterlist.add(checkbox12.text.toString())
+
+                }
+                if (checkbox13.isChecked) {
+                    filterlist.add(checkbox13.text.toString())
+
+                }
+                if (checkbox14.isChecked) {
+                    filterlist.add(checkbox14.text.toString())
+
+                }
+                if (checkbox15.isChecked) {
+                    filterlist.add(checkbox15.text.toString())
+
+                }
+                if (checkbox16.isChecked) {
+                    filterlist.add(checkbox16.text.toString())
+
+                }
+                if (checkbox17.isChecked) {
+                    filterlist.add(checkbox17.text.toString())
+
+                }
+                if (checkbox18.isChecked) {
+                    filterlist.add(checkbox18.text.toString())
+
+                }
+                if (checkbox19.isChecked) {
+                    filterlist.add(checkbox19.text.toString())
+
+                }
+                if (checkbox20.isChecked) {
+                    filterlist.add(checkbox20.text.toString())
+
+                }
+                if (checkbox21.isChecked) {
+                    filterlist.add(checkbox21.text.toString())
+
+                }
+                if (checkbox22.isChecked) {
+                    filterlist.add(checkbox22.text.toString())
+
+                }
+                if (checkbox23.isChecked) {
+                    filterlist.add(checkbox23.text.toString())
+
+                }
+                if (checkbox24.isChecked) {
+                    filterlist.add(checkbox24.text.toString())
+
+                }
+                if (checkbox25.isChecked) {
+                    filterlist.add(checkbox25.text.toString())
+
+                }
+                if (checkbox26.isChecked) {
+                    filterlist.add(checkbox26.text.toString())
+
+                }
+                if (checkbox27.isChecked) {
+                    filterlist.add(checkbox27.text.toString())
+
+                }
+                if (checkbox28.isChecked) {
+                    filterlist.add(checkbox28.text.toString())
+
+                }
+                if (checkbox29.isChecked) {
+                    filterlist.add(checkbox29.text.toString())
+
+                }
+                if (filterlist.size==0)
+                {
                     binding.viscoseRecycler2.adapter =
                         MillsListAdapter(
                             list_all_mill

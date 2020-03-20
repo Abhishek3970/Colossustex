@@ -8,16 +8,25 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.navigation.ViewKt;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.colossustex.MainActivity;
 import com.example.colossustex.R;
 import com.example.colossustex.SG.model.ItemGroup;
+
+import org.w3c.dom.Text;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref;
@@ -25,8 +34,10 @@ import kotlin.jvm.internal.Ref;
 public class yarn_requirements extends AppCompatActivity{
 
     ImageView back;
-    LinearLayout Fibre,Purpose,Count, Quality_Range_Texturised, Quality_Range_Fancy, Product_Range_Texturised, Product_Range_Fancy, Quality,Variety, Type, Nature, Grade, noofbags, description, sendto, denier;
-    TextView Fibre_, Purpose_, Count_ , Quality_Range_texturised, Quality_Range_fancy, Product_Range_texturised, Product_Range_fancy, Quality_, Variety_, Type_, Nature_, Grade_ , sendto_;
+    int i = 1, sum = 0;
+    CardView Grade;
+    LinearLayout Fibre,Purpose,Count, Quality_Range_Texturised, Quality_Range_Fancy, Product_Range_Texturised, Product_Range_Fancy, Quality,Variety, Type, Nature, noofbags, description, sendto, denier, send_reqto, SingDub;
+    TextView Fibre_, Purpose_, Count_ , Quality_Range_texturised,req,  Quality_Range_fancy, Product_Range_texturised, Product_Range_fancy, Quality_, Variety_, Type_, Nature_, Grade_ , sendto_, sendreqto, denier_, singdub;
 
 
     @Override
@@ -47,6 +58,8 @@ public class yarn_requirements extends AppCompatActivity{
         sendto = findViewById(R.id.sendto);
         noofbags = findViewById(R.id.noofbags);
         description = findViewById(R.id.desc);
+        send_reqto = findViewById(R.id.sendmill);
+        SingDub = findViewById(R.id.SingDub);
         denier = findViewById(R.id.denier);
         Quality_Range_Texturised = findViewById(R.id.Quality_Range_texturised);
         Quality_Range_Fancy = findViewById(R.id.Quality_Range_fancy);
@@ -54,11 +67,13 @@ public class yarn_requirements extends AppCompatActivity{
         Product_Range_Texturised = findViewById(R.id.Product_Range_texturised);
         Fibre_ = findViewById(R.id.f);
         Purpose_ = findViewById(R.id.p);
-        Count_ = findViewById(R.id.c);
+        req = findViewById(R.id.requirement);
         Type_ = findViewById(R.id.t);
         Quality_ = findViewById(R.id.q);
         Nature_ = findViewById(R.id.n);
+        singdub = findViewById(R.id.singdub);
         Variety_ = findViewById(R.id.v);
+        sendreqto = findViewById(R.id.send_mill);
         Quality_Range_texturised = findViewById(R.id.qrt);
         Quality_Range_fancy = findViewById(R.id.qrf);
         Product_Range_texturised = findViewById(R.id.rt);
@@ -69,6 +84,7 @@ public class yarn_requirements extends AppCompatActivity{
         Purpose.setVisibility(View.GONE);
         Count.setVisibility(View.GONE);
         Type.setVisibility(View.GONE);
+        SingDub.setVisibility(View.GONE);
         Quality.setVisibility(View.GONE);
         denier.setVisibility(View.GONE);
         Quality_Range_Fancy.setVisibility(View.GONE);
@@ -79,8 +95,10 @@ public class yarn_requirements extends AppCompatActivity{
         sendto.setVisibility(View.GONE);
         Variety.setVisibility(View.GONE);
         Grade.setVisibility(View.GONE);
+        send_reqto.setVisibility(View.GONE);
         Product_Range_Texturised.setVisibility(View.GONE);
         Product_Range_Fancy.setVisibility(View.GONE);
+
 
 
         Fibre.setOnClickListener(new View.OnClickListener() {
@@ -111,14 +129,14 @@ public class yarn_requirements extends AppCompatActivity{
                         Nature.setVisibility(View.VISIBLE);
                         noofbags.setVisibility(View.VISIBLE);
                         description.setVisibility(View.VISIBLE);
+                        SingDub.setVisibility(View.VISIBLE);
                         denier.setVisibility(View.GONE);
                         sendto.setVisibility(View.VISIBLE);
                         Variety.setVisibility(View.GONE);
                         Grade.setVisibility(View.GONE);
                         Product_Range_Texturised.setVisibility(View.GONE);
+                        send_reqto.setVisibility(View.VISIBLE);
                         Product_Range_Fancy.setVisibility(View.GONE);
-
-
                     }
                 }));
                 synthetic.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
@@ -127,6 +145,7 @@ public class yarn_requirements extends AppCompatActivity{
                         Fibre_.setText("synthetic");
                         Purpose.setVisibility(View.GONE);
                         Count.setVisibility(View.VISIBLE);
+                        SingDub.setVisibility(View.VISIBLE);
                         Type.setVisibility(View.VISIBLE);
                         Quality.setVisibility(View.GONE);
                         denier.setVisibility(View.GONE);
@@ -137,6 +156,7 @@ public class yarn_requirements extends AppCompatActivity{
                         description.setVisibility(View.VISIBLE);
                         sendto.setVisibility(View.VISIBLE);
                         Variety.setVisibility(View.VISIBLE);
+                        send_reqto.setVisibility(View.VISIBLE);
                         Grade.setVisibility(View.GONE);
                         Product_Range_Texturised.setVisibility(View.GONE);
                         Product_Range_Fancy.setVisibility(View.GONE);
@@ -148,6 +168,7 @@ public class yarn_requirements extends AppCompatActivity{
                         Fibre_.setText("viscose");
                         Purpose.setVisibility(View.GONE);
                         Count.setVisibility(View.VISIBLE);
+                        SingDub.setVisibility(View.VISIBLE);
                         Type.setVisibility(View.VISIBLE);
                         Quality.setVisibility(View.GONE);
                         Quality_Range_Fancy.setVisibility(View.GONE);
@@ -159,6 +180,7 @@ public class yarn_requirements extends AppCompatActivity{
                         denier.setVisibility(View.GONE);
                         Variety.setVisibility(View.GONE);
                         Grade.setVisibility(View.GONE);
+                        send_reqto.setVisibility(View.VISIBLE);
                         Product_Range_Texturised.setVisibility(View.GONE);
                         Product_Range_Fancy.setVisibility(View.GONE);
 
@@ -170,6 +192,7 @@ public class yarn_requirements extends AppCompatActivity{
                         Fibre_.setText("Texturised");
                         Purpose.setVisibility(View.GONE);
                         Count.setVisibility(View.GONE);
+                        SingDub.setVisibility(View.GONE);
                         Type.setVisibility(View.GONE);
                         Quality.setVisibility(View.GONE);
                         Quality_Range_Fancy.setVisibility(View.GONE);
@@ -181,6 +204,7 @@ public class yarn_requirements extends AppCompatActivity{
                         sendto.setVisibility(View.VISIBLE);
                         Variety.setVisibility(View.GONE);
                         Grade.setVisibility(View.VISIBLE);
+                        send_reqto.setVisibility(View.VISIBLE);
                         Product_Range_Texturised.setVisibility(View.VISIBLE);
                         Product_Range_Fancy.setVisibility(View.GONE);
                     }
@@ -191,6 +215,7 @@ public class yarn_requirements extends AppCompatActivity{
                         Fibre_.setText("fancy");
                         Purpose.setVisibility(View.GONE);
                         Count.setVisibility(View.VISIBLE);
+                        SingDub.setVisibility(View.VISIBLE);
                         Type.setVisibility(View.GONE);
                         Quality.setVisibility(View.GONE);
                         Quality_Range_Fancy.setVisibility(View.VISIBLE);
@@ -201,6 +226,7 @@ public class yarn_requirements extends AppCompatActivity{
                         sendto.setVisibility(View.VISIBLE);
                         Variety.setVisibility(View.GONE);
                         Grade.setVisibility(View.GONE);
+                        send_reqto.setVisibility(View.VISIBLE);
                         Product_Range_Texturised.setVisibility(View.GONE);
                         Product_Range_Fancy.setVisibility(View.VISIBLE);
                     }
@@ -209,70 +235,108 @@ public class yarn_requirements extends AppCompatActivity{
             }
         });
 
-        Count.setOnClickListener(new View.OnClickListener() {
+        send_reqto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 final Ref.ObjectRef dialog = new Ref.ObjectRef();
-
-                Toast.makeText(yarn_requirements.this, "Ready to Connect. Segment will be connected soon.", Toast.LENGTH_SHORT).show();
-
 //                Intrinsics.checkExpressionValueIsNotNull(it, "it");
-//                dialog.element = new Dialog(yarn_requirements.this);
-//                ((Dialog)dialog.element).setContentView(R.layout.sg_purpose_dialog);
-//                TextView Weaving = (TextView)((Dialog)dialog.element).findViewById(R.id.purpose_Weaving_dialog);
-//                TextView Hoisery = (TextView)((Dialog)dialog.element).findViewById(R.id.purpose_Hosiery_dialog);
+                dialog.element = new Dialog(yarn_requirements.this);
+                ((Dialog)dialog.element).setContentView(R.layout.sg_sendto_dialog);
+                TextView First = (TextView)((Dialog)dialog.element).findViewById(R.id.first_sendreqto);
+                TextView Second = (TextView)((Dialog)dialog.element).findViewById(R.id.second_sendreqto);
+                TextView Both = (TextView)((Dialog)dialog.element).findViewById(R.id.third_sendreqto);
 
 
-//                Weaving.setOnClickListener((new View.OnClickListener() {
-//                    public final void onClick(View it) {
-//                        ((Dialog)dialog.element).dismiss();
-//                        Purpose_.setText("Weaving");
-//                    }
-//                }));
-//                Hoisery.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
-//                    public final void onClick(View it) {
-//                        ((Dialog)dialog.element).dismiss();
-//                        Purpose_.setText("Hoisery");
-//                    }
-//                }
-//                ));
-//                ((Dialog)dialog.element).show();
+                First.setOnClickListener((new View.OnClickListener() {
+                    public final void onClick(View it) {
+                        ((Dialog)dialog.element).dismiss();
+                        sendreqto.setText("Mills Only");
+                    }
+                }));
+
+                Second.setOnClickListener((new View.OnClickListener() {
+                    public final void onClick(View it) {
+                        ((Dialog)dialog.element).dismiss();
+                        sendreqto.setText("Agents and Traders only");
+                    }
+                }));
+                Both.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                    public final void onClick(View it) {
+                        ((Dialog)dialog.element).dismiss();
+                        sendreqto.setText("Mills and Agents and Traders only");
+                    }
+                }));
+                ((Dialog)dialog.element).show();
             }
         });
 
-
-        denier.setOnClickListener(new View.OnClickListener() {
+        sendto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 final Ref.ObjectRef dialog = new Ref.ObjectRef();
-
-                Toast.makeText(yarn_requirements.this, "Ready to Connect. Segment will be connected soon.", Toast.LENGTH_SHORT).show();
-
 //                Intrinsics.checkExpressionValueIsNotNull(it, "it");
-//                dialog.element = new Dialog(yarn_requirements.this);
-//                ((Dialog)dialog.element).setContentView(R.layout.sg_purpose_dialog);
-//                TextView Weaving = (TextView)((Dialog)dialog.element).findViewById(R.id.purpose_Weaving_dialog);
-//                TextView Hoisery = (TextView)((Dialog)dialog.element).findViewById(R.id.purpose_Hosiery_dialog);
+                dialog.element = new Dialog(yarn_requirements.this);
+                ((Dialog)dialog.element).setContentView(R.layout.sg_sendto);
+                TextView ind = (TextView)((Dialog)dialog.element).findViewById(R.id.india);
+                TextView out = (TextView)((Dialog)dialog.element).findViewById(R.id.outside);
+                TextView bangla = (TextView)((Dialog)dialog.element).findViewById(R.id.bangladesh);
 
 
-//                Weaving.setOnClickListener((new View.OnClickListener() {
-//                    public final void onClick(View it) {
-//                        ((Dialog)dialog.element).dismiss();
-//                        Purpose_.setText("Weaving");
-//                    }
-//                }));
-//                Hoisery.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
-//                    public final void onClick(View it) {
-//                        ((Dialog)dialog.element).dismiss();
-//                        Purpose_.setText("Hoisery");
-//                    }
-//                }
-//                ));
-//                ((Dialog)dialog.element).show();
+                ind.setOnClickListener((new View.OnClickListener() {
+                    public final void onClick(View it) {
+                        ((Dialog)dialog.element).dismiss();
+                        sendto_.setText("Within India");
+                    }
+                }));
+
+                out.setOnClickListener((new View.OnClickListener() {
+                    public final void onClick(View it) {
+                        ((Dialog)dialog.element).dismiss();
+                        sendto_.setText("Outside India");
+                    }
+                }));
+                bangla.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                    public final void onClick(View it) {
+                        ((Dialog)dialog.element).dismiss();
+                        sendto_.setText("Bangladesh");
+                    }
+                }));
+                ((Dialog)dialog.element).show();
             }
         });
+
+
+        SingDub.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                final Ref.ObjectRef dialog = new Ref.ObjectRef();
+//                Intrinsics.checkExpressionValueIsNotNull(it, "it");
+                dialog.element = new Dialog(yarn_requirements.this);
+                ((Dialog)dialog.element).setContentView(R.layout.singledouble);
+                final TextView single = (TextView)((Dialog)dialog.element).findViewById(R.id.single);
+                TextView dubble = (TextView)((Dialog)dialog.element).findViewById(R.id.dubble);
+
+
+                single.setOnClickListener((new View.OnClickListener() {
+                    public final void onClick(View it) {
+                        ((Dialog)dialog.element).dismiss();
+                        singdub.setText("single");
+                    }
+                }));
+                dubble.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                    public final void onClick(View it) {
+                        ((Dialog)dialog.element).dismiss();
+                        singdub.setText("double");
+                    }
+                }));
+                ((Dialog)dialog.element).show();
+            }
+        });
+
+
 
         Purpose.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -520,7 +584,7 @@ public class yarn_requirements extends AppCompatActivity{
                 vortex.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
-                        Fibre_.setText("Vortex");
+                        Nature_.setText("Vortex");
                     }
                 }));
                 ((Dialog)dialog.element).show();
@@ -731,13 +795,16 @@ public class yarn_requirements extends AppCompatActivity{
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(yarn_requirements.this, "Order to save", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(yarn_requirements.this, "order recorded successfully", Toast.LENGTH_SHORT).show();
             }
         });
         add_more.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(yarn_requirements.this, "order to save and taking more order", Toast.LENGTH_SHORT).show();
+
+                req.setText("Requirement"+ (i+1));
+                i+=1;
+                Toast.makeText(yarn_requirements.this, "order taken and new requirement begin...", Toast.LENGTH_SHORT).show();
             }
         });
         back.setOnClickListener(new View.OnClickListener() {

@@ -5,7 +5,7 @@
     android:layout_gravity="center">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="275dp"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
@@ -16,43 +16,67 @@
             android:layout_gravity="center"
             android:layout_margin="5dp"
             android:text="NIM"
-            android:textSize="30dp" />
+            android:textSize="24sp" />
+
+        <View
+            android:id="@+id/divider12"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#858080" />
 
         <TextView
             android:id="@+id/gft_quality_t_dialog"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="GFT"
-            android:layout_margin="5dp"
             android:layout_gravity="center"
-            android:textSize="30dp"
-            />
+            android:layout_margin="5dp"
+            android:text="GFT"
+            android:textSize="24sp" />
+
+        <View
+            android:id="@+id/divider13"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#858080" />
 
         <TextView
             android:id="@+id/lim_sim_quality_t_dialog"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="30dp"
-            android:layout_margin="5dp"
             android:layout_gravity="center"
-            android:text="LIM/SIM" />
+            android:layout_margin="5dp"
+            android:text="LIM/SIM"
+            android:textSize="24sp" />
+
+        <View
+            android:id="@+id/divider14"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#858080" />
 
         <TextView
             android:id="@+id/im_roto_quality_t_dialog"
             android:layout_width="wrap_content"
-            android:layout_margin="5dp"
             android:layout_height="wrap_content"
-            android:textSize="30dp"
             android:layout_gravity="center"
-            android:text="IM/ROTO" />
+            android:layout_margin="5dp"
+            android:text="IM/ROTO"
+            android:textSize="24sp" />
+
+        <View
+            android:id="@+id/divider15"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#858080" />
 
         <TextView
             android:id="@+id/him_roto_quality_t_dialog"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
             android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:paddingLeft="10dp"
             android:text="HIM/ROTO"
-            android:textSize="30dp"/>
+            android:textSize="24sp" />
     </LinearLayout>
 </LinearLayout>

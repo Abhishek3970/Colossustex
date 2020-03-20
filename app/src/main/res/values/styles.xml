@@ -3,12 +3,10 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-<!--        <item name="android:textColor">#111</item>-->
-<!--        <item name="android:textSize">14sp</item>-->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:fontFamily">@font/baloo_da_medium</item>
+        <item name="android:fontFamily">@font/roboto_regular</item>
     </style>
 
     <style name="DialogScale">
@@ -63,6 +61,9 @@
     </style>
 <style name="loginstatusbar" parent="AppTheme">
     <item name="colorPrimaryDark">#63584E</item>
+    <item name="colorPrimary">@color/colorPrimary</item>
+    <item name="colorAccent">@color/colorAccent</item>
+    <item name="android:fontFamily">@font/roboto_regular</item>
 </style>
 
 </resources>

@@ -10,43 +10,63 @@
         android:orientation="vertical">
 
 
-
         <TextView
             android:id="@+id/Ist_grade_dialog"
-            android:layout_width="match_parent"
+            android:layout_width="275dp"
             android:layout_height="wrap_content"
-            android:textSize="30dp"
-            android:layout_margin="5dp"
             android:layout_gravity="center"
-            android:text="1st" />
+            android:layout_margin="5dp"
+            android:paddingLeft="10dp"
+            android:text="1st"
+            android:textSize="24sp" />
+
+        <View
+            android:id="@+id/divider40"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#858080" />
 
         <TextView
             android:id="@+id/pq_grade_dialog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="30dp"
-            android:layout_margin="5dp"
             android:layout_gravity="center"
-            android:text="PQ" />
+            android:layout_margin="5dp"
+            android:paddingLeft="10dp"
+            android:text="PQ"
+            android:textSize="24sp" />
+
+        <View
+            android:id="@+id/divider42"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#858080" />
 
         <TextView
             android:id="@+id/clq_grade_dialog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="30dp"
-            android:layout_margin="5dp"
             android:layout_gravity="center"
-            android:text="CLQ" />
+            android:layout_margin="5dp"
+            android:paddingLeft="10dp"
+            android:text="CLQ"
+            android:textSize="24sp" />
+
+        <View
+            android:id="@+id/divider41"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#858080" />
 
         <TextView
             android:id="@+id/std_grade_dialog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="30dp"
-            android:layout_margin="5dp"
             android:layout_gravity="center"
-            android:text="STD" />
-
+            android:layout_margin="5dp"
+            android:paddingLeft="10dp"
+            android:text="STD"
+            android:textSize="24sp" />
 
 
     </LinearLayout>

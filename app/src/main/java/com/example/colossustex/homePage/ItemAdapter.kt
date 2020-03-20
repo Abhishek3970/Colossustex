@@ -40,23 +40,44 @@ class ItemAdapter(var list: MutableList<Item>) :
         holder.constraintLayout.setOnClickListener {
             when (position) {
                 0 -> holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToSpinningMillOfIndia())
-                1 -> holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToImportYarn())
-                2-> holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToBuySellTextileProducts())
-                3-> it.context.startActivity(Intent(it.context, yarn_offers::class.java))
-                4-> {
+                1 -> holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToSpinningMillOfIndia())
+                2 -> holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToImportYarn())
+                3-> holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToBuySellTextileProducts())
+                4-> it.context.startActivity(Intent(it.context, yarn_offers::class.java))
+                5-> {
                     var dialog = Dialog(it.context)
                     dialog.setContentView(R.layout.buy_yarn_offers_dialog1)
                     val cotton = dialog.findViewById<TextView>(R.id.dialog_cotton)
                     val synthetic = dialog.findViewById<TextView>(R.id.dialog_synthetic)
+                    val viscose = dialog.findViewById<TextView>(R.id.dialog_viscose)
+                    val texturised = dialog.findViewById<TextView>(R.id.dialog_texturised)
+                    val fancy = dialog.findViewById<TextView>(R.id.dialog_fancy)
+
                     cotton.setOnClickListener {
                         //start an activity cotton
-
+                        dialog.dismiss()
+                        holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToCottonTabFragment())
                     }
                     synthetic.setOnClickListener {
                         //start synthic activity
-                        it.context.startActivity(Intent(it.context, yarn_offers::class.java))
+                        dialog.dismiss()
+                        holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToSyntheticTab())
 
                     }
+                    viscose.setOnClickListener{
+                        dialog.dismiss()
+                        holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToViscoseFragment())
+                    }
+                    texturised.setOnClickListener{
+                        dialog.dismiss()
+                        holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToTexturisedFragment1())
+                    }
+                    texturised.setOnClickListener{
+                        dialog.dismiss()
+                        holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToFancyFragment1())
+                    }
+
+
                     dialog.show()
                 }
 //                5 -> (AlertDialog.Builder(it.context).setSingleChoiceItems(itemList, -1){dialog, which->
@@ -64,9 +85,9 @@ class ItemAdapter(var list: MutableList<Item>) :
 //                }
 //                val alertDialog = builder.create()
 //                alertDialog.show())
-                5 -> it.context.startActivity(Intent(it.context, yarn_requirements::class.java))
-                6 -> it.context.startActivity(Intent(it.context, Textile_News::class.java))
-                7 -> it.context.startActivity(Intent(it.context, sensex_SG::class.java))
+                6 -> it.context.startActivity(Intent(it.context, yarn_requirements::class.java))
+                7 -> it.context.startActivity(Intent(it.context, Textile_News::class.java))
+                8 -> it.context.startActivity(Intent(it.context, sensex_SG::class.java))
                 else -> Toast.makeText(it.context,list[position].description, Toast.LENGTH_SHORT).show()
             }
         }

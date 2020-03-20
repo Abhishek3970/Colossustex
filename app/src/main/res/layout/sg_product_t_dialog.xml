@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_width="275dp"
     android:layout_height="wrap_content"
-    android:layout_gravity="center">
+    android:layout_gravity="center"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -11,74 +12,124 @@
 
         <TextView
             android:id="@+id/bright_product_t_dialog"
-            android:layout_width="match_parent"
+            android:layout_width="275dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="5dp"
-            android:textSize="30dp"
-            android:text="Bright" />
+            android:paddingLeft="10dp"
+            android:text="Bright"
+            android:textSize="24sp" />
+
+        <View
+            android:id="@+id/divider27"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#858080" />
 
         <TextView
             android:id="@+id/Semidull_product_t_dialog"
             android:layout_width="match_parent"
-            android:layout_gravity="center"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_margin="5dp"
-            android:textSize="30dp"
-            android:text="Semi Dull" />
+            android:paddingLeft="10dp"
+            android:text="Semi Dull"
+            android:textSize="24sp" />
+
+        <View
+            android:id="@+id/divider28"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#858080" />
 
         <TextView
             android:id="@+id/fulldull_cot_look_product_t_dialog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
             android:layout_gravity="center"
-            android:textSize="30dp"
-            android:text="Full Dull / Cot Look" />
+            android:layout_margin="5dp"
+            android:paddingLeft="10dp"
+            android:text="Full Dull / Cot Look"
+            android:textSize="24sp" />
+
+        <View
+            android:id="@+id/divider29"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#858080" />
 
         <TextView
             android:id="@+id/stretch_lycra_product_t_dialog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
             android:layout_gravity="center"
-            android:textSize="30dp"
-            android:text="Stretch / Lycra" />
+            android:layout_margin="5dp"
+            android:paddingLeft="10dp"
+            android:text="Stretch / Lycra"
+            android:textSize="24sp" />
+
+        <View
+            android:id="@+id/divider30"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#858080" />
 
         <TextView
             android:id="@+id/catonic_product_t_dialog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
             android:layout_gravity="center"
-            android:textSize="30dp"
-            android:text="Catonic" />
+            android:layout_margin="5dp"
+            android:paddingLeft="10dp"
+            android:text="Catonic"
+            android:textSize="24sp" />
+
+        <View
+            android:id="@+id/divider31"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#858080" />
 
         <TextView
             android:id="@+id/airtex_cooltex_product_t_dialog"
             android:layout_width="match_parent"
-            android:layout_margin="5dp"
-            android:layout_gravity="center"
-            android:textSize="30dp"
             android:layout_height="wrap_content"
-            android:text="Airtex / Cooltex" />
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:paddingLeft="10dp"
+            android:text="Airtex / Cooltex"
+            android:textSize="24sp" />
+
+        <View
+            android:id="@+id/divider32"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#858080" />
 
         <TextView
             android:id="@+id/blackdope_dyed_"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
             android:layout_gravity="center"
-            android:textSize="30dp"
-            android:text="Black Dope Dyed" />
+            android:layout_margin="5dp"
+            android:paddingLeft="10dp"
+            android:text="Black Dope Dyed"
+            android:textSize="24sp" />
+
+        <View
+            android:id="@+id/divider33"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#858080" />
 
         <TextView
             android:id="@+id/FDY_product_t_dialog"
             android:layout_width="match_parent"
-            android:layout_margin="5dp"
-            android:layout_gravity="center"
-            android:textSize="30dp"
             android:layout_height="wrap_content"
-            android:text="FDY" />
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:paddingLeft="10dp"
+            android:text="FDY"
+            android:textSize="24sp" />
     </LinearLayout>
 </LinearLayout>

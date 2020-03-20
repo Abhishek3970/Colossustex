@@ -1,8 +1,8 @@
 package com.example.colossustex.EmailLogin
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.ProgressBar
@@ -12,12 +12,13 @@ import androidx.databinding.DataBindingUtil
 import com.example.colossustex.MainActivity
 import com.example.colossustex.R
 import com.example.colossustex.databinding.ActivityVerifyNumberBinding
-import com.example.colossustex.homePage.HomePage
 import com.google.android.gms.tasks.TaskExecutors
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthProvider
+import com.google.firebase.database.FirebaseDatabase
 import java.util.concurrent.TimeUnit
 
 class VerifyNumber : AppCompatActivity() {
@@ -27,6 +28,7 @@ class VerifyNumber : AppCompatActivity() {
     lateinit var mAuth: FirebaseAuth
     lateinit var progressBar: ProgressBar
     lateinit var editText: EditText
+    lateinit var number: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,6 +39,7 @@ class VerifyNumber : AppCompatActivity() {
         editText = binding.editOTP
 
         val phoneNo = intent.getStringExtra("number")
+        number = phoneNo
         sendVerificationCode(phoneNo)
 
         binding.buttonSubmit.setOnClickListener {
@@ -57,7 +60,7 @@ class VerifyNumber : AppCompatActivity() {
         if (credential != null) {
             signInWithCredential(credential)
         } else {
-            Toast.makeText(this@VerifyNumber, "Invalid Code" , Toast.LENGTH_LONG).show()
+            Toast.makeText(this@VerifyNumber, "Invalid Code", Toast.LENGTH_LONG).show()
 
         }
     }
@@ -67,6 +70,17 @@ class VerifyNumber : AppCompatActivity() {
             .addOnCompleteListener { task ->
 
                 if (task.isSuccessful) {
+
+                    val user = FirebaseAuth.getInstance().currentUser
+                    val mref=
+                        FirebaseDatabase.getInstance().getReference("User").child(user?.uid.toString())
+                    val useref=UserRegister(user!!.uid,"","","" , number)
+                    mref.setValue(useref)
+
+                    val sharedPreferences = getSharedPreferences("SHARED_PREFERRENCE", MODE_PRIVATE)
+                    val editor = sharedPreferences.edit()
+                    editor.putInt("state" , 1)
+
                     val intent = Intent(this, MainActivity::class.java)
                     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                     startActivity(intent)
