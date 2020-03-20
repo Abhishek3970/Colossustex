@@ -53,7 +53,7 @@ class MainLogin : AppCompatActivity() {
             signin()
         }
         binding.forgotPass.setOnClickListener {
-            startActivity(Intent(this,ForgotPassword::class.java))
+            startActivity(Intent(this, ForgotPassword::class.java))
         }
     }
 
@@ -74,15 +74,15 @@ class MainLogin : AppCompatActivity() {
             return
         }
         auth.signInWithEmailAndPassword(
-            binding.emaillogin.text.toString(),
-            binding.passlogin.text.toString()
-        )
+                binding.emaillogin.text.toString(),
+                binding.passlogin.text.toString()
+            )
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     val user = auth.currentUser
                     updateUI(user)
                 } else {
-                    Toast.makeText(this,"Failed...Please sign up",Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Failed...Please sign up", Toast.LENGTH_SHORT).show()
                     updateUI(null)
                 }
             }
@@ -144,12 +144,10 @@ class MainLogin : AppCompatActivity() {
                 startActivity(intent)
                 finish()
             }
-            if (state == 0) {
-                if (currentUser.isEmailVerified) {
-                    val intent = Intent(this, MainActivity::class.java)
-                    startActivity(intent)
-                    finish()
-                }
+            if (currentUser.isEmailVerified) {
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                finish()
             }
         }
 
