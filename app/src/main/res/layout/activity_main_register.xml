@@ -26,8 +26,10 @@
 
     <EditText
         android:id="@+id/name_et"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
         android:layout_marginBottom="24dp"
         android:backgroundTint="#FFF"
         android:ems="10"
@@ -40,11 +42,13 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:backgroundTint="#FFF"
         android:id="@+id/email_et"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
         android:layout_marginBottom="24dp"
+        android:backgroundTint="#FFF"
         android:ems="10"
         android:hint="Email Address"
         android:inputType="textPersonName"
@@ -56,11 +60,13 @@
 
     <EditText
         android:id="@+id/pass_et"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
         android:layout_marginBottom="24dp"
-        android:ems="10"
         android:backgroundTint="#FFF"
+        android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
         android:textColor="#FFF"
@@ -71,13 +77,15 @@
 
     <EditText
         android:id="@+id/conf_pass_et"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:backgroundTint="#FFF"
         android:ems="10"
         android:hint="Confirm Password"
         android:inputType="textPassword"
         android:textColor="#FFF"
-        android:backgroundTint="#FFF"
         android:textColorHint="#E4E4E4"
         app:layout_constraintBottom_toTopOf="@+id/resgister_btn"
         app:layout_constraintEnd_toEndOf="parent"

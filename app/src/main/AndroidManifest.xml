@@ -12,6 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".EmailLogin.ForgotPassword"></activity>
         <activity android:name=".EmailLogin.VerifyNumber"></activity>
         <activity android:name=".EmailLogin.MobileLogin" />
         <activity android:name=".SplashActivity">
