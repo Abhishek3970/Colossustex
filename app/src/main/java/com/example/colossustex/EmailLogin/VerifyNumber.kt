@@ -74,7 +74,7 @@ class VerifyNumber : AppCompatActivity() {
                     val user = FirebaseAuth.getInstance().currentUser
                     val mref=
                         FirebaseDatabase.getInstance().getReference("User").child(user?.uid.toString())
-                    val useref=UserRegister(user!!.uid,"","","" , number)
+                    val useref=UserRegister(id= user!!.uid,phone = number)
                     mref.setValue(useref)
 
                     val sharedPreferences = getSharedPreferences("SHARED_PREFERRENCE", MODE_PRIVATE)

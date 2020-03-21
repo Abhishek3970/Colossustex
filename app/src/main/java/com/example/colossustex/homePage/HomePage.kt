@@ -20,6 +20,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.colossustex.EmailLogin.MainLogin
+import com.example.colossustex.EmailLogin.UserRegister
 import com.example.colossustex.EmailLogin.googleSignInClient
 import com.example.colossustex.R
 import com.firebase.ui.database.FirebaseRecyclerOptions
@@ -177,14 +178,14 @@ class HomePage : Fragment() {
         val editTextCity = mDialog1.findViewById<TextInputLayout>(R.id.editText_city)
         val buttonNext = mDialog1.findViewById<Button>(R.id.button_next)
 
-        editTextCountry.editText!!.keyListener = null
-        editTextMobile.editText!!.keyListener = null
 
-        mDb.child("user").addValueEventListener(
+        val user = FirebaseAuth.getInstance().currentUser
+        var cate = ""
+        mDb.child("User/${user?.uid}/userData").addValueEventListener(
             object : ValueEventListener {
                 override fun onDataChange(data: DataSnapshot) {
                     val country = data.child("country").value.toString()
-                    val mobile = data.child("mobile").value.toString()
+                    val mobile = data.child("phone").value.toString()
                     val name = data.child("name").value.toString()
                     val email = data.child("email").value.toString()
                     val city = data.child("city").value.toString()
@@ -193,6 +194,7 @@ class HomePage : Fragment() {
                     editTextName.editText?.setText(name)
                     editTextEmail.editText?.setText(email)
                     editTextCity.editText?.setText(city)
+                    cate = data.child("categary").value.toString()
 
                 }
 
@@ -206,11 +208,11 @@ class HomePage : Fragment() {
         //code for next button click:-
         buttonNext.setOnClickListener {
 
-            tempCountry = editTextCountry.editText?.text.toString()
-            tempMobile = editTextMobile.editText?.text.toString()
-            tempName = editTextName.editText?.text.toString()
-            tempEmail = editTextEmail.editText?.text.toString()
-            tempCity = editTextCity.editText?.text.toString()
+            tempCountry = editTextCountry.editText?.text.toString().trim()
+            tempMobile = editTextMobile.editText?.text.toString().trim()
+            tempName = editTextName.editText?.text.toString().trim()
+            tempEmail = editTextEmail.editText?.text.toString().trim()
+            tempCity = editTextCity.editText?.text.toString().trim()
 
             if (tempCountry == "") {
                 editTextCountry.error = "Field can't be empty"
@@ -271,6 +273,30 @@ class HomePage : Fragment() {
                 val buttonModify = mDialog2.findViewById<Button>(R.id.button_modify)
                 var count1 = 0
 
+                mDb.child("User/${user?.uid}/userData").addValueEventListener(
+                    object : ValueEventListener {
+                        override fun onDataChange(data: DataSnapshot) {
+                            val companyName = data.child("companyName").value.toString()
+                            val GST = data.child("GSTNumber").value.toString()
+                            val address = data.child("address").value.toString()
+                            val state = data.child("state").value.toString()
+                            val pin = data.child("pinCode").value.toString()
+                            editTextCompanyName.editText?.setText(companyName)
+                            editTextGSTNumber.editText?.setText(GST)
+                            editTextCompanyState.editText?.setText(state)
+                            editTextCompanyAddress.editText?.setText(address)
+                            editTextPinCode.editText?.setText(pin)
+
+                            cate = data.child("categary").value.toString()
+
+                        }
+
+                        override fun onCancelled(p0: DatabaseError) {
+                        }
+
+                    }
+                )
+
                 buttonModify.setOnClickListener {
 
                     if (editTextCompanyName.editText?.text.toString().trim() == "") {
@@ -302,6 +328,25 @@ class HomePage : Fragment() {
                     }
 
                     if (count1 == 4) {     //all necessary fields filled
+
+                        val info = UserRegister(
+                            id = user!!.uid,
+                            email = tempEmail,
+                            name = tempName,
+                            phone = tempMobile,
+                            country = tempCountry,
+                            city = tempCity,
+                            categary = cate,
+                            companyName = editTextCompanyName.editText?.text.toString().trim(),
+                            GSTNumber = editTextGSTNumber.editText?.text.toString().trim(),
+                            address = editTextCompanyAddress.editText?.text.toString().trim(),
+                            state = editTextCompanyState.editText?.text.toString().trim(),
+                            pinCode = editTextPinCode.editText?.text.toString().trim()
+                        )
+
+                        val mref=
+                            FirebaseDatabase.getInstance().getReference("User${user?.uid}/userData")
+                        mref.setValue(info)
                         Toast.makeText(context, "Saved Successfully", Toast.LENGTH_SHORT).show()
                         mDialog1.dismiss()
                         mDialog2.dismiss()
