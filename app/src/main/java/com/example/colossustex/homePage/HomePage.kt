@@ -180,7 +180,7 @@ class HomePage : Fragment() {
         editTextCountry.editText!!.keyListener = null
         editTextMobile.editText!!.keyListener = null
 
-        mDb.child("user").addValueEventListener(
+        mDb.child("User/userData").addValueEventListener(
             object : ValueEventListener {
                 override fun onDataChange(data: DataSnapshot) {
                     val country = data.child("country").value.toString()
