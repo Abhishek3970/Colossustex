@@ -13,13 +13,10 @@ import android.widget.Button
 import android.widget.Switch
 import android.widget.TextView
 import android.widget.Toast
-import android.view.*
-import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.colossustex.EmailLogin.MainLogin
 import com.example.colossustex.EmailLogin.UserRegister
 import com.example.colossustex.EmailLogin.WelcomeActivity
 import com.example.colossustex.EmailLogin.googleSignInClient
@@ -278,7 +275,7 @@ class HomePage : Fragment() {
                     object : ValueEventListener {
                         override fun onDataChange(data: DataSnapshot) {
                             val companyName = data.child("companyName").value.toString()
-                            val GST = data.child("GSTNumber").value.toString()
+                            val GST = data.child("gstnumber").value.toString()
                             val address = data.child("address").value.toString()
                             val state = data.child("state").value.toString()
                             val pin = data.child("pinCode").value.toString()
@@ -345,8 +342,9 @@ class HomePage : Fragment() {
                             pinCode = editTextPinCode.editText?.text.toString().trim()
                         )
 
-                        val mref=
-                            FirebaseDatabase.getInstance().getReference("User${user?.uid}/userData")
+                        val mref =
+                            FirebaseDatabase.getInstance().getReference("User").child(user.uid)
+                                .child("userData")
                         mref.setValue(info)
                         Toast.makeText(context, "Saved Successfully", Toast.LENGTH_SHORT).show()
                         mDialog1.dismiss()
@@ -416,10 +414,10 @@ class HomePage : Fragment() {
                         .show()
                 } else {
                     Toast.makeText(
-                            context,
-                            "New password do not match with confirm password!! Please try again",
-                            Toast.LENGTH_LONG
-                        )
+                        context,
+                        "New password do not match with confirm password!! Please try again",
+                        Toast.LENGTH_LONG
+                    )
                         .show()
                 }
 
