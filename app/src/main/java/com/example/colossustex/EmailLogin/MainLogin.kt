@@ -11,7 +11,6 @@ import com.example.colossustex.R
 import com.example.colossustex.databinding.ActivityMainLoginBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
-import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
@@ -19,7 +18,6 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.database.FirebaseDatabase
 
-lateinit var googleSignInClient: GoogleSignInClient
 val RC_SIGN_IN = 1
 
 const val SHARED_PREFERRENCE = "SHARED PREFERENCE"
@@ -27,6 +25,7 @@ const val state = "state"
 
 class MainLogin : AppCompatActivity() {
 
+    var category: String? = null
     private lateinit var auth: FirebaseAuth
     lateinit var binding: ActivityMainLoginBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,6 +42,7 @@ class MainLogin : AppCompatActivity() {
         binding.mobile.setOnClickListener {
             startActivity(Intent(this, MobileLogin::class.java))
         }
+        category = intent.extras?.getString("category")
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail()
@@ -117,10 +117,18 @@ class MainLogin : AppCompatActivity() {
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
                     val user = auth.currentUser
-                    val userDetails =
-                        UserDetails(user?.uid, user?.email, user?.displayName, user?.phoneNumber)
+                    val userDetails = UserRegister(
+                        user?.uid,
+                        user?.email,
+                        user?.displayName,
+                        "",
+                        "",
+                        "",
+                        "",
+                        category, "", "", "", "", ""
+                    )
                     val mref = FirebaseDatabase.getInstance().getReference("User")
-                        .child(user?.uid.toString())
+                        .child(user?.uid.toString()).child("userData")
                     mref.setValue(userDetails)
                     updateUI(user)
                 } else {
@@ -133,7 +141,6 @@ class MainLogin : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-
         val sharedPreferences = getSharedPreferences(SHARED_PREFERRENCE, MODE_PRIVATE)
         val state = sharedPreferences.getInt("state", -1)
         val currentUser = auth.currentUser
