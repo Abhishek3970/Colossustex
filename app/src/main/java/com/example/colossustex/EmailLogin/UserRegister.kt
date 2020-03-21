@@ -5,5 +5,12 @@ data class UserRegister(
     var email: String = "",
     var name: String = "",
     var password: String = "",
-    var phone: String = ""
+    var phone: String = "",
+    var city: String = "",
+    var categary: String = "",
+    var companyName: String = "",
+    var GSTNumber: String = "",
+    var address: String = "",
+    var state: String = "",
+    var pinCode: String = ""
 )
