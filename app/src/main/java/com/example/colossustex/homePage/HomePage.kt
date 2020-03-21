@@ -162,6 +162,8 @@ class HomePage : Fragment() {
 
     private fun modifyProfile() {//store values in temp variable on click and validate each value and navigate to next page
         mDialog1.setContentView(R.layout.home_page_modify_profile_1)
+        mDialog1.show()
+
         var tempCountry: String
         var tempMobile: String
         var tempName: String
@@ -201,6 +203,7 @@ class HomePage : Fragment() {
 
             }
         )
+
 
 
         //code for next button click:-
@@ -246,6 +249,7 @@ class HomePage : Fragment() {
             if (count == 5) {    //all necessary fields filled
                 mDialog1.hide()
                 mDialog2.setContentView(R.layout.home_page_modify_profile_2)
+                mDialog2.show()
 
                 mDialog2.setOnKeyListener { dialogInterface, keyCode, keyEvent ->
                     //for back pressed in dialog2
@@ -347,6 +351,7 @@ class HomePage : Fragment() {
                                 .child("userData")
                         mref.setValue(info)
                         Toast.makeText(context, "Saved Successfully", Toast.LENGTH_SHORT).show()
+                        mDialog1.show()
                         mDialog1.dismiss()
                         mDialog2.dismiss()
                     } else {
@@ -355,7 +360,6 @@ class HomePage : Fragment() {
 
                 }
 
-                mDialog2.show()
             } else {
                 count = 0
             }
@@ -365,7 +369,7 @@ class HomePage : Fragment() {
 
 
 
-        mDialog1.show()
+
     }          //code for modify Profile option in menu
 
     private fun changePassword() {
