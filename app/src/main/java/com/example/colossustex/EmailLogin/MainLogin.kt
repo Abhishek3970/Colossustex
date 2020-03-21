@@ -20,7 +20,7 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.database.FirebaseDatabase
 
-lateinit var googleSignInClient: GoogleSignInClient
+
 val RC_SIGN_IN = 1
 
 const val SHARED_PREFERRENCE = "SHARED PREFERENCE"
@@ -46,12 +46,7 @@ class MainLogin : AppCompatActivity() {
             startActivity(Intent(this, MobileLogin::class.java))
         }
         category = intent.extras?.getString("category")
-        Log.i("cat",category)
-        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(getString(R.string.default_web_client_id))
-            .requestEmail()
-            .build()
-        googleSignInClient = GoogleSignIn.getClient(this, gso)
+
         val signinbt = binding.googleSigninBtn
         signinbt.setOnClickListener {
             signin()
