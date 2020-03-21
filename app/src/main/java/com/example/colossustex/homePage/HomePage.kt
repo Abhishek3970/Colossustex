@@ -21,6 +21,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.colossustex.EmailLogin.MainLogin
 import com.example.colossustex.EmailLogin.UserRegister
+import com.example.colossustex.EmailLogin.WelcomeActivity
 import com.example.colossustex.EmailLogin.googleSignInClient
 import com.example.colossustex.R
 import com.firebase.ui.database.FirebaseRecyclerOptions
@@ -97,7 +98,7 @@ class HomePage : Fragment() {
                     if (GoogleSignIn.getLastSignedInAccount(context) != null) {
                         googleSignInClient.signOut()
                     }
-                    val intent = Intent(context, MainLogin::class.java).apply {
+                    val intent = Intent(context, WelcomeActivity::class.java).apply {
                         flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
                     }
                     startActivity(intent)

@@ -2,6 +2,7 @@ package com.example.colossustex.EmailLogin
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.util.Patterns
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -27,6 +28,7 @@ const val state = "state"
 
 class MainLogin : AppCompatActivity() {
 
+    var category: String?=null
     private lateinit var auth: FirebaseAuth
     lateinit var binding: ActivityMainLoginBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,7 +36,7 @@ class MainLogin : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main_login)
         auth = FirebaseAuth.getInstance()
         binding.textRegister.setOnClickListener {
-            val intent = Intent(this, MainRegister::class.java)
+            val intent = Intent(this, MainRegister::class.java).putExtra("category", category)
             startActivity(intent)
         }
         binding.loginBtn.setOnClickListener {
@@ -43,6 +45,8 @@ class MainLogin : AppCompatActivity() {
         binding.mobile.setOnClickListener {
             startActivity(Intent(this, MobileLogin::class.java))
         }
+        category = intent.extras?.getString("category")
+        Log.i("cat",category)
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail()
@@ -117,10 +121,18 @@ class MainLogin : AppCompatActivity() {
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
                     val user = auth.currentUser
-                    val userDetails =
-                        UserDetails(user?.uid, user?.email, user?.displayName, user?.phoneNumber)
+                    val userDetails = UserRegister(
+                        user?.uid,
+                        user?.email,
+                        user?.displayName,
+                        "",
+                        "",
+                        "",
+                        "",
+                        category,"","","","",""
+                    )
                     val mref = FirebaseDatabase.getInstance().getReference("User")
-                        .child(user?.uid.toString())
+                        .child(user?.uid.toString()).child("userData")
                     mref.setValue(userDetails)
                     updateUI(user)
                 } else {

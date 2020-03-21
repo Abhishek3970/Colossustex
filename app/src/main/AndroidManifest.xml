@@ -15,6 +15,7 @@
         <activity android:name=".EmailLogin.ForgotPassword"></activity>
         <activity android:name=".EmailLogin.VerifyNumber"></activity>
         <activity android:name=".EmailLogin.MobileLogin" />
+        <activity android:name=".EmailLogin.WelcomeActivity" />
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
