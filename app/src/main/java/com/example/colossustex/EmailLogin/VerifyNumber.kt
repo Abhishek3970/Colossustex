@@ -78,7 +78,7 @@ class VerifyNumber : AppCompatActivity() {
                         ).child("userData")
                     val useref =
                         UserRegister(
-                            id = user!!.uid,
+                            id = user.uid,
                             email = "",
                             name = "",
                             phone = number,

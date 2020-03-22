@@ -10,6 +10,7 @@ import androidx.databinding.DataBindingUtil
 import com.example.colossustex.R
 import com.example.colossustex.databinding.ActivityMainRegisterBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.UserInfo
 import com.google.firebase.database.FirebaseDatabase
 
 class MainRegister : AppCompatActivity() {
@@ -51,12 +52,7 @@ class MainRegister : AppCompatActivity() {
             binding.passEt.requestFocus()
             return
         }
-        if (!Patterns.EMAIL_ADDRESS.matcher(binding.emailEt.text.toString()).matches()) {
-            binding.emailEt.error = "Enter Proper Email"
-            binding.emailEt.requestFocus()
-            return
-        }
-        if (!binding.passEt.text.equals(binding.confPassEt.text)) {
+        if (binding.passEt.text.toString() != binding.confPassEt.text.toString()) {
             binding.passEt.setText("")
             binding.confPassEt.setText("")
             binding.passEt.error = "Password doesn't match"
@@ -75,23 +71,14 @@ class MainRegister : AppCompatActivity() {
                         ?.addOnCompleteListener { task ->
                             if (task.isSuccessful) {
                                 binding.progresslayout.visibility = View.GONE
-                                val mref =
-                                    FirebaseDatabase.getInstance().getReference("User").child(
-                                        user.uid
-                                    ).child("userData")
-                                val useref =
-                                    UserRegister(
-                                        user.uid,
-                                        user.email.toString(),
-                                        name,
-                                        pass,
-                                        "",
-                                        "",
-                                        "",
-                                        category, "", "", "", "", ""
-                                    )
-                                mref.setValue(useref)
-                                startActivity(Intent(this, MainLogin::class.java))
+                                startActivity(
+                                    Intent(this,InfoActivity::class.java).putExtra(
+                                            "name",
+                                            name
+                                        ).putExtra("email", binding.emailEt.text.toString())
+                                        .putExtra("pass", binding.passEt.text.toString())
+                                        .putExtra("category", category)
+                                )
                                 finish()
                             } else {
                                 binding.progresslayout.visibility = View.GONE
@@ -105,7 +92,7 @@ class MainRegister : AppCompatActivity() {
                 } else {
                     binding.progresslayout.visibility = View.GONE
                     Toast.makeText(
-                        baseContext, "Sign Up Failed.",
+                        baseContext, "Sign Up Failed.You may be registered.",
                         Toast.LENGTH_SHORT
                     ).show()
                 }

@@ -18,6 +18,7 @@ import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.auth.UserInfo
 import com.google.firebase.database.FirebaseDatabase
 
 
@@ -129,7 +130,14 @@ class MainLogin : AppCompatActivity() {
                     val mref = FirebaseDatabase.getInstance().getReference("User")
                         .child(user?.uid.toString()).child("userData")
                     mref.setValue(userDetails)
-                    updateUI(user)
+                    startActivity(
+                        Intent(this, InfoActivity::class.java).putExtra(
+                                "name",
+                                user?.displayName
+                            ).putExtra("email", user?.email)
+                            .putExtra("pass", "")
+                            .putExtra("category", category).putExtra("google","google")
+                    )
                 } else {
                     // If sign in fails, display a message to the user.
                     Toast.makeText(this, "Authentication Failed", Toast.LENGTH_SHORT).show()
@@ -140,32 +148,35 @@ class MainLogin : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-
-        val sharedPreferences = getSharedPreferences(SHARED_PREFERRENCE, MODE_PRIVATE)
-        val state = sharedPreferences.getInt("state", -1)
-        val currentUser = auth.currentUser
-        if (currentUser != null) {
-
-            if (state == 1) {
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
-                finish()
-            }
-            if (currentUser.isEmailVerified) {
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
-                finish()
-            }
-        }
+//        val sharedPreferences = getSharedPreferences(SHARED_PREFERRENCE, MODE_PRIVATE)
+//        val state = sharedPreferences.getInt("state", -1)
+//        val currentUser = auth.currentUser
+//        if (currentUser != null) {
+//
+//            if (state == 1) {
+//                val intent = Intent(this, MainActivity::class.java).apply {
+//                    flags=Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+//                }
+//                startActivity(intent)
+//
+//            }
+//            if (currentUser.isEmailVerified) {
+//                val intent = Intent(this, MainActivity::class.java).apply {
+//                    flags=Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+//                }
+//                startActivity(intent)
+//            }
+//        }
 
     }
 
     private fun updateUI(currentUser: FirebaseUser?) {
         if (currentUser != null) {
             if (currentUser.isEmailVerified) {
-                val intent = Intent(this, MainActivity::class.java)
+                val intent = Intent(this, MainActivity::class.java).apply {
+                    flags=Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                }
                 startActivity(intent)
-                finish()
             } else {
                 Toast.makeText(this, "Verify your email", Toast.LENGTH_SHORT).show()
             }

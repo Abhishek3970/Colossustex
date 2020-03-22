@@ -206,13 +206,13 @@ class SpinningMillOfIndia : Fragment() {
                 checkboxViscose
             )
             for (item in list) {
-                item!!.setOnClickListener {
+                item.setOnClickListener {
                     when (item) {
-                        checkboxCotton -> cottonState = checkboxCotton!!.isChecked
-                        checkboxSynthetic -> syntheticState = checkboxSynthetic!!.isChecked
-                        checkboxViscose -> viscoseState = checkboxViscose!!.isChecked
-                        checkboxTexturized -> texturizedState = checkboxTexturized!!.isChecked
-                        checkboxFancy -> fancyState = checkboxFancy!!.isChecked
+                        checkboxCotton -> cottonState = checkboxCotton.isChecked
+                        checkboxSynthetic -> syntheticState = checkboxSynthetic.isChecked
+                        checkboxViscose -> viscoseState = checkboxViscose.isChecked
+                        checkboxTexturized -> texturizedState = checkboxTexturized.isChecked
+                        checkboxFancy -> fancyState = checkboxFancy.isChecked
 
                     }
                     if (!cottonState && !syntheticState && !viscoseState && !texturizedState && !fancyState) {
@@ -224,15 +224,15 @@ class SpinningMillOfIndia : Fragment() {
                     }
                     // continue by adding filters here.....
                     var tempList = ArrayList<String>()
-                    if (checkboxCotton!!.isChecked)
+                    if (checkboxCotton.isChecked)
                         tempList.add("Cotton")
-                    if (checkboxFancy!!.isChecked)
+                    if (checkboxFancy.isChecked)
                         tempList.add("Fancy")
-                    if (checkboxSynthetic!!.isChecked)
+                    if (checkboxSynthetic.isChecked)
                         tempList.add("Synthetic")
-                    if (checkboxViscose!!.isChecked)
+                    if (checkboxViscose.isChecked)
                         tempList.add("Viscose")
-                    if (checkboxTexturized!!.isChecked)
+                    if (checkboxTexturized.isChecked)
                         tempList.add("Texturized")
 
                     val newPostList = ArrayList<post>()

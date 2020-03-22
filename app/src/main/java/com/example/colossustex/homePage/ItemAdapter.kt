@@ -125,7 +125,7 @@ class ItemAdapter(var list: MutableList<Item>) :
             sliderLayout.visibility = View.VISIBLE
             sliderLayout.setIndicatorAnimation(IndicatorAnimations.SWAP) //set indicator animation by using 	 				SliderLayout.IndicatorAnimations. :WORM or THIN_WORM or COLOR or DROP or FILL or NONE or SCALE or SCALE_DOWN or SLIDE and SWAP!!
             sliderLayout.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION)
-            sliderLayout.scrollTimeInSec = 2; //set scroll delay in seconds :
+            sliderLayout.scrollTimeInSec = 2 //set scroll delay in seconds :
 
             for (i in 0..3) {
 

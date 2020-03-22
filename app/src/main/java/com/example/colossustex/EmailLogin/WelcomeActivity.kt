@@ -18,19 +18,19 @@ class WelcomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding=DataBindingUtil.setContentView(this,R.layout.activity_welcome)
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken(getString(R.string.default_web_client_id))
+            .requestEmail()
+            .build()
+        googleSignInClient = GoogleSignIn.getClient(this, gso)
         binding.customerBt.setOnClickListener {
-            val intent= Intent(this,MainLogin::class.java).putExtra("category","Customer")
+            val intent= Intent(this,MainLogin::class.java).putExtra("category","Company")
             startActivity(intent)
         }
         binding.agentBt.setOnClickListener {
             val intent=Intent(this,MainLogin::class.java).putExtra("category","Agent")
             startActivity(intent)
-
-            val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id))
-                .requestEmail()
-                .build()
-            googleSignInClient = GoogleSignIn.getClient(this, gso)        }
+        }
     }
 
     override fun onStart() {
