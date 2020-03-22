@@ -127,17 +127,13 @@ class MainLogin : AppCompatActivity() {
                         "",
                         category,"","","","",""
                     )
-                    val mref = FirebaseDatabase.getInstance().getReference("User")
-                        .child(user?.uid.toString()).child("userData")
-                    mref.setValue(userDetails)
                     startActivity(
                         Intent(this, InfoActivity::class.java).putExtra(
                                 "name",
                                 user?.displayName
                             ).putExtra("email", user?.email)
                             .putExtra("pass", "")
-                            .putExtra("category", category).putExtra("google","google")
-                    )
+                            .putExtra("category", category).putExtra("google","google"))
                 } else {
                     // If sign in fails, display a message to the user.
                     Toast.makeText(this, "Authentication Failed", Toast.LENGTH_SHORT).show()

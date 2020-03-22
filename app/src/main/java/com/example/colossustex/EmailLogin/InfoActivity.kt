@@ -18,17 +18,20 @@ class InfoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_user_info)
+
+        auth = FirebaseAuth.getInstance()
+        val user = auth.currentUser
         val name = intent.extras?.getString("name")
         val email = intent.extras?.getString("email")
         var pass = intent.extras?.getString("pass")
         val category = intent.extras?.getString("category")
-        val google=intent.extras?.getString("google")
+        val google = intent.extras?.getString("google")
         if (name != null) {
             binding.nameInfo.setText(name)
+        }else{
+            binding.nameInfo.setText(user?.displayName)
         }
-        if (email != null) {
-            binding.emailInfo.setText(email)
-        }
+        binding.emailInfo.setText(user?.email)
         if (category != null) {
             binding.categoryInfo.setText(category)
         }
@@ -37,12 +40,10 @@ class InfoActivity : AppCompatActivity() {
         }
 
         binding.procBtInfo.setOnClickListener {
-            auth = FirebaseAuth.getInstance()
-            val user = auth.currentUser
             val mref = FirebaseDatabase.getInstance().getReference("User")
                 .child(user?.uid.toString()).child("userData")
             if (binding.categoryInfo.text.isEmpty() || binding.cityInfo.text.isEmpty() || binding.countryInfo.text.isEmpty() || binding.emailInfo.text.isEmpty() || binding.mobileInfo.text.isEmpty() || binding.nameInfo.text.isEmpty()) {
-                Toast.makeText(this,"Fill all fields",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Fill all fields", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
             val userinfo = UserRegister(
@@ -54,7 +55,7 @@ class InfoActivity : AppCompatActivity() {
                 binding.countryInfo.text.toString()
                 ,
                 binding.cityInfo.text.toString(),
-                category,
+                binding.categoryInfo.text.toString(),
                 "",
                 "",
                 "",
@@ -62,11 +63,11 @@ class InfoActivity : AppCompatActivity() {
                 ""
             )
             mref.setValue(userinfo)
-            if(google=="google"){
+            if (google == "google") {
                 startActivity(Intent(this, MainActivity::class.java).apply {
-                    flags=Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                    flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
                 })
-            }else {
+            } else {
                 startActivity(Intent(this, MainLogin::class.java).apply {
                     flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
                 })

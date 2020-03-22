@@ -11,6 +11,10 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 lateinit var googleSignInClient: GoogleSignInClient
 class WelcomeActivity : AppCompatActivity() {
@@ -26,10 +30,12 @@ class WelcomeActivity : AppCompatActivity() {
         binding.customerBt.setOnClickListener {
             val intent= Intent(this,MainLogin::class.java).putExtra("category","Company")
             startActivity(intent)
+            finish()
         }
         binding.agentBt.setOnClickListener {
             val intent=Intent(this,MainLogin::class.java).putExtra("category","Agent")
             startActivity(intent)
+            finish()
         }
     }
 
@@ -39,17 +45,46 @@ class WelcomeActivity : AppCompatActivity() {
         val sharedPreferences = getSharedPreferences(SHARED_PREFERRENCE, MODE_PRIVATE)
         val state = sharedPreferences.getInt("state", -1)
         val currentUser = auth.currentUser
+        var country=""
         if (currentUser != null) {
+            val mref = FirebaseDatabase.getInstance().getReference("Users").child(currentUser.uid)
+                .child("userData")
+            mref.addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onCancelled(p0: DatabaseError) {
 
+                }
+
+                override fun onDataChange(p0: DataSnapshot) {
+                    if (p0.exists()) {
+                        country = p0.child("country").value.toString()
+                    }
+                }
+
+            })
             if (state == 1) {
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
                 finish()
             }
             if (currentUser.isEmailVerified) {
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
-                finish()
+                if (country != "") {
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
+                else{
+                    if (GoogleSignIn.getLastSignedInAccount(this) != null) {
+                        val intent = Intent(this, InfoActivity::class.java).putExtra("google","google")
+                        startActivity(intent)
+                        finish()
+                    }
+                    else{
+                        val intent=Intent(this,InfoActivity::class.java)
+                        startActivity(intent)
+                        finish()
+                    }
+
+                }
             }
         }
     }
