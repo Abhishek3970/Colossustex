@@ -14,7 +14,6 @@ class MobileLogin : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_mobile_login)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_mobile_login)
         val adapter = ArrayAdapter<String>(this, R.layout.spinner_item, countryNames)
         adapter.setDropDownViewResource(R.layout.spinner_item_dropdown)

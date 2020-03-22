@@ -22,10 +22,6 @@ import com.google.firebase.auth.UserInfo
 import com.google.firebase.database.FirebaseDatabase
 
 
-val RC_SIGN_IN = 1
-
-const val SHARED_PREFERRENCE = "SHARED PREFERENCE"
-const val state = "state"
 
 class MainLogin : AppCompatActivity() {
 
@@ -127,13 +123,17 @@ class MainLogin : AppCompatActivity() {
                         "",
                         category,"","","","",""
                     )
+                    val mref = FirebaseDatabase.getInstance().getReference("User")
+                        .child(user?.uid.toString()).child("userData")
+                    mref.setValue(userDetails)
                     startActivity(
                         Intent(this, InfoActivity::class.java).putExtra(
                                 "name",
                                 user?.displayName
                             ).putExtra("email", user?.email)
                             .putExtra("pass", "")
-                            .putExtra("category", category).putExtra("google","google"))
+                            .putExtra("category", category).putExtra("google","google")
+                    )
                 } else {
                     // If sign in fails, display a message to the user.
                     Toast.makeText(this, "Authentication Failed", Toast.LENGTH_SHORT).show()
