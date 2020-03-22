@@ -78,7 +78,6 @@ class InfoActivity : AppCompatActivity() {
             val editor = sharedPreferences.edit()
             editor.putInt("state", 2)
             editor.apply()
-
             Log.i("if","pressed")
             val state = sharedPreferences.getInt(state, -1)
             Log.i("if",state.toString())
