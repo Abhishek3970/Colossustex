@@ -26,6 +26,9 @@ class InfoActivity : AppCompatActivity() {
         var pass = intent.extras?.getString("pass")
         val category = intent.extras?.getString("category")
         val google = intent.extras?.getString("google")
+        val phone = intent.extras?.getString("phone")
+        val country = intent.extras?.getString("country")
+
         if (name != null) {
             binding.nameInfo.setText(name)
         }else{
@@ -34,6 +37,12 @@ class InfoActivity : AppCompatActivity() {
         binding.emailInfo.setText(user?.email)
         if (category != null) {
             binding.categoryInfo.setText(category)
+        }
+        if(phone!= null){
+            binding.mobileInfo.setText(phone)
+        }
+        if(country!=null){
+            binding.countryInfo.setText(country)
         }
         if (pass == null) {
             pass = ""
