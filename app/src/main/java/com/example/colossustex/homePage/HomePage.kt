@@ -206,6 +206,8 @@ class HomePage : Fragment() {
 
 
 
+
+
         //code for next button click:-
         buttonNext.setOnClickListener {
 
