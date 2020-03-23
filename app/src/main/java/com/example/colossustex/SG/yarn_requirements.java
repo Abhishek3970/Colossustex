@@ -35,8 +35,7 @@ public class yarn_requirements extends AppCompatActivity{
 
     ImageView back;
     int i = 1, sum = 0;
-    CardView Grade;
-    LinearLayout Fibre,Purpose,Count, Quality_Range_Texturised, Quality_Range_Fancy, Product_Range_Texturised, Product_Range_Fancy, Quality,Variety, Type, Nature, noofbags, description, sendto, denier, send_reqto, SingDub;
+    LinearLayout Fibre,Purpose,Count, Quality_Range_Texturised, Quality_Range_Fancy, Product_Range_Texturised, Grade, Product_Range_Fancy, Quality,Variety, Type, Nature, noofbags, description, sendto, denier, send_reqto, SingDub;
     TextView Fibre_, Purpose_, Count_ , Quality_Range_texturised,req,  Quality_Range_fancy, Product_Range_texturised, Product_Range_fancy, Quality_, Variety_, Type_, Nature_, Grade_ , sendto_, sendreqto, denier_, singdub;
 
 

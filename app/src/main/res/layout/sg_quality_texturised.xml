@@ -16,7 +16,7 @@
             android:layout_gravity="center"
             android:layout_margin="5dp"
             android:text="NIM"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
 
         <View
             android:id="@+id/divider12"
@@ -31,7 +31,7 @@
             android:layout_gravity="center"
             android:layout_margin="5dp"
             android:text="GFT"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
 
         <View
             android:id="@+id/divider13"
@@ -46,7 +46,7 @@
             android:layout_gravity="center"
             android:layout_margin="5dp"
             android:text="LIM/SIM"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
 
         <View
             android:id="@+id/divider14"
@@ -61,7 +61,7 @@
             android:layout_gravity="center"
             android:layout_margin="5dp"
             android:text="IM/ROTO"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
 
         <View
             android:id="@+id/divider15"
@@ -77,6 +77,6 @@
             android:layout_margin="5dp"
             android:paddingLeft="10dp"
             android:text="HIM/ROTO"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
     </LinearLayout>
 </LinearLayout>

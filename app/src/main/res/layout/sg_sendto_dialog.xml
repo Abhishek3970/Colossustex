@@ -21,20 +21,22 @@
             android:layout_width="275dp"
             android:layout_height="wrap_content"
             android:text="Mills only"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
 
         <View
             android:id="@+id/divider6"
             android:layout_width="match_parent"
             android:layout_height="1dp"
+            android:layout_margin="10dp"
             android:background="#858080" />
 
         <TextView
             android:id="@+id/second_sendreqto"
             android:layout_width="275dp"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             android:text="Agents and Traders only"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
 
         <View
             android:id="@+id/divider5"
@@ -46,7 +48,8 @@
             android:id="@+id/third_sendreqto"
             android:layout_width="275dp"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             android:text="Mills and Agents and Traders"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

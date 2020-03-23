@@ -19,8 +19,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_margin="10dp"
             android:text="Cotton"
-            android:textSize="24sp"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.378"
@@ -39,8 +40,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_margin="10dp"
             android:text="synthetic"
-            android:textSize="24sp"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.378"
@@ -58,9 +60,10 @@
             android:id="@+id/dialog_viscose"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             android:gravity="center"
             android:text="Viscose"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
 
         <View
             android:id="@+id/divider45"
@@ -72,9 +75,10 @@
             android:id="@+id/dialog_texturised"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             android:gravity="center"
             android:text="Texturised"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
 
         <View
             android:id="@+id/divider4"
@@ -86,8 +90,9 @@
             android:id="@+id/dialog_fancy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             android:gravity="center"
             android:text="Fancy"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

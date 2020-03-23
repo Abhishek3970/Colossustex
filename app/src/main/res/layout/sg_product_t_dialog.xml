@@ -15,10 +15,10 @@
             android:layout_width="275dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="5dp"
+            android:layout_margin="10dp"
             android:paddingLeft="10dp"
             android:text="Bright"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
 
         <View
             android:id="@+id/divider27"
@@ -31,10 +31,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="5dp"
+            android:layout_margin="10dp"
             android:paddingLeft="10dp"
             android:text="Semi Dull"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
 
         <View
             android:id="@+id/divider28"
@@ -47,10 +47,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="5dp"
+            android:layout_margin="10dp"
             android:paddingLeft="10dp"
             android:text="Full Dull / Cot Look"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
 
         <View
             android:id="@+id/divider29"
@@ -63,10 +63,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="5dp"
+            android:layout_margin="10dp"
             android:paddingLeft="10dp"
             android:text="Stretch / Lycra"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
 
         <View
             android:id="@+id/divider30"
@@ -79,10 +79,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="5dp"
+            android:layout_margin="10dp"
             android:paddingLeft="10dp"
             android:text="Catonic"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
 
         <View
             android:id="@+id/divider31"
@@ -95,10 +95,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="5dp"
+            android:layout_margin="10dp"
             android:paddingLeft="10dp"
             android:text="Airtex / Cooltex"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
 
         <View
             android:id="@+id/divider32"
@@ -111,10 +111,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="5dp"
+            android:layout_margin="10dp"
             android:paddingLeft="10dp"
             android:text="Black Dope Dyed"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
 
         <View
             android:id="@+id/divider33"
@@ -127,9 +127,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="5dp"
+            android:layout_margin="10dp"
             android:paddingLeft="10dp"
             android:text="FDY"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
     </LinearLayout>
 </LinearLayout>

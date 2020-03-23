@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="275dp"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:gravity="center"
     android:orientation="vertical">
@@ -16,8 +16,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_margin="10dp"
             android:text="Combed"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
 
         <View
             android:id="@+id/divider21"
@@ -30,8 +31,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_margin="10dp"
             android:text="Carded"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
 
         <View
             android:id="@+id/divider22"
@@ -44,9 +46,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="5dp"
+            android:layout_margin="10dp"
             android:text="Virgin"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
 
         <View
             android:id="@+id/divider23"
@@ -59,9 +61,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="5dp"
+            android:layout_margin="10dp"
             android:text="Combed Compact"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
 
         <View
             android:id="@+id/divider24"
@@ -74,9 +76,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="5dp"
+            android:layout_margin="10dp"
             android:text="Carded Compact"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
 
         <View
             android:id="@+id/divider25"
@@ -89,8 +91,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="5dp"
+            android:layout_margin="10dp"
             android:text="Giza"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
     </LinearLayout>
 </LinearLayout>
