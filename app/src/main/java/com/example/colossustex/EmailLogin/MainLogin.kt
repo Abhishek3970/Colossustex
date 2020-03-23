@@ -17,9 +17,13 @@ import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.database.FirebaseDatabase
 
 lateinit var googleSignInClient: GoogleSignInClient
 val RC_SIGN_IN = 1
+
+const val SHARED_PREFERRENCE = "SHARED PREFERENCE"
+const val state = "state"
 
 class MainLogin : AppCompatActivity() {
 
@@ -48,6 +52,9 @@ class MainLogin : AppCompatActivity() {
         signinbt.setOnClickListener {
             signin()
         }
+        binding.forgotPass.setOnClickListener {
+            startActivity(Intent(this, ForgotPassword::class.java))
+        }
     }
 
     private fun dologin() {
@@ -75,6 +82,7 @@ class MainLogin : AppCompatActivity() {
                     val user = auth.currentUser
                     updateUI(user)
                 } else {
+                    Toast.makeText(this, "Failed...Please sign up", Toast.LENGTH_SHORT).show()
                     updateUI(null)
                 }
             }
@@ -109,10 +117,15 @@ class MainLogin : AppCompatActivity() {
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
                     val user = auth.currentUser
+                    val userDetails =
+                        UserDetails(user?.uid, user?.email, user?.displayName, user?.phoneNumber)
+                    val mref = FirebaseDatabase.getInstance().getReference("User")
+                        .child(user?.uid.toString())
+                    mref.setValue(userDetails)
                     updateUI(user)
                 } else {
                     // If sign in fails, display a message to the user.
-                    Toast.makeText(this,"Authentication Failed",Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Authentication Failed", Toast.LENGTH_SHORT).show()
                     updateUI(null)
                 }
             }
@@ -120,14 +133,24 @@ class MainLogin : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
+
+        val sharedPreferences = getSharedPreferences(SHARED_PREFERRENCE, MODE_PRIVATE)
+        val state = sharedPreferences.getInt("state", -1)
         val currentUser = auth.currentUser
         if (currentUser != null) {
+
+            if (state == 1) {
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
             if (currentUser.isEmailVerified) {
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
                 finish()
             }
         }
+
     }
 
     private fun updateUI(currentUser: FirebaseUser?) {

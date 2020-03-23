@@ -12,6 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".EmailLogin.ForgotPassword"></activity>
         <activity android:name=".EmailLogin.VerifyNumber"></activity>
         <activity android:name=".EmailLogin.MobileLogin" />
         <activity android:name=".SplashActivity">
@@ -21,8 +22,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".EmailLogin.MainRegister" />
-        <activity android:name=".EmailLogin.MainLogin" />
+        <activity android:name=".EmailLogin.MainRegister" android:theme="@style/loginstatusbar" />
+        <activity android:name=".EmailLogin.MainLogin" android:theme="@style/loginstatusbar"/>
         <activity
             android:name=".SpinningMillOfIndia.Synthetic.SyntheticTabbed"
             android:label="@string/title_activity_synthetic_tabbed"

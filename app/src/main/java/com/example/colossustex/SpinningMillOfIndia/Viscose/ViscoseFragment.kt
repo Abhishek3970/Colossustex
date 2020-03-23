@@ -22,6 +22,8 @@ import com.example.colossustex.SpinningMillOfIndia.Common.AllproductsData
 import com.example.colossustex.databinding.ViscoseFragment1Binding
 import com.example.dialogcustom.SpinnerDialogAdapter
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -33,6 +35,7 @@ class ViscoseFragment : Fragment() {
     lateinit var list: MutableList<Int>
     lateinit var binding: ViscoseFragment1Binding
     lateinit var dialog: Dialog
+    var user: FirebaseUser? = null
     lateinit var viewed_list: MutableList<ViewedHistoryData>
     lateinit var firebaseDatabase: FirebaseDatabase
     lateinit var dialog2: Dialog
@@ -49,8 +52,7 @@ class ViscoseFragment : Fragment() {
         dialog = Dialog(context!!)
         dialog2 = Dialog(context!!)
         firebaseDatabase = FirebaseDatabase.getInstance()
-        val ref = firebaseDatabase.getReference("Viscose")
-        val history_ref = firebaseDatabase.getReference("ViscoseHistory")
+        user=FirebaseAuth.getInstance().currentUser
         dialog2.setContentView(R.layout.viscose_dialog2)
         dialog.setContentView(R.layout.viscose_dialog)
         dialog2.setContentView(R.layout.viscose_dialog2)
@@ -168,9 +170,10 @@ class ViscoseFragment : Fragment() {
         binding.searchId.setOnClickListener {
             val data = ViewedHistoryData(first_seg, second_seg, third_seg)
             if (data.first != "" && data.second != "" && data.third != "" && binding.spinnerViscose.text.toString() != "--Select Count--") {
-                val key = ref.push().key
-                val history_ref2 = history_ref.child("Search History").child(key!!)
-                history_ref2.setValue(data)
+                val user=FirebaseAuth.getInstance().currentUser
+                val useref=FirebaseDatabase.getInstance().getReference("User").child(user?.uid.toString()).child("Search History")
+                val key=useref.push().key
+                useref.child(key!!).setValue(data)
                 val intent = Intent(context, AllProducts::class.java).putExtra("f", first_seg)
                     .putExtra("s", second_seg).putExtra("t", third_seg)
                     .putExtra("c", binding.spinnerViscose.text.toString())
@@ -181,7 +184,7 @@ class ViscoseFragment : Fragment() {
 
         }// When Search Button is pressed
         binding.searchHistoryViscose.setOnClickListener {
-            val ref3 = history_ref.child("Search History")
+            val ref3 =FirebaseDatabase.getInstance().getReference("User").child(user?.uid.toString()).child("Search History")
             ref3.addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onCancelled(p0: DatabaseError) {
 
@@ -211,7 +214,7 @@ class ViscoseFragment : Fragment() {
             })
         }     //When Search History is pressed
         binding.viewedHistoryViscose.setOnClickListener {
-            val ref3 = history_ref.child("ViewedHistory")
+            val ref3 = FirebaseDatabase.getInstance().getReference("User").child(user?.uid.toString()).child("Viewed History")
             ref3.addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onCancelled(p0: DatabaseError) {
 

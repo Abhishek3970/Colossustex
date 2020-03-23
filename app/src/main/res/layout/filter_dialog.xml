@@ -49,7 +49,7 @@
             <CheckBox
                 android:id="@+id/checkBox1"
                 style="@style/checkbox"
-                android:text="Anubhav" />
+                android:text="Andhra Pradesh" />
 
             <View
                 android:layout_width="match_parent"
@@ -59,7 +59,7 @@
             <CheckBox
                 android:id="@+id/checkBox2"
                 style="@style/checkbox"
-                android:text="Deepak" />
+                android:text="Arunachal Pradesh" />
 
             <View
                 android:layout_width="match_parent"
@@ -69,7 +69,7 @@
             <CheckBox
                 android:id="@+id/checkBox3"
                 style="@style/checkbox"
-                android:text="Himanshu" />
+                android:text="Assam" />
 
             <View
                 android:layout_width="match_parent"
@@ -80,7 +80,7 @@
 
                 android:id="@+id/checkBox4"
                 style="@style/checkbox"
-                android:text="Sagar" />
+                android:text="Bihar" />
 
             <View
                 android:layout_width="match_parent"
@@ -90,7 +90,211 @@
             <CheckBox
                 android:id="@+id/checkBox5"
                 style="@style/checkbox"
-                android:text="Aditya" />
+                android:text="Chattisgarh" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.75dp"
+                android:background="#28111111" />
+            <CheckBox
+                android:id="@+id/checkBox6"
+                style="@style/checkbox"
+                android:text="Goa" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.75dp"
+                android:background="#28111111" />
+            <CheckBox
+                android:id="@+id/checkBox7"
+                style="@style/checkbox"
+                android:text="Gujarat" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.75dp"
+                android:background="#28111111" />
+            <CheckBox
+                android:id="@+id/checkBox8"
+                style="@style/checkbox"
+                android:text="Haryana" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.75dp"
+                android:background="#28111111" />
+            <CheckBox
+                android:id="@+id/checkBox9"
+                style="@style/checkbox"
+                android:text="Himanchal Pradesh" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.75dp"
+                android:background="#28111111" />
+            <CheckBox
+                android:id="@+id/checkBox10"
+                style="@style/checkbox"
+                android:text="Jammu &amp; Kashmir" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.75dp"
+                android:background="#28111111" />
+            <CheckBox
+                android:id="@+id/checkBox11"
+                style="@style/checkbox"
+                android:text="Jharkhand" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.75dp"
+                android:background="#28111111" />
+            <CheckBox
+                android:id="@+id/checkBox12"
+                style="@style/checkbox"
+                android:text="Karnataka" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.75dp"
+                android:background="#28111111" /> <CheckBox
+                android:id="@+id/checkBox13"
+                style="@style/checkbox"
+                android:text="Kerala" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.75dp"
+                android:background="#28111111" /> <CheckBox
+                android:id="@+id/checkBox14"
+                style="@style/checkbox"
+                android:text="Madhya Pradesh" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.75dp"
+                android:background="#28111111" /> <CheckBox
+                android:id="@+id/checkBox15"
+                style="@style/checkbox"
+                android:text="Maharashtra" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.75dp"
+                android:background="#28111111" /> <CheckBox
+                android:id="@+id/checkBox16"
+                style="@style/checkbox"
+                android:text="Manipur" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.75dp"
+                android:background="#28111111" /> <CheckBox
+                android:id="@+id/checkBox17"
+                style="@style/checkbox"
+                android:text="Meghalaya" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.75dp"
+                android:background="#28111111" /> <CheckBox
+                android:id="@+id/checkBox18"
+                style="@style/checkbox"
+                android:text="Mizoram" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.75dp"
+                android:background="#28111111" /> <CheckBox
+                android:id="@+id/checkBox19"
+                style="@style/checkbox"
+                android:text="Nagaland" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.75dp"
+                android:background="#28111111" /> <CheckBox
+                android:id="@+id/checkBox20"
+                style="@style/checkbox"
+                android:text="Orissa" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.75dp"
+                android:background="#28111111" /> <CheckBox
+                android:id="@+id/checkBox21"
+                style="@style/checkbox"
+                android:text="Punjab" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.75dp"
+                android:background="#28111111" />
+            <CheckBox
+                android:id="@+id/checkBox22"
+                style="@style/checkbox"
+                android:text="Rajasthan" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.75dp"
+                android:background="#28111111" />
+            <CheckBox
+                android:id="@+id/checkBox23"
+                style="@style/checkbox"
+                android:text="Sikkim" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.75dp"
+                android:background="#28111111" /><CheckBox
+                android:id="@+id/checkBox24"
+                style="@style/checkbox"
+                android:text="Telangana" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.75dp"
+                android:background="#28111111" /><CheckBox
+                android:id="@+id/checkBox25"
+                style="@style/checkbox"
+                android:text="Tamil Nadu" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.75dp"
+                android:background="#28111111" /><CheckBox
+                android:id="@+id/checkBox26"
+                style="@style/checkbox"
+                android:text="Tripura" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.75dp"
+                android:background="#28111111" />
+            <CheckBox
+                android:id="@+id/checkBox27"
+                style="@style/checkbox"
+                android:text="Uttar Pradesh" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.75dp"
+                android:background="#28111111" />
+            <CheckBox
+                android:id="@+id/checkBox28"
+                style="@style/checkbox"
+                android:text="Uttarakhand" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.75dp"
+                android:background="#28111111" />
+            <CheckBox
+                android:id="@+id/checkBox29"
+                style="@style/checkbox"
+                android:text="West Bengal" />
 
             <View
                 android:layout_width="match_parent"
