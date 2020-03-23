@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.SCROLL_STATE_IDLE
 import com.example.colossustex.R
+import com.example.colossustex.SG.yarn_requirements
 import com.example.colossustex.SpinningMillOfIndia.Fancy.FancyActivity
 import com.example.colossustex.SpinningMillOfIndia.Texturised.TexturisedActivity
 import com.example.colossustex.SpinningMillOfIndia.Viscose.ViscoseActivity
@@ -86,6 +87,11 @@ class SpinningMillOfIndia : Fragment() {
             it.findNavController()
                 .navigate(SpinningMillOfIndiaDirections.actionSpinningMillOfIndiaToSearchAgent())
         }
+
+        postYarnRequirement.setOnClickListener {
+            startActivity(Intent(it.context, yarn_requirements::class.java))
+        }
+
 
         toolbar.inflateMenu(R.menu.menu_spinning_mills_of_india)
         toolbar.setOnMenuItemClickListener {
