@@ -9,6 +9,7 @@ import androidx.databinding.DataBindingUtil
 import com.example.colossustex.MainActivity
 import com.example.colossustex.R
 import com.example.colossustex.databinding.ActivityUserInfoBinding
+import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 
@@ -23,7 +24,6 @@ class InfoActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         val user = auth.currentUser
         val name = intent.extras?.getString("name")
-        val email = intent.extras?.getString("email")
         var pass = intent.extras?.getString("pass")
         val category = intent.extras?.getString("category")
         val google = intent.extras?.getString("google")
@@ -90,6 +90,14 @@ class InfoActivity : AppCompatActivity() {
                     flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
                 })
             }
+        }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        Toast.makeText(this,"Data is not stored",Toast.LENGTH_SHORT).show()
+        if (GoogleSignIn.getLastSignedInAccount(this) != null) {
+            googleSignInClient.signOut()
         }
     }
 }

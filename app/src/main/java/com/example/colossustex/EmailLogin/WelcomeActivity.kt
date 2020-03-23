@@ -42,29 +42,13 @@ class WelcomeActivity : AppCompatActivity() {
             finish()
         }
     }
-
     override fun onStart() {
         super.onStart()
         val auth = FirebaseAuth.getInstance()
         val sharedPreferences = getSharedPreferences(SHARED_PREFERRENCE, MODE_PRIVATE)
         val state = sharedPreferences.getInt("state", -1)
         val currentUser = auth.currentUser
-//        var country=""
         if (currentUser != null) {
-//            val mref = FirebaseDatabase.getInstance().getReference("User").child(currentUser.uid)
-//            mref.addListenerForSingleValueEvent(object : ValueEventListener {
-//                override fun onCancelled(p0: DatabaseError) {
-//
-//                }
-//                override fun onDataChange(p0: DataSnapshot) {
-//                    if (p0.exists()) {
-//                        Log.i("u","datachange")
-//                        val data= p0.child("userData").getValue(UserRegister::class.java)
-//                        country=data?.country!!
-//                    }
-//                }
-//
-//            })
             if (state == 1) {
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
@@ -72,24 +56,8 @@ class WelcomeActivity : AppCompatActivity() {
             }
             if (currentUser.isEmailVerified) {
                 Log.i("i", "verified")
-                Log.i("i", state.toString())
-                if (state == 2) {
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
-                    finish()
-                } else {
-                    if (GoogleSignIn.getLastSignedInAccount(this) != null) {
-                        val intent =
-                            Intent(this, InfoActivity::class.java).putExtra("google", "google")
-                        startActivity(intent)
-                        finish()
-                    } else {
-                        val intent = Intent(this, InfoActivity::class.java)
-                        startActivity(intent)
-                        finish()
-                    }
-
-                }
             }
         }
     }
