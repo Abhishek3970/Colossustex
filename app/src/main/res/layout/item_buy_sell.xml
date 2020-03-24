@@ -20,18 +20,16 @@
         android:id="@+id/textView_catagory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="16dp"
         android:text="Catagory"
         android:textSize="10sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view2" />
+        app:layout_constraintStart_toStartOf="@+id/textView_product_name"
+        app:layout_constraintTop_toBottomOf="@+id/textView_product_name" />
 
     <TextView
         android:id="@+id/textView_location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/borders"
         android:paddingStart="5dp"
@@ -41,31 +39,33 @@
         android:text="India"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view2" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/textView_product_name"
+        app:layout_constraintTop_toTopOf="@+id/textView_product_name" />
 
     <TextView
         android:id="@+id/textView_product_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:clickable="false"
         android:text="Temp Heading"
         android:textColor="@color/design_default_color_on_secondary"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_catagory" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView_image"
         android:layout_width="0dp"
         android:layout_height="293dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
         android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_product_name"
+        app:layout_constraintTop_toBottomOf="@+id/textView_catagory"
         app:srcCompat="@mipmap/ic_launcher_round" />
 
     <TextView
@@ -77,7 +77,7 @@
         android:layout_marginEnd="24dp"
         android:text="Sample Heading"
         android:textColor="@color/common_google_signin_btn_text_dark_focused"
-        android:textSize="18sp"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView_image" />
@@ -90,6 +90,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
         android:text="Sample Description would be link this and checking for line brake"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_description_heading" />
@@ -99,12 +100,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:background="#40C0C0C0"
+        android:background="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_count">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/linearLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -115,42 +116,36 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view3">
 
-            <TextView
+            <ImageButton
                 android:id="@+id/button_contact"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:layout_weight="1"
+                android:layout_width="50dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="24dp"
                 android:background="?android:attr/selectableItemBackground"
                 android:clickable="true"
                 android:drawableStart="@drawable/ic_call_black_24dp"
-                android:drawableTint="@color/colorAccent"
                 android:focusable="true"
-                android:gravity="center_vertical"
-                android:paddingStart="16dp"
-                android:text="Contact Seller"
-                android:textColor="@color/common_google_signin_btn_text_light_pressed"
-                android:textSize="14sp" />
+                android:src="@drawable/ic_call_black_24dp"
+                app:layout_constraintBottom_toBottomOf="@+id/button_share"
+                app:layout_constraintEnd_toStartOf="@+id/button_share"
+                app:layout_constraintTop_toTopOf="@+id/button_share"
+                app:layout_constraintVertical_bias="0.0" />
 
-            <TextView
+            <ImageButton
                 android:id="@+id/button_share"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:layout_weight="1"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
                 android:background="?android:attr/selectableItemBackground"
                 android:clickable="true"
                 android:drawableStart="@drawable/ic_share_black_24dp"
-                android:drawableTint="@color/colorAccent"
                 android:focusable="true"
                 android:gravity="center_vertical"
-                android:paddingStart="50dp"
-                android:text="Share"
-                android:textColor="@color/common_google_signin_btn_text_light_pressed"
-                android:textSize="14sp" />
-        </LinearLayout>
+                android:src="@drawable/ic_share_black_24dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
             android:id="@+id/textView_seller"
