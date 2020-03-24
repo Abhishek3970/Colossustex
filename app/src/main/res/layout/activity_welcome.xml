@@ -6,13 +6,13 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/welcome_bg"
+        android:background="@drawable/login_bg"
         tools:context=".EmailLogin.WelcomeActivity">
 
         <ImageView
             android:id="@+id/logo_welcome"
-            android:layout_width="267dp"
-            android:layout_height="90dp"
+            android:layout_width="290dp"
+            android:layout_height="110dp"
             app:layout_constraintBottom_toTopOf="@+id/continue_txt"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
@@ -26,11 +26,12 @@
             android:layout_height="wrap_content"
             android:text="Continue as "
             android:textColor="#FFF"
-            android:textSize="30sp"
+            android:textSize="26sp"
             app:layout_constraintBottom_toTopOf="@+id/customer_bt"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.68" />
 
         <Button
             android:id="@+id/customer_bt"
@@ -38,9 +39,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="60dp"
             android:layout_marginEnd="60dp"
-            android:layout_marginBottom="256dp"
+            android:layout_marginBottom="236dp"
             android:background="@drawable/login_but"
             android:text="Company"
+            android:textColor="#5128A7"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -54,22 +56,13 @@
             android:layout_marginEnd="60dp"
             android:background="@drawable/login_but"
             android:text="Agent"
+            android:textColor="#5128A7"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/customer_bt" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginEnd="50dp"
-            android:background="#B4FFFFFF"
-            app:layout_constraintBottom_toTopOf="@+id/agent_bt"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/customer_bt" />
+            app:layout_constraintTop_toBottomOf="@+id/customer_bt"
+            app:layout_constraintVertical_bias="0.201" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
