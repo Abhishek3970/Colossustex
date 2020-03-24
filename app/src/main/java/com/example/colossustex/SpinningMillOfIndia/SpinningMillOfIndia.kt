@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.SCROLL_STATE_IDLE
 import com.example.colossustex.R
+import com.example.colossustex.SG.yarn_requirements
 import com.example.colossustex.SpinningMillOfIndia.Fancy.FancyActivity
 import com.example.colossustex.SpinningMillOfIndia.Texturised.TexturisedActivity
 import com.example.colossustex.SpinningMillOfIndia.Viscose.ViscoseActivity
@@ -86,6 +87,11 @@ class SpinningMillOfIndia : Fragment() {
             it.findNavController()
                 .navigate(SpinningMillOfIndiaDirections.actionSpinningMillOfIndiaToSearchAgent())
         }
+
+        postYarnRequirement.setOnClickListener {
+            startActivity(Intent(it.context, yarn_requirements::class.java))
+        }
+
 
         toolbar.inflateMenu(R.menu.menu_spinning_mills_of_india)
         toolbar.setOnMenuItemClickListener {
@@ -206,13 +212,13 @@ class SpinningMillOfIndia : Fragment() {
                 checkboxViscose
             )
             for (item in list) {
-                item!!.setOnClickListener {
+                item.setOnClickListener {
                     when (item) {
-                        checkboxCotton -> cottonState = checkboxCotton!!.isChecked
-                        checkboxSynthetic -> syntheticState = checkboxSynthetic!!.isChecked
-                        checkboxViscose -> viscoseState = checkboxViscose!!.isChecked
-                        checkboxTexturized -> texturizedState = checkboxTexturized!!.isChecked
-                        checkboxFancy -> fancyState = checkboxFancy!!.isChecked
+                        checkboxCotton -> cottonState = checkboxCotton.isChecked
+                        checkboxSynthetic -> syntheticState = checkboxSynthetic.isChecked
+                        checkboxViscose -> viscoseState = checkboxViscose.isChecked
+                        checkboxTexturized -> texturizedState = checkboxTexturized.isChecked
+                        checkboxFancy -> fancyState = checkboxFancy.isChecked
 
                     }
                     if (!cottonState && !syntheticState && !viscoseState && !texturizedState && !fancyState) {
@@ -224,15 +230,15 @@ class SpinningMillOfIndia : Fragment() {
                     }
                     // continue by adding filters here.....
                     var tempList = ArrayList<String>()
-                    if (checkboxCotton!!.isChecked)
+                    if (checkboxCotton.isChecked)
                         tempList.add("Cotton")
-                    if (checkboxFancy!!.isChecked)
+                    if (checkboxFancy.isChecked)
                         tempList.add("Fancy")
-                    if (checkboxSynthetic!!.isChecked)
+                    if (checkboxSynthetic.isChecked)
                         tempList.add("Synthetic")
-                    if (checkboxViscose!!.isChecked)
+                    if (checkboxViscose.isChecked)
                         tempList.add("Viscose")
-                    if (checkboxTexturized!!.isChecked)
+                    if (checkboxTexturized.isChecked)
                         tempList.add("Texturized")
 
                     val newPostList = ArrayList<post>()

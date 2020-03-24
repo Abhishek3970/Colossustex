@@ -13,10 +13,10 @@
             android:id="@+id/psf_variety_dialog"
             android:layout_width="275dp"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
+            android:layout_margin="10dp"
             android:paddingLeft="10dp"
             android:text="PSF"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
 
         <View
             android:id="@+id/divider8"
@@ -28,10 +28,10 @@
             android:id="@+id/pv_variety_dialog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
+            android:layout_margin="10dp"
             android:paddingLeft="10dp"
             android:text="PV"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
 
         <View
             android:id="@+id/divider9"
@@ -43,9 +43,9 @@
             android:id="@+id/pc_variety_dialog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
+            android:layout_margin="10dp"
             android:paddingLeft="10dp"
             android:text="PC"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
     </LinearLayout>
 </LinearLayout>

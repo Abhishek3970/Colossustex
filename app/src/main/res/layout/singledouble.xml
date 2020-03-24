@@ -21,9 +21,10 @@
             android:id="@+id/single"
             android:layout_width="275dp"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             android:paddingLeft="10dp"
             android:text="@string/single"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
 
         <View
             android:id="@+id/divider43"
@@ -35,8 +36,9 @@
             android:id="@+id/dubble"
             android:layout_width="275dp"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             android:paddingLeft="10dp"
             android:text="@string/double_text"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

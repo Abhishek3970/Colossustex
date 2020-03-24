@@ -35,7 +35,7 @@ public class MyItemAdapter extends RecyclerView.Adapter<MyItemAdapter.MyViewHold
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.sub_heading.setText(itemDataList.get(position).getSub_heading());
-        holder.sub_price.setText(itemDataList.get(position).getSub_price().toString());
+        holder.sub_price.setText(itemDataList.get(position).getSub_price());
         holder.sub_time.setText(itemDataList.get(position).getSub_time());
         holder.sub_title.setText(itemDataList.get(position).getSub_title());
         holder.sub_change.setText(itemDataList.get(position).getSub_change());

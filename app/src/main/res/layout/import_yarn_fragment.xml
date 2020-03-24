@@ -142,7 +142,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/constraint_layout_post_yarn_requirement"
+                        android:id="@+id/constraint_layout_post_yarn_requirement_import"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="0dp"

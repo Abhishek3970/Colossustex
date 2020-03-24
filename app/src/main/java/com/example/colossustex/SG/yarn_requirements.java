@@ -35,8 +35,7 @@ public class yarn_requirements extends AppCompatActivity{
 
     ImageView back;
     int i = 1, sum = 0;
-    CardView Grade;
-    LinearLayout Fibre,Purpose,Count, Quality_Range_Texturised, Quality_Range_Fancy, Product_Range_Texturised, Product_Range_Fancy, Quality,Variety, Type, Nature, noofbags, description, sendto, denier, send_reqto, SingDub;
+    LinearLayout Fibre,Purpose,Count, Quality_Range_Texturised, Quality_Range_Fancy, Product_Range_Texturised, Grade, Product_Range_Fancy, Quality,Variety, Type, Nature, noofbags, description, sendto, denier, send_reqto, SingDub;
     TextView Fibre_, Purpose_, Count_ , Quality_Range_texturised,req,  Quality_Range_fancy, Product_Range_texturised, Product_Range_fancy, Quality_, Variety_, Type_, Nature_, Grade_ , sendto_, sendreqto, denier_, singdub;
 
 
@@ -109,11 +108,11 @@ public class yarn_requirements extends AppCompatActivity{
 //                Intrinsics.checkExpressionValueIsNotNull(it, "it");
                 dialog.element = new Dialog(yarn_requirements.this);
                 ((Dialog)dialog.element).setContentView(R.layout.buy_yarn_offers_dialog1);
-                TextView cotton = (TextView)((Dialog)dialog.element).findViewById(R.id.dialog_cotton);
-                TextView synthetic = (TextView)((Dialog)dialog.element).findViewById(R.id.dialog_synthetic);
-                TextView viscose = (TextView)((Dialog)dialog.element).findViewById(R.id.dialog_viscose);
-                TextView Texturised = (TextView)((Dialog)dialog.element).findViewById(R.id.dialog_texturised);
-                TextView fancy = (TextView)((Dialog)dialog.element).findViewById(R.id.dialog_fancy);
+                TextView cotton = ((Dialog)dialog.element).findViewById(R.id.dialog_cotton);
+                TextView synthetic = ((Dialog)dialog.element).findViewById(R.id.dialog_synthetic);
+                TextView viscose = ((Dialog)dialog.element).findViewById(R.id.dialog_viscose);
+                TextView Texturised = ((Dialog)dialog.element).findViewById(R.id.dialog_texturised);
+                TextView fancy = ((Dialog)dialog.element).findViewById(R.id.dialog_fancy);
 
 
                 cotton.setOnClickListener((new View.OnClickListener() {
@@ -139,7 +138,7 @@ public class yarn_requirements extends AppCompatActivity{
                         Product_Range_Fancy.setVisibility(View.GONE);
                     }
                 }));
-                synthetic.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                synthetic.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Fibre_.setText("synthetic");
@@ -161,8 +160,8 @@ public class yarn_requirements extends AppCompatActivity{
                         Product_Range_Texturised.setVisibility(View.GONE);
                         Product_Range_Fancy.setVisibility(View.GONE);
                     }
-                }));
-                viscose.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                });
+                viscose.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Fibre_.setText("viscose");
@@ -185,8 +184,8 @@ public class yarn_requirements extends AppCompatActivity{
                         Product_Range_Fancy.setVisibility(View.GONE);
 
                     }
-                }));
-                Texturised.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                });
+                Texturised.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Fibre_.setText("Texturised");
@@ -208,8 +207,8 @@ public class yarn_requirements extends AppCompatActivity{
                         Product_Range_Texturised.setVisibility(View.VISIBLE);
                         Product_Range_Fancy.setVisibility(View.GONE);
                     }
-                }));
-                fancy.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                });
+                fancy.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Fibre_.setText("fancy");
@@ -230,7 +229,7 @@ public class yarn_requirements extends AppCompatActivity{
                         Product_Range_Texturised.setVisibility(View.GONE);
                         Product_Range_Fancy.setVisibility(View.VISIBLE);
                     }
-                }));
+                });
                 ((Dialog)dialog.element).show();
             }
         });
@@ -243,9 +242,9 @@ public class yarn_requirements extends AppCompatActivity{
 //                Intrinsics.checkExpressionValueIsNotNull(it, "it");
                 dialog.element = new Dialog(yarn_requirements.this);
                 ((Dialog)dialog.element).setContentView(R.layout.sg_sendto_dialog);
-                TextView First = (TextView)((Dialog)dialog.element).findViewById(R.id.first_sendreqto);
-                TextView Second = (TextView)((Dialog)dialog.element).findViewById(R.id.second_sendreqto);
-                TextView Both = (TextView)((Dialog)dialog.element).findViewById(R.id.third_sendreqto);
+                TextView First = ((Dialog)dialog.element).findViewById(R.id.first_sendreqto);
+                TextView Second = ((Dialog)dialog.element).findViewById(R.id.second_sendreqto);
+                TextView Both = ((Dialog)dialog.element).findViewById(R.id.third_sendreqto);
 
 
                 First.setOnClickListener((new View.OnClickListener() {
@@ -261,12 +260,12 @@ public class yarn_requirements extends AppCompatActivity{
                         sendreqto.setText("Agents and Traders only");
                     }
                 }));
-                Both.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                Both.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         sendreqto.setText("Mills and Agents and Traders only");
                     }
-                }));
+                });
                 ((Dialog)dialog.element).show();
             }
         });
@@ -279,9 +278,9 @@ public class yarn_requirements extends AppCompatActivity{
 //                Intrinsics.checkExpressionValueIsNotNull(it, "it");
                 dialog.element = new Dialog(yarn_requirements.this);
                 ((Dialog)dialog.element).setContentView(R.layout.sg_sendto);
-                TextView ind = (TextView)((Dialog)dialog.element).findViewById(R.id.india);
-                TextView out = (TextView)((Dialog)dialog.element).findViewById(R.id.outside);
-                TextView bangla = (TextView)((Dialog)dialog.element).findViewById(R.id.bangladesh);
+                TextView ind = ((Dialog)dialog.element).findViewById(R.id.india);
+                TextView out = ((Dialog)dialog.element).findViewById(R.id.outside);
+                TextView bangla = ((Dialog)dialog.element).findViewById(R.id.bangladesh);
 
 
                 ind.setOnClickListener((new View.OnClickListener() {
@@ -297,12 +296,12 @@ public class yarn_requirements extends AppCompatActivity{
                         sendto_.setText("Outside India");
                     }
                 }));
-                bangla.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                bangla.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         sendto_.setText("Bangladesh");
                     }
-                }));
+                });
                 ((Dialog)dialog.element).show();
             }
         });
@@ -316,8 +315,8 @@ public class yarn_requirements extends AppCompatActivity{
 //                Intrinsics.checkExpressionValueIsNotNull(it, "it");
                 dialog.element = new Dialog(yarn_requirements.this);
                 ((Dialog)dialog.element).setContentView(R.layout.singledouble);
-                final TextView single = (TextView)((Dialog)dialog.element).findViewById(R.id.single);
-                TextView dubble = (TextView)((Dialog)dialog.element).findViewById(R.id.dubble);
+                final TextView single = ((Dialog)dialog.element).findViewById(R.id.single);
+                TextView dubble = ((Dialog)dialog.element).findViewById(R.id.dubble);
 
 
                 single.setOnClickListener((new View.OnClickListener() {
@@ -326,12 +325,12 @@ public class yarn_requirements extends AppCompatActivity{
                         singdub.setText("single");
                     }
                 }));
-                dubble.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                dubble.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         singdub.setText("double");
                     }
-                }));
+                });
                 ((Dialog)dialog.element).show();
             }
         });
@@ -346,8 +345,8 @@ public class yarn_requirements extends AppCompatActivity{
 //                Intrinsics.checkExpressionValueIsNotNull(it, "it");
                 dialog.element = new Dialog(yarn_requirements.this);
                 ((Dialog)dialog.element).setContentView(R.layout.sg_purpose_dialog);
-                TextView Weaving = (TextView)((Dialog)dialog.element).findViewById(R.id.purpose_Weaving_dialog);
-                TextView Hoisery = (TextView)((Dialog)dialog.element).findViewById(R.id.purpose_Hosiery_dialog);
+                TextView Weaving = ((Dialog)dialog.element).findViewById(R.id.purpose_Weaving_dialog);
+                TextView Hoisery = ((Dialog)dialog.element).findViewById(R.id.purpose_Hosiery_dialog);
 
 
                 Weaving.setOnClickListener((new View.OnClickListener() {
@@ -356,12 +355,12 @@ public class yarn_requirements extends AppCompatActivity{
                         Purpose_.setText("Weaving");
                     }
                 }));
-                Hoisery.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                Hoisery.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Purpose_.setText("Hoisery");
                     }
-                }));
+                });
                 ((Dialog)dialog.element).show();
             }
         });
@@ -374,21 +373,21 @@ public class yarn_requirements extends AppCompatActivity{
 //                Intrinsics.checkExpressionValueIsNotNull(it, "it");
                 dialog.element = new Dialog(yarn_requirements.this);
                 ((Dialog)dialog.element).setContentView(R.layout.sg_type_dialog);
-                TextView Wrap = (TextView)((Dialog)dialog.element).findViewById(R.id.wrap_type_dialog);
-                TextView Weft = (TextView)((Dialog)dialog.element).findViewById(R.id.weft_type_dialog);
+                TextView Wrap = ((Dialog)dialog.element).findViewById(R.id.wrap_type_dialog);
+                TextView Weft = ((Dialog)dialog.element).findViewById(R.id.weft_type_dialog);
 
-                Wrap.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                Wrap.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Type_.setText("Wrap");
                     }
-                }));
-                Weft.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                });
+                Weft.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Type_.setText("Weft");
                     }
-                }));
+                });
                 ((Dialog)dialog.element).show();
             }
         });
@@ -402,12 +401,12 @@ public class yarn_requirements extends AppCompatActivity{
                 //     ======Comber used later is actually combed wala=====================
                 dialog.element = new Dialog(yarn_requirements.this);
                 ((Dialog)dialog.element).setContentView(R.layout.sg_quality_dialog);
-                TextView comber = (TextView)((Dialog)dialog.element).findViewById(R.id.comber_quality_dialog);
-                TextView virgin = (TextView)((Dialog)dialog.element).findViewById(R.id.virgin_quality_dialog);
-                TextView card = (TextView)((Dialog)dialog.element).findViewById(R.id.carded_quality_dialog);
-                TextView combed = (TextView)((Dialog)dialog.element).findViewById(R.id.combed_compact_quality_dialog);
-                TextView carded = (TextView)((Dialog)dialog.element).findViewById(R.id.carded_compact_quality_dialog);
-                TextView Giza = (TextView)((Dialog)dialog.element).findViewById(R.id.giza_quality_dialog);
+                TextView comber = ((Dialog)dialog.element).findViewById(R.id.comber_quality_dialog);
+                TextView virgin = ((Dialog)dialog.element).findViewById(R.id.virgin_quality_dialog);
+                TextView card = ((Dialog)dialog.element).findViewById(R.id.carded_quality_dialog);
+                TextView combed = ((Dialog)dialog.element).findViewById(R.id.combed_compact_quality_dialog);
+                TextView carded = ((Dialog)dialog.element).findViewById(R.id.carded_compact_quality_dialog);
+                TextView Giza = ((Dialog)dialog.element).findViewById(R.id.giza_quality_dialog);
 
 
                 comber.setOnClickListener((new View.OnClickListener() {
@@ -423,30 +422,30 @@ public class yarn_requirements extends AppCompatActivity{
                         Quality_.setText("Virgin");
                     }
                 }));
-                card.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                card.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Quality_.setText("Carded");
                     }
-                }));
-                combed.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                });
+                combed.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Quality_.setText("Combed Compact");
                     }
-                }));
-                carded.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                });
+                carded.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Quality_.setText("Carded Compact");
                     }
-                }));
-                Giza.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                });
+                Giza.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Quality_.setText("Giza");
                     }
-                }));
+                });
                 ((Dialog)dialog.element).show();
             }
         });
@@ -459,11 +458,11 @@ public class yarn_requirements extends AppCompatActivity{
 //                Intrinsics.checkExpressionValueIsNotNull(it, "it");
                 dialog.element = new Dialog(yarn_requirements.this);
                 ((Dialog)dialog.element).setContentView(R.layout.sg_quality_texturised);
-                TextView nim = (TextView)((Dialog)dialog.element).findViewById(R.id.nim_quality_t_dialog);
-                TextView gft = (TextView)((Dialog)dialog.element).findViewById(R.id.gft_quality_t_dialog);
-                TextView limsim = (TextView)((Dialog)dialog.element).findViewById(R.id.lim_sim_quality_t_dialog);
-                TextView imroto = (TextView)((Dialog)dialog.element).findViewById(R.id.im_roto_quality_t_dialog);
-                TextView himroto = (TextView)((Dialog)dialog.element).findViewById(R.id.him_roto_quality_t_dialog);
+                TextView nim = ((Dialog)dialog.element).findViewById(R.id.nim_quality_t_dialog);
+                TextView gft = ((Dialog)dialog.element).findViewById(R.id.gft_quality_t_dialog);
+                TextView limsim = ((Dialog)dialog.element).findViewById(R.id.lim_sim_quality_t_dialog);
+                TextView imroto = ((Dialog)dialog.element).findViewById(R.id.im_roto_quality_t_dialog);
+                TextView himroto = ((Dialog)dialog.element).findViewById(R.id.him_roto_quality_t_dialog);
 
 
                 nim.setOnClickListener((new View.OnClickListener() {
@@ -472,30 +471,30 @@ public class yarn_requirements extends AppCompatActivity{
                         Quality_Range_texturised.setText("NIM");
                     }
                 }));
-                gft.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                gft.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Quality_Range_texturised.setText("GFT");
                     }
-                }));
-                limsim.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                });
+                limsim.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Quality_Range_texturised.setText("LIM / SIM");
                     }
-                }));
-                imroto.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                });
+                imroto.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Quality_Range_texturised.setText("IM / ROTO");
                     }
-                }));
-                himroto.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                });
+                himroto.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Quality_Range_texturised.setText("HIM / ROTO");
                     }
-                }));
+                });
                 ((Dialog)dialog.element).show();
             }
         });
@@ -508,12 +507,12 @@ public class yarn_requirements extends AppCompatActivity{
 //                Intrinsics.checkExpressionValueIsNotNull(it, "it");
                 dialog.element = new Dialog(yarn_requirements.this);
                 ((Dialog)dialog.element).setContentView(R.layout.sg_quality_fancy);
-                TextView cotton = (TextView)((Dialog)dialog.element).findViewById(R.id.cotton_quality_f_dialog);
-                TextView pv = (TextView)((Dialog)dialog.element).findViewById(R.id.pv_quality_f_dialog);
-                TextView pc = (TextView)((Dialog)dialog.element).findViewById(R.id.pc_quality_f_dialog);
-                TextView psf = (TextView)((Dialog)dialog.element).findViewById(R.id.psf_quality_f_dialog);
-                TextView vsf = (TextView)((Dialog)dialog.element).findViewById(R.id.vsf_quality_f_dialog);
-                TextView texturised = (TextView)((Dialog)dialog.element).findViewById(R.id.texturised_quality_f_dialog);
+                TextView cotton = ((Dialog)dialog.element).findViewById(R.id.cotton_quality_f_dialog);
+                TextView pv = ((Dialog)dialog.element).findViewById(R.id.pv_quality_f_dialog);
+                TextView pc = ((Dialog)dialog.element).findViewById(R.id.pc_quality_f_dialog);
+                TextView psf = ((Dialog)dialog.element).findViewById(R.id.psf_quality_f_dialog);
+                TextView vsf = ((Dialog)dialog.element).findViewById(R.id.vsf_quality_f_dialog);
+                TextView texturised = ((Dialog)dialog.element).findViewById(R.id.texturised_quality_f_dialog);
 
 
                 cotton.setOnClickListener((new View.OnClickListener() {
@@ -529,30 +528,30 @@ public class yarn_requirements extends AppCompatActivity{
                         Quality_Range_fancy.setText("PV");
                     }
                 }));
-                pc.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                pc.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Quality_Range_fancy.setText("PC");
                     }
-                }));
-                psf.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                });
+                psf.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Quality_Range_fancy.setText("PSF");
                     }
-                }));
-                vsf.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                });
+                vsf.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Quality_Range_fancy.setText("VSF");
                     }
-                }));
-                texturised.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                });
+                texturised.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Quality_Range_fancy.setText("Texturised");
                     }
-                }));
+                });
                 ((Dialog)dialog.element).show();
             }
         });
@@ -565,28 +564,28 @@ public class yarn_requirements extends AppCompatActivity{
 //                Intrinsics.checkExpressionValueIsNotNull(it, "it");
                 dialog.element = new Dialog(yarn_requirements.this);
                 ((Dialog)dialog.element).setContentView(R.layout.sg_nature_dialog);
-                TextView open = (TextView)((Dialog)dialog.element).findViewById(R.id.open_end_nature_dialog);
-                TextView ring = (TextView)((Dialog)dialog.element).findViewById(R.id.ring_span_nature_dialog);
-                TextView vortex = (TextView)((Dialog)dialog.element).findViewById(R.id.vortex_nature_dialog);
+                TextView open = ((Dialog)dialog.element).findViewById(R.id.open_end_nature_dialog);
+                TextView ring = ((Dialog)dialog.element).findViewById(R.id.ring_span_nature_dialog);
+                TextView vortex = ((Dialog)dialog.element).findViewById(R.id.vortex_nature_dialog);
 
-                open.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                open.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Nature_.setText("Open End");
                     }
-                }));
-                ring.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                });
+                ring.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Nature_.setText("Ring Span");
                     }
-                }));
-                vortex.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                });
+                vortex.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Nature_.setText("Vortex");
                     }
-                }));
+                });
                 ((Dialog)dialog.element).show();
             }
         });
@@ -599,28 +598,28 @@ public class yarn_requirements extends AppCompatActivity{
 //                Intrinsics.checkExpressionValueIsNotNull(it, "it");
                 dialog.element = new Dialog(yarn_requirements.this);
                 ((Dialog)dialog.element).setContentView(R.layout.sg_variety_dialog);
-                TextView psf = (TextView)((Dialog)dialog.element).findViewById(R.id.psf_variety_dialog);
-                TextView pv = (TextView)((Dialog)dialog.element).findViewById(R.id.pv_variety_dialog);
-                TextView pc = (TextView)((Dialog)dialog.element).findViewById(R.id.pc_variety_dialog);
+                TextView psf = ((Dialog)dialog.element).findViewById(R.id.psf_variety_dialog);
+                TextView pv = ((Dialog)dialog.element).findViewById(R.id.pv_variety_dialog);
+                TextView pc = ((Dialog)dialog.element).findViewById(R.id.pc_variety_dialog);
 
-                psf.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                psf.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Variety_.setText("PSF");
                     }
-                }));
-                pv.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                });
+                pv.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Variety_.setText("PV");
                     }
-                }));
-                pc.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                });
+                pc.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Variety_.setText("PC");
                     }
-                }));
+                });
                 ((Dialog)dialog.element).show();
             }
         });
@@ -633,11 +632,11 @@ public class yarn_requirements extends AppCompatActivity{
 //                Intrinsics.checkExpressionValueIsNotNull(it, "it");
                 dialog.element = new Dialog(yarn_requirements.this);
                 ((Dialog)dialog.element).setContentView(R.layout.sg_product_f_dialog);
-                TextView slub = (TextView)((Dialog)dialog.element).findViewById(R.id.Slub);
-                TextView multi_color = (TextView)((Dialog)dialog.element).findViewById(R.id.multicolor_product_f_dialog);
-                TextView modal = (TextView)((Dialog)dialog.element).findViewById(R.id.modal_product_f_dialog);
-                TextView excel = (TextView)((Dialog)dialog.element).findViewById(R.id.excel_product_f_dialog);
-                TextView tencel = (TextView)((Dialog)dialog.element).findViewById(R.id.tencel_product_f_dialog);
+                TextView slub = ((Dialog)dialog.element).findViewById(R.id.Slub);
+                TextView multi_color = ((Dialog)dialog.element).findViewById(R.id.multicolor_product_f_dialog);
+                TextView modal = ((Dialog)dialog.element).findViewById(R.id.modal_product_f_dialog);
+                TextView excel = ((Dialog)dialog.element).findViewById(R.id.excel_product_f_dialog);
+                TextView tencel = ((Dialog)dialog.element).findViewById(R.id.tencel_product_f_dialog);
 
 
                 slub.setOnClickListener((new View.OnClickListener() {
@@ -646,30 +645,30 @@ public class yarn_requirements extends AppCompatActivity{
                         Product_Range_fancy.setText("Slub");
                     }
                 }));
-                multi_color.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                multi_color.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Product_Range_fancy.setText("Multi Colour");
                     }
-                }));
-                modal.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                });
+                modal.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Product_Range_fancy.setText("Modal");
                     }
-                }));
-                excel.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                });
+                excel.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Product_Range_fancy.setText("Excel");
                     }
-                }));
-                tencel.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                });
+                tencel.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Product_Range_fancy.setText("Tencel");
                     }
-                }));
+                });
                 ((Dialog)dialog.element).show();
             }
         });
@@ -682,14 +681,14 @@ public class yarn_requirements extends AppCompatActivity{
 //                Intrinsics.checkExpressionValueIsNotNull(it, "it");
                 dialog.element = new Dialog(yarn_requirements.this);
                 ((Dialog)dialog.element).setContentView(R.layout.sg_product_t_dialog);
-                TextView bright = (TextView)((Dialog)dialog.element).findViewById(R.id.bright_product_t_dialog);
-                TextView semidull = (TextView)((Dialog)dialog.element).findViewById(R.id.Semidull_product_t_dialog);
-                TextView fulldull = (TextView)((Dialog)dialog.element).findViewById(R.id.fulldull_cot_look_product_t_dialog);
-                final TextView stretch = (TextView)((Dialog)dialog.element).findViewById(R.id.stretch_lycra_product_t_dialog);
-                TextView catonic = (TextView)((Dialog)dialog.element).findViewById(R.id.catonic_product_t_dialog);
-                TextView airtex = (TextView)((Dialog)dialog.element).findViewById(R.id.airtex_cooltex_product_t_dialog);
-                TextView blackdope = (TextView)((Dialog)dialog.element).findViewById(R.id.blackdope_dyed_);
-                TextView fdy = (TextView)((Dialog)dialog.element).findViewById(R.id.FDY_product_t_dialog);
+                TextView bright = ((Dialog)dialog.element).findViewById(R.id.bright_product_t_dialog);
+                TextView semidull = ((Dialog)dialog.element).findViewById(R.id.Semidull_product_t_dialog);
+                TextView fulldull = ((Dialog)dialog.element).findViewById(R.id.fulldull_cot_look_product_t_dialog);
+                final TextView stretch = ((Dialog)dialog.element).findViewById(R.id.stretch_lycra_product_t_dialog);
+                TextView catonic = ((Dialog)dialog.element).findViewById(R.id.catonic_product_t_dialog);
+                TextView airtex = ((Dialog)dialog.element).findViewById(R.id.airtex_cooltex_product_t_dialog);
+                TextView blackdope = ((Dialog)dialog.element).findViewById(R.id.blackdope_dyed_);
+                TextView fdy = ((Dialog)dialog.element).findViewById(R.id.FDY_product_t_dialog);
 
 
                 bright.setOnClickListener((new View.OnClickListener() {
@@ -698,18 +697,18 @@ public class yarn_requirements extends AppCompatActivity{
                         Product_Range_texturised.setText("Bright");
                     }
                 }));
-                semidull.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                semidull.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Product_Range_texturised.setText("Semi Dull");
                     }
-                }));
-                fulldull.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                });
+                fulldull.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Product_Range_texturised.setText("Full Dull");
                     }
-                }));
+                });
 
                 stretch.setOnClickListener((new View.OnClickListener() {
                     public final void onClick(View it) {
@@ -717,30 +716,30 @@ public class yarn_requirements extends AppCompatActivity{
                         Product_Range_texturised.setText("Stretch / Lycra");
                     }
                 }));
-                catonic.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                catonic.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Product_Range_texturised.setText("Catonic");
                     }
-                }));
-                airtex.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                });
+                airtex.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Product_Range_texturised.setText("Airtex / Cooltex");
                     }
-                }));
-                blackdope.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                });
+                blackdope.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Product_Range_texturised.setText("Black Dope Dyed");
                     }
-                }));
-                fdy.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                });
+                fdy.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Product_Range_texturised.setText("FDY");
                     }
-                }));
+                });
                 ((Dialog)dialog.element).show();
             }
         });
@@ -754,36 +753,36 @@ public class yarn_requirements extends AppCompatActivity{
 //                Intrinsics.checkExpressionValueIsNotNull(it, "it");
                 dialog.element = new Dialog(yarn_requirements.this);
                 ((Dialog)dialog.element).setContentView(R.layout.sg_grade_dialog);
-                TextView Ist = (TextView)((Dialog)dialog.element).findViewById(R.id.Ist_grade_dialog);
-                TextView pq = (TextView)((Dialog)dialog.element).findViewById(R.id.pq_grade_dialog);
-                TextView clq = (TextView)((Dialog)dialog.element).findViewById(R.id.clq_grade_dialog);
-                TextView std = (TextView)((Dialog)dialog.element).findViewById(R.id.std_grade_dialog);
+                TextView Ist = ((Dialog)dialog.element).findViewById(R.id.Ist_grade_dialog);
+                TextView pq = ((Dialog)dialog.element).findViewById(R.id.pq_grade_dialog);
+                TextView clq = ((Dialog)dialog.element).findViewById(R.id.clq_grade_dialog);
+                TextView std = ((Dialog)dialog.element).findViewById(R.id.std_grade_dialog);
 
 
-                Ist.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                Ist.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Grade_.setText("1st");
                     }
-                }));
-                pq.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                });
+                pq.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Grade_.setText("PQ");
                     }
-                }));
-                clq.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                });
+                clq.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Grade_.setText("CLQ");
                     }
-                }));
-                std.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                });
+                std.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Grade_.setText("STD");
                     }
-                }));
+                });
                 ((Dialog)dialog.element).show();
             }
         });
