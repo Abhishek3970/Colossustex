@@ -52,6 +52,7 @@ public class yarn_offers extends AppCompatActivity {
                         contents.add(info.getContent());
                     }
                 }
+
             }
 
             @Override

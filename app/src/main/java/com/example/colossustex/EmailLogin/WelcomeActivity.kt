@@ -58,6 +58,7 @@ class WelcomeActivity : AppCompatActivity() {
                 Log.i("i", "verified")
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
+                finish()
             }
         }
     }
