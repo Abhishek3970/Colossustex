@@ -46,7 +46,7 @@ public class news_adapter extends RecyclerView.Adapter<news_adapter.Viewholder>{
     public void onBindViewHolder(@NonNull Viewholder holder, int position) {
 
         holder.heading.setText(heading.get(position));
-        holder.place.setText(place.get(position));
+//        holder.place.setText(place.get(position));
         holder.news.setText(news.get(position));
         holder.time.setText(time.get(position));
 
@@ -91,7 +91,7 @@ public class news_adapter extends RecyclerView.Adapter<news_adapter.Viewholder>{
             img4 = itemView.findViewById(R.id.imageView4);
             news = itemView.findViewById(R.id.textView3);
             heading = itemView.findViewById(R.id.news_heading);
-            place = itemView.findViewById(R.id.textView7);
+//            place = itemView.findViewById(R.id.textView7);
 //            txt9 = itemView.findViewById(R.id.textView9);
             time = itemView.findViewById(R.id.textView10);
         }
