@@ -127,7 +127,7 @@
                                 android:layout_gravity="center_vertical"
                                 android:layout_weight="5"
                                 android:text="--Select--"
-                                android:textSize="24sp" />
+                                android:textSize="22sp" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -178,7 +178,7 @@
                                 android:layout_gravity="center_vertical"
                                 android:layout_weight="5"
                                 android:text="--Select--"
-                                android:textSize="24sp" />
+                                android:textSize="22sp" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -227,7 +227,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="8"
                                 android:inputType="number"
-                                android:textSize="24sp" />
+                                android:textSize="22sp" />
 
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
@@ -269,7 +269,7 @@
                                 android:layout_gravity="center_vertical"
                                 android:layout_weight="5"
                                 android:text="--Select--"
-                                android:textSize="24sp" />
+                                android:textSize="22sp" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -319,7 +319,7 @@
                                 android:layout_gravity="center_vertical"
                                 android:layout_weight="5"
                                 android:text="--Select--"
-                                android:textSize="24sp" />
+                                android:textSize="22sp" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -368,7 +368,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
                                 android:text="--Select--"
-                                android:textSize="24sp" />
+                                android:textSize="22sp" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -416,7 +416,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
                                 android:text="--Select--"
-                                android:textSize="24sp" />
+                                android:textSize="22sp" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -463,7 +463,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
                                 android:text="--Select--"
-                                android:textSize="24sp" />
+                                android:textSize="22sp" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -510,7 +510,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
                                 android:text="--Select--"
-                                android:textSize="24sp" />
+                                android:textSize="22sp" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -557,7 +557,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
                                 android:text="--Select--"
-                                android:textSize="24sp" />
+                                android:textSize="22sp" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -604,7 +604,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
                                 android:text="--Select--"
-                                android:textSize="24sp" />
+                                android:textSize="22sp" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -650,7 +650,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
                                 android:text="--Select--"
-                                android:textSize="24sp" />
+                                android:textSize="22sp" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -697,7 +697,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
                                 android:text="--Select--"
-                                android:textSize="24sp" />
+                                android:textSize="22sp" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -745,7 +745,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
                                 android:hint="e.g. : 200/300"
-                                android:textSize="24sp" />
+                                android:textSize="22sp" />
 
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
@@ -785,7 +785,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
                                 android:text="--Select--"
-                                android:textSize="24sp" />
+                                android:textSize="22sp" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -833,7 +833,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
                                 android:text="--Select--"
-                                android:textSize="24sp" />
+                                android:textSize="22sp" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -879,7 +879,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
                                 android:hint="--Select--"
-                                android:textSize="24sp" />
+                                android:textSize="22sp" />
 
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
@@ -918,7 +918,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
                                 android:hint="--Type--"
-                                android:textSize="24sp" />
+                                android:textSize="22sp" />
 
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
