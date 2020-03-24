@@ -6,56 +6,32 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/welcome_bg"
+        android:background="@drawable/login_bg"
         tools:context=".EmailLogin.WelcomeActivity">
 
         <ImageView
             android:id="@+id/logo_welcome"
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
+            android:layout_width="290dp"
+            android:layout_height="110dp"
+            app:layout_constraintBottom_toTopOf="@+id/continue_txt"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="30dp"
+            app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/col" />
 
         <TextView
-            android:id="@+id/txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Welcome to"
-            android:textColor="#FFF"
-            android:textSize="30sp"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="50dp"
-            android:fontFamily="@font/ptsans_bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/logo_welcome" />
-
-        <TextView
-            android:id="@+id/txt2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Colossustex !"
-            android:fontFamily="@font/ptsans_bold"
-            android:textColor="#FFF"
-            android:textSize="30sp"
-            android:layout_marginStart="50dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt"  />
-
-        <TextView
             android:id="@+id/continue_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Continue as..."
-            android:fontFamily="@font/pt_sans_regular"
+            android:text="Continue as "
             android:textColor="#FFF"
-            android:layout_marginBottom="30dp"
-            android:layout_marginStart="50dp"
-            android:textSize="21sp"
+            android:textSize="26sp"
+            app:layout_constraintBottom_toTopOf="@+id/customer_bt"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/customer_bt" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.68" />
 
         <Button
             android:id="@+id/customer_bt"
@@ -63,23 +39,13 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="60dp"
             android:layout_marginEnd="60dp"
+            android:layout_marginBottom="236dp"
             android:background="@drawable/login_but"
             android:text="Company"
-            app:layout_constraintBottom_toTopOf="@+id/line"
+            android:textColor="#5128A7"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginBottom="40dp"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <View
-            android:id="@+id/line"
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginEnd="50dp"
-            android:background="#B4FFFFFF"
-            app:layout_constraintBottom_toTopOf="@+id/agent_bt"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginBottom="40dp"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
@@ -90,10 +56,13 @@
             android:layout_marginEnd="60dp"
             android:background="@drawable/login_but"
             android:text="Agent"
-            android:layout_marginBottom="60dp"
+            android:textColor="#5128A7"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/customer_bt"
+            app:layout_constraintVertical_bias="0.201" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
