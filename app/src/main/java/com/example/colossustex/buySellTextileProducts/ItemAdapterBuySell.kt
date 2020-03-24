@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -70,8 +71,8 @@ class ItemAdapterBuySell() : RecyclerView.Adapter<ItemAdapterBuySell.MyViewHolde
         var descriptionHeading: TextView = itemView.findViewById(R.id.textView_description_heading)
         var description: TextView = itemView.findViewById(R.id.textView_description)
         var seller: TextView = itemView.findViewById(R.id.textView_seller)
-        var contactButton: TextView = itemView.findViewById(R.id.button_contact)
-        var shareButton: TextView = itemView.findViewById(R.id.button_share)
+        var contactButton: ImageButton = itemView.findViewById(R.id.button_contact)
+        var shareButton: ImageButton = itemView.findViewById(R.id.button_share)
         var countViews: TextView = itemView.findViewById(R.id.textView_count)
         var flag = 1
     }
