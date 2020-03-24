@@ -10,7 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
+        android:background="@color/colorAccent"
         android:orientation="horizontal">
 
         <TextView
@@ -19,9 +19,10 @@
             android:paddingStart="12dp"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
+            android:fontFamily="@font/ptsans_bold"
             android:text="Advertise With Us"
             android:textColor="#ffffff"
-            android:textSize="25dp"
+            android:textSize="24sp"
             android:textStyle="bold" />
 
         <TextView

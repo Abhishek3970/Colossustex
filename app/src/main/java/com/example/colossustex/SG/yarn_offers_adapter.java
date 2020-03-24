@@ -49,28 +49,28 @@ public class yarn_offers_adapter extends RecyclerView.Adapter<yarn_offers_adapte
         holder.heading.setText(heading.get(position));
         holder.content.setText(content.get(position));
 
-        holder.contact.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(context, "Segment made separately to be attach here", Toast.LENGTH_SHORT).show();
-            }
-        });
+//        holder.contact.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(context, "Segment made separately to be attach here", Toast.LENGTH_SHORT).show();
+//            }
+//        });
         holder.Contact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, "Segment made separately to be attach here", Toast.LENGTH_SHORT).show();
             }
         });
-        holder.share.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_SEND);
-                intent.setType("text/plain");
-                intent.putExtra(Intent.EXTRA_SUBJECT,"Subject");
-                intent.putExtra(Intent.EXTRA_TEXT, "text");
-                context.startActivity(Intent.createChooser(intent, "Share using"));
-            }
-        });
+//        holder.share.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(Intent.ACTION_SEND);
+//                intent.setType("text/plain");
+//                intent.putExtra(Intent.EXTRA_SUBJECT,"Subject");
+//                intent.putExtra(Intent.EXTRA_TEXT, "text");
+//                context.startActivity(Intent.createChooser(intent, "Share using"));
+//            }
+//        });
         holder.Share.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

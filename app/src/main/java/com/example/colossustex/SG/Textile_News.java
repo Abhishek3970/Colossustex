@@ -13,6 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.colossustex.MainActivity;
 import com.example.colossustex.R;
+import com.example.colossustex.SG.interface_firebase.FirebaseLoadListener;
+import com.example.colossustex.SG.model.ItemGroup;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -20,6 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Textile_News extends AppCompatActivity {
 
@@ -56,7 +59,7 @@ public class Textile_News extends AppCompatActivity {
                         place.add(info.getPlace());
                         time.add(info.getTime());
                     }
-
+                    startadapter();
                 }
             }
 
@@ -65,8 +68,7 @@ public class Textile_News extends AppCompatActivity {
                 Toast.makeText(Textile_News.this, "Data load failed", Toast.LENGTH_SHORT).show();
             }
         });
-
-        startadapter();
+//        startadapter();
     }
 
 //    private void setall() {
@@ -109,6 +111,7 @@ public class Textile_News extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.recyclerview);
         news_adapter adapter = new news_adapter(heading, place, news, time, Textile_News.this);
         recyclerView.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
         recyclerView.setLayoutManager(new LinearLayoutManager(Textile_News.this));
     }
 }

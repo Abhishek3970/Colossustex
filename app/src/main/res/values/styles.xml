@@ -59,11 +59,19 @@
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@android:color/black</item>
     </style>
-<style name="loginstatusbar" parent="AppTheme">
+
+    <style name="loginstatusbar" parent="AppTheme">
     <item name="colorPrimaryDark">#63584E</item>
     <item name="colorPrimary">@color/colorPrimary</item>
     <item name="colorAccent">@color/colorAccent</item>
     <item name="android:fontFamily">@font/roboto_regular</item>
 </style>
+
+    <style name="WelcomeStyle" parent="AppTheme">
+        <item name="colorPrimaryDark">#2a384d</item>
+        <item name="colorPrimary">#2a384d</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:fontFamily">@font/roboto_regular</item>
+    </style>
 
 </resources>

@@ -12,10 +12,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EmailLogin.ForgotPassword" />
+        <activity android:name=".EmailLogin.ForgotPassword"
+            android:theme="@style/loginstatusbar"/>
         <activity android:name=".EmailLogin.VerifyNumber" />
         <activity android:name=".EmailLogin.MobileLogin" />
-        <activity android:name=".EmailLogin.WelcomeActivity" />
+        <activity android:name=".EmailLogin.WelcomeActivity"
+            android:theme="@style/WelcomeStyle"/>
         <activity android:name=".EmailLogin.InfoActivity" />
         <activity android:name=".SplashActivity">
             <intent-filter>

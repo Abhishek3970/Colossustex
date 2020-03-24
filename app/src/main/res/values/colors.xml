@@ -2,7 +2,6 @@
 <resources>
     <color name="colorPrimary">#ea6059</color>
     <color name="colorPrimaryDark">#ea6059</color>
-<!--    <color name="colorAccent">#009ABD</color>-->
     <color name="colorAccent">#289CCA</color>
     <color name="orange">#FFA200</color>
     <color name="tabunselected">#80FFFFFF</color>
@@ -13,8 +12,7 @@
     <color name="stocklotsBackground">#D2691E</color>
     <color name="wastesBackground">@android:color/holo_red_dark</color>
     <color name="machineryBackground">#FFA000</color>
+
+    <color name="bg">#EDEDED</color>
+    <color name="text">#414141</color>
 </resources>
-
-
-
-<!--    2286c9-->

@@ -29,15 +29,13 @@
 
             <ImageView
                 android:id="@+id/imageView9"
-                android:layout_width="249dp"
-                android:layout_height="73dp"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/logo_temp"
+                android:src="@drawable/col"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/logo_temp" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/textView29"

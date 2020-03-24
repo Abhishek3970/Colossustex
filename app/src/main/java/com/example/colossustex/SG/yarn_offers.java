@@ -17,6 +17,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.colossustex.MainActivity;
 import com.example.colossustex.R;
+import com.example.colossustex.SG.interface_firebase.FirebaseLoadListener;
+import com.example.colossustex.SG.model.ItemGroup;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -26,13 +28,13 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.EventListener;
+import java.util.List;
 
 public class yarn_offers extends AppCompatActivity {
 
     ArrayList<String> headings = new ArrayList<>();
     ArrayList<String> contents = new ArrayList<>();
     ImageView back;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +53,7 @@ public class yarn_offers extends AppCompatActivity {
                         headings.add(info.getName());
                         contents.add(info.getContent());
                     }
+                    initializeRV();
                 }
 
             }
@@ -99,7 +102,7 @@ public class yarn_offers extends AppCompatActivity {
                 finishAffinity();
             }
         });
-        initializeRV();
+//        initializeRV();
     }
 //
 //    @Override
@@ -144,12 +147,11 @@ public class yarn_offers extends AppCompatActivity {
         return super.onContextItemSelected(item);
     }
 
-
     private void initializeRV(){
         RecyclerView recyclerView = findViewById(R.id.recyclerview);
         yarn_offers_adapter adapter = new yarn_offers_adapter(headings, contents, yarn_offers.this);
         recyclerView.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
         recyclerView.setLayoutManager(new LinearLayoutManager(yarn_offers.this));
     }
-
 }

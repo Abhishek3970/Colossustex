@@ -10,7 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
+        android:background="@color/colorAccent"
         android:orientation="horizontal">
 
         <TextView
@@ -19,9 +19,10 @@
             android:paddingStart="12dp"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
+            android:fontFamily="@font/ptsans_bold"
             android:text="Are you a spinning mil?"
             android:textColor="#ffffff"
-            android:textSize="25dp"
+            android:textSize="24sp"
             android:textStyle="bold" />
 
         <TextView
@@ -76,9 +77,10 @@
             android:layout_height="45dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="18dp"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorAccent"
             android:text="Register Here"
             android:textColor="#ffffff"
+            android:fontFamily="@font/pt_sans_regular"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3" />

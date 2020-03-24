@@ -16,13 +16,14 @@
         android:layout_marginTop="16dp"
         android:text="Register"
         android:textColor="#FFF"
-        android:textSize="34sp"
+        android:textSize="30sp"
+        android:padding="30dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/name_et"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+       />
 
     <EditText
         android:id="@+id/name_et"
@@ -102,23 +103,23 @@
         android:layout_marginBottom="24dp"
         android:background="@drawable/login_but"
         android:text="REGISTER"
-        android:textSize="16sp"
         android:textColor="#5128A7"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/textView30"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView30"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="116dp"
+        android:layout_marginBottom="92dp"
         android:text="By clicking register, I agree to your Terms"
         android:textColor="#FFF"
         app:layout_constraintBottom_toTopOf="@+id/login_now_text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.465"
+        app:layout_constraintHorizontal_bias="0.462"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -127,6 +128,8 @@
         android:layout_height="wrap_content"
         android:text="Already a member ?"
         android:textColor="#FFF"
+        android:paddingEnd="10dp"
+        android:textStyle="italic"
         app:layout_constraintBaseline_toBaselineOf="@+id/login_now_text"
         app:layout_constraintEnd_toStartOf="@+id/login_now_text"
         app:layout_constraintStart_toStartOf="parent" />

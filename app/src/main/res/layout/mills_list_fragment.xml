@@ -18,8 +18,10 @@
             android:layout_marginTop="5dp"
             android:gravity="center"
             android:padding="6dp"
+            android:textColor="@android:color/black"
+            android:fontFamily="@font/pt_sans_regular"
             android:text="All Yarn Spinning Mills"
-            android:textSize="25sp" />
+            android:textSize="22sp" />
 
         <EditText
             android:padding="6dp"
