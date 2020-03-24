@@ -41,8 +41,7 @@ class FancyActivity : AppCompatActivity() {
                     intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
                     startActivity(intent)
                     overridePendingTransition(
-                        R.anim.nav_default_enter_anim,
-                        R.anim.nav_default_exit_anim
+                        R.anim.slide_in_left,R.anim.slide_out_right
                     )
                 }
             }
