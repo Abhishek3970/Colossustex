@@ -1,6 +1,5 @@
 package com.example.colossustex.EmailLogin
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -15,7 +14,6 @@ import com.example.colossustex.databinding.ActivityVerifyNumberBinding
 import com.google.android.gms.tasks.TaskExecutors
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthProvider
 import com.google.firebase.database.FirebaseDatabase
@@ -29,6 +27,7 @@ class VerifyNumber : AppCompatActivity() {
     lateinit var progressBar: ProgressBar
     lateinit var editText: EditText
     lateinit var number: String
+    lateinit var country: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,6 +39,8 @@ class VerifyNumber : AppCompatActivity() {
 
         val phoneNo = intent.getStringExtra("number")
         number = phoneNo
+        country = intent.getStringExtra("country")
+
         sendVerificationCode(phoneNo)
 
         binding.buttonSubmit.setOnClickListener {
@@ -71,19 +72,41 @@ class VerifyNumber : AppCompatActivity() {
 
                 if (task.isSuccessful) {
 
-                    val user = FirebaseAuth.getInstance().currentUser
-                    val mref=
-                        FirebaseDatabase.getInstance().getReference("User").child(user?.uid.toString())
-                    val useref=UserRegister(user!!.uid,"","","" , number)
-                    mref.setValue(useref)
+//                    val user = FirebaseAuth.getInstance().currentUser
+//                    val mref =
+//                        FirebaseDatabase.getInstance().getReference("User").child(
+//                            user!!.uid
+//                        ).child("userData")
+//                    val useref =
+//                        UserRegister(
+//                            id = user.uid,
+//                            email = "",
+//                            name = "",
+//                            phone = number,
+//                            country = "",
+//                            city = "",
+//                            categary = "",
+//                            companyName = "",
+//                            GSTNumber = "",
+//                            address = "",
+//                            state = "",
+//                            pinCode = ""
+//                        )
+//                    mref.setValue(useref)
+
+
 
                     val sharedPreferences = getSharedPreferences("SHARED_PREFERRENCE", MODE_PRIVATE)
                     val editor = sharedPreferences.edit()
-                    editor.putInt("state" , 1)
+                    editor.putInt("state", 1)
 
-                    val intent = Intent(this, MainActivity::class.java)
-                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                    startActivity(intent)
+                    startActivity(
+                        Intent(this, InfoActivity::class.java)
+                            .putExtra("phone", number )
+                            .putExtra("country", country)
+                            .putExtra("google", "google")
+                    )
+
                 } else {
                     Toast.makeText(this@VerifyNumber, task.exception?.message, Toast.LENGTH_LONG)
                         .show()

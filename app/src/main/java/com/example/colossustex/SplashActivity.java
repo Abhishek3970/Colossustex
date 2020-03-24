@@ -7,7 +7,10 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
 
+import com.example.colossustex.EmailLogin.InfoActivity;
 import com.example.colossustex.EmailLogin.MainLogin;
+import com.example.colossustex.EmailLogin.WelcomeActivity;
+import com.google.firebase.auth.UserInfo;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -28,7 +31,7 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void start() {
-        startActivity(new Intent(this, MainLogin.class));
+        startActivity(new Intent(this,WelcomeActivity.class));
         finish();
     }
 

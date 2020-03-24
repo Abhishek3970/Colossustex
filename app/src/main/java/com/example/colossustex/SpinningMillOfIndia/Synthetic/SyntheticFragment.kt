@@ -34,7 +34,7 @@ class SyntheticFragment : Fragment() {
         firebaseDatabase = FirebaseDatabase.getInstance()
         datalist = mutableListOf()
         binding.toolbar.inflateMenu(R.menu.cotton_menu)
-        binding.toolbar.setTitle("Synthetic")
+        binding.toolbar.title = "Synthetic"
         binding.toolbar.setOnMenuItemClickListener {
             when (it.itemId) {
                 R.id.home_id -> findNavController().navigate(R.id.action_syntheticFragment_to_homePage)

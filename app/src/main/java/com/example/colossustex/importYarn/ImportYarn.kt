@@ -16,6 +16,7 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.colossustex.R
+import com.example.colossustex.SG.yarn_requirements
 import com.example.colossustex.SpinningMillOfIndia.AppBarStateChangedListener
 import com.example.colossustex.SpinningMillOfIndia.Fancy.FancyActivity
 import com.example.colossustex.SpinningMillOfIndia.Texturised.TexturisedActivity
@@ -85,6 +86,10 @@ class ImportYarn : Fragment() {
                     .navigate(ImportYarnDirections.actionImportYarnToSyntheticFragment())
             }
         })
+
+        binding.postYarnRequirements.setOnClickListener {
+            startActivity(Intent(it.context, yarn_requirements::class.java))
+        }
 
 
         binding.toolbarImport.inflateMenu(R.menu.menu_import_yarn)
