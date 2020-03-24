@@ -115,6 +115,7 @@
                                 android:layout_width="30dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:layout_marginBottom="20sp"
                                 android:layout_weight="5"
                                 android:paddingStart="4dp"
                                 android:text="Fibre"
@@ -127,7 +128,7 @@
                                 android:layout_gravity="center_vertical"
                                 android:layout_weight="5"
                                 android:text="--Select--"
-                                android:textSize="22sp" />
+                                android:textSize="20sp" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -166,6 +167,7 @@
                                 android:layout_width="30dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:layout_marginBottom="20sp"
                                 android:layout_weight="5"
                                 android:paddingStart="4dp"
                                 android:text="Purpose"
@@ -178,7 +180,7 @@
                                 android:layout_gravity="center_vertical"
                                 android:layout_weight="5"
                                 android:text="--Select--"
-                                android:textSize="22sp" />
+                                android:textSize="20sp" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -217,6 +219,7 @@
                                 android:layout_width="80dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:layout_marginBottom="20sp"
                                 android:layout_weight="2"
                                 android:paddingStart="4dp"
                                 android:text="Count" />
@@ -227,7 +230,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="8"
                                 android:inputType="number"
-                                android:textSize="22sp" />
+                                android:textSize="20sp" />
 
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
@@ -257,6 +260,7 @@
                                 android:layout_width="30dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:layout_marginBottom="20sp"
                                 android:layout_weight="5"
                                 android:paddingStart="4dp"
                                 android:text="Type of Text"
@@ -269,7 +273,7 @@
                                 android:layout_gravity="center_vertical"
                                 android:layout_weight="5"
                                 android:text="--Select--"
-                                android:textSize="22sp" />
+                                android:textSize="20sp" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -307,6 +311,7 @@
                                 android:layout_width="30dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:layout_marginBottom="20sp"
                                 android:layout_weight="5"
                                 android:paddingStart="4dp"
                                 android:text="Quality Range"
@@ -319,7 +324,7 @@
                                 android:layout_gravity="center_vertical"
                                 android:layout_weight="5"
                                 android:text="--Select--"
-                                android:textSize="22sp" />
+                                android:textSize="20sp" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -357,6 +362,7 @@
                                 android:layout_width="30dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:layout_marginBottom="20sp"
                                 android:layout_weight="5"
                                 android:paddingStart="4dp"
                                 android:text="Quality Range"
@@ -368,7 +374,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
                                 android:text="--Select--"
-                                android:textSize="22sp" />
+                                android:textSize="20sp" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -405,6 +411,7 @@
                                 android:layout_width="30dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:layout_marginBottom="20sp"
                                 android:layout_weight="5"
                                 android:paddingStart="4dp"
                                 android:text="Product Range"
@@ -416,7 +423,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
                                 android:text="--Select--"
-                                android:textSize="22sp" />
+                                android:textSize="20sp" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -452,6 +459,7 @@
                                 android:layout_width="30dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:layout_marginBottom="20sp"
                                 android:layout_weight="5"
                                 android:paddingStart="4dp"
                                 android:text="Product Range"
@@ -463,7 +471,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
                                 android:text="--Select--"
-                                android:textSize="22sp" />
+                                android:textSize="20sp" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -499,6 +507,7 @@
                                 android:layout_width="30dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:layout_marginBottom="20sp"
                                 android:layout_weight="5"
                                 android:paddingStart="4dp"
                                 android:text="Quality"
@@ -510,7 +519,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
                                 android:text="--Select--"
-                                android:textSize="22sp" />
+                                android:textSize="20sp" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -546,6 +555,7 @@
                                 android:layout_width="30dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:layout_marginBottom="20sp"
                                 android:layout_weight="5"
                                 android:paddingStart="4dp"
                                 android:text="Variety"
@@ -557,7 +567,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
                                 android:text="--Select--"
-                                android:textSize="22sp" />
+                                android:textSize="20sp" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -593,6 +603,7 @@
                                 android:layout_width="30dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:layout_marginBottom="20sp"
                                 android:layout_weight="5"
                                 android:paddingStart="4dp"
                                 android:text="Type"
@@ -604,7 +615,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
                                 android:text="--Select--"
-                                android:textSize="22sp" />
+                                android:textSize="20sp" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -640,6 +651,7 @@
                                 android:layout_width="30dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:layout_marginBottom="20sp"
                                 android:layout_weight="5"
                                 android:paddingStart="4dp"
                                 android:text="Nature" />
@@ -650,7 +662,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
                                 android:text="--Select--"
-                                android:textSize="22sp" />
+                                android:textSize="20sp" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -686,6 +698,7 @@
                                 android:layout_width="30dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:layout_marginBottom="20sp"
                                 android:layout_weight="5"
                                 android:paddingStart="4dp"
                                 android:text="Grade"
@@ -697,7 +710,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
                                 android:text="--Select--"
-                                android:textSize="22sp" />
+                                android:textSize="20sp" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -735,9 +748,11 @@
                                 android:layout_width="30dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:layout_marginBottom="20sp"
                                 android:layout_weight="4"
                                 android:paddingStart="4dp"
-                                android:text="No.of Bags" />
+                                android:text="No.of Bags"
+                                android:textSize="14sp" />
 
                             <EditText
                                 android:id="@+id/df"
@@ -745,7 +760,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
                                 android:hint="e.g. : 200/300"
-                                android:textSize="22sp" />
+                                android:textSize="20sp" />
 
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
@@ -775,6 +790,7 @@
                                 android:layout_width="30dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:layout_marginBottom="15sp"
                                 android:layout_weight="5"
                                 android:paddingStart="4dp"
                                 android:text="Send requirement to" />
@@ -785,7 +801,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
                                 android:text="--Select--"
-                                android:textSize="22sp" />
+                                android:textSize="20sp" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -823,6 +839,7 @@
                                 android:layout_width="30dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:layout_marginBottom="10sp"
                                 android:layout_weight="5"
                                 android:paddingStart="4dp"
                                 android:text="Yarn Delivery" />
@@ -833,7 +850,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
                                 android:text="--Select--"
-                                android:textSize="22sp" />
+                                android:textSize="20sp" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -869,6 +886,7 @@
                                 android:layout_width="30dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:layout_marginBottom="15sp"
                                 android:layout_weight="4"
                                 android:paddingStart="4dp"
                                 android:text="No.of Bags" />
@@ -879,7 +897,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
                                 android:hint="--Select--"
-                                android:textSize="22sp" />
+                                android:textSize="20sp" />
 
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
@@ -908,6 +926,7 @@
                                 android:layout_width="25dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:layout_marginBottom="15sp"
                                 android:layout_weight="4"
                                 android:paddingStart="4dp"
                                 android:text="Description" />
@@ -918,7 +937,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
                                 android:hint="--Type--"
-                                android:textSize="22sp" />
+                                android:textSize="20sp" />
 
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
