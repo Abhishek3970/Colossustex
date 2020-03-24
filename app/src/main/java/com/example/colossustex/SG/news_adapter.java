@@ -50,7 +50,17 @@ public class news_adapter extends RecyclerView.Adapter<news_adapter.Viewholder>{
         holder.news.setText(news.get(position));
         holder.time.setText(time.get(position));
 
-        holder.txt9.setOnClickListener(new View.OnClickListener() {
+//        holder.txt9.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(Intent.ACTION_SEND);intent.setType("text/plain");
+//                intent.putExtra(Intent.EXTRA_SUBJECT,"Subject");
+//                intent.putExtra(Intent.EXTRA_TEXT, "text");
+//                context.startActivity(Intent.createChooser(intent, "Share using"));
+//            }
+//        });
+
+        holder.img4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_SEND);intent.setType("text/plain");
@@ -82,7 +92,7 @@ public class news_adapter extends RecyclerView.Adapter<news_adapter.Viewholder>{
             news = itemView.findViewById(R.id.textView3);
             heading = itemView.findViewById(R.id.news_heading);
             place = itemView.findViewById(R.id.textView7);
-            txt9 = itemView.findViewById(R.id.textView9);
+//            txt9 = itemView.findViewById(R.id.textView9);
             time = itemView.findViewById(R.id.textView10);
         }
     }
