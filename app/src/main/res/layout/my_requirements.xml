@@ -112,10 +112,10 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:layout_width="wrap_content"
+                                android:layout_width="30dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="5"
                                 android:layout_gravity="center_vertical"
+                                android:layout_weight="5"
                                 android:paddingStart="4dp"
                                 android:text="Fibre"
                                 android:textSize="12sp" />
@@ -124,10 +124,10 @@
                                 android:id="@+id/f"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="5"
                                 android:layout_gravity="center_vertical"
+                                android:layout_weight="5"
                                 android:text="--Select--"
-                                android:textSize="22sp" />
+                                android:textSize="24sp" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -163,22 +163,22 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:layout_width="wrap_content"
+                                android:layout_width="30dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="5"
                                 android:layout_gravity="center_vertical"
-                                android:text="Purpose"
+                                android:layout_weight="5"
                                 android:paddingStart="4dp"
+                                android:text="Purpose"
                                 android:textSize="12sp" />
 
                             <TextView
                                 android:id="@+id/p"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="5"
                                 android:layout_gravity="center_vertical"
+                                android:layout_weight="5"
                                 android:text="--Select--"
-                                android:textSize="22sp"/>
+                                android:textSize="24sp" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -214,10 +214,10 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:layout_width="wrap_content"
+                                android:layout_width="80dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"
                                 android:layout_gravity="center_vertical"
+                                android:layout_weight="2"
                                 android:paddingStart="4dp"
                                 android:text="Count" />
 
@@ -227,7 +227,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="8"
                                 android:inputType="number"
-                                android:textSize="22sp" />
+                                android:textSize="24sp" />
 
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
@@ -254,10 +254,10 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:layout_width="wrap_content"
+                                android:layout_width="30dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="5"
                                 android:layout_gravity="center_vertical"
+                                android:layout_weight="5"
                                 android:paddingStart="4dp"
                                 android:text="Type of Text"
                                 android:textSize="12sp" />
@@ -266,10 +266,10 @@
                                 android:id="@+id/singdub"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="5"
                                 android:layout_gravity="center_vertical"
+                                android:layout_weight="5"
                                 android:text="--Select--"
-                                android:textSize="22sp" />
+                                android:textSize="24sp" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -304,22 +304,22 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:layout_width="wrap_content"
+                                android:layout_width="30dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="5"
-                                android:text="Quality Range"
                                 android:layout_gravity="center_vertical"
+                                android:layout_weight="5"
                                 android:paddingStart="4dp"
+                                android:text="Quality Range"
                                 android:textSize="12sp" />
 
                             <TextView
                                 android:id="@+id/qrt"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="5"
                                 android:layout_gravity="center_vertical"
+                                android:layout_weight="5"
                                 android:text="--Select--"
-                                android:textSize="22sp"/>
+                                android:textSize="24sp" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -354,10 +354,10 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:layout_width="wrap_content"
+                                android:layout_width="30dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="5"
                                 android:layout_gravity="center_vertical"
+                                android:layout_weight="5"
                                 android:paddingStart="4dp"
                                 android:text="Quality Range"
                                 android:textSize="12sp" />
@@ -368,7 +368,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
                                 android:text="--Select--"
-                                android:textSize="22sp" />
+                                android:textSize="24sp" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -402,10 +402,10 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:layout_width="wrap_content"
+                                android:layout_width="30dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="5"
                                 android:layout_gravity="center_vertical"
+                                android:layout_weight="5"
                                 android:paddingStart="4dp"
                                 android:text="Product Range"
                                 android:textSize="12sp" />
@@ -416,7 +416,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
                                 android:text="--Select--"
-                                android:textSize="22sp" />
+                                android:textSize="24sp" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -449,10 +449,10 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:layout_width="wrap_content"
+                                android:layout_width="30dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="5"
                                 android:layout_gravity="center_vertical"
+                                android:layout_weight="5"
                                 android:paddingStart="4dp"
                                 android:text="Product Range"
                                 android:textSize="12sp" />
@@ -463,7 +463,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
                                 android:text="--Select--"
-                                android:textSize="22sp" />
+                                android:textSize="24sp" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -496,10 +496,10 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:layout_width="wrap_content"
+                                android:layout_width="30dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="5"
                                 android:layout_gravity="center_vertical"
+                                android:layout_weight="5"
                                 android:paddingStart="4dp"
                                 android:text="Quality"
                                 android:textSize="12sp" />
@@ -510,7 +510,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
                                 android:text="--Select--"
-                                android:textSize="22sp" />
+                                android:textSize="24sp" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -543,12 +543,12 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:layout_width="wrap_content"
+                                android:layout_width="30dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="5"
-                                android:text="Variety"
                                 android:layout_gravity="center_vertical"
+                                android:layout_weight="5"
                                 android:paddingStart="4dp"
+                                android:text="Variety"
                                 android:textSize="12sp" />
 
                             <TextView
@@ -557,7 +557,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
                                 android:text="--Select--"
-                                android:textSize="22sp" />
+                                android:textSize="24sp" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -590,12 +590,12 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:layout_width="wrap_content"
+                                android:layout_width="30dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="5"
-                                android:text="Type"
                                 android:layout_gravity="center_vertical"
+                                android:layout_weight="5"
                                 android:paddingStart="4dp"
+                                android:text="Type"
                                 android:textSize="12sp" />
 
                             <TextView
@@ -604,7 +604,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
                                 android:text="--Select--"
-                                android:textSize="22sp" />
+                                android:textSize="24sp" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -637,10 +637,10 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:layout_width="wrap_content"
+                                android:layout_width="30dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="5"
                                 android:layout_gravity="center_vertical"
+                                android:layout_weight="5"
                                 android:paddingStart="4dp"
                                 android:text="Nature" />
 
@@ -650,7 +650,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
                                 android:text="--Select--"
-                                android:textSize="22sp" />
+                                android:textSize="24sp" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -683,12 +683,12 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:layout_width="wrap_content"
+                                android:layout_width="30dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="5"
-                                android:text="Grade"
                                 android:layout_gravity="center_vertical"
+                                android:layout_weight="5"
                                 android:paddingStart="4dp"
+                                android:text="Grade"
                                 android:textSize="12sp" />
 
                             <TextView
@@ -697,7 +697,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
                                 android:text="--Select--"
-                                android:textSize="22sp" />
+                                android:textSize="24sp" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -732,10 +732,10 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:layout_width="wrap_content"
+                                android:layout_width="30dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="5"
                                 android:layout_gravity="center_vertical"
+                                android:layout_weight="4"
                                 android:paddingStart="4dp"
                                 android:text="No.of Bags" />
 
@@ -745,7 +745,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
                                 android:hint="e.g. : 200/300"
-                                android:textSize="22sp" />
+                                android:textSize="24sp" />
 
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
@@ -772,10 +772,10 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:layout_width="wrap_content"
+                                android:layout_width="30dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="5"
                                 android:layout_gravity="center_vertical"
+                                android:layout_weight="5"
                                 android:paddingStart="4dp"
                                 android:text="Send requirement to" />
 
@@ -785,7 +785,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
                                 android:text="--Select--"
-                                android:textSize="22sp" />
+                                android:textSize="24sp" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -820,10 +820,10 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:layout_width="wrap_content"
+                                android:layout_width="30dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="5"
                                 android:layout_gravity="center_vertical"
+                                android:layout_weight="5"
                                 android:paddingStart="4dp"
                                 android:text="Yarn Delivery" />
 
@@ -833,7 +833,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
                                 android:text="--Select--"
-                                android:textSize="22sp" />
+                                android:textSize="24sp" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -866,10 +866,10 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:layout_width="wrap_content"
+                                android:layout_width="30dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="5"
                                 android:layout_gravity="center_vertical"
+                                android:layout_weight="4"
                                 android:paddingStart="4dp"
                                 android:text="No.of Bags" />
 
@@ -879,7 +879,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
                                 android:hint="--Select--"
-                                android:textSize="22sp" />
+                                android:textSize="24sp" />
 
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
@@ -888,7 +888,7 @@
                 <LinearLayout
                     android:id="@+id/desc"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="80dp"
                     android:background="@drawable/background_round_white"
                     android:orientation="vertical">
 
@@ -902,14 +902,13 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_margin="12dp"
                             android:orientation="horizontal">
 
                             <TextView
-                                android:layout_width="wrap_content"
+                                android:layout_width="25dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="5"
                                 android:layout_gravity="center_vertical"
+                                android:layout_weight="4"
                                 android:paddingStart="4dp"
                                 android:text="Description" />
 
@@ -919,7 +918,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
                                 android:hint="--Type--"
-                                android:textSize="22sp" />
+                                android:textSize="24sp" />
 
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
@@ -927,6 +926,9 @@
 
             </LinearLayout>
         </ScrollView>
+
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -949,7 +951,4 @@
             android:background="#F34208"
             android:text="SUBMIT" />
     </LinearLayout>
-
-
-</LinearLayout>
 </LinearLayout>

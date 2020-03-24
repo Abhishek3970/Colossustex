@@ -72,7 +72,7 @@ class ItemAdapter(var list: MutableList<Item>) :
                         dialog.dismiss()
                         holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToTexturisedFragment1())
                     }
-                    texturised.setOnClickListener{
+                    fancy.setOnClickListener{
                         dialog.dismiss()
                         holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToFancyFragment1())
                     }
