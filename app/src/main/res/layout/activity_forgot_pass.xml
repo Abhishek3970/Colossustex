@@ -12,39 +12,36 @@
         android:id="@+id/pass_forgot_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="60dp"
         android:ems="10"
         android:backgroundTint="#FFF"
         android:hint="Email"
         android:inputType="textWebEmailAddress"
+        android:layout_marginBottom="30dp"
         android:textColorHint="#FFF"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.238" />
+        app:layout_constraintBottom_toTopOf="@id/forgot_bt" />
 
     <Button
         android:id="@+id/forgot_bt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="60dp"
         android:background="@drawable/login_but"
         android:text="Reset Password"
         android:textColor="#5128A7"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pass_forgot_et"
-        app:layout_constraintVertical_bias="0.101" />
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
     <ImageView
         android:id="@+id/imageView7"
-        android:layout_width="wrap_content"
+        android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:src="@drawable/col"

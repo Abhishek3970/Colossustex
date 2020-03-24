@@ -16,7 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:text="@string/app_name"
         android:textSize="28sp"
-        android:fontFamily="@font/baloo_da_medium"
+        android:fontFamily="@font/ptsans_bold"
         android:textColor="@android:color/white"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
