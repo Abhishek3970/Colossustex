@@ -73,14 +73,6 @@ class InfoActivity : AppCompatActivity() {
                 ""
             )
             mref.setValue(userinfo)
-
-            val sharedPreferences = getSharedPreferences("SHARED_PREFERRENCE", MODE_PRIVATE)
-            val editor = sharedPreferences.edit()
-            editor.putInt("state", 2)
-            editor.apply()
-            Log.i("if","pressed")
-            val state = sharedPreferences.getInt(state, -1)
-            Log.i("if",state.toString())
             if (google == "google") {
                 startActivity(Intent(this, MainActivity::class.java).apply {
                     flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
