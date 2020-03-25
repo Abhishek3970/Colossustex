@@ -53,55 +53,120 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
-
-                    <ImageView
-                        android:id="@+id/cotton"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:onClick="@{()->ImportYarnViewModel.toCotton()}"
-                        android:src="@drawable/cotton" />
+                        android:orientation="vertical">
 
-                    <ImageView
-                        android:id="@+id/Synthetic"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
+                        <ImageView
+                            android:id="@+id/cotton"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/cotton"
+                            android:onClick="@{()->ImportYarnViewModel.toCotton()"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Cotton"
+                            android:textSize="10sp"
+                            android:textColor="@color/colorPrimary"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
                         android:layout_weight="1"
-                        android:src="@drawable/synthetic"
-                        android:onClick="@{()->ImportYarnViewModel.toSynthetic()}"
-                        />
+                        android:orientation="vertical">
 
-                    <ImageView
-                        android:id="@+id/viscose"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_weight="1"
+                        <ImageView
+                            android:id="@+id/synthetic"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/synthetic" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Synthetic"
+                            android:textSize="10sp"
+                            android:textColor="@color/colorPrimary"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_marginStart="14dp"
                         android:layout_marginEnd="14dp"
-                        android:src="@drawable/viscose"
-                        android:onClick="@{()->ImportYarnViewModel.toViscose()}"
-                        />
 
-                    <ImageView
-                        android:id="@+id/texturised"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/viscose"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/viscose" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Viscose"
+                            android:textSize="10sp"
+                            android:textColor="@color/colorPrimary"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
                         android:layout_weight="1"
-                        android:src="@drawable/texturized"
-                        android:onClick="@{()->ImportYarnViewModel.toTexturized()}"
-                    />
+                        android:orientation="vertical">
 
-                    <ImageView
-                        android:id="@+id/fancy"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
+                        <ImageView
+                            android:id="@+id/texturised"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/texturized" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Texturised"
+                            android:textSize="10sp"
+                            android:textColor="@color/colorPrimary"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:src="@drawable/fancy"
-                        android:onClick="@{()->ImportYarnViewModel.toFancy()}"
-                         />
+                        android:orientation="vertical">
 
+                        <ImageView
+                            android:id="@+id/fancy"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/fancy" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Fancy"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="10sp"
+                            android:layout_gravity="center"/>
+                    </LinearLayout>
                 </LinearLayout>
 
 
