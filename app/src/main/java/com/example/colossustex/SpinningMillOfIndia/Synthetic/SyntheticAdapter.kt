@@ -69,10 +69,23 @@ class SyntheticAdapter(var list: MutableList<SyntheticData>) :
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.text.text = list[position].textdesc
-        Glide.with(holder.itemView)
-            .load(list[position].imageurl)
-            .apply(RequestOptions.circleCropTransform())
-            .into(holder.image)
+        when (position) {
+            0->holder.image.setImageResource(R.drawable.yarn1)
+            1->holder.image.setImageResource(R.drawable.yarn2)
+            2->holder.image.setImageResource(R.drawable.yarn3)
+            3->holder.image.setImageResource(R.drawable.yarn4)
+            4->holder.image.setImageResource(R.drawable.yarn5)
+            5->holder.image.setImageResource(R.drawable.yarn6)
+            6->holder.image.setImageResource(R.drawable.yarn1)
+            7->holder.image.setImageResource(R.drawable.yarn2)
+            8->holder.image.setImageResource(R.drawable.yarn3)
+            9->holder.image.setImageResource(R.drawable.yarn4)
+            10->holder.image.setImageResource(R.drawable.yarn5)
+            11->holder.image.setImageResource(R.drawable.yarn6)
+            12->holder.image.setImageResource(R.drawable.yarn1)
+            13->holder.image.setImageResource(R.drawable.yarn2)
+            14->holder.image.setImageResource(R.drawable.yarn3)
+        }
         if (position == 0) {
             holder.sliderLayout.visibility = View.VISIBLE
         } else {
