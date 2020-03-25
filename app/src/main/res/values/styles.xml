@@ -66,6 +66,9 @@
     <item name="colorAccent">@color/colorAccent</item>
     <item name="android:fontFamily">@font/roboto_regular</item>
 </style>
+    <style name="splash_statusbar" parent="AppTheme">
+        <item name="colorPrimaryDark">#FFFFFF</item>
+    </style>
 
     <style name="WelcomeStyle" parent="AppTheme">
         <item name="colorPrimaryDark">#2a384d</item>

@@ -22,7 +22,8 @@
             android:theme="@style/loginstatusbar"/>
         <activity android:name=".EmailLogin.InfoActivity"
             android:theme="@style/loginstatusbar"/>
-        <activity android:name=".SplashActivity">
+        <activity android:name=".SplashActivity"
+            android:theme="@style/splash_statusbar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
