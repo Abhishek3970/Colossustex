@@ -65,7 +65,7 @@
                             android:layout_height="30dp"
                             android:layout_gravity="center"
                             android:src="@drawable/cotton"
-                            android:onClick="@{()->ImportYarnViewModel.toCotton()"/>
+                            android:onClick="@{()->ImportYarnViewModel.toCotton()}"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -88,7 +88,8 @@
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_gravity="center"
-                            android:src="@drawable/synthetic" />
+                            android:src="@drawable/synthetic"
+                            android:onClick="@{()->ImportYarnViewModel.toSynthetic()}"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -104,7 +105,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="14dp"
                         android:layout_marginEnd="14dp"
-
                         android:orientation="vertical">
 
                         <ImageView
@@ -112,7 +112,8 @@
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_gravity="center"
-                            android:src="@drawable/viscose" />
+                            android:src="@drawable/viscose"
+                            android:onClick="@{()->ImportYarnViewModel.toViscose()}"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -135,7 +136,8 @@
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_gravity="center"
-                            android:src="@drawable/texturized" />
+                            android:src="@drawable/texturized"
+                            android:onClick="@{()->ImportYarnViewModel.toTexturized()}"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -157,7 +159,8 @@
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_gravity="center"
-                            android:src="@drawable/fancy" />
+                            android:src="@drawable/fancy"
+                            android:onClick="@{()->ImportYarnViewModel.toFancy()}"/>
 
                         <TextView
                             android:layout_width="wrap_content"
