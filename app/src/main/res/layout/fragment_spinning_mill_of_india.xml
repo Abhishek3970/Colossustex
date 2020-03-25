@@ -37,7 +37,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:gravity="center_vertical"
+                android:gravity="center"
                 android:orientation="horizontal"
                 android:weightSum="5"
                 app:layout_constraintBottom_toTopOf="@+id/cardView_post_yarn_requirement"
@@ -45,74 +45,44 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <TextView
+                <ImageView
                     android:id="@+id/textView_cotton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="3dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_weight="1"
-                    android:background="@color/colorAccent"
-                    android:paddingStart="3dp"
-                    android:paddingEnd="3dp"
-                    android:text="Cotton"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/white"
-                    android:textSize="14sp" />
+                    android:src="@drawable/cotton" />
 
-                <TextView
+                <ImageView
                     android:id="@+id/textView_Synthetic"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="3dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="8dp"
+
                     android:layout_weight="1"
+                    android:src="@drawable/synthetic" />
 
-                    android:background="@color/colorAccent"
-                    android:paddingStart="3dp"
-                    android:paddingEnd="3dp"
-                    android:text="Synthetic"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/white" />
-
-                <TextView
+                <ImageView
                     android:id="@+id/textView_viscose"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="3dp"
-                    android:background="@color/colorAccent"
-                    android:paddingStart="3dp"
-                    android:paddingEnd="3dp"
-                    android:text="Viscose"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginEnd="14dp"
+                    android:src="@drawable/viscose" />
 
-                    android:textAlignment="center"
-                    android:textColor="@android:color/white" />
-
-                <TextView
+                <ImageView
                     android:id="@+id/textView_texturised"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="3dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="8dp"
                     android:layout_weight="1"
+                    android:src="@drawable/texturized" />
 
-                    android:background="@color/colorAccent"
-                    android:paddingStart="3dp"
-                    android:paddingEnd="3dp"
-                    android:text="Texturised"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/white" />
-
-                <TextView
+                <ImageView
                     android:id="@+id/textView_fancy"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="3dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_weight="1"
-
-                    android:background="@color/colorAccent"
-                    android:paddingStart="3dp"
-                    android:paddingEnd="3dp"
-                    android:text="Fancy"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/white" />
+                    android:src="@drawable/fancy" />
 
             </LinearLayout>
 
@@ -273,10 +243,10 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:visibility="gone"
-            tools:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible">
 
             <EditText
                 android:id="@+id/editText_search_spinning_mills_in_india"

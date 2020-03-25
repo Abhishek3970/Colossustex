@@ -54,75 +54,53 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
-                    <TextView
+                    <ImageView
                         android:id="@+id/cotton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="3dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:layout_weight="1"
-                        android:background="@color/colorAccent"
                         android:onClick="@{()->ImportYarnViewModel.toCotton()}"
-                        android:paddingStart="3dp"
-                        android:paddingEnd="3dp"
-                        android:text="Cotton"
-                        android:textAlignment="center"
-                        android:textColor="@android:color/white"
-                        android:textSize="14sp" />
+                        android:src="@drawable/cotton" />
 
-                    <TextView
+                    <ImageView
                         android:id="@+id/Synthetic"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="3dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="8dp"
                         android:layout_weight="1"
-                        android:background="@color/colorAccent"
+                        android:src="@drawable/synthetic"
                         android:onClick="@{()->ImportYarnViewModel.toSynthetic()}"
-                        android:paddingStart="3dp"
-                        android:paddingEnd="3dp"
-                        android:text="Synthetic"
-                        android:textAlignment="center"
-                        android:textColor="@android:color/white" />
+                        />
 
-                    <TextView
+                    <ImageView
                         android:id="@+id/viscose"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="3dp"
-                        android:background="@color/colorAccent"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="14dp"
+                        android:layout_marginEnd="14dp"
+                        android:src="@drawable/viscose"
                         android:onClick="@{()->ImportYarnViewModel.toViscose()}"
-                        android:paddingStart="3dp"
-                        android:paddingEnd="3dp"
-                        android:text="Viscose"
-                        android:textAlignment="center"
-                        android:textColor="@android:color/white" />
+                        />
 
-                    <TextView
+                    <ImageView
                         android:id="@+id/texturised"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="3dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="8dp"
                         android:layout_weight="1"
-                        android:background="@color/colorAccent"
+                        android:src="@drawable/texturized"
                         android:onClick="@{()->ImportYarnViewModel.toTexturized()}"
-                        android:paddingStart="3dp"
-                        android:paddingEnd="3dp"
-                        android:text="Texturised"
-                        android:textAlignment="center"
-                        android:textColor="@android:color/white" />
+                    />
 
-                    <TextView
+                    <ImageView
                         android:id="@+id/fancy"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="3dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:layout_weight="1"
-                        android:background="@color/colorAccent"
+                        android:src="@drawable/fancy"
                         android:onClick="@{()->ImportYarnViewModel.toFancy()}"
-                        android:paddingStart="3dp"
-                        android:paddingEnd="3dp"
-                        android:text="Fancy"
-                        android:textAlignment="center"
-                        android:textColor="@android:color/white" />
+                         />
 
                 </LinearLayout>
 
