@@ -64,12 +64,12 @@
                     android:layout_weight="1"
                     android:background="@drawable/background_yarn"
                     android:drawableStart="@drawable/ic_star_black_24dp"
-                    android:drawableTint="@color/colorPrimary"
+                    android:drawableTint="@color/colorAccent"
                     android:gravity="center_vertical|center_horizontal"
                     android:paddingStart="20dp"
                     android:paddingEnd="20dp"
                     android:text="Yarn"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/colorAccent"
                     android:textSize="12sp" />
 
                 <TextView
