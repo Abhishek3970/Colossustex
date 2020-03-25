@@ -37,6 +37,21 @@ class ItemAdapter(var list: MutableList<Item>) :
 //       holder.image.setImageResource(R.drawable.yarn)
         //   val itemList : ArrayList<String> = {"Cotton", "Synthetic", "Viscose", "Texturised", "Fancy"}
 
+        holder.image.setImageResource(
+            when(position){
+                0->R.drawable.global_spinning_mills
+                1->R.drawable.mills_of_india
+                2->R.drawable.import_yarn
+                3->R.drawable.buy_sell_textile
+                4->R.drawable.yarn_offers
+                5->R.drawable.buy_yarn_online
+                6->R.drawable.post_yarn_req
+                7->R.drawable.textile_news
+                8->R.drawable.live_crude_currencies
+                else->R.drawable.yarn
+            }
+        )
+
         holder.constraintLayout.setOnClickListener {
             when (position) {
                 0 -> holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToSpinningMillOfIndia())
@@ -92,7 +107,7 @@ class ItemAdapter(var list: MutableList<Item>) :
             }
         }
 
-        if (position == 7) {
+        if (position == 8) {
             holder.view2.visibility = View.INVISIBLE
         }
 
@@ -112,7 +127,7 @@ class ItemAdapter(var list: MutableList<Item>) :
 
     class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        val image: ImageView = itemView.findViewById(R.id.imageView_image)
+        val image: ImageView = itemView.findViewById(R.id.imageView_image_home_page)
         val heading: TextView = itemView.findViewById(R.id.textView_heading)
         val description: TextView = itemView.findViewById(R.id.textView_description)
         val constraintLayout: ConstraintLayout = itemView.findViewById(R.id.constraintLayout1)
