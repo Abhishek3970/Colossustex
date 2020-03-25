@@ -59,6 +59,8 @@
             android:name=".SpinningMillOfIndia.Texturised.TexturisedActivity"
             android:label="@string/title_activity_texturised"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".SpinningMillOfIndia.ProductDetails"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".SpinningMillOfIndia.Viscose.ViscoseActivity"
             android:label="@string/title_activity_main2"

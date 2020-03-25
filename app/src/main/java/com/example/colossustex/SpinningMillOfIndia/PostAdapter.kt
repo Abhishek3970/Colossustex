@@ -2,6 +2,7 @@ package com.example.colossustex.SpinningMillOfIndia
 
 import android.app.Dialog
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.view.LayoutInflater
@@ -10,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.colossustex.R
 import java.text.SimpleDateFormat
@@ -107,6 +109,9 @@ class PostAdapter() : RecyclerView.Adapter<PostAdapter.MyViewHolder>() {
             mailText.text = "Email the ${posts[pos].nameOnly}"
 
             dialog.show()
+        }
+        holder.itemView.setOnClickListener {
+            holder.itemView.context.startActivity(Intent(context,ProductDetails::class.java))
         }
 
 

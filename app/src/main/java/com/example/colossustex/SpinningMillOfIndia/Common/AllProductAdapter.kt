@@ -1,13 +1,16 @@
 package com.example.colossustex.SpinningMillOfIndia.Common
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.colossustex.R
+import com.example.colossustex.SpinningMillOfIndia.ProductDetails
 import com.example.colossustex.SpinningMillOfIndia.Viscose.ViewedHistoryData
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
@@ -67,6 +70,9 @@ class AllProductAdapter(val context: Context, val list: MutableList<AllproductsD
         holder.text10.text = list[position].text10
         holder.text11.text = list[position].text11
         holder.textround.text = list[position].textround
+        holder.itemView.setOnClickListener {
+           context.startActivity(Intent(context,ProductDetails::class.java))
+        }
 
 
     }
