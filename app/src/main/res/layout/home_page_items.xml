@@ -42,7 +42,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/imageView_image_home_page"
+            app:layout_constraintStart_toEndOf="@+id/imageView_image_home"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
@@ -59,17 +59,32 @@
             app:layout_constraintStart_toStartOf="@+id/textView_heading"
             app:layout_constraintTop_toBottomOf="@+id/textView_heading" />
 
-        <ImageView
-            android:id="@+id/imageView_image_home_page"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:contentDescription="image"
-            android:src="@drawable/yarn"
-            app:layout_constraintBottom_toBottomOf="@+id/textView_description"
+        <RelativeLayout
+            android:id="@+id/imageView_image_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/textView_heading" />
+            app:layout_constraintBottom_toBottomOf="@+id/textView_description"
+            app:layout_constraintTop_toTopOf="@+id/textView_heading"
+        >
+<!--            <ImageView-->
+<!--                android:layout_width="50dp"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:src="@drawable/circle"/>-->
+
+            <ImageView
+                android:id="@+id/imageView_image_home_page"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_centerInParent="true"
+                android:contentDescription="image"
+                android:src="@drawable/mills_of_india"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="6dp"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+        </RelativeLayout>
 
         <View
             android:id="@+id/view2"
@@ -77,7 +92,7 @@
             android:layout_height="0.75dp"
             android:layout_marginTop="40dp"
             android:background="#BFC0C0C0"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView_image_home_page"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView_image_home"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/textView_description"
             app:layout_constraintTop_toBottomOf="@+id/textView_description" />

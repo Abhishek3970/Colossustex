@@ -8,13 +8,16 @@
         android:layout_height="match_parent"
         android:background="@drawable/login_bg"
         tools:context=".EmailLogin.MainLogin">
+
         <ImageView
             android:id="@+id/head"
             android:layout_width="180dp"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:layout_marginTop="32dp"
             android:contentDescription="Colossustex"
-            android:src="@drawable/col"
+            android:src="@drawable/logo"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
