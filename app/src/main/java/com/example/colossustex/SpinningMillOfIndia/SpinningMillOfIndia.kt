@@ -22,6 +22,7 @@ import com.example.colossustex.SG.yarn_requirements
 import com.example.colossustex.SpinningMillOfIndia.Fancy.FancyActivity
 import com.example.colossustex.SpinningMillOfIndia.Texturised.TexturisedActivity
 import com.example.colossustex.SpinningMillOfIndia.Viscose.ViscoseActivity
+import com.example.colossustex.homePage.HomePage
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.firebase.database.*
@@ -93,12 +94,18 @@ class SpinningMillOfIndia : Fragment() {
         }
 
 
+
         toolbar.inflateMenu(R.menu.menu_spinning_mills_of_india)
         toolbar.setOnMenuItemClickListener {
             when (it.itemId) {
                 R.id.home_page -> {
                     toolbar.findNavController().navigateUp()
                 }
+//                R.id.notification_Settings -> HomePage.notificationSetting(context!!)
+//                R.id.edit_profile -> modifyProfile(context!!)
+//                R.id.change_password -> changePassword(context!!)
+//                R.id.support -> support(context!!)
+//                R.id.advertise_with_us -> advertiseWithUs(context!!)
             }
             true
         }
