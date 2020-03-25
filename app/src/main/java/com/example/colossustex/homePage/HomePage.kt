@@ -2,6 +2,7 @@ package com.example.colossustex.homePage
 
 
 import android.app.Dialog
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -31,8 +32,6 @@ class HomePage : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: ItemAdapter
-    private lateinit var mDialog1: Dialog
-    private lateinit var mDialog2: Dialog
     private lateinit var mDb: DatabaseReference
     private lateinit var viewModel: HomePageViewModel
 
@@ -45,9 +44,6 @@ class HomePage : Fragment() {
 
         val lay = inflater.inflate(R.layout.home_page_fragment, container, false)
         viewModel = ViewModelProviders.of(this).get(HomePageViewModel::class.java)
-
-        mDialog1 = Dialog(context!!)             //Used for showing Dialog
-        mDialog2 = Dialog(context!!)             //Used for showing Dialog
 
         mDb = FirebaseDatabase.getInstance().reference
 
@@ -77,12 +73,12 @@ class HomePage : Fragment() {
         toolbar.inflateMenu(R.menu.main_menu)
         toolbar.setOnMenuItemClickListener {
             when (it.itemId) {
-                R.id.notification_Settings -> notificationSetting()
-                R.id.edit_profile -> modifyProfile()
-                R.id.change_password -> changePassword()
-                R.id.spinning_mill -> spinningMill()
-                R.id.support -> support()
-                R.id.advertise_with_us -> advertiseWithUs()
+                R.id.notification_Settings -> notificationSetting(context!!)
+                R.id.edit_profile -> modifyProfile(context!!)
+                R.id.change_password -> changePassword(context!!)
+                R.id.spinning_mill -> spinningMill(context!!)
+                R.id.support -> support(context!!)
+                R.id.advertise_with_us -> advertiseWithUs(context!!)
                 R.id.rate_this_app -> Toast.makeText(
                     context,
                     "Rate This App",
@@ -109,7 +105,9 @@ class HomePage : Fragment() {
     }                           //main code
 
 
-    private fun notificationSetting() {                     //Add on click handlers to all switches
+    private fun notificationSetting(context: Context) {
+//        val mDialog1 = Dialog//Add on click handlers to all switches
+        val mDialog1 = Dialog(context)
         mDialog1.setContentView(R.layout.home_page_notification_setting)
         val close = mDialog1.findViewById<TextView>(R.id.closeButtonNotificationSetting)
         val switch1 = mDialog1.findViewById<Switch>(R.id.switch1)
@@ -160,7 +158,11 @@ class HomePage : Fragment() {
         mDialog1.show()
     }    // code for notification Settings option in menu
 
-    private fun modifyProfile() {//store values in temp variable on click and validate each value and navigate to next page
+    private fun modifyProfile(context: Context) {//store values in temp variable on click and validate each value and navigate to next page
+        val mDialog1 = Dialog(context)
+        val mDialog2 = Dialog(context)
+
+
         mDialog1.setContentView(R.layout.home_page_modify_profile_1)
         mDialog1.show()
 
@@ -203,9 +205,6 @@ class HomePage : Fragment() {
 
             }
         )
-
-
-
 
 
         //code for next button click:-
@@ -369,12 +368,10 @@ class HomePage : Fragment() {
         }
 
 
-
-
-
     }          //code for modify Profile option in menu
 
-    private fun changePassword() {
+    private fun changePassword(context: Context) {
+        val mDialog1 = Dialog(context)
         mDialog1.setContentView(R.layout.home_page_change_password)
         val editTextCurrentPassword =
             mDialog1.findViewById<TextInputLayout>(R.id.editText_current_password)
@@ -435,7 +432,8 @@ class HomePage : Fragment() {
         mDialog1.show()
     }         //code for change password option in main menu
 
-    private fun spinningMill() {
+    private fun spinningMill(context: Context) {
+        val mDialog1 = Dialog(context)
         mDialog1.setContentView(R.layout.home_page_spinning_mill)
         val closeButton = mDialog1.findViewById<TextView>(R.id.closeButtonSpinningMill)
         val registerHere = mDialog1.findViewById<Button>(R.id.button_register_here)
@@ -449,7 +447,9 @@ class HomePage : Fragment() {
         mDialog1.show()
     }           //code for spinning mill option in main menu
 
-    private fun support() {
+    private fun support(context: Context) {
+        val mDialog1 = Dialog(context)
+
         mDialog1.setContentView(R.layout.home_page_support)
         val buttonClose = mDialog1.findViewById<TextView>(R.id.closeButtonSupport)
         val phone = mDialog1.findViewById<TextView>(R.id.textView_phone_no_support)
@@ -473,7 +473,9 @@ class HomePage : Fragment() {
         mDialog1.show()
     }                //code for support option in main menu
 
-    private fun advertiseWithUs() {
+    private fun advertiseWithUs(context: Context) {
+        val mDialog1 = Dialog(context)
+
         mDialog1.setContentView(R.layout.home_page_advertise_with_us)
         val close = mDialog1.findViewById<TextView>(R.id.closeButtonAdvertiseWithUs)
         val phone = mDialog1.findViewById<TextView>(R.id.textView_phone_no_advertise)

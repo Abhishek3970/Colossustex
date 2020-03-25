@@ -101,6 +101,10 @@
         <action
             android:id="@+id/action_cottonFragment_to_homePage"
             app:destination="@+id/homePage"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_out_left"
+            app:popExitAnim="@anim/slide_in_right"
             app:popUpTo="@+id/homePage"
             app:popUpToInclusive="true" />
     </fragment>
@@ -111,6 +115,10 @@
         <action
             android:id="@+id/action_syntheticFragment_to_homePage"
             app:destination="@id/homePage"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_out_left"
+            app:popExitAnim="@anim/slide_in_right"
             app:popUpTo="@+id/homePage"
             app:popUpToInclusive="true" />
     </fragment>

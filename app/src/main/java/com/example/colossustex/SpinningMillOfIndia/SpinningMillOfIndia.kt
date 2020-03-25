@@ -22,6 +22,7 @@ import com.example.colossustex.SG.yarn_requirements
 import com.example.colossustex.SpinningMillOfIndia.Fancy.FancyActivity
 import com.example.colossustex.SpinningMillOfIndia.Texturised.TexturisedActivity
 import com.example.colossustex.SpinningMillOfIndia.Viscose.ViscoseActivity
+import com.example.colossustex.homePage.HomePage
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.firebase.database.*
@@ -46,15 +47,15 @@ class SpinningMillOfIndia : Fragment() {
         var lay = inflater.inflate(R.layout.fragment_spinning_mill_of_india, container, false)
         val toolbar =
             lay.findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar_spinning_mills_in_india)
-        val cotton = lay.findViewById<TextView>(R.id.textView_cotton)
+        val cotton = lay.findViewById<ImageView>(R.id.textView_cotton)
         cotton.setOnClickListener {
             it.findNavController().navigate(R.id.action_spinningMillOfIndia_to_cottonFragment)
         }
-        val synthetic = lay.findViewById<TextView>(R.id.textView_Synthetic)
+        val synthetic = lay.findViewById<ImageView>(R.id.textView_Synthetic)
         synthetic.setOnClickListener {
             it.findNavController().navigate(R.id.action_spinningMillOfIndia_to_syntheticFragment)
         }
-        val viscose = lay.findViewById<TextView>(R.id.textView_viscose)
+        val viscose = lay.findViewById<ImageView>(R.id.textView_viscose)
         viscose.setOnClickListener {
             startActivity(
                 Intent(
@@ -63,11 +64,11 @@ class SpinningMillOfIndia : Fragment() {
                 )
             )
         }
-        val texturised = lay.findViewById<TextView>(R.id.textView_texturised)
+        val texturised = lay.findViewById<ImageView>(R.id.textView_texturised)
         texturised.setOnClickListener {
             startActivity(Intent(context, TexturisedActivity::class.java))
         }
-        val fancy = lay.findViewById<TextView>(R.id.textView_fancy)
+        val fancy = lay.findViewById<ImageView>(R.id.textView_fancy)
         fancy.setOnClickListener {
             startActivity(Intent(context, FancyActivity::class.java))
         }
@@ -93,12 +94,18 @@ class SpinningMillOfIndia : Fragment() {
         }
 
 
+
         toolbar.inflateMenu(R.menu.menu_spinning_mills_of_india)
         toolbar.setOnMenuItemClickListener {
             when (it.itemId) {
                 R.id.home_page -> {
                     toolbar.findNavController().navigateUp()
                 }
+//                R.id.notification_Settings -> HomePage.notificationSetting(context!!)
+//                R.id.edit_profile -> modifyProfile(context!!)
+//                R.id.change_password -> changePassword(context!!)
+//                R.id.support -> support(context!!)
+//                R.id.advertise_with_us -> advertiseWithUs(context!!)
             }
             true
         }
