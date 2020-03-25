@@ -2,7 +2,9 @@ package com.example.colossustex.EmailLogin
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
+import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -20,7 +22,6 @@ class InfoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_user_info)
-
         auth = FirebaseAuth.getInstance()
         val user = auth.currentUser
         val name = intent.extras?.getString("name")
@@ -28,22 +29,51 @@ class InfoActivity : AppCompatActivity() {
         val category = intent.extras?.getString("category")
         val google = intent.extras?.getString("google")
         val phone = intent.extras?.getString("phone")
-        val country = intent.extras?.getString("country")
+        var country = intent.extras?.getString("country")
+        val countries = resources.getStringArray(R.array.countries_array)
+        val aa=
+            ArrayAdapter<String>(this,R.layout.spineer_item_country,countries)
+        aa.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
+        binding.countryInfo.adapter=aa
+        if (country != null) {
+            var j = 0;
+            for (i in 0 until countries.size) {
+                if (countries[i] == country) {
+                    j = i
+                    break
+                }
+            }
+            binding.countryInfo.setSelection(j)
+        }
+        else{
+            country=""
+        }
+        binding.countryInfo.onItemSelectedListener=object : AdapterView.OnItemSelectedListener{
+            override fun onNothingSelected(parent: AdapterView<*>?) {
 
+            }
+
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                country = countries[position]
+            }
+
+        }
         if (name != null) {
             binding.nameInfo.setText(name)
-        }else{
+        } else {
             binding.nameInfo.setText(user?.displayName)
         }
         binding.emailInfo.setText(user?.email)
         if (category != null) {
             binding.categoryInfo.setText(category)
         }
-        if(phone!= null){
+        if (phone != null) {
             binding.mobileInfo.setText(phone)
-        }
-        if(country!=null){
-            binding.countryInfo.setText(country)
         }
         if (pass == null) {
             pass = ""
@@ -52,7 +82,7 @@ class InfoActivity : AppCompatActivity() {
         binding.procBtInfo.setOnClickListener {
             val mref = FirebaseDatabase.getInstance().getReference("User")
                 .child(user?.uid.toString()).child("userData")
-            if (binding.categoryInfo.text.isEmpty() || binding.cityInfo.text.isEmpty() || binding.countryInfo.text.isEmpty() || binding.emailInfo.text.isEmpty() || binding.mobileInfo.text.isEmpty() || binding.nameInfo.text.isEmpty()) {
+            if (binding.categoryInfo.text.isEmpty() || binding.cityInfo.text.isEmpty() || country=="" || binding.emailInfo.text.isEmpty() || binding.mobileInfo.text.isEmpty() || binding.nameInfo.text.isEmpty()) {
                 Toast.makeText(this, "Fill all fields", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
@@ -62,7 +92,7 @@ class InfoActivity : AppCompatActivity() {
                 binding.nameInfo.text.toString(),
                 pass,
                 binding.mobileInfo.text.toString(),
-                binding.countryInfo.text.toString()
+                country
                 ,
                 binding.cityInfo.text.toString(),
                 binding.categoryInfo.text.toString(),
@@ -87,7 +117,7 @@ class InfoActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         super.onBackPressed()
-        Toast.makeText(this,"Data is not stored",Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Data is not stored", Toast.LENGTH_SHORT).show()
         if (GoogleSignIn.getLastSignedInAccount(this) != null) {
             googleSignInClient.signOut()
         }
