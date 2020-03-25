@@ -1,6 +1,7 @@
 package com.example.colossustex.SG;
 
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -34,6 +35,7 @@ import kotlin.jvm.internal.Ref;
 public class yarn_requirements extends AppCompatActivity{
 
     ImageView back;
+//    String text, t1, t2, t3, t4, t5, t6, t7;
     int i = 1, sum = 0;
     LinearLayout Fibre,Purpose,Count, Quality_Range_Texturised, Quality_Range_Fancy, Product_Range_Texturised, Grade, Product_Range_Fancy, Quality,Variety, Type, Nature, noofbags, description, sendto, denier, send_reqto, SingDub;
     TextView Fibre_, Purpose_, Count_ , Quality_Range_texturised,req,  Quality_Range_fancy, Product_Range_texturised, Product_Range_fancy, Quality_, Variety_, Type_, Nature_, Grade_ , sendto_, sendreqto, denier_, singdub;
@@ -118,7 +120,7 @@ public class yarn_requirements extends AppCompatActivity{
                 cotton.setOnClickListener((new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
-                        Fibre_.setText("cotton");
+                        Fibre_.setText("Cotton");
                         Purpose.setVisibility(View.VISIBLE);
                         Count.setVisibility(View.VISIBLE);
                         Type.setVisibility(View.VISIBLE);
@@ -141,7 +143,7 @@ public class yarn_requirements extends AppCompatActivity{
                 synthetic.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
-                        Fibre_.setText("synthetic");
+                        Fibre_.setText("Synthetic");
                         Purpose.setVisibility(View.GONE);
                         Count.setVisibility(View.VISIBLE);
                         SingDub.setVisibility(View.VISIBLE);
@@ -164,7 +166,7 @@ public class yarn_requirements extends AppCompatActivity{
                 viscose.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
-                        Fibre_.setText("viscose");
+                        Fibre_.setText("Viscose");
                         Purpose.setVisibility(View.GONE);
                         Count.setVisibility(View.VISIBLE);
                         SingDub.setVisibility(View.VISIBLE);
@@ -211,7 +213,7 @@ public class yarn_requirements extends AppCompatActivity{
                 fancy.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
-                        Fibre_.setText("fancy");
+                        Fibre_.setText("Fancy");
                         Purpose.setVisibility(View.GONE);
                         Count.setVisibility(View.VISIBLE);
                         SingDub.setVisibility(View.VISIBLE);
@@ -792,9 +794,13 @@ public class yarn_requirements extends AppCompatActivity{
 
 
         submit.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("ResourceType")
             @Override
             public void onClick(View v) {
-                    Toast.makeText(yarn_requirements.this, "order recorded successfully", Toast.LENGTH_SHORT).show();
+
+//                text = t1+t2+t3+t4+t5+t6+t7;
+
+                    Toast.makeText(yarn_requirements.this, "Data saved successfully" , Toast.LENGTH_SHORT).show();
             }
         });
         add_more.setOnClickListener(new View.OnClickListener() {

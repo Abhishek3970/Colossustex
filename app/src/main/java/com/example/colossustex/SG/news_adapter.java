@@ -43,7 +43,7 @@ public class news_adapter extends RecyclerView.Adapter<news_adapter.Viewholder>{
     }
 
     @Override
-    public void onBindViewHolder(@NonNull Viewholder holder, int position) {
+    public void onBindViewHolder(@NonNull Viewholder holder, final int position) {
 
         holder.heading.setText(heading.get(position));
 //        holder.place.setText(place.get(position));
@@ -64,9 +64,10 @@ public class news_adapter extends RecyclerView.Adapter<news_adapter.Viewholder>{
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_SEND);intent.setType("text/plain");
-                intent.putExtra(Intent.EXTRA_SUBJECT,"Subject");
-                intent.putExtra(Intent.EXTRA_TEXT, "text");
-                context.startActivity(Intent.createChooser(intent, "Share using"));
+                intent.putExtra(Intent.EXTRA_SUBJECT,place.get(position));
+                intent.putExtra(Intent.EXTRA_TEXT, place.get(position));
+                intent.putExtra(intent.EXTRA_TITLE, heading.get(position));
+                context.startActivity(Intent.createChooser(intent, "Share news via :"));
             }
         });
 
