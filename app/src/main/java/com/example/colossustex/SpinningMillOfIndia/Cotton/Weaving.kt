@@ -35,7 +35,7 @@ class Weaving : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.mills_list_fragment, container, false)
-        binding.viscoseRecycler2.layoutManager = LinearLayoutManager(context)
+        binding.allMillsRecycler.layoutManager = LinearLayoutManager(context)
         binding.progressLayout.visibility = View.VISIBLE
         database = FirebaseDatabase.getInstance()
         binding.allYarn.text = "Weaving Yarn"
@@ -58,7 +58,7 @@ class Weaving : Fragment() {
             }
         } //Newlist for fragment
         binding.progressLayout.visibility = View.GONE
-        binding.viscoseRecycler2.adapter = MillsListAdapter(newlist)
+        binding.allMillsRecycler.adapter = MillsListAdapter(newlist)
         binding.filter.setOnClickListener {
             dialog.show()
             close.setOnClickListener {
@@ -89,7 +89,7 @@ class Weaving : Fragment() {
                 if (!(checkbox1.isChecked or checkbox2.isChecked or checkbox3.isChecked
                             or checkbox4.isChecked or checkbox5.isChecked)
                 ) {
-                    binding.viscoseRecycler2.adapter =
+                    binding.allMillsRecycler.adapter =
                         MillsListAdapter(
                             newlist
                         )
@@ -104,7 +104,7 @@ class Weaving : Fragment() {
                         }
 
                     }
-                    binding.viscoseRecycler2.adapter =
+                    binding.allMillsRecycler.adapter =
                         MillsListAdapter(
                             newlist1
                         )
@@ -128,7 +128,7 @@ class Weaving : Fragment() {
                         newlist_search.add(i)
                     }
                 }
-                binding.viscoseRecycler2.adapter =
+                binding.allMillsRecycler.adapter =
                     MillsListAdapter(
                         newlist_search
                     )

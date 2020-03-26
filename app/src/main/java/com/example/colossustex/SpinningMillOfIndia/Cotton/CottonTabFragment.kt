@@ -19,7 +19,7 @@ import com.example.colossustex.SpinningMillOfIndia.Common.AllProducts
 import com.example.colossustex.SpinningMillOfIndia.Common.AllproductsData
 import com.example.colossustex.SpinningMillOfIndia.Viscose.ViewedHistoryAdapter
 import com.example.colossustex.SpinningMillOfIndia.Viscose.ViewedHistoryData
-import com.example.colossustex.SpinningMillOfIndia.Viscose.allpro_list
+import com.example.colossustex.SpinningMillOfIndia.allpro_list
 import com.example.colossustex.databinding.FragmentCottonTabbedBinding
 import com.example.dialogcustom.SpinnerDialogAdapter
 import com.google.android.material.snackbar.Snackbar

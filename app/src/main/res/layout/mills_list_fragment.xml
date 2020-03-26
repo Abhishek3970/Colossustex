@@ -56,7 +56,7 @@
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/viscose_recycler2"
+            android:id="@+id/all_mills_recycler"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_above="@+id/filter"

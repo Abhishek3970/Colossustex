@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.colossustex.R
 import com.google.firebase.database.FirebaseDatabase
@@ -43,7 +44,8 @@ class MillsListAdapter(val list: MutableList<AllMillsData>) :
         holder.itemView.setOnClickListener {
             val intent = Intent(holder.itemView.context, AllProducts::class.java)
             intent.putExtra("Head", list[position].text1).putExtra("Location", list[position].text2)
-                .putExtra("Type", list[position].text3)
+                .putExtra("Type", list[position].text3).putExtra("id", list[position].id.toString())
+            Toast.makeText(holder.itemView.context,list[position].id.toString(),Toast.LENGTH_SHORT).show()
             holder.itemView.context.startActivity(intent)
         }
         holder.text2.text = list[position].text2

@@ -13,7 +13,7 @@ import com.example.colossustex.R
 import com.example.colossustex.SpinningMillOfIndia.Common.AllMillsData
 import com.example.colossustex.SpinningMillOfIndia.Common.AllproductsData
 import com.example.colossustex.SpinningMillOfIndia.Common.list_all_mill
-import com.example.colossustex.SpinningMillOfIndia.Viscose.allpro_list
+import com.example.colossustex.SpinningMillOfIndia.allpro_list
 import com.google.android.material.tabs.TabLayout
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError

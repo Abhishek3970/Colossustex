@@ -37,7 +37,7 @@ class MillsListFragment : Fragment() {
     ): View? {
         list_all_mill = mutableListOf()
         binding = DataBindingUtil.inflate(inflater, R.layout.mills_list_fragment, container, false)
-        binding.viscoseRecycler2.layoutManager = LinearLayoutManager(context)
+        binding.allMillsRecycler.layoutManager = LinearLayoutManager(context)
         binding.progressLayout.visibility = View.VISIBLE
         database = FirebaseDatabase.getInstance()
         val mdata = database.getReference("Viscose")
@@ -53,7 +53,7 @@ class MillsListFragment : Fragment() {
                     list_all_mill.add(store!!)
                 }
                 binding.progressLayout.visibility = View.GONE
-                binding.viscoseRecycler2.adapter =
+                binding.allMillsRecycler.adapter =
                     MillsListAdapter(
                         list_all_mill
                     )
@@ -219,7 +219,7 @@ class MillsListFragment : Fragment() {
                 }
                 if (filterlist.size==0)
                 {
-                    binding.viscoseRecycler2.adapter =
+                    binding.allMillsRecycler.adapter =
                         MillsListAdapter(
                             list_all_mill
                         )
@@ -234,7 +234,7 @@ class MillsListFragment : Fragment() {
                         }
 
                     }
-                    binding.viscoseRecycler2.adapter =
+                    binding.allMillsRecycler.adapter =
                         MillsListAdapter(
                             newlist1
                         )
@@ -258,7 +258,7 @@ class MillsListFragment : Fragment() {
                         newlist.add(i)
                     }
                 }
-                binding.viscoseRecycler2.adapter =
+                binding.allMillsRecycler.adapter =
                     MillsListAdapter(
                         newlist
                     )

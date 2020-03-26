@@ -35,7 +35,7 @@ class KnittingYarn : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.mills_list_fragment, container, false)
-        binding.viscoseRecycler2.layoutManager = LinearLayoutManager(context)
+        binding.allMillsRecycler.layoutManager = LinearLayoutManager(context)
         binding.progressLayout.visibility = View.VISIBLE
         database = FirebaseDatabase.getInstance()
         binding.allYarn.text = "Knitting Yarn"  //Changing title
@@ -46,7 +46,7 @@ class KnittingYarn : Fragment() {
             }
         } //Condition for filtering the data from all mills for each fragment(newlist)
         binding.progressLayout.visibility = View.GONE
-        binding.viscoseRecycler2.adapter = MillsListAdapter(newlist)
+        binding.allMillsRecycler.adapter = MillsListAdapter(newlist)
         val dialog = BottomSheetDialog(context!!)
         dialog.setContentView(R.layout.filter_dialog)
         dialog.create()
@@ -88,7 +88,7 @@ class KnittingYarn : Fragment() {
                 if (!(checkbox1.isChecked or checkbox2.isChecked or checkbox3.isChecked
                             or checkbox4.isChecked or checkbox5.isChecked)
                 ) {
-                    binding.viscoseRecycler2.adapter =
+                    binding.allMillsRecycler.adapter =
                         MillsListAdapter(
                             newlist
                         )
@@ -103,7 +103,7 @@ class KnittingYarn : Fragment() {
                         }
 
                     }
-                    binding.viscoseRecycler2.adapter =
+                    binding.allMillsRecycler.adapter =
                         MillsListAdapter(
                             newlist1
                         )
@@ -127,7 +127,7 @@ class KnittingYarn : Fragment() {
                         search_list.add(i)
                     }
                 }
-                binding.viscoseRecycler2.adapter =
+                binding.allMillsRecycler.adapter =
                     MillsListAdapter(
                         search_list
                     )

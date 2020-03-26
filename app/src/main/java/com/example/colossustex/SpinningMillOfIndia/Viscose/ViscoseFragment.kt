@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.colossustex.R
 import com.example.colossustex.SpinningMillOfIndia.Common.AllProducts
 import com.example.colossustex.SpinningMillOfIndia.Common.AllproductsData
+import com.example.colossustex.SpinningMillOfIndia.allpro_list
 import com.example.colossustex.databinding.ViscoseFragment1Binding
 import com.example.dialogcustom.SpinnerDialogAdapter
 import com.google.android.material.snackbar.Snackbar
@@ -29,7 +30,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
-lateinit var allpro_list: MutableList<AllproductsData>
+
 
 class ViscoseFragment : Fragment() {
     lateinit var list: MutableList<Int>

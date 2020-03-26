@@ -98,7 +98,6 @@
                 android:layout_alignParentEnd="true"
                 android:text="Price Updated:12 Mar,09:32"
                 android:textColor="#111" />
-
         </RelativeLayout>
 
         <LinearLayout
@@ -121,6 +120,12 @@
                     android:textSize="16dp"
                     android:textStyle="bold" />
             </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dip"
+                android:background="#2D111111"
+                />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -273,6 +278,12 @@
                     android:textSize="16dp"
                     android:textStyle="bold" />
             </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dip"
+                android:background="#2D111111"
+                />
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -363,6 +374,12 @@
                     android:textSize="16dp"
                     android:textStyle="bold" />
             </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dip"
+                android:background="#2D111111"
+                />
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -487,7 +504,7 @@
 
         </LinearLayout>
         <RelativeLayout
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#22111111"

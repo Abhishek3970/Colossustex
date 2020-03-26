@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.colossustex.MainActivity
 import com.example.colossustex.R
 import com.example.colossustex.SpinningMillOfIndia.Viscose.ViewedHistoryData
-import com.example.colossustex.SpinningMillOfIndia.Viscose.allpro_list
+import com.example.colossustex.SpinningMillOfIndia.allpro_list
 import com.example.colossustex.databinding.FragmentAllProductsBinding
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.firebase.database.DataSnapshot
@@ -38,6 +38,7 @@ class AllProducts : AppCompatActivity() {
         val head = intent.getStringExtra("Head")
         val type = intent.getStringExtra("Type")
         val loc = intent.getStringExtra("Location")
+        val idstring=intent.getStringExtra("id")
         if (f != null && s != null && t != null && c != null) {
             selectedlist = mutableListOf()
             for (i in allpro_list) {
@@ -82,7 +83,9 @@ class AllProducts : AppCompatActivity() {
                         selectedlist = mutableListOf()
                         for (datasnap in p0.children) {
                             val data = datasnap.getValue(AllproductsData::class.java)
-                            selectedlist.add(data!!)
+                            if(data!!.id==idstring) {
+                                selectedlist.add(data)
+                            }
                         }
                         binding.progressbarAllproducts.visibility = View.GONE
                         binding.allProductsRecycler.adapter =

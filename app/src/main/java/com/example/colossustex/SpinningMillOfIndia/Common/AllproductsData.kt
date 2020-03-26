@@ -1,6 +1,7 @@
 package com.example.colossustex.SpinningMillOfIndia.Common
 
 data class AllproductsData(
+    var id:String="",
     var textround: String = "",
     var text1: String = "",
     var text2: String = "",
