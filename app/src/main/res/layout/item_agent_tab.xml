@@ -11,7 +11,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -55,6 +55,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView_name_agents" />
 
             <ImageView
+                android:id="@+id/arrow_agents"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
@@ -79,11 +80,13 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout_details_agents"
+            tools:visibility="visible"
+            android:visibility="gone"
             android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="4dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:padding="8dp"
             android:background="@drawable/border_agnts_card"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/constratint_layout_agents">
@@ -105,7 +108,7 @@
                     android:layout_margin="8dp"
                     android:text="Name"
                     android:textColor="@android:color/white"
-                    android:textSize="24sp"
+                    android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -118,7 +121,7 @@
                     android:gravity="end"
                     android:text="Location"
                     android:textColor="@android:color/white"
-                    android:textSize="18sp"
+                    android:textSize="14sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -140,7 +143,7 @@
                     android:layout_margin="8dp"
                     android:text="Company: Comapny Name"
                     android:textColor="@android:color/white"
-                    android:textSize="18sp"
+                    android:textSize="14sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -165,7 +168,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Can Supply to"
-                    android:textSize="18dp"
+                    android:textSize="14sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -182,7 +185,7 @@
                     android:paddingBottom="4dp"
                     android:text="States        "
                     android:textColor="@android:color/black"
-                    android:textSize="18dp"
+                    android:textSize="14sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/supply_to_agents" />
 
@@ -191,13 +194,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Can Supply from"
-                    android:textSize="18dp"
+                    android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/no_supply_from"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:background="@drawable/border_agnts_card"
@@ -208,7 +211,8 @@
                     android:paddingBottom="4dp"
                     android:text="States        "
                     android:textColor="@android:color/black"
-                    android:textSize="18dp"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/supply_from_agents"
                     app:layout_constraintTop_toBottomOf="@+id/supply_from_agents" />
 
@@ -219,7 +223,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:text="Can Supply"
-                    android:textSize="18dp"
+                    android:textSize="14sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/no_supply_to" />
 
@@ -231,12 +235,12 @@
                     android:background="@drawable/border_agnts_card"
                     android:drawableEnd="@drawable/ic_arrow_drop_down_black_24dp"
                     android:drawableTint="@android:color/black"
-                    android:paddingStart="4dp"
+                    android:paddingStart="8dp"
                     android:paddingTop="4dp"
                     android:paddingBottom="4dp"
                     android:text="Types of Yarn"
                     android:textColor="@android:color/black"
-                    android:textSize="18dp"
+                    android:textSize="14sp"
                     app:layout_constraintTop_toBottomOf="@+id/textView34"
                     tools:layout_editor_absoluteX="0dp" />
 
@@ -246,7 +250,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:text="Agents for:"
-                    android:textSize="18dp"
+                    android:textSize="14sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/types_of_yarn_agents" />
 
@@ -256,7 +260,7 @@
                     android:layout_height="wrap_content"
                     android:text="11 - 50 mills"
                     android:textColor="@android:color/black"
-                    android:textSize="18dp"
+                    android:textSize="14sp"
                     app:layout_constraintBottom_toBottomOf="@+id/textView36"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/textView36" />
@@ -278,7 +282,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="In Business Since:"
-                    android:textSize="18dp"
+                    android:textSize="14sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/view6" />
 
@@ -288,7 +292,7 @@
                     android:layout_height="wrap_content"
                     android:text="1981"
                     android:textColor="@android:color/black"
-                    android:textSize="18dp"
+                    android:textSize="14sp"
                     app:layout_constraintBottom_toBottomOf="@+id/textView38"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/textView38" />
@@ -309,7 +313,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="Description"
-                    android:textSize="18dp"
+                    android:textSize="14sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/view8" />
 
@@ -321,7 +325,7 @@
                     android:layout_marginBottom="8dp"
                     android:text="something about agent"
                     android:textColor="@android:color/black"
-                    android:textSize="18dp"
+                    android:textSize="14sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
