@@ -5,6 +5,11 @@ data class AgentData(
     val location:String? = "",
     val type:String? = "",
     val stateFrom:String? = "",
-    val stateTo: String? = ""
-
+    val stateTo: String? = "",
+    val canSupply:String? = "",
+    val agentFor:String? = "",
+    val inBusinessSince: String? = "",
+    val description: String? = "",
+    val call: String? = "",
+    val email: String? = ""
 )
