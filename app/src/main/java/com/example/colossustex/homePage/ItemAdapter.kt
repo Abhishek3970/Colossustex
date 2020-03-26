@@ -148,13 +148,13 @@ class ItemAdapter(var list: MutableList<Item>) :
                 val sliderView = DefaultSliderView(constraintLayout.context)
 
                 when (i) {
-                    0 -> sliderView.setImageDrawable(R.drawable.yarn)
+                    0 -> sliderView.setImageDrawable(R.drawable.banner1)
 
-                    1 ->sliderView.setImageDrawable(R.drawable.yarn)
+                    1 ->sliderView.setImageDrawable(R.drawable.banner2)
 
-                    2 ->sliderView.setImageDrawable(R.drawable.yarn)
+                    2 ->sliderView.setImageDrawable(R.drawable.banner3)
 
-                    3 -> sliderView.setImageDrawable(R.drawable.yarn)
+                    3 -> sliderView.setImageDrawable(R.drawable.banner4)
 
                 }
 

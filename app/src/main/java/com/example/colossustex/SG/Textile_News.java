@@ -42,6 +42,8 @@ public class Textile_News extends AppCompatActivity {
     ArrayList<String> place = new ArrayList<>();
     ArrayList<String> news = new ArrayList<>();
     ArrayList<String> time = new ArrayList<>();
+    ArrayList<String> nameArr = new ArrayList<>();
+
     ImageView back;
     TextView Refresh_button;
     private RequestQueue mQueue;
@@ -72,14 +74,14 @@ public class Textile_News extends AppCompatActivity {
         });
 
 
-        class Aclass{
-            private void load_data(){
-                Toast.makeText(Textile_News.this, "Function called successfully", Toast.LENGTH_SHORT).show();
-                parse_data();
-            }
-        }
-
-        new Aclass().load_data();
+//        class Aclass{
+//            private void load_data(){
+//                Toast.makeText(Textile_News.this, "Function called successfully", Toast.LENGTH_SHORT).show();
+//                parse_data();
+//            }
+//        }
+//
+//        new Aclass().load_data();
 
 
 //        DatabaseReference dbr2 = FirebaseDatabase.getInstance().getReference().child("Textile News");
@@ -146,10 +148,10 @@ public class Textile_News extends AppCompatActivity {
 
     private void startadapter() {
         RecyclerView recyclerView = findViewById(R.id.recyclerview);
-        news_adapter adapter = new news_adapter(heading, place, news, time, Textile_News.this);
+        news_adapter adapter = new news_adapter(heading, place, news, time, nameArr, Textile_News.this);
+        recyclerView.setLayoutManager(new LinearLayoutManager(Textile_News.this));
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
-        recyclerView.setLayoutManager(new LinearLayoutManager(Textile_News.this));
     }
 
     private void parse_data(){
@@ -159,21 +161,24 @@ public class Textile_News extends AppCompatActivity {
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, news_url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
+                startadapter();
                 try {
                     JSONArray jsonArray = response.getJSONArray("articles");
 
                     for(int i = 0 ; i< jsonArray.length(); i++){
                         JSONObject article = jsonArray.getJSONObject(i);
                         String title = article.getString("title");
-                        String content = article.getString("content");
+//                        String content = article.getString("content");
+                        String content = article.getString("description");
                         String time_ = article.getString("publishedAt");
                         String url = article.getString("url");
-
+                        String name = article.getJSONObject("source").getString("name");
+                        time_ = time_.substring(0, 10);
                         heading.add(title);
                         news.add(content);
                         time.add(time_);
+                        nameArr.add(name);
                         place.add(url);        // can be used later!!!!!
-
                     }
 
                 } catch (JSONException e) {
@@ -188,8 +193,6 @@ public class Textile_News extends AppCompatActivity {
         });
 
         mQueue.add(request);
-
-        startadapter();
     }
 
 }
