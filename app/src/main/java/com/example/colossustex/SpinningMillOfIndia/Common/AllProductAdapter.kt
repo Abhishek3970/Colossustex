@@ -1,13 +1,12 @@
 package com.example.colossustex.SpinningMillOfIndia.Common
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.colossustex.R
 import com.example.colossustex.SpinningMillOfIndia.ProductDetails
@@ -15,6 +14,7 @@ import com.example.colossustex.SpinningMillOfIndia.Viscose.ViewedHistoryData
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.gson.Gson
 
 class AllProductAdapter(val context: Context, val list: MutableList<AllproductsData>) :
     RecyclerView.Adapter<AllProductAdapter.MyViewHolder>() {
@@ -48,30 +48,33 @@ class AllProductAdapter(val context: Context, val list: MutableList<AllproductsD
         return list.size
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.itemView.setOnClickListener {
             val key = mref.push().key
             val data = ViewedHistoryData(
-                list[position].text1,
-                list[position].text2,
+                list[position].company_name,
+                list[position].nature+","+list[position].type,
                 list[position].textround
             )
             mref.child(key!!).setValue(data)
         }
-        holder.text1.text = list[position].text1
-        holder.text2.text = list[position].text2
-        holder.text3.text = list[position].text3
-        holder.text4.text = list[position].text4
-        holder.text5.text = list[position].text5
-        holder.text6.text = list[position].text6
-        holder.text7.text = list[position].text7
-        holder.text8.text = list[position].text8
-        holder.text9.text = list[position].text9
-        holder.text10.text = list[position].text10
-        holder.text11.text = list[position].text11
+        holder.text1.text = list[position].company_name
+        holder.text2.text = list[position].nature+","+list[position].type
+        holder.text3.text = "CSP:"+list[position].csp
+        holder.text4.text = "Actual Count:"+list[position].actual_count
+        holder.text5.text = "Ex-Mill "
+        holder.text6.text = list[position].price+".00/kg"
+        holder.text7.text = "Updated:"+list[position].updated
+        holder.text8.text = "Immediate Payment Price"
+        holder.text9.text = list[position].weight
+        holder.text10.text = list[position].cones
+        holder.text11.text = list[position].delivery_period
         holder.textround.text = list[position].textround
         holder.itemView.setOnClickListener {
-           context.startActivity(Intent(context,ProductDetails::class.java))
+            val gson=Gson()
+            val details=gson.toJson(list[position])
+           context.startActivity(Intent(context,ProductDetails::class.java).putExtra("details",details))
         }
 
 

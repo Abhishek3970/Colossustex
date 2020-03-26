@@ -110,9 +110,9 @@ class PostAdapter() : RecyclerView.Adapter<PostAdapter.MyViewHolder>() {
 
             dialog.show()
         }
-        holder.itemView.setOnClickListener {
-            holder.itemView.context.startActivity(Intent(context,ProductDetails::class.java))
-        }
+//        holder.itemView.setOnClickListener {
+//            holder.itemView.context.startActivity(Intent(context,ProductDetails::class.java))
+//        }
 
 
     }
