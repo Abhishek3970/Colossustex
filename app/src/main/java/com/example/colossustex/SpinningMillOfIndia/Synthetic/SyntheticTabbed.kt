@@ -30,7 +30,7 @@ class SyntheticTabbed : AppCompatActivity() {
         val sectionsPagerAdapter =
             SectionsPagerAdapter(
                 this,
-                supportFragmentManager
+                supportFragmentManager,"Synthetic"
             )
         val viewPager: ViewPager = findViewById(R.id.view_pager)
         viewPager.adapter = sectionsPagerAdapter

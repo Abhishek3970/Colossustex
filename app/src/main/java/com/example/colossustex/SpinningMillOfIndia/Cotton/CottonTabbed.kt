@@ -24,15 +24,16 @@ class CottonTabbed : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cotton_tabbed)
+        val tabs: TabLayout = findViewById(R.id.tabs)
+        val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
         val sectionsPagerAdapter =
             SectionsPagerAdapter(
                 this,
-                supportFragmentManager
+                supportFragmentManager,"Cotton"
             )
         val viewPager: ViewPager = findViewById(R.id.view_pager)
         viewPager.adapter = sectionsPagerAdapter
-        val tabs: TabLayout = findViewById(R.id.tabs)
-        val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
+
         tabs.setSelectedTabIndicatorColor(Color.WHITE)
         tabs.setTabTextColors(getColor(R.color.tabunselected), Color.WHITE)
         tabs.setupWithViewPager(viewPager)

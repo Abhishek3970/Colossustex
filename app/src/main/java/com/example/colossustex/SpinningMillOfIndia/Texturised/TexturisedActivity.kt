@@ -22,7 +22,7 @@ class TexturisedActivity : AppCompatActivity() {
         val sectionsPagerAdapter =
             SectionsPagerAdapter(
                 this,
-                supportFragmentManager
+                supportFragmentManager,"Texturised"
             )
         val viewPager: ViewPager = findViewById(R.id.view_pager2)
         viewPager.adapter = sectionsPagerAdapter

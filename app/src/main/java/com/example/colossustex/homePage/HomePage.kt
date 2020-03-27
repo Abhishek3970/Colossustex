@@ -22,6 +22,7 @@ import com.example.colossustex.EmailLogin.UserRegister
 import com.example.colossustex.EmailLogin.WelcomeActivity
 import com.example.colossustex.EmailLogin.googleSignInClient
 import com.example.colossustex.R
+import com.example.colossustex.SpinningMillOfIndia.Common.CompanyAdd
 import com.firebase.ui.database.FirebaseRecyclerOptions
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.material.textfield.TextInputLayout
@@ -94,6 +95,10 @@ class HomePage : Fragment() {
                     val intent = Intent(context, WelcomeActivity::class.java).apply {
                         flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
                     }
+                    startActivity(intent)
+                }
+                R.id.add->{
+                    val intent=Intent(context, CompanyAdd::class.java)
                     startActivity(intent)
                 }
             }

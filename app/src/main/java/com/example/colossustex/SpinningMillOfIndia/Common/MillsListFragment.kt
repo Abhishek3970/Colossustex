@@ -25,7 +25,7 @@ import com.google.firebase.database.ValueEventListener
 
 lateinit var list_all_mill: MutableList<AllMillsData>
 
-class MillsListFragment : Fragment() {
+class MillsListFragment(val type:String) : Fragment() {
     lateinit var database: FirebaseDatabase
     lateinit var binding: MillsListFragmentBinding
 
@@ -47,10 +47,11 @@ class MillsListFragment : Fragment() {
             }
 
             override fun onDataChange(p0: DataSnapshot) {
-                list_all_mill = mutableListOf()
+                list_all_mill= mutableListOf()
                 for (snapshot in p0.children) {
                     val store = snapshot.getValue(AllMillsData::class.java)
-                    list_all_mill.add(store!!)
+                    if(store!!.text3.toLowerCase().contains(type.toLowerCase()))
+                   list_all_mill.add(store)
                 }
                 binding.progressLayout.visibility = View.GONE
                 binding.allMillsRecycler.adapter =
