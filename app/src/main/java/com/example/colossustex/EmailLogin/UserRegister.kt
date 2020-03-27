@@ -13,5 +13,6 @@ data class UserRegister(
     var GSTNumber: String? = "",
     var address: String? = "",
     var state: String? = "",
-    var pinCode: String? = ""
+    var pinCode: String? = "",
+    var flag: Int = 0
 )
