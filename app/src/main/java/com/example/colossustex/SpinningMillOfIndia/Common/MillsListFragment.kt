@@ -17,13 +17,14 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.colossustex.R
 import com.example.colossustex.databinding.MillsListFragmentBinding
+import com.example.colossustex.homePage.list_all_mill
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
-lateinit var list_all_mill: MutableList<AllMillsData>
+
 
 class MillsListFragment(val type:String) : Fragment() {
     lateinit var database: FirebaseDatabase
@@ -40,7 +41,7 @@ class MillsListFragment(val type:String) : Fragment() {
         binding.allMillsRecycler.layoutManager = LinearLayoutManager(context)
         binding.progressLayout.visibility = View.VISIBLE
         database = FirebaseDatabase.getInstance()
-        val mdata = database.getReference("Viscose")
+        val mdata = database.getReference("AllMills")
         mdata.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onCancelled(p0: DatabaseError) {
 
@@ -50,7 +51,7 @@ class MillsListFragment(val type:String) : Fragment() {
                 list_all_mill= mutableListOf()
                 for (snapshot in p0.children) {
                     val store = snapshot.getValue(AllMillsData::class.java)
-                    if(store!!.text3.toLowerCase().contains(type.toLowerCase()))
+                    if(store!!.type.toLowerCase().contains(type.toLowerCase()))
                    list_all_mill.add(store)
                 }
                 binding.progressLayout.visibility = View.GONE

@@ -1,11 +1,12 @@
 package com.example.colossustex.SpinningMillOfIndia.Common
 
 data class AllMillsData(
-    val id: Int = 0,
+    val id:String= "",
     val text1: String = "",
     val text2: String = "",
-    val text3: String = "",
+    var count: String = "",
+    val type:String="",
     val views: Int = 0,
-    val text4: String = "",
+    var text4: String = "",
     val text5: String = ""
 )

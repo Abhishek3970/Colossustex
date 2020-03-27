@@ -42,7 +42,7 @@
                         android:layout_marginTop="10dp"
                         android:hint="Company Name"
                         android:textColor="#111"
-                        android:textSize="16sp" />
+                        android:textSize="18sp" />
 
                     <EditText
                         android:id="@+id/location_top"
@@ -62,6 +62,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="5dp"
                         android:hint="Price"
+                        android:inputType="number"
                         android:textColor="#111" />
 
                     <TextView
@@ -282,7 +283,7 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="39dp"
                         android:orientation="horizontal"
                         android:padding="2.5dp"
                         android:weightSum="2">
@@ -298,7 +299,8 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:hint="Actual Count" />
+                            android:hint="Actual Count"
+                            android:inputType="number" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -319,7 +321,8 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:hint="CSP" />
+                            android:hint="CSP"
+                            android:inputType="number"/>
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -397,7 +400,8 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:hint="Weight" />
+                            android:hint="Weight"
+                            android:inputType="number"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -479,7 +483,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:id="@+id/min_quantity"
-                            android:hint="Quantity" />
+                            android:hint="Quantity"
+                            android:inputType="number"/>
                     </LinearLayout>
 
                 </LinearLayout>
@@ -510,6 +515,7 @@
             android:id="@+id/contact_details">
 
             <TextView
+                android:id="@+id/add_now"
                 android:textSize="17sp"
                 android:layout_width="0dp"
                 android:layout_weight="1"

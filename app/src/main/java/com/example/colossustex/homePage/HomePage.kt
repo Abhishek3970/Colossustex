@@ -22,13 +22,14 @@ import com.example.colossustex.EmailLogin.UserRegister
 import com.example.colossustex.EmailLogin.WelcomeActivity
 import com.example.colossustex.EmailLogin.googleSignInClient
 import com.example.colossustex.R
+import com.example.colossustex.SpinningMillOfIndia.Common.AllMillsData
 import com.example.colossustex.SpinningMillOfIndia.Common.CompanyAdd
 import com.firebase.ui.database.FirebaseRecyclerOptions
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-
+lateinit var list_all_mill: MutableList<AllMillsData>
 class HomePage : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
@@ -105,7 +106,19 @@ class HomePage : Fragment() {
             true
         }        //menu items on click listeners
 
+        val mdata = FirebaseDatabase.getInstance().getReference("AllMills")
+        mdata.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onCancelled(p0: DatabaseError) {
 
+            }
+            override fun onDataChange(p0: DataSnapshot) {
+                list_all_mill= mutableListOf()
+                for (snapshot in p0.children) {
+                    val store = snapshot.getValue(AllMillsData::class.java)
+                        list_all_mill.add(store!!)
+                }
+            }
+        })
         return lay
     }                           //main code
 
