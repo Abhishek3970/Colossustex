@@ -8,5 +8,7 @@ data class AllMillsData(
     val type:String="",
     val views: Int = 0,
     var text4: String = "",
-    val text5: String = ""
+    val text5: String = "",
+    val variety:String="",
+    val purpose:String=""
 )

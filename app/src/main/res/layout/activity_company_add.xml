@@ -65,30 +65,22 @@
                         android:inputType="number"
                         android:textColor="#111" />
 
-                    <TextView
+                    <EditText
+                        android:id="@+id/updated"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/price_top"
                         android:layout_alignParentEnd="true"
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="5dp"
-                        android:text="Ex-Mill" />
+                        android:hint="Current Time" />
                 </RelativeLayout>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="25dp"
                     android:background="#22111111"
-                    android:padding="3dp">
-
-                    <TextView
-                        android:id="@+id/updated"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:text="Price Updated:12 Mar,09:32"
-                        android:textColor="#111" />
-                </RelativeLayout>
+                    android:padding="3dp"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -157,6 +149,26 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:hint="Purpose" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="2.5dp"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="VARIETY" />
+
+                        <EditText
+                            android:id="@+id/variety"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="Variety" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -283,7 +295,7 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="39dp"
+                        android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:padding="2.5dp"
                         android:weightSum="2">
@@ -422,6 +434,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:inputType="number"
                             android:hint="Cones" />
                     </LinearLayout>
 
@@ -488,20 +501,6 @@
                     </LinearLayout>
 
                 </LinearLayout>
-                <RelativeLayout
-                    android:layout_marginTop="20dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#22111111"
-                    android:layout_marginBottom="5dp"
-                    android:padding="7dp">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="View All products of Sri Ranga Vilas Mil..."
-                        android:id="@+id/all_products"
-                        android:gravity="center"/>
-                </RelativeLayout>
             </LinearLayout>
 
         </ScrollView>

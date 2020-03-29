@@ -9,6 +9,7 @@ data class AllproductsData(
     var updated:String="-",
     var yarn_type: String = "-",
     var purpose: String = "-",
+    var variety:String="",
     var nature: String = "-",
     var count: String = "-",
     var type: String = "-",

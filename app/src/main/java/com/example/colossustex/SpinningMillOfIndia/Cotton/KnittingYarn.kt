@@ -41,7 +41,7 @@ class KnittingYarn : Fragment() {
         binding.allYarn.text = "Knitting Yarn"  //Changing title
         val newlist = mutableListOf<AllMillsData>()
         for (i in list_all_mill) {
-            if (i.text1.toLowerCase().trim().contains("i")) {
+            if (i.purpose.toLowerCase().contains("knitting")) {
                 newlist.add(i)
             }
         } //Condition for filtering the data from all mills for each fragment(newlist)

@@ -20,21 +20,9 @@ class CompanyAdd : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_company_add)
         val ref = FirebaseDatabase.getInstance().getReference("AllProducts")
         val refmills = FirebaseDatabase.getInstance().getReference("AllMills")
-//        var allmills = AllMillsData()
-//        refmills.addListenerForSingleValueEvent(object : ValueEventListener {
-//            override fun onCancelled(p0: DatabaseError) {
-//
-//            }
-//
-//            override fun onDataChange(p0: DataSnapshot) {
-//                if (p0.exists()) {
-//                    for (datasnap in p0.children) {
-//                        allmills = datasnap.getValue(AllMillsData::class.java)!!
-//
-//                    }
-//                }
-//            }
-//        })
+        binding.toolbarDetails.setNavigationOnClickListener {
+            onBackPressed()
+        }
         binding.addNow.setOnClickListener {
             val data = AllproductsData(
                 "",
@@ -45,6 +33,7 @@ class CompanyAdd : AppCompatActivity() {
                 binding.updated.text.toString(),
                 binding.yarnType.text.toString(),
                 binding.purpose.text.toString(),
+                binding.variety.text.toString(),
                 binding.nature.text.toString(),
                 binding.count.text.toString(),
                 binding.type.text.toString(),
@@ -52,7 +41,7 @@ class CompanyAdd : AppCompatActivity() {
                 binding.actualCount.text.toString(),
                 binding.csp.text.toString(),
                 binding.totalImperfections.text.toString(),
-                binding.deliveryPeriod.text.toString(),
+                binding.weight.text.toString(),
                 binding.cones.text.toString(),
                 binding.deliveryPeriod.text.toString(),
                 binding.minQuantity.text.toString()
@@ -63,8 +52,9 @@ class CompanyAdd : AppCompatActivity() {
                 override fun onCancelled(p0: DatabaseError) {
 
                 }
+
                 override fun onDataChange(p0: DataSnapshot) {
-                    list_all_mill= mutableListOf()
+                    list_all_mill = mutableListOf()
                     for (snapshot in p0.children) {
                         val store = snapshot.getValue(AllMillsData::class.java)
                         list_all_mill.add(store!!)
@@ -77,15 +67,15 @@ class CompanyAdd : AppCompatActivity() {
                         .toLowerCase() && i.text1.toLowerCase() == binding.companyName.text.toString()
                         .toLowerCase()
                 ) {
-                    Log.i("all","inside")
-                    i.count=(i.count.toInt()+1).toString()
-                    i.text4=i.text4+","+ binding.count.text.toString()
+                    Log.i("all", "inside")
+                    i.count = (i.count.toInt() + 1).toString()
+                    i.text4 = i.text4 + "," + binding.count.text.toString()
                     refmills.child(i.id).setValue(i)
-                    j=1
+                    j = 1
                     break
                 }
             }
-            Log.i("all",j.toString())
+            Log.i("all", j.toString())
             if (j == 0) {
                 val id = refmills.push().key
                 val newmilldata = AllMillsData(
@@ -96,13 +86,32 @@ class CompanyAdd : AppCompatActivity() {
                     binding.yarnType.text.toString(),
                     0,
                     binding.count.text.toString(),
-                    binding.updated.text.toString()
+                    binding.updated.text.toString(),
+                    binding.variety.text.toString(),
+                    binding.purpose.text.toString()
                 )
                 Toast.makeText(this, "New Added", Toast.LENGTH_SHORT).show()
                 refmills.child(id).setValue(newmilldata)
             } else {
                 Toast.makeText(this, "Added in earlier", Toast.LENGTH_SHORT).show()
             }
+            binding.count.setText("")
+            binding.priceTop.setText("")
+            binding.updated.setText("")
+            binding.yarnType.setText("")
+            binding.purpose.setText("")
+            binding.variety.setText("")
+            binding.nature.setText("")
+            binding.count.setText("")
+            binding.type.setText("")
+            binding.quality.setText("")
+            binding.actualCount.setText("")
+            binding.csp.setText("")
+            binding.totalImperfections.setText("")
+            binding.deliveryPeriod.setText("")
+            binding.cones.setText("")
+            binding.deliveryPeriod.setText("")
+            binding.minQuantity.setText("")
         }
     }
 }
