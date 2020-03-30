@@ -11,7 +11,7 @@ private val TAB_TITLES = arrayOf(
     "ALL MILLS"
 )
 
-class SectionsPagerAdapter(private val context: Context, fm: FragmentManager) :
+class SectionsPagerAdapter(private val context: Context, fm: FragmentManager,val type:String) :
     FragmentPagerAdapter(fm) {
 
     override fun getItem(position: Int): Fragment {
@@ -21,7 +21,7 @@ class SectionsPagerAdapter(private val context: Context, fm: FragmentManager) :
         when (position) {
             0 -> fragment = ViscoseFragment()
             1 -> fragment =
-                 MillsListFragment()
+                 MillsListFragment(type)
         }
         return fragment!!
     }

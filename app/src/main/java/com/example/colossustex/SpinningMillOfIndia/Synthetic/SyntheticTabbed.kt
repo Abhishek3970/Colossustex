@@ -12,8 +12,8 @@ import com.example.colossustex.MainActivity
 import com.example.colossustex.R
 import com.example.colossustex.SpinningMillOfIndia.Common.AllMillsData
 import com.example.colossustex.SpinningMillOfIndia.Common.AllproductsData
-import com.example.colossustex.SpinningMillOfIndia.Common.list_all_mill
 import com.example.colossustex.SpinningMillOfIndia.allpro_list
+import com.example.colossustex.homePage.list_all_mill
 import com.google.android.material.tabs.TabLayout
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -30,7 +30,7 @@ class SyntheticTabbed : AppCompatActivity() {
         val sectionsPagerAdapter =
             SectionsPagerAdapter(
                 this,
-                supportFragmentManager
+                supportFragmentManager,"Synthetic"
             )
         val viewPager: ViewPager = findViewById(R.id.view_pager)
         viewPager.adapter = sectionsPagerAdapter

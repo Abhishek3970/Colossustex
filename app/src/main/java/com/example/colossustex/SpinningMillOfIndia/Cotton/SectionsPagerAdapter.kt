@@ -12,7 +12,7 @@ private val TAB_TITLES = arrayOf(
             "All Mills", "Weaving Yarn", "Knitting Yarn", "Open End"
 )
 
-class SectionsPagerAdapter(private val context: Context, fm: FragmentManager) :
+class SectionsPagerAdapter(private val context: Context, fm: FragmentManager,val type:String) :
     FragmentPagerAdapter(fm) {
 
     override fun getItem(position: Int): Fragment {
@@ -22,10 +22,10 @@ class SectionsPagerAdapter(private val context: Context, fm: FragmentManager) :
         when (position) {
 
             0 -> fragment = CottonTabFragment()
-            1 -> fragment = MillsListFragment()
+            1 -> fragment = MillsListFragment(type)
             2 -> fragment = Weaving()
             3 -> fragment = KnittingYarn()
-            4 -> fragment = MillsListFragment()
+            4 -> fragment = MillsListFragment(type)
         }
         return fragment!!
     }

@@ -10,14 +10,14 @@ private val TAB_TITLES = arrayOf(
     "Synthetic", "View All Mills", "PSF Mills"
 )
 
-class SectionsPagerAdapter(private val context: Context, fm: FragmentManager) :
+class SectionsPagerAdapter(private val context: Context, fm: FragmentManager,val type:String) :
     FragmentPagerAdapter(fm) {
 
     override fun getItem(position: Int): Fragment {
         var frag: Fragment? = null
         when (position) {
             0 -> frag = SyntheticTab()
-            1 -> frag = MillsListFragment()
+            1 -> frag = MillsListFragment(type)
             2 -> frag = PSFYarn()
         }
         return frag!!

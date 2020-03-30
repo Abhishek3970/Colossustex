@@ -91,7 +91,7 @@ class AllProducts : AppCompatActivity() {
                             selectedlist = mutableListOf()
                             for (datasnap in p0.children) {
                                 val data = datasnap.getValue(AllproductsData::class.java)
-                                if (head.toLowerCase()==data!!.company_name.toLowerCase()) {
+                                if (head.toLowerCase()==data!!.company_name.toLowerCase()&&type.toLowerCase().trim().contains(data.yarn_type.toLowerCase().trim())) {
                                     selectedlist.add(data)
                                 }
                             }
