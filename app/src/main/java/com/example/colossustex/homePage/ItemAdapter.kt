@@ -17,6 +17,8 @@ import com.example.colossustex.SG.Textile_News
 import com.example.colossustex.SG.sensex_SG
 import com.example.colossustex.SG.yarn_offers
 import com.example.colossustex.SG.yarn_requirements
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.*
 import com.smarteist.autoimageslider.DefaultSliderView
 import com.smarteist.autoimageslider.IndicatorAnimations
 import com.smarteist.autoimageslider.SliderAnimations
@@ -100,7 +102,30 @@ class ItemAdapter(var list: MutableList<Item>) :
 //                }
 //                val alertDialog = builder.create()
 //                alertDialog.show())
-                6 -> it.context.startActivity(Intent(it.context, yarn_requirements::class.java))
+                6 -> {
+                    var temp  = 0L
+                    val user = FirebaseAuth.getInstance().currentUser
+                    var mDb : DatabaseReference = FirebaseDatabase.getInstance().reference
+                    mDb.child("User/${user?.uid}/userData").addValueEventListener(
+                        object : ValueEventListener{
+                            override fun onCancelled(p0: DatabaseError) {}
+
+                            override fun onDataChange(data: DataSnapshot) {
+
+                                temp = data.child("flag").value as Long
+
+                                if(temp == 1L){
+                                    it.context.startActivity(Intent(it.context, yarn_requirements::class.java))
+                                }
+                                else{
+                                    modifyProfile(it.context , to = 1)
+                                }
+                            }
+
+                        })
+
+
+                }
                 7 -> it.context.startActivity(Intent(it.context, Textile_News::class.java))
                 8 -> it.context.startActivity(Intent(it.context, sensex_SG::class.java))
                 else -> Toast.makeText(it.context,list[position].description, Toast.LENGTH_SHORT).show()
@@ -148,13 +173,13 @@ class ItemAdapter(var list: MutableList<Item>) :
                 val sliderView = DefaultSliderView(constraintLayout.context)
 
                 when (i) {
-                    0 -> sliderView.setImageDrawable(R.drawable.yarn)
+                    0 -> sliderView.setImageDrawable(R.drawable.banner1)
 
-                    1 ->sliderView.setImageDrawable(R.drawable.yarn)
+                    1 ->sliderView.setImageDrawable(R.drawable.banner2)
 
-                    2 ->sliderView.setImageDrawable(R.drawable.yarn)
+                    2 ->sliderView.setImageDrawable(R.drawable.banner3)
 
-                    3 -> sliderView.setImageDrawable(R.drawable.yarn)
+                    3 -> sliderView.setImageDrawable(R.drawable.banner4)
 
                 }
 

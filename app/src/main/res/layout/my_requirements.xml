@@ -38,7 +38,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="18dp"
-                android:text="Yarn offers"
+                android:text="My Requirements"
                 android:textColor="@android:color/white"
                 android:textSize="15sp"
                 android:textStyle="bold"
