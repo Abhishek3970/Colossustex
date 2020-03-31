@@ -13,17 +13,24 @@
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EmailLogin.ForgotPassword"
-            android:theme="@style/loginstatusbar"/>
-        <activity android:name=".EmailLogin.VerifyNumber"
-            android:theme="@style/loginstatusbar"/>
-        <activity android:name=".EmailLogin.MobileLogin"
-            android:theme="@style/loginstatusbar"/>
-        <activity android:name=".EmailLogin.WelcomeActivity"
-            android:theme="@style/loginstatusbar"/>
-        <activity android:name=".EmailLogin.InfoActivity"
-            android:theme="@style/loginstatusbar"/>
-        <activity android:name=".SplashActivity"
+        <activity android:name=".SpinningMillOfIndia.Common.CompanyAdd"></activity>
+        <activity
+            android:name=".EmailLogin.ForgotPassword"
+            android:theme="@style/loginstatusbar" />
+        <activity
+            android:name=".EmailLogin.VerifyNumber"
+            android:theme="@style/loginstatusbar" />
+        <activity
+            android:name=".EmailLogin.MobileLogin"
+            android:theme="@style/loginstatusbar" />
+        <activity
+            android:name=".EmailLogin.WelcomeActivity"
+            android:theme="@style/loginstatusbar" />
+        <activity
+            android:name=".EmailLogin.InfoActivity"
+            android:theme="@style/loginstatusbar" />
+        <activity
+            android:name=".SplashActivity"
             android:theme="@style/splash_statusbar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -59,6 +66,9 @@
         <activity
             android:name=".SpinningMillOfIndia.Texturised.TexturisedActivity"
             android:label="@string/title_activity_texturised"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SpinningMillOfIndia.ProductDetails"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".SpinningMillOfIndia.Viscose.ViscoseActivity"

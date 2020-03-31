@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
 import com.example.colossustex.MainActivity
 import com.example.colossustex.R
+import com.example.colossustex.SpinningMillOfIndia.Common.CompanyAdd
 import com.google.android.material.tabs.TabLayout
 
 class ViscoseActivity : AppCompatActivity() {
@@ -18,15 +19,16 @@ class ViscoseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.viscose_activity)
+        val tabs: TabLayout = findViewById(R.id.tabs)
+        val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
         val sectionsPagerAdapter =
             SectionsPagerAdapter(
                 this,
-                supportFragmentManager
+                supportFragmentManager,"Viscose"
             )
         val viewPager: ViewPager = findViewById(R.id.view_pager)
         viewPager.adapter = sectionsPagerAdapter
-        val tabs: TabLayout = findViewById(R.id.tabs)
-        val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
+
         tabs.setSelectedTabIndicatorColor(Color.WHITE)
         tabs.setTabTextColors(getColor(R.color.tabunselected), Color.WHITE)
         tabs.setupWithViewPager(viewPager)
@@ -45,6 +47,7 @@ class ViscoseActivity : AppCompatActivity() {
                         R.anim.slide_in_left,R.anim.slide_out_right
                     )
                 }
+
             }
             true
         }

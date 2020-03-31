@@ -8,16 +8,20 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#43111111"/>
+
     <TextView
-        android:background="@drawable/text_round"
-        android:layout_margin="5dp"
-        android:textColor="#FFF"
         android:id="@+id/textround"
-        android:layout_width="62dp"
-        android:layout_height="62dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/text_round"
+        android:gravity="center"
         android:text="30s"
-        android:textSize="20sp"
-        android:gravity="center"/>
+        android:textColor="#FFF"
+        android:textSize="20sp" />
 
     <TextView
         android:layout_marginTop="7dp"
@@ -40,7 +44,7 @@
         android:text="Ring Spun, Warp" />
 
     <TextView
-        android:id="@id/text3"
+        android:id="@+id/text3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/text2"

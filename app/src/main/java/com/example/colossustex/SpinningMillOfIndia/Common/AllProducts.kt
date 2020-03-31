@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.colossustex.MainActivity
 import com.example.colossustex.R
 import com.example.colossustex.SpinningMillOfIndia.Viscose.ViewedHistoryData
-import com.example.colossustex.SpinningMillOfIndia.Viscose.allpro_list
+import com.example.colossustex.SpinningMillOfIndia.allpro_list
 import com.example.colossustex.databinding.FragmentAllProductsBinding
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.firebase.database.DataSnapshot
@@ -38,11 +38,13 @@ class AllProducts : AppCompatActivity() {
         val head = intent.getStringExtra("Head")
         val type = intent.getStringExtra("Type")
         val loc = intent.getStringExtra("Location")
+        val idstring = intent.getStringExtra("id")
         if (f != null && s != null && t != null && c != null) {
             selectedlist = mutableListOf()
             for (i in allpro_list) {
-                if (i.text2.toLowerCase().trim()
-                        .contains(f.toLowerCase().trim()) || i.text2.toLowerCase().trim().contains(
+                if ((i.nature + i.type).toLowerCase().trim()
+                        .contains(f.toLowerCase().trim()) || (i.nature + i.type).toLowerCase()
+                        .trim().contains(
                         s.toLowerCase().trim()
                     )
                 ) {
@@ -71,34 +73,35 @@ class AllProducts : AppCompatActivity() {
 
             }
         } else {
-            val ref = FirebaseDatabase.getInstance().getReference("AllProducts")
-            ref.addValueEventListener(object : ValueEventListener {
-                override fun onCancelled(p0: DatabaseError) {
+            if (head != null && type != null && loc != null) {
+                binding.allProductsRecycler.visibility = View.VISIBLE
+                binding.noresConstaint.visibility = View.GONE
+                binding.resultsAllpro.visibility = View.GONE
+                binding.constraint.visibility = View.VISIBLE
+                binding.mainhead.text = head
+                binding.type.text = type
+                binding.location.text = loc
+                val ref = FirebaseDatabase.getInstance().getReference("AllProducts")
+                ref.addValueEventListener(object : ValueEventListener {
+                    override fun onCancelled(p0: DatabaseError) {
 
-                }
-
-                override fun onDataChange(p0: DataSnapshot) {
-                    if (p0.exists()) {
-                        selectedlist = mutableListOf()
-                        for (datasnap in p0.children) {
-                            val data = datasnap.getValue(AllproductsData::class.java)
-                            selectedlist.add(data!!)
-                        }
-                        binding.progressbarAllproducts.visibility = View.GONE
-                        binding.allProductsRecycler.adapter =
-                            AllProductAdapter(this@AllProducts, selectedlist)
                     }
-                }
-            })
-        }
-        if (head != null && type != null && loc != null) {
-            binding.allProductsRecycler.visibility = View.VISIBLE
-            binding.noresConstaint.visibility = View.GONE
-            binding.resultsAllpro.visibility = View.GONE
-            binding.constraint.visibility = View.VISIBLE
-            binding.mainhead.text = head
-            binding.type.text = type
-            binding.location.text = loc
+                    override fun onDataChange(p0: DataSnapshot) {
+                        if (p0.exists()) {
+                            selectedlist = mutableListOf()
+                            for (datasnap in p0.children) {
+                                val data = datasnap.getValue(AllproductsData::class.java)
+                                if (head.toLowerCase()==data!!.company_name.toLowerCase()&&type.toLowerCase().trim().contains(data.yarn_type.toLowerCase().trim())) {
+                                    selectedlist.add(data)
+                                }
+                            }
+                            binding.progressbarAllproducts.visibility = View.GONE
+                            binding.allProductsRecycler.adapter =
+                                AllProductAdapter(this@AllProducts, selectedlist)
+                        }
+                    }
+                })
+            }
         }
         binding.toolbar.setNavigationOnClickListener {
             onBackPressed()
@@ -162,8 +165,8 @@ class AllProducts : AppCompatActivity() {
                             R.id.lth -> {
                                 for (i in 0 until selectedlist.size) {
                                     for (j in i until selectedlist.size) {
-                                        val s1 = selectedlist[i].text6.replace(".00/kg", "")
-                                        val s2 = selectedlist[j].text6.replace(".00/kg", "")
+                                        val s1 = selectedlist[i].price
+                                        val s2 = selectedlist[j].price
                                         if (s1.toInt() > s2.toInt()) {
                                             val t = selectedlist[i]
                                             selectedlist[i] = selectedlist[j]
@@ -178,8 +181,8 @@ class AllProducts : AppCompatActivity() {
                             R.id.htl -> {
                                 for (i in 0 until selectedlist.size) {
                                     for (j in i until selectedlist.size) {
-                                        val s1 = selectedlist[i].text6.replace(".00/kg", "")
-                                        val s2 = selectedlist[j].text6.replace(".00/kg", "")
+                                        val s1 = selectedlist[i].price
+                                        val s2 = selectedlist[j].price
                                         if (s1.toInt() < s2.toInt()) {
                                             val t = selectedlist[i]
                                             selectedlist[i] = selectedlist[j]
@@ -198,7 +201,7 @@ class AllProducts : AppCompatActivity() {
                             R.id.lth -> {
                                 for (i in 0 until selectedlist.size) {
                                     for (j in i until selectedlist.size) {
-                                        if (selectedlist[i].text10.toInt() > selectedlist[j].text10.toInt()) {
+                                        if (selectedlist[i].actual_count.toInt() > selectedlist[j].actual_count.toInt()) {
                                             val t = selectedlist[i]
                                             selectedlist[i] = selectedlist[j]
                                             selectedlist[j] = t
@@ -211,7 +214,7 @@ class AllProducts : AppCompatActivity() {
                             R.id.htl -> {
                                 for (i in 0 until selectedlist.size) {
                                     for (j in i until selectedlist.size) {
-                                        if (selectedlist[i].text10.toInt() < selectedlist[j].text10.toInt()) {
+                                        if (selectedlist[i].actual_count.toInt() < selectedlist[j].actual_count.toInt()) {
                                             val t = selectedlist[i]
                                             selectedlist[i] = selectedlist[j]
                                             selectedlist[j] = t
@@ -251,7 +254,7 @@ class AllProducts : AppCompatActivity() {
                 ) {
                     newlist = mutableListOf()
                     for (i in selectedlist) {
-                        val s = i.text11.replace(" days", "")
+                        val s = i.delivery_period
                         if (s == a[position]) {
                             newlist.add(i)
                         }
@@ -266,14 +269,14 @@ class AllProducts : AppCompatActivity() {
                 when (id) {
                     R.id.weft -> {
                         for (i in newlist) {
-                            if (i.text2.trim().toLowerCase().contains("weft")) {
+                            if ((i.nature + i.type).trim().toLowerCase().contains("weft")) {
                                 newlist2.add(i)
                             }
                         }
                     }
                     R.id.warp -> {
                         for (i in newlist) {
-                            if (i.text2.trim().toLowerCase().contains("warp")) {
+                            if ((i.nature + i.type).trim().toLowerCase().contains("warp")) {
                                 newlist2.add(i)
                             }
                         }

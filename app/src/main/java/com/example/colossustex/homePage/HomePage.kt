@@ -6,7 +6,6 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
@@ -17,7 +16,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.colossustex.EmailLogin.UserRegister
@@ -25,12 +23,14 @@ import com.example.colossustex.EmailLogin.WelcomeActivity
 import com.example.colossustex.EmailLogin.googleSignInClient
 import com.example.colossustex.R
 import com.example.colossustex.SG.yarn_requirements
+import com.example.colossustex.SpinningMillOfIndia.Common.AllMillsData
+import com.example.colossustex.SpinningMillOfIndia.Common.CompanyAdd
 import com.firebase.ui.database.FirebaseRecyclerOptions
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-
+lateinit var list_all_mill: MutableList<AllMillsData>
 fun modifyProfile(context: Context , to: Int = 0) {//store values in temp variable on click and validate each value and navigate to next page
     val mDialog1 = Dialog(context)
     val mDialog2 = Dialog(context)
@@ -308,6 +308,9 @@ class HomePage : Fragment() {
                     Toast.LENGTH_SHORT
                 ).show()
                 R.id.share_app -> Toast.makeText(context, "Share App", Toast.LENGTH_SHORT).show()
+                R.id.add->{
+                    startActivity(Intent(context,CompanyAdd::class.java))
+                }
                 R.id.logout_menu -> {
                     val auth = FirebaseAuth.getInstance()
                     auth.signOut()
@@ -322,7 +325,19 @@ class HomePage : Fragment() {
             }
             true
         }        //menu items on click listeners
+        val mdata = FirebaseDatabase.getInstance().getReference("AllMills")
+        mdata.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onCancelled(p0: DatabaseError) {
 
+            }
+            override fun onDataChange(p0: DataSnapshot) {
+                list_all_mill= mutableListOf()
+                for (snapshot in p0.children) {
+                    val store = snapshot.getValue(AllMillsData::class.java)
+                    list_all_mill.add(store!!)
+                }
+            }
+        })
 
         return lay
     }                           //main code
@@ -380,8 +395,6 @@ class HomePage : Fragment() {
 
         mDialog1.show()
     }    // code for notification Settings option in menu
-
-
 
     private fun changePassword(context: Context) {
         val mDialog1 = Dialog(context)

@@ -19,14 +19,16 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.SCROLL_STATE_IDLE
 import com.example.colossustex.R
 import com.example.colossustex.SG.yarn_requirements
+import com.example.colossustex.SpinningMillOfIndia.Common.AllproductsData
 import com.example.colossustex.SpinningMillOfIndia.Fancy.FancyActivity
 import com.example.colossustex.SpinningMillOfIndia.Texturised.TexturisedActivity
 import com.example.colossustex.SpinningMillOfIndia.Viscose.ViscoseActivity
-import com.example.colossustex.homePage.HomePage
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.fragment_spinning_mill_of_india.*
+
+lateinit var allpro_list: MutableList<AllproductsData>
 
 class SpinningMillOfIndia : Fragment() {
 
@@ -262,6 +264,23 @@ class SpinningMillOfIndia : Fragment() {
             }
 
         }
+        val all_ref = FirebaseDatabase.getInstance().getReference("AllProducts")
+        all_ref.addValueEventListener(object : ValueEventListener {
+            override fun onCancelled(p0: DatabaseError) {
+
+            }
+
+            override fun onDataChange(p0: DataSnapshot) {
+                if (p0.exists()) {
+                    allpro_list = mutableListOf()
+                    for (datasnap in p0.children) {
+                        val data = datasnap.getValue(AllproductsData::class.java)
+                        allpro_list.add(data!!)
+                    }
+
+                }
+            }
+        })
 
 
 

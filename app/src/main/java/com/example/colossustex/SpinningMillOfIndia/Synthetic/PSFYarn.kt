@@ -20,8 +20,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.colossustex.R
 import com.example.colossustex.SpinningMillOfIndia.Common.AllMillsData
 import com.example.colossustex.SpinningMillOfIndia.Common.MillsListAdapter
-import com.example.colossustex.SpinningMillOfIndia.Common.list_all_mill
 import com.example.colossustex.databinding.MillsListFragmentBinding
+import com.example.colossustex.homePage.list_all_mill
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.firebase.database.FirebaseDatabase
 
@@ -36,7 +36,7 @@ class PSFYarn : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.mills_list_fragment, container, false)
-        binding.viscoseRecycler2.layoutManager = LinearLayoutManager(context)
+        binding.allMillsRecycler.layoutManager = LinearLayoutManager(context)
         binding.progressLayout.visibility = View.VISIBLE
         database = FirebaseDatabase.getInstance()
         binding.allYarn.text = "PSF Yarn Mills"
@@ -53,12 +53,12 @@ class PSFYarn : Fragment() {
         val checkbox5 = dialog.findViewById<CheckBox>(R.id.checkBox5)!!
         val newlist = mutableListOf<AllMillsData>()
         for (i in list_all_mill) {
-            if (i.text1.toLowerCase().trim().contains("bh")) {
+            if (i.variety.toLowerCase().contains("psf")) {
                 newlist.add(i)
             }
         } //Newlist for fragment
         binding.progressLayout.visibility = View.GONE
-        binding.viscoseRecycler2.adapter = MillsListAdapter(newlist)
+        binding.allMillsRecycler.adapter = MillsListAdapter(newlist)
         binding.filter.setOnClickListener {
             dialog.show()
             close.setOnClickListener {
@@ -89,7 +89,7 @@ class PSFYarn : Fragment() {
                 if (!(checkbox1.isChecked or checkbox2.isChecked or checkbox3.isChecked
                             or checkbox4.isChecked or checkbox5.isChecked)
                 ) {
-                    binding.viscoseRecycler2.adapter =
+                    binding.allMillsRecycler.adapter =
                         MillsListAdapter(
                             newlist
                         )
@@ -104,7 +104,7 @@ class PSFYarn : Fragment() {
                         }
 
                     }
-                    binding.viscoseRecycler2.adapter =
+                    binding.allMillsRecycler.adapter =
                         MillsListAdapter(
                             newlist1
                         )
@@ -128,7 +128,7 @@ class PSFYarn : Fragment() {
                         newlist_search.add(i)
                     }
                 }
-                binding.viscoseRecycler2.adapter =
+                binding.allMillsRecycler.adapter =
                     MillsListAdapter(
                         newlist_search
                     )
@@ -149,7 +149,7 @@ class PSFYarn : Fragment() {
             }
         } //Newlist for fragment
         binding.progressLayout.visibility = View.GONE
-        binding.viscoseRecycler2.adapter = MillsListAdapter(newlist)
+        binding.allMillsRecycler.adapter = MillsListAdapter(newlist)
     }
 
 }
