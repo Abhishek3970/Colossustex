@@ -61,7 +61,7 @@ public class yarn_requirements extends AppCompatActivity{
         sendto = findViewById(R.id.sendto);
         noofbags = findViewById(R.id.noofbags);
         description = findViewById(R.id.desc);
-        send_reqto = findViewById(R.id.sendmill);
+        send_reqto = findViewById(R.id.requirement_form);
         SingDub = findViewById(R.id.SingDub);
         denier = findViewById(R.id.denier);
         Quality_Range_Texturised = findViewById(R.id.Quality_Range_texturised);
@@ -98,7 +98,6 @@ public class yarn_requirements extends AppCompatActivity{
         sendto.setVisibility(View.GONE);
         Variety.setVisibility(View.GONE);
         Grade.setVisibility(View.GONE);
-        send_reqto.setVisibility(View.GONE);
         Product_Range_Texturised.setVisibility(View.GONE);
         Product_Range_Fancy.setVisibility(View.GONE);
 
