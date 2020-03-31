@@ -57,11 +57,9 @@ class ItemAdapter(var list: MutableList<Item>) :
         holder.constraintLayout.setOnClickListener {
             when (position) {
                 0 -> holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToSpinningMillOfIndia())
-                1 -> holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToSpinningMillOfIndia())
-                2 -> holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToImportYarn())
-                3-> holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToBuySellTextileProducts())
-                4-> it.context.startActivity(Intent(it.context, yarn_offers::class.java))
-                5-> {
+                1-> holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToBuySellTextileProducts())
+                2-> it.context.startActivity(Intent(it.context, yarn_offers::class.java))
+                3-> {
                     var dialog = Dialog(it.context)
                     dialog.setContentView(R.layout.buy_yarn_offers_dialog1)
                     val cotton = dialog.findViewById<TextView>(R.id.dialog_cotton)
@@ -102,7 +100,7 @@ class ItemAdapter(var list: MutableList<Item>) :
 //                }
 //                val alertDialog = builder.create()
 //                alertDialog.show())
-                6 -> {
+                4 -> {
                     var temp  = 0L
                     val user = FirebaseAuth.getInstance().currentUser
                     var mDb : DatabaseReference = FirebaseDatabase.getInstance().reference
@@ -126,13 +124,13 @@ class ItemAdapter(var list: MutableList<Item>) :
 
 
                 }
-                7 -> it.context.startActivity(Intent(it.context, Textile_News::class.java))
-                8 -> it.context.startActivity(Intent(it.context, sensex_SG::class.java))
+                5 -> it.context.startActivity(Intent(it.context, Textile_News::class.java))
+                6 -> it.context.startActivity(Intent(it.context, sensex_SG::class.java))
                 else -> Toast.makeText(it.context,list[position].description, Toast.LENGTH_SHORT).show()
             }
         }
 
-        if (position == 8) {
+        if (position == 6) {
             holder.view2.visibility = View.INVISIBLE
         }
 
