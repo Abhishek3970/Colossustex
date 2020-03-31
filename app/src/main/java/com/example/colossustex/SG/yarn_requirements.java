@@ -35,14 +35,16 @@ import kotlin.jvm.internal.Ref;
 public class yarn_requirements extends AppCompatActivity{
 
     ImageView back;
-//    String text, t1, t2, t3, t4, t5, t6, t7;
+    String text, t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11;
     int i = 1, sum = 0;
     LinearLayout Fibre,Purpose,Count, Quality_Range_Texturised, Quality_Range_Fancy, Product_Range_Texturised, Grade, Product_Range_Fancy, Quality,Variety, Type, Nature, noofbags, description, sendto, denier, send_reqto, SingDub;
     TextView Fibre_, Purpose_, Count_ , Quality_Range_texturised,req,  Quality_Range_fancy, Product_Range_texturised, Product_Range_fancy, Quality_, Variety_, Type_, Nature_, Grade_ , sendto_, sendreqto, denier_, singdub;
 
 
+    @SuppressLint("ResourceType")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        t1 = t2 = t3 = t4 = t5 = t6 = t7 = t8 = t9 = t10 = t11 = "";
         super.onCreate(savedInstanceState);
         setContentView(R.layout.my_requirements);
         Button add_more = findViewById(R.id.button);
@@ -121,6 +123,7 @@ public class yarn_requirements extends AppCompatActivity{
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Fibre_.setText("Cotton");
+                        t1 = "Cotton";
                         Purpose.setVisibility(View.VISIBLE);
                         Count.setVisibility(View.VISIBLE);
                         Type.setVisibility(View.VISIBLE);
@@ -144,6 +147,7 @@ public class yarn_requirements extends AppCompatActivity{
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Fibre_.setText("Synthetic");
+                        t1 = "Synthetic";
                         Purpose.setVisibility(View.GONE);
                         Count.setVisibility(View.VISIBLE);
                         SingDub.setVisibility(View.VISIBLE);
@@ -167,6 +171,7 @@ public class yarn_requirements extends AppCompatActivity{
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Fibre_.setText("Viscose");
+                        t1 = "Viscose";
                         Purpose.setVisibility(View.GONE);
                         Count.setVisibility(View.VISIBLE);
                         SingDub.setVisibility(View.VISIBLE);
@@ -191,6 +196,7 @@ public class yarn_requirements extends AppCompatActivity{
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Fibre_.setText("Texturised");
+                        t1 = "Texturised";
                         Purpose.setVisibility(View.GONE);
                         Count.setVisibility(View.GONE);
                         SingDub.setVisibility(View.GONE);
@@ -214,6 +220,7 @@ public class yarn_requirements extends AppCompatActivity{
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Fibre_.setText("Fancy");
+                        t1 = "Fancy";
                         Purpose.setVisibility(View.GONE);
                         Count.setVisibility(View.VISIBLE);
                         SingDub.setVisibility(View.VISIBLE);
@@ -253,6 +260,7 @@ public class yarn_requirements extends AppCompatActivity{
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         sendreqto.setText("Mills Only");
+                        t8="Mills Only";
                     }
                 }));
 
@@ -260,14 +268,17 @@ public class yarn_requirements extends AppCompatActivity{
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         sendreqto.setText("Agents and Traders only");
+                        t8 = "Agents and Traders only";
                     }
                 }));
                 Both.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         sendreqto.setText("Mills and Agents and Traders only");
+                        t8 = "Mills and Agents and Traders only";
                     }
                 });
+//                t8 = getText(R.id.sendreqto);
                 ((Dialog)dialog.element).show();
             }
         });
@@ -289,6 +300,7 @@ public class yarn_requirements extends AppCompatActivity{
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         sendto_.setText("Within India");
+                        t9 = "Within India";
                     }
                 }));
 
@@ -296,12 +308,14 @@ public class yarn_requirements extends AppCompatActivity{
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         sendto_.setText("Outside India");
+                        t9 = "Outside India";
                     }
                 }));
                 bangla.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         sendto_.setText("Bangladesh");
+                        t9 = "Bangladesh";
                     }
                 });
                 ((Dialog)dialog.element).show();
@@ -324,13 +338,15 @@ public class yarn_requirements extends AppCompatActivity{
                 single.setOnClickListener((new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
-                        singdub.setText("single");
+                        singdub.setText("Single");
+                        t4 = "Single";
                     }
                 }));
                 dubble.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
-                        singdub.setText("double");
+                        singdub.setText("Double");
+                        t4 = "Double";
                     }
                 });
                 ((Dialog)dialog.element).show();
@@ -355,12 +371,14 @@ public class yarn_requirements extends AppCompatActivity{
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Purpose_.setText("Weaving");
+                        t2 = "Weaving";
                     }
                 }));
                 Hoisery.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Purpose_.setText("Hoisery");
+                        t2 = "Hosiery";
                     }
                 });
                 ((Dialog)dialog.element).show();
@@ -382,12 +400,14 @@ public class yarn_requirements extends AppCompatActivity{
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Type_.setText("Wrap");
+                        t6 = "Wrap";
                     }
                 });
                 Weft.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Type_.setText("Weft");
+                        t6 = "Weft";
                     }
                 });
                 ((Dialog)dialog.element).show();
@@ -415,6 +435,7 @@ public class yarn_requirements extends AppCompatActivity{
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Quality_.setText("Combed");
+                        t5 = "Combed";
                     }
                 }));
 
@@ -422,30 +443,35 @@ public class yarn_requirements extends AppCompatActivity{
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Quality_.setText("Virgin");
+                        t5 = "Virgin";
                     }
                 }));
                 card.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Quality_.setText("Carded");
+                        t5 = "Carded";
                     }
                 });
                 combed.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Quality_.setText("Combed Compact");
+                        t5 = "Combed Compact";
                     }
                 });
                 carded.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Quality_.setText("Carded Compact");
+                        t5 = "Carded Compact";
                     }
                 });
                 Giza.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Quality_.setText("Giza");
+                        t5 = "Giza";
                     }
                 });
                 ((Dialog)dialog.element).show();
@@ -471,30 +497,35 @@ public class yarn_requirements extends AppCompatActivity{
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Quality_Range_texturised.setText("NIM");
+                        t5 = "NIM";
                     }
                 }));
                 gft.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Quality_Range_texturised.setText("GFT");
+                        t5 = "GFT";
                     }
                 });
                 limsim.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Quality_Range_texturised.setText("LIM / SIM");
+                        t5 = "LIM / SIM";
                     }
                 });
                 imroto.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Quality_Range_texturised.setText("IM / ROTO");
+                        t5 = "IM / ROTO";
                     }
                 });
                 himroto.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Quality_Range_texturised.setText("HIM / ROTO");
+                        t6 = "HIM / ROTO";
                     }
                 });
                 ((Dialog)dialog.element).show();
@@ -521,6 +552,7 @@ public class yarn_requirements extends AppCompatActivity{
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Quality_Range_fancy.setText("Cotton");
+                        t5 = "Cotton";
                     }
                 }));
 
@@ -528,30 +560,35 @@ public class yarn_requirements extends AppCompatActivity{
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Quality_Range_fancy.setText("PV");
+                        t5 = "PV";
                     }
                 }));
                 pc.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Quality_Range_fancy.setText("PC");
+                        t5 = "PC";
                     }
                 });
                 psf.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Quality_Range_fancy.setText("PSF");
+                        t5 = "PSF";
                     }
                 });
                 vsf.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Quality_Range_fancy.setText("VSF");
+                        t5 = "VSF";
                     }
                 });
                 texturised.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Quality_Range_fancy.setText("Texturised");
+                        t5 = "Texturised";
                     }
                 });
                 ((Dialog)dialog.element).show();
@@ -574,18 +611,21 @@ public class yarn_requirements extends AppCompatActivity{
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Nature_.setText("Open End");
+                        t7 = "Open End";
                     }
                 });
                 ring.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Nature_.setText("Ring Span");
+                        t7 = "Ring Span";
                     }
                 });
                 vortex.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Nature_.setText("Vortex");
+                        t7 = "Vortex";
                     }
                 });
                 ((Dialog)dialog.element).show();
@@ -608,18 +648,21 @@ public class yarn_requirements extends AppCompatActivity{
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Variety_.setText("PSF");
+                        t5 = "PSF";
                     }
                 });
                 pv.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Variety_.setText("PV");
+                        t5 = "PV";
                     }
                 });
                 pc.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Variety_.setText("PC");
+                        t5 = "PC";
                     }
                 });
                 ((Dialog)dialog.element).show();
@@ -645,30 +688,35 @@ public class yarn_requirements extends AppCompatActivity{
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Product_Range_fancy.setText("Slub");
+                        t6 = "Slub";
                     }
                 }));
                 multi_color.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Product_Range_fancy.setText("Multi Colour");
+                        t6 = "Multi Colour";
                     }
                 });
                 modal.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Product_Range_fancy.setText("Modal");
+                        t6 = "Modal";
                     }
                 });
                 excel.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Product_Range_fancy.setText("Excel");
+                        t6 = "Excel";
                     }
                 });
                 tencel.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Product_Range_fancy.setText("Tencel");
+                        t6 = "Tencel";
                     }
                 });
                 ((Dialog)dialog.element).show();
@@ -697,18 +745,21 @@ public class yarn_requirements extends AppCompatActivity{
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Product_Range_texturised.setText("Bright");
+                        t6 = "Bright";
                     }
                 }));
                 semidull.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Product_Range_texturised.setText("Semi Dull");
+                        t6 = "Semi Dull";
                     }
                 });
                 fulldull.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Product_Range_texturised.setText("Full Dull");
+                        t6 = "Full Dull";
                     }
                 });
 
@@ -716,30 +767,35 @@ public class yarn_requirements extends AppCompatActivity{
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Product_Range_texturised.setText("Stretch / Lycra");
+                        t6 = "Stretch / Lycra";
                     }
                 }));
                 catonic.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Product_Range_texturised.setText("Catonic");
+                        t6 = "Catonic";
                     }
                 });
                 airtex.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Product_Range_texturised.setText("Airtex / Cooltex");
+                        t6 = "Airtex / Cooltex";
                     }
                 });
                 blackdope.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Product_Range_texturised.setText("Black Dope Dyed");
+                        t6 = "Black Dope Dyed";
                     }
                 });
                 fdy.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Product_Range_texturised.setText("FDY");
+                        t6 = "FDY";
                     }
                 });
                 ((Dialog)dialog.element).show();
@@ -765,24 +821,28 @@ public class yarn_requirements extends AppCompatActivity{
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Grade_.setText("1st");
+                        t4 = "1st";
                     }
                 });
                 pq.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Grade_.setText("PQ");
+                        t4 = "PQ";
                     }
                 });
                 clq.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Grade_.setText("CLQ");
+                        t4 = "CLQ";
                     }
                 });
                 std.setOnClickListener(new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
                         Grade_.setText("STD");
+                        t4 = "STD";
                     }
                 });
                 ((Dialog)dialog.element).show();
@@ -791,6 +851,16 @@ public class yarn_requirements extends AppCompatActivity{
 
 
 
+        if(t1 == "Texturised"){
+            t3 = getText(R.id.denier).toString();
+        }
+        else{
+            t3 = getText(R.id.count).toString();
+        }
+
+
+        t10 = getText(R.id.noofbags).toString();
+        t11 = getText(R.id.desc).toString();
 
 
         submit.setOnClickListener(new View.OnClickListener() {
@@ -798,9 +868,11 @@ public class yarn_requirements extends AppCompatActivity{
             @Override
             public void onClick(View v) {
 
-//                text = t1+t2+t3+t4+t5+t6+t7;
-
-                    Toast.makeText(yarn_requirements.this, "Data saved successfully" , Toast.LENGTH_SHORT).show();
+                text = t1+" , "+t2+" , "+t3+" , "+t4+" , "+t5+" , "+t6+" , "+" , "+t7+" , "+t8+" , "+t9+" , "+t10+" , "+t11;
+                    Toast.makeText(yarn_requirements.this, t1+" , "+t2+" , "+t3+" , "+t4+" , "+t5+" , "+t6+" , "+" , "+t7+" , "+t8+" , "+t9+" , "+t10+" , "+t11 , Toast.LENGTH_SHORT).show();
+                    Toast.makeText(yarn_requirements.this, "Data Stored for using once! more Space in Database recommended", Toast.LENGTH_LONG).show();
+                    send_reqto.setVisibility(View.GONE);
+                    t1 = t2 = t3 = t4 = t5 = t6 = t7 = t8 = t9 = t10 = t11 = "";
             }
         });
         add_more.setOnClickListener(new View.OnClickListener() {
@@ -809,6 +881,7 @@ public class yarn_requirements extends AppCompatActivity{
 
                 req.setText("Requirement"+ (i+1));
                 i+=1;
+                send_reqto.setVisibility(View.VISIBLE);
                 Toast.makeText(yarn_requirements.this, "order taken and new requirement begin...", Toast.LENGTH_SHORT).show();
             }
         });
@@ -816,6 +889,7 @@ public class yarn_requirements extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(yarn_requirements.this, MainActivity.class));
+                Toast.makeText(yarn_requirements.this, "Data lost !", Toast.LENGTH_SHORT).show();
                 finishAffinity();
             }
         });

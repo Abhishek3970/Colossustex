@@ -63,10 +63,15 @@
         android:text="The Requirements you enter below will be sent to all the spinning mills that have added products on YarnLIVE. Interested spinning mills will contact you."
         android:textSize="14sp" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:id="@+id/requirement_form"
         android:layout_weight="1"
         android:background="#00585050"
         android:orientation="vertical">
@@ -127,7 +132,9 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
                                 android:layout_weight="5"
+                                android:layout_marginTop="7dp"
                                 android:text="--Select--"
+                                android:layout_marginBottom="7dp"
                                 android:textSize="20sp" />
 
                             <ImageView
@@ -179,6 +186,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
                                 android:layout_weight="5"
+                                android:layout_marginTop="7dp"
+                                android:layout_marginBottom="7dp"
                                 android:text="--Select--"
                                 android:textSize="20sp" />
 
@@ -226,9 +235,12 @@
 
                             <EditText
                                 android:id="@+id/c"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="8"
+                                android:hint="1-200"
                                 android:inputType="number"
                                 android:textSize="20sp" />
 
@@ -271,6 +283,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:layout_marginTop="7dp"
+                                android:layout_marginBottom="10dp"
                                 android:layout_weight="5"
                                 android:text="--Select--"
                                 android:textSize="20sp" />
@@ -323,6 +337,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
                                 android:layout_weight="5"
+                                android:layout_marginTop="7dp"
+                                android:layout_marginBottom="7dp"
                                 android:text="--Select--"
                                 android:textSize="20sp" />
 
@@ -373,6 +389,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
+                                android:layout_marginTop="7dp"
+                                android:layout_marginBottom="7dp"
                                 android:text="--Select--"
                                 android:textSize="20sp" />
 
@@ -423,6 +441,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
                                 android:text="--Select--"
+                                android:layout_marginTop="7dp"
+                                android:layout_marginBottom="7dp"
                                 android:textSize="20sp" />
 
                             <ImageView
@@ -470,6 +490,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
+                                android:layout_marginTop="7dp"
+                                android:layout_marginBottom="7dp"
                                 android:text="--Select--"
                                 android:textSize="20sp" />
 
@@ -519,6 +541,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
                                 android:text="--Select--"
+                                android:layout_marginTop="7dp"
+                                android:layout_marginBottom="7dp"
                                 android:textSize="20sp" />
 
                             <ImageView
@@ -566,6 +590,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
+                                android:layout_marginTop="7dp"
+                                android:layout_marginBottom="7dp"
                                 android:text="--Select--"
                                 android:textSize="20sp" />
 
@@ -615,6 +641,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
                                 android:text="--Select--"
+                                android:layout_marginTop="7dp"
+                                android:layout_marginBottom="7dp"
                                 android:textSize="20sp" />
 
                             <ImageView
@@ -661,6 +689,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
+                                android:layout_marginTop="7dp"
+                                android:layout_marginBottom="7dp"
                                 android:text="--Select--"
                                 android:textSize="20sp" />
 
@@ -709,7 +739,9 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
+                                android:layout_marginTop="7dp"
                                 android:text="--Select--"
+                                android:layout_marginBottom="7dp"
                                 android:textSize="20sp" />
 
                             <ImageView
@@ -760,6 +792,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
                                 android:hint="e.g. : 200/300"
+                                android:layout_marginTop="7dp"
+                                android:layout_marginBottom="7dp"
                                 android:textSize="20sp" />
 
                         </LinearLayout>
@@ -790,7 +824,7 @@
                                 android:layout_width="30dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
-                                android:layout_marginBottom="15sp"
+                                android:layout_marginBottom="5sp"
                                 android:layout_weight="5"
                                 android:paddingStart="4dp"
                                 android:text="Send requirement to" />
@@ -800,6 +834,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="7dp"
                                 android:text="--Select--"
                                 android:textSize="20sp" />
 
@@ -839,7 +875,7 @@
                                 android:layout_width="30dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
-                                android:layout_marginBottom="10sp"
+                                android:layout_marginBottom="15sp"
                                 android:layout_weight="5"
                                 android:paddingStart="4dp"
                                 android:text="Yarn Delivery" />
@@ -849,6 +885,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5"
+                                android:layout_marginTop="7dp"
+                                android:layout_marginBottom="7dp"
                                 android:text="--Select--"
                                 android:textSize="20sp" />
 

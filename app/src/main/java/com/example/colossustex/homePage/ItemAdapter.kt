@@ -101,28 +101,29 @@ class ItemAdapter(var list: MutableList<Item>) :
 //                val alertDialog = builder.create()
 //                alertDialog.show())
                 4 -> {
-                    var temp  = 0L
-                    val user = FirebaseAuth.getInstance().currentUser
-                    var mDb : DatabaseReference = FirebaseDatabase.getInstance().reference
-                    mDb.child("User/${user?.uid}/userData").addValueEventListener(
-                        object : ValueEventListener{
-                            override fun onCancelled(p0: DatabaseError) {}
+//                    var temp  = 0L
+//                    val user = FirebaseAuth.getInstance().currentUser
+//                    var mDb : DatabaseReference = FirebaseDatabase.getInstance().reference
+//                    mDb.child("User/${user?.uid}/userData").addValueEventListener(
+//                        object : ValueEventListener{
+//                            override fun onCancelled(p0: DatabaseError) {}
+//
+//                            override fun onDataChange(data: DataSnapshot) {
+//
+//                                temp = data.child("flag").value as Long
+//
+//                                if(temp == 1L){
+//                                    it.context.startActivity(Intent(it.context, yarn_requirements::class.java))
+//                                }
+//                                else{
+//                                    modifyProfile(it.context , to = 1)
+//                                }
+//                            }
+//
+//                        })
+//
 
-                            override fun onDataChange(data: DataSnapshot) {
-
-                                temp = data.child("flag").value as Long
-
-                                if(temp == 1L){
-                                    it.context.startActivity(Intent(it.context, yarn_requirements::class.java))
-                                }
-                                else{
-                                    modifyProfile(it.context , to = 1)
-                                }
-                            }
-
-                        })
-
-
+                    it.context.startActivity(Intent(it.context, yarn_requirements::class.java))
                 }
                 5 -> it.context.startActivity(Intent(it.context, Textile_News::class.java))
                 6 -> it.context.startActivity(Intent(it.context, sensex_SG::class.java))
