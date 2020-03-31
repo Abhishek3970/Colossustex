@@ -34,7 +34,7 @@ import com.google.firebase.database.*
 fun modifyProfile(context: Context , to: Int = 0) {//store values in temp variable on click and validate each value and navigate to next page
     val mDialog1 = Dialog(context)
     val mDialog2 = Dialog(context)
-    var mDb : DatabaseReference = FirebaseDatabase.getInstance().reference
+    val mDb : DatabaseReference = FirebaseDatabase.getInstance().reference
 
     mDialog1.setContentView(R.layout.home_page_modify_profile_1)
     mDialog1.show()
@@ -276,7 +276,7 @@ class HomePage : Fragment() {
             .setQuery(FirebaseDatabase.getInstance().reference.child("Item"), Item::class.java)
             .build()
         val item0 =
-            Item("Global Spinning Mills", "Mill's rate in USD,contact details and product range")
+            Item("Colossus Grow", "Mill's rate in USD,contact details and product range")
         val item1 =
             Item("Spinning Mills of India", "Mill's rate in INR,contact details and product range")
         val item2 =
@@ -289,7 +289,7 @@ class HomePage : Fragment() {
         val item8 =
             Item("Live Cotton, Crude, Currencies", "ICE, MCX, NCDEX futures, crude and currencies")
         val mainlist =
-            mutableListOf<Item>(item0, item1, item2, item3, item4, item5, item6, item7, item8)
+            mutableListOf<Item>(item0,  item3, item4, item5, item6, item7, item8)
         adapter = ItemAdapter(mainlist)
         recyclerView.adapter = adapter
         val toolbar = lay.findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
