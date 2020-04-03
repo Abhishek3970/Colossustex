@@ -12,6 +12,8 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import java.text.SimpleDateFormat
+import java.util.*
 
 class CompanyAdd : AppCompatActivity() {
     lateinit var binding: ActivityCompanyAddBinding
@@ -24,13 +26,16 @@ class CompanyAdd : AppCompatActivity() {
             onBackPressed()
         }
         binding.addNow.setOnClickListener {
+            val getdate = Calendar.getInstance().time
+            val dateformat = SimpleDateFormat("h:mm a dd-MMM-yy")
+            val date = dateformat.format(getdate)
             val data = AllproductsData(
                 "",
                 binding.count.text.toString(),
                 binding.companyName.text.toString(),
                 binding.locationTop.text.toString(),
                 binding.priceTop.text.toString(),
-                binding.updated.text.toString(),
+                date,
                 binding.yarnType.text.toString(),
                 binding.purpose.text.toString(),
                 binding.variety.text.toString(),
@@ -86,7 +91,7 @@ class CompanyAdd : AppCompatActivity() {
                     binding.yarnType.text.toString(),
                     0,
                     binding.count.text.toString(),
-                    binding.updated.text.toString(),
+                    date,
                     binding.variety.text.toString(),
                     binding.purpose.text.toString()
                 )
@@ -97,7 +102,6 @@ class CompanyAdd : AppCompatActivity() {
             }
             binding.count.setText("")
             binding.priceTop.setText("")
-            binding.updated.setText("")
             binding.yarnType.setText("")
             binding.purpose.setText("")
             binding.variety.setText("")
