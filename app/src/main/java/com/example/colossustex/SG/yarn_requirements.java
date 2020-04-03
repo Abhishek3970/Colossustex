@@ -23,6 +23,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.colossustex.MainActivity;
 import com.example.colossustex.R;
 import com.example.colossustex.SG.model.ItemGroup;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import org.w3c.dom.Text;
 
@@ -35,9 +40,12 @@ import kotlin.jvm.internal.Ref;
 public class yarn_requirements extends AppCompatActivity{
 
     ImageView back;
-    String text, t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11;
-    int i = 1, sum = 0;
-    LinearLayout Fibre,Purpose,Count, Quality_Range_Texturised, Quality_Range_Fancy, Product_Range_Texturised, Grade, Product_Range_Fancy, Quality,Variety, Type, Nature, noofbags, description, sendto, denier, send_reqto, SingDub;
+    ArrayList<String> details = new ArrayList<>();
+    ArrayList<String> no = new ArrayList<>();
+    String text="", t1="", t2="", t3="", t4="", t5="", t6="", t7="", t8="", t9="", t10="", t11="";
+    RecyclerView rcv;
+    int i = 1;
+    LinearLayout Fibre,Purpose,Count, Quality_Range_Texturised, Quality_Range_Fancy, Product_Range_Texturised, Grade, Product_Range_Fancy, Quality,Variety, Type, Nature, noofbags, description, sendto, denier, send_reqto, SingDub, req_form;
     TextView Fibre_, Purpose_, Count_ , Quality_Range_texturised,req,  Quality_Range_fancy, Product_Range_texturised, Product_Range_fancy, Quality_, Variety_, Type_, Nature_, Grade_ , sendto_, sendreqto, denier_, singdub;
 
 
@@ -47,6 +55,39 @@ public class yarn_requirements extends AppCompatActivity{
         t1 = t2 = t3 = t4 = t5 = t6 = t7 = t8 = t9 = t10 = t11 = "";
         super.onCreate(savedInstanceState);
         setContentView(R.layout.my_requirements);
+
+        final DatabaseReference dbr = FirebaseDatabase.getInstance().getReference().child("req_data");
+        rcv = findViewById(R.id.rcv_req_s);
+
+        dbr.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                no.clear();details.clear();
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
+
+                    req_card info = snapshot.getValue(req_card.class);
+                    if(info!=null){
+                        no.add(info.getNumber());
+                        details.add(info.getDetails());
+                    }
+                    posted_card_adapter adapter = new posted_card_adapter(no, details, yarn_requirements.this);
+                    rcv.setAdapter(adapter);
+                    adapter.notifyDataSetChanged();
+                    i = no.size()+1;
+                    rcv.setLayoutManager(new LinearLayoutManager(yarn_requirements.this));
+
+                }
+
+            }
+
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(yarn_requirements.this, "Data load failed", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
         Button add_more = findViewById(R.id.button);
         Button submit = findViewById(R.id.button2);
         back = findViewById(R.id.back);
@@ -61,13 +102,14 @@ public class yarn_requirements extends AppCompatActivity{
         sendto = findViewById(R.id.sendto);
         noofbags = findViewById(R.id.noofbags);
         description = findViewById(R.id.desc);
-        send_reqto = findViewById(R.id.requirement_form);
+        send_reqto = findViewById(R.id.sendmill);
         SingDub = findViewById(R.id.SingDub);
         denier = findViewById(R.id.denier);
         Quality_Range_Texturised = findViewById(R.id.Quality_Range_texturised);
         Quality_Range_Fancy = findViewById(R.id.Quality_Range_fancy);
         Product_Range_Fancy = findViewById(R.id.Product_Range_fancy);
         Product_Range_Texturised = findViewById(R.id.Product_Range_texturised);
+        req_form = findViewById(R.id.requirement_form);
         Fibre_ = findViewById(R.id.f);
         Purpose_ = findViewById(R.id.p);
         req = findViewById(R.id.requirement);
@@ -95,6 +137,7 @@ public class yarn_requirements extends AppCompatActivity{
         Nature.setVisibility(View.GONE);
         noofbags.setVisibility(View.GONE);
         description.setVisibility(View.GONE);
+        send_reqto.setVisibility(View.GONE);
         sendto.setVisibility(View.GONE);
         Variety.setVisibility(View.GONE);
         Grade.setVisibility(View.GONE);
@@ -117,7 +160,7 @@ public class yarn_requirements extends AppCompatActivity{
                 TextView Texturised = ((Dialog)dialog.element).findViewById(R.id.dialog_texturised);
                 TextView fancy = ((Dialog)dialog.element).findViewById(R.id.dialog_fancy);
 
-
+//C:\Users\Hp\AndroidStudioProjects\Colossustex___\app\release
                 cotton.setOnClickListener((new View.OnClickListener() {
                     public final void onClick(View it) {
                         ((Dialog)dialog.element).dismiss();
@@ -869,9 +912,16 @@ public class yarn_requirements extends AppCompatActivity{
 
                 text = t1+" , "+t2+" , "+t3+" , "+t4+" , "+t5+" , "+t6+" , "+" , "+t7+" , "+t8+" , "+t9+" , "+t10+" , "+t11;
                     Toast.makeText(yarn_requirements.this, t1+" , "+t2+" , "+t3+" , "+t4+" , "+t5+" , "+t6+" , "+" , "+t7+" , "+t8+" , "+t9+" , "+t10+" , "+t11 , Toast.LENGTH_SHORT).show();
-                    Toast.makeText(yarn_requirements.this, "Data Stored for using once! more Space in Database recommended", Toast.LENGTH_LONG).show();
-                    send_reqto.setVisibility(View.GONE);
-                    t1 = t2 = t3 = t4 = t5 = t6 = t7 = t8 = t9 = t10 = t11 = "";
+//                    Toast.makeText(yarn_requirements.this, "Data Stored for using once! more Space in Database recommended", Toast.LENGTH_LONG).show();
+                dbr.child(String.valueOf(i)).setValue(new order_to_database(text,String.valueOf(i)));
+                req_form.setVisibility(View.GONE);
+                t1 = t2 = t3 = t4 = t5 = t6 = t7 = t8 = t9 = t10 = t11 = "";
+
+//                String no_ = i;
+//                no.add(no_);
+//                details.add(text);
+
+
             }
         });
         add_more.setOnClickListener(new View.OnClickListener() {
@@ -880,7 +930,7 @@ public class yarn_requirements extends AppCompatActivity{
 
                 req.setText("Requirement"+ (i+1));
                 i+=1;
-                send_reqto.setVisibility(View.VISIBLE);
+                req_form.setVisibility(View.VISIBLE);
                 Toast.makeText(yarn_requirements.this, "order taken and new requirement begin...", Toast.LENGTH_SHORT).show();
             }
         });

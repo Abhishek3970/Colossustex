@@ -13,10 +13,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.colossustex.R
-import com.example.colossustex.SG.Textile_News
-import com.example.colossustex.SG.sensex_SG
-import com.example.colossustex.SG.yarn_offers
-import com.example.colossustex.SG.yarn_requirements
+import com.example.colossustex.SG.*
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.smarteist.autoimageslider.DefaultSliderView
@@ -126,7 +123,7 @@ class ItemAdapter(var list: MutableList<Item>) :
                     it.context.startActivity(Intent(it.context, yarn_requirements::class.java))
                 }
                 5 -> it.context.startActivity(Intent(it.context, Textile_News::class.java))
-                6 -> it.context.startActivity(Intent(it.context, sensex_SG::class.java))
+                6 -> it.context.startActivity(Intent(it.context, brain::class.java))
                 else -> Toast.makeText(it.context,list[position].description, Toast.LENGTH_SHORT).show()
             }
         }

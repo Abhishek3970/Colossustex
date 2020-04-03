@@ -48,7 +48,7 @@
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
                     android:weightSum="5"
-                    app:layout_constraintBottom_toTopOf="@+id/cardView_post_yarn_requirement"
+
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
