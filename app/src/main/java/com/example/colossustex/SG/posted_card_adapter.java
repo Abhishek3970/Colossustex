@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -48,22 +47,25 @@ public class posted_card_adapter extends RecyclerView.Adapter<posted_card_adapte
                 holder.card.setVisibility(View.GONE);
             }
         });
-        holder.req.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                Toast.makeText(context, details.get(position), Toast.LENGTH_SHORT).show();
-                final Ref.ObjectRef dialog = new Ref.ObjectRef<>();
-                dialog.element = new Dialog(context);
-                holder.data.setText(details.get(position));
-                ((Dialog)dialog.element).setContentView(R.layout.sg_dialog_datashow);
-            }
-        });
-        holder.details.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(context, details.get(position), Toast.LENGTH_SHORT).show();
-            }
-        });
+//        holder.req.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+////                Toast.makeText(context, details.get(position), Toast.LENGTH_SHORT).show();
+//                final Ref.ObjectRef dialog = new Ref.ObjectRef<>();
+//                dialog.element = new Dialog(context);
+//                holder.data.setText(details.get(position));
+//                ((Dialog)dialog.element).setContentView(R.layout.show_req);
+//            }
+//        });
+//        holder.details.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                final Ref.ObjectRef dialog = new Ref.ObjectRef<>();
+//                dialog.element = new Dialog(context);
+//                holder.data.setText(details.get(position));
+//                ((Dialog)dialog.element).setContentView(R.layout.show_req);
+//            }
+//        });
     }
 
     @Override
@@ -80,7 +82,7 @@ public class posted_card_adapter extends RecyclerView.Adapter<posted_card_adapte
             cross = itemView.findViewById(R.id.cross);
             req = itemView.findViewById(R.id.req);
             card = itemView.findViewById(R.id.card);
-            data = itemView.findViewById(R.id.data);
+            data = itemView.findViewById(R.id.datum);
         }
     }
 }
