@@ -278,19 +278,27 @@ class HomePage : Fragment() {
         val item0 =
             Item("Colossus Grow", "Mill's rate in USD,contact details and product range")
         val item1 =
-            Item("Spinning Mills of India", "Mill's rate in INR,contact details and product range")
+            Item("Colossus Deal", "Mill's rate in INR,contact details and product range")
         val item2 =
-            Item("Import Yarn from India", "Mill's rate in USD, contact details and product range")
-        val item3 = Item("Buy-Sell Textile Products", "Fabrics,garments,stock-lots, waste")
-        val item4 = Item("Colossus Tex yarn offers", "Special offers directly from spinning mills")
-        val item5 = Item("Buy Yarn Online", "Colossustex will coordinate your purchase")
-        val item6 = Item("Post Yarn Requirement", "Mills and agents will contact you directly")
-        val item7 = Item("Latest Textile News", "News that affects your textile business")
+            Item("Colossus Find", "Mill's rate in USD, contact details and product range")
+        val item3 = Item("Buy Yarn Online", "Colossustex will coordinate your purchase")
+        val item4 = Item("Colossus Mind", "Special offers directly from spinning mills")
+        val item5 = Item("Colossus Move", "Colossustex will coordinate your purchase")
+        val item6 = Item("Colossus Tech", "Mills and agents will contact you directly")
+        val item7 = Item("Colossus Time", "News that affects your textile business")
         val item8 =
-            Item("Live Cotton, Crude, Currencies", "ICE, MCX, NCDEX futures, crude and currencies")
+            Item("Colossus Edge", "ICE, MCX, NCDEX futures, crude and currencies")
+        val item9 =
+            Item("Colossus Meet", "ICE, MCX, NCDEX futures, crude and currencies")
+        val item10 =
+            Item("Colossus Wave", "ICE, MCX, NCDEX futures, crude and currencies")
+        val item11 =
+            Item("Colossus Care", "ICE, MCX, NCDEX futures, crude and currencies")
+        val item12 =
+            Item("Colossus Hire", "ICE, MCX, NCDEX futures, crude and currencies")
         val mainlist =
-            mutableListOf<Item>(item0,  item3, item4, item5, item6, item7, item8)
-        adapter = ItemAdapter(mainlist)
+            mutableListOf<Item>(item0, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12)
+        adapter = ItemAdapter(mainlist , context!!)
         recyclerView.adapter = adapter
         val toolbar = lay.findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
         toolbar.inflateMenu(R.menu.main_menu)

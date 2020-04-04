@@ -1,6 +1,8 @@
 package com.example.colossustex.homePage
 
+import android.app.AlertDialog
 import android.app.Dialog
+import android.content.Context
 import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
@@ -13,6 +15,9 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.colossustex.R
+import com.example.colossustex.SG.Textile_News
+import com.example.colossustex.SG.sensex_SG
+import com.example.colossustex.SG.yarn_requirements
 import com.example.colossustex.SG.*
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
@@ -20,16 +25,30 @@ import com.smarteist.autoimageslider.DefaultSliderView
 import com.smarteist.autoimageslider.IndicatorAnimations
 import com.smarteist.autoimageslider.SliderAnimations
 import com.smarteist.autoimageslider.SliderLayout
-import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.allproducts_item.view.*
+import kotlinx.android.synthetic.main.home_page_items.view.*
 
-class ItemAdapter(var list: MutableList<Item>) :
+class ItemAdapter(var list: MutableList<Item>, val context: Context) :
     RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
+
+
+    private val grow = arrayOf(
+        "Global Spinning Mill",
+        "Domestic Spinning Mill"
+    )
+    private val mind = arrayOf(
+        "Latest Textie News",
+        "Live Cotton , Crude , Forex"
+    )
+
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         return ItemViewHolder(
             LayoutInflater.from(parent.context)
                 .inflate(R.layout.home_page_items, parent, false)
         )
     }
+
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         holder.description.text = list[position].description
         holder.heading.text = list[position].heading
@@ -37,67 +56,67 @@ class ItemAdapter(var list: MutableList<Item>) :
         //   val itemList : ArrayList<String> = {"Cotton", "Synthetic", "Viscose", "Texturised", "Fancy"}
 
         holder.image.setImageResource(
-            when(position){
-                0->R.drawable.global_spinning_mills
-                1->R.drawable.mills_of_india
-                2->R.drawable.import_yarn
-                3->R.drawable.buy_sell_textile
-                4->R.drawable.yarn_offers
-                5->R.drawable.buy_yarn_online
-                6->R.drawable.post_yarn_req
-                7->R.drawable.textile_news
-                8->R.drawable.live_crude_currencies
-                else->R.drawable.yarn
+            when (position) {
+                0 -> R.drawable.global_spinning_mills
+                1 -> R.drawable.mills_of_india
+                2 -> R.drawable.import_yarn
+                3 -> R.drawable.buy_sell_textile
+                4 -> R.drawable.yarn_offers
+                5 -> R.drawable.buy_yarn_online
+                6 -> R.drawable.post_yarn_req
+                7 -> R.drawable.textile_news
+                8 -> R.drawable.live_crude_currencies
+                else -> R.drawable.yarn
             }
         )
 
         holder.constraintLayout.setOnClickListener {
             when (position) {
-                0 -> holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToSpinningMillOfIndia())
-                1-> holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToBuySellTextileProducts())
-                2-> it.context.startActivity(Intent(it.context, yarn_offers::class.java))
-                3-> {
-                    var dialog = Dialog(it.context)
-                    dialog.setContentView(R.layout.buy_yarn_offers_dialog1)
-                    val cotton = dialog.findViewById<TextView>(R.id.dialog_cotton)
-                    val synthetic = dialog.findViewById<TextView>(R.id.dialog_synthetic)
-                    val viscose = dialog.findViewById<TextView>(R.id.dialog_viscose)
-                    val texturised = dialog.findViewById<TextView>(R.id.dialog_texturised)
-                    val fancy = dialog.findViewById<TextView>(R.id.dialog_fancy)
-
-                    cotton.setOnClickListener {
-                        //start an activity cotton
-                        dialog.dismiss()
-                        holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToCottonTabFragment())
-                    }
-                    synthetic.setOnClickListener {
-                        //start synthic activity
-                        dialog.dismiss()
-                        holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToSyntheticTab())
-
-                    }
-                    viscose.setOnClickListener{
-                        dialog.dismiss()
-                        holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToViscoseFragment())
-                    }
-                    texturised.setOnClickListener{
-                        dialog.dismiss()
-                        holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToTexturisedFragment1())
-                    }
-                    fancy.setOnClickListener{
-                        dialog.dismiss()
-                        holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToFancyFragment1())
-                    }
-
-
-                    dialog.show()
-                }
-//                5 -> (AlertDialog.Builder(it.context).setSingleChoiceItems(itemList, -1){dialog, which->
-//                    Toast.makeText(it.context, itemList[which], Toast.LENGTH_SHORT).show()
+//                0 -> holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToSpinningMillOfIndia())
+//                1-> holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToBuySellTextileProducts())
+//                2-> it.context.startActivity(Intent(it.context, yarn_offers::class.java))
+//                3-> {
+//                    var dialog = Dialog(it.context)
+//                    dialog.setContentView(R.layout.buy_yarn_offers_dialog1)
+//                    val cotton = dialog.findViewById<TextView>(R.id.dialog_cotton)
+//                    val synthetic = dialog.findViewById<TextView>(R.id.dialog_synthetic)
+//                    val viscose = dialog.findViewById<TextView>(R.id.dialog_viscose)
+//                    val texturised = dialog.findViewById<TextView>(R.id.dialog_texturised)
+//                    val fancy = dialog.findViewById<TextView>(R.id.dialog_fancy)
+//
+//                    cotton.setOnClickListener {
+//                        //start an activity cotton
+//                        dialog.dismiss()
+//                        holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToCottonTabFragment())
+//                    }
+//                    synthetic.setOnClickListener {
+//                        //start synthic activity
+//                        dialog.dismiss()
+//                        holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToSyntheticTab())
+//
+//                    }
+//                    viscose.setOnClickListener{
+//                        dialog.dismiss()
+//                        holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToViscoseFragment())
+//                    }
+//                    texturised.setOnClickListener{
+//                        dialog.dismiss()
+//                        holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToTexturisedFragment1())
+//                    }
+//                    fancy.setOnClickListener{
+//                        dialog.dismiss()
+//                        holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToFancyFragment1())
+//                    }
+//
+//
+//                    dialog.show()
 //                }
-//                val alertDialog = builder.create()
-//                alertDialog.show())
-                4 -> {
+////                5 -> (AlertDialog.Builder(it.context).setSingleChoiceItems(itemList, -1){dialog, which->
+////                    Toast.makeText(it.context, itemList[which], Toast.LENGTH_SHORT).show()
+////                }
+////                val alertDialog = builder.create()
+////                alertDialog.show())
+//                4 -> {
 //                    var temp  = 0L
 //                    val user = FirebaseAuth.getInstance().currentUser
 //                    var mDb : DatabaseReference = FirebaseDatabase.getInstance().reference
@@ -119,16 +138,107 @@ class ItemAdapter(var list: MutableList<Item>) :
 //
 //                        })
 //
+//
+//                }
+//                5 -> it.context.startActivity(Intent(it.context, Textile_News::class.java))
+//                6 -> it.context.startActivity(Intent(it.context, sensex_SG::class.java))
+//                else -> Toast.makeText(it.context,list[position].description, Toast.LENGTH_SHORT).show()
 
-                    it.context.startActivity(Intent(it.context, yarn_requirements::class.java))
+                0 -> {
+                    val builder = AlertDialog.Builder(context)
+                    builder.setItems(grow) { dialog, which ->
+                        when (which) {
+                            0 -> holder.constraintLayout.findNavController().navigate(
+                                HomePageDirections.actionHomePageToSpinningMillOfIndia()
+                            )
+                            1 -> holder.constraintLayout.findNavController().navigate(
+                                HomePageDirections.actionHomePageToSpinningMillOfIndia()
+                            )
+                        }
+                    }
+                    val dialog = builder.create()
+                    dialog.show()
                 }
-                5 -> it.context.startActivity(Intent(it.context, Textile_News::class.java))
-                6 -> it.context.startActivity(Intent(it.context, brain::class.java))
-                else -> Toast.makeText(it.context,list[position].description, Toast.LENGTH_SHORT).show()
+                1 -> holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToBuySellTextileProducts())
+                2 -> {
+                    var temp = 0L
+                    val user = FirebaseAuth.getInstance().currentUser
+                    var mDb: DatabaseReference = FirebaseDatabase.getInstance().reference
+                    mDb.child("User/${user?.uid}/userData").addValueEventListener(
+                        object : ValueEventListener {
+                            override fun onCancelled(p0: DatabaseError) {}
+
+                            override fun onDataChange(data: DataSnapshot) {
+
+                                temp = data.child("flag").value as Long
+
+                                if (temp == 1L) {
+                                    context.startActivity(Intent(it.context, yarn_requirements::class.java))
+                                } else {
+                                    modifyProfile(it.context, to = 1)
+                                }
+                            }
+
+                        })
+                }
+                3 -> {
+                    var dialog = Dialog(it.context)
+                    dialog.setContentView(R.layout.buy_yarn_offers_dialog1)
+                    val cotton = dialog.findViewById<TextView>(R.id.dialog_cotton)
+                    val synthetic = dialog.findViewById<TextView>(R.id.dialog_synthetic)
+                    val viscose = dialog.findViewById<TextView>(R.id.dialog_viscose)
+                    val texturised = dialog.findViewById<TextView>(R.id.dialog_texturised)
+                    val fancy = dialog.findViewById<TextView>(R.id.dialog_fancy)
+
+                    cotton.setOnClickListener {
+                        //start an activity cotton
+                        dialog.dismiss()
+                        holder.constraintLayout.findNavController()
+                            .navigate(HomePageDirections.actionHomePageToCottonTabFragment())
+                    }
+                    synthetic.setOnClickListener {
+                        //start synthic activity
+                        dialog.dismiss()
+                        holder.constraintLayout.findNavController()
+                            .navigate(HomePageDirections.actionHomePageToSyntheticTab())
+
+                    }
+                    viscose.setOnClickListener {
+                        dialog.dismiss()
+                        holder.constraintLayout.findNavController()
+                            .navigate(HomePageDirections.actionHomePageToViscoseFragment())
+                    }
+                    texturised.setOnClickListener {
+                        dialog.dismiss()
+                        holder.constraintLayout.findNavController()
+                            .navigate(HomePageDirections.actionHomePageToTexturisedFragment1())
+                    }
+                    fancy.setOnClickListener {
+                        dialog.dismiss()
+                        holder.constraintLayout.findNavController()
+                            .navigate(HomePageDirections.actionHomePageToFancyFragment1())
+                    }
+
+
+                    dialog.show()
+                }
+
+                4 -> {
+                    val builder = AlertDialog.Builder(context)
+                    builder.setItems(mind) { dialog, which ->
+                        when (which) {
+                            0 -> context.startActivity(Intent(it.context, Textile_News::class.java))
+
+                            1 -> context.startActivity(Intent(it.context, sensex_SG::class.java))
+                        }
+                    }
+                    val dialog = builder.create()
+                    dialog.show()
+                }
             }
         }
 
-        if (position == 6) {
+        if (position == itemCount-1) {
             holder.view2.visibility = View.INVISIBLE
         }
 
@@ -138,7 +248,6 @@ class ItemAdapter(var list: MutableList<Item>) :
         else {
             holder.sliderLayout.visibility = View.GONE
         }
-
 
     }
 
@@ -193,10 +302,10 @@ class ItemAdapter(var list: MutableList<Item>) :
             }
 
 
-
         }
 
     }
 }
+
 
 
