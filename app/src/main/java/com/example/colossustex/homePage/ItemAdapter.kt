@@ -229,13 +229,13 @@ class ItemAdapter(var list: MutableList<Item>, val context: Context) :
                         when (which) {
                             0 -> context.startActivity(Intent(it.context, Textile_News::class.java))
 
-                            1 -> context.startActivity(Intent(it.context, sensex_SG::class.java).putExtra("For","stocks"))
+                            1 -> context.startActivity(Intent(it.context, sensex_SG::class.java).putExtra("For","https://ssltsw.forexprostools.com/?notChosenTab=%2312a13f&lang=1&forex=1,2,3,5,7,9,10&commodities=8830,8836,8831,8849,8833,8862,8832&indices=175,166,172,27,179,170,174&stocks=334,345,346,347,348,349,350&tabs=1,2,3,4"))
                         }
                     }
                     val dialog = builder.create()
                     dialog.show()
                 }
-                5 -> context.startActivity(Intent(it.context, sensex_SG::class.java).putExtra("For","col_move"))
+                5 -> context.startActivity(Intent(it.context, sensex_SG::class.java).putExtra("For","https://www.searates.com/"))
             }
         }
 
