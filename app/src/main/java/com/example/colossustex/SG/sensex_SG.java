@@ -35,6 +35,7 @@ public class sensex_SG extends AppCompatActivity {
 
     ImageView back;
     WebView webView;
+    String str;
 
 //    FirebaseLoadListener iFirebaseLoadListener;
 //
@@ -46,9 +47,14 @@ public class sensex_SG extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sensex);
+        if(getIntent().hasExtra("For"))
+            if(getIntent().getStringExtra("For") == "stocks")
+                str = "https://ssltsw.forexprostools.com/?notChosenTab=%2312a13f&lang=1&forex=1,2,3,5,7,9,10&commodities=8830,8836,8831,8849,8833,8862,8832&indices=175,166,172,27,179,170,174&stocks=334,345,346,347,348,349,350&tabs=1,2,3,4";
+            if(getIntent().getStringExtra("For")=="col_move")
+                str = "https://www.searates.com/";
         webView = (WebView)findViewById(R.id.webView);
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("http://m.investing.com");
+        webView.loadUrl(str);
 
 //        myRecyclerView = findViewById(R.id.sensex);
 //        myRecyclerView.setHasFixedSize(true);

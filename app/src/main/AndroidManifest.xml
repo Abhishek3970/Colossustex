@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".SG.brain"></activity>
+        <activity android:name=".SG.brain" />
         <activity android:name=".SpinningMillOfIndia.Common.CompanyAdd" />
         <activity
             android:name=".EmailLogin.ForgotPassword"

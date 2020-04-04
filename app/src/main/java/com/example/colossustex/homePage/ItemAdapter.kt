@@ -229,12 +229,13 @@ class ItemAdapter(var list: MutableList<Item>, val context: Context) :
                         when (which) {
                             0 -> context.startActivity(Intent(it.context, Textile_News::class.java))
 
-                            1 -> context.startActivity(Intent(it.context, sensex_SG::class.java))
+                            1 -> context.startActivity(Intent(it.context, sensex_SG::class.java).putExtra("For","stocks"))
                         }
                     }
                     val dialog = builder.create()
                     dialog.show()
                 }
+                5 -> context.startActivity(Intent(it.context, sensex_SG::class.java).putExtra("For","col_move"))
             }
         }
 
