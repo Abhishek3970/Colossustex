@@ -46,7 +46,7 @@ public class yarn_requirements extends AppCompatActivity{
     RecyclerView rcv;
     int i = 1;
     LinearLayout Fibre,Purpose,Count, Quality_Range_Texturised, Quality_Range_Fancy, Product_Range_Texturised, Grade, Product_Range_Fancy, Quality,Variety, Type, Nature, noofbags, description, sendto, denier, send_reqto, SingDub, req_form;
-    TextView Fibre_, Purpose_, Count_ , Quality_Range_texturised,req,  Quality_Range_fancy, Product_Range_texturised, Product_Range_fancy, Quality_, Variety_, Type_, Nature_, Grade_ , sendto_, sendreqto, denier_, singdub;
+    TextView Fibre_, Purpose_, Count_ , Quality_Range_texturised,req,  Quality_Range_fancy, Product_Range_texturised, Product_Range_fancy, Quality_, Variety_, Type_, Nature_, Grade_ , sendto_, sendreqto, denier_, singdub, description_, noofbags_;
 
 
     @SuppressLint("ResourceType")
@@ -124,7 +124,10 @@ public class yarn_requirements extends AppCompatActivity{
         Product_Range_texturised = findViewById(R.id.rt);
         Product_Range_fancy = findViewById(R.id.rf);
         Grade_= findViewById(R.id.g);
+        Count_ = findViewById(R.id.c);
         sendto_ = findViewById(R.id.sendto_text);
+        description_ = findViewById(R.id.des);
+        noofbags_ = findViewById(R.id.n2);
 
         Purpose.setVisibility(View.GONE);
         Count.setVisibility(View.GONE);
@@ -910,10 +913,43 @@ public class yarn_requirements extends AppCompatActivity{
             @Override
             public void onClick(View v) {
 
-                text = t1+" , "+t2+" , "+t3+" , "+t4+" , "+t5+" , "+t6+" , "+" , "+t7+" , "+t8+" , "+t9+" , "+t10+" , "+t11;
-                    Toast.makeText(yarn_requirements.this, t1+" , "+t2+" , "+t3+" , "+t4+" , "+t5+" , "+t6+" , "+" , "+t7+" , "+t8+" , "+t9+" , "+t10+" , "+t11 , Toast.LENGTH_SHORT).show();
-//                    Toast.makeText(yarn_requirements.this, "Data Stored for using once! more Space in Database recommended", Toast.LENGTH_LONG).show();
-                dbr.child(String.valueOf(i)).setValue(new order_to_database(text,String.valueOf(i)));
+                if(t1=="Cotton"){
+                    if(t2 != "" && t6 !="" && t5 != "" && t7 != "" && t4 != "" && Count_.getText() != "" && t9 !="" &&noofbags_.getText() != "" && description_.getText() != "")
+                    {text = t2+","+Count_.getText()+"," + t4 + ","+t5 + "," +t6+","+t7+","+t8+","+t9+","+noofbags_.getText()+","+description_.getText();
+                    dbr.child(String.valueOf(i)).setValue(new order_to_database(text,String.valueOf(i)));
+                    Toast.makeText(yarn_requirements.this, "Recorded successfully!", Toast.LENGTH_SHORT).show();}
+                }
+                if(t1=="Sythetic"){
+                    if(Count_.getText() != "" && t4 != "" && t6 !="" && t7 !="" && noofbags_.getText() != "" && description_.getText() != "" && t9 !="" && t5 !="" && t8 !="" ){
+                        text= Count_.getText()+","+t4 + ","+t6+","+t7+","+noofbags_.getText()+","+description_.getText()+","+t9+","+t5+","+t8;
+                        dbr.child(String.valueOf(i)).setValue(new order_to_database(text,String.valueOf(i)));
+                        Toast.makeText(yarn_requirements.this, "Recorded successfully!", Toast.LENGTH_SHORT).show();
+                    }
+                }
+                if(t1 == "Viscose"){
+                    if(Count_.getText() !="" && t4 !="" && t6 != "" && t7 !="" && noofbags_.getText()!="" && description_.getText()!="" && t8 !=""&& t9 != "" ){
+                        text = Count_.getText()+","+t4+","+t6+","+t7+","+noofbags_.getText()+","+description_.getText()+","+t8+","+t9;
+                        dbr.child(String.valueOf(i)).setValue(new order_to_database(text,String.valueOf(i)));
+                        Toast.makeText(yarn_requirements.this, "Recorded successfully!", Toast.LENGTH_SHORT).show();
+                    }
+                }
+                if(t1 == "Texturised"){
+                    if(t5!="" && noofbags_.getText()!="" && description_.getText()!="" && t9 !="" && t4 !="" && t8!="" && t6!=""){
+                        text = t4+","+t5+","+t6+","+t8+","+t9+","+noofbags_.getText()+","+description_.getText();
+                        dbr.child(String.valueOf(i)).setValue(new order_to_database(text,String.valueOf(i)));
+                        Toast.makeText(yarn_requirements.this, "Recorded successfully!", Toast.LENGTH_SHORT).show();
+                    }
+                }
+                if(t1 =="Fancy"){
+                    if(Count_.getText() !="" && t4 !="" && t5 !="" && noofbags_.getText()!="" && description_.getText()!=""&&t9!="" && t8!="" && t6!=""){
+                        text = Count_.getText()+","+t4+","+t5+","+t6+","+t8+","+t9+","+noofbags_.getText()+","+description_.getText();
+                        dbr.child(String.valueOf(i)).setValue(new order_to_database(text,String.valueOf(i)));
+                        Toast.makeText(yarn_requirements.this, "Recorded successfully!", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+
+
                 req_form.setVisibility(View.GONE);
                 t1 = t2 = t3 = t4 = t5 = t6 = t7 = t8 = t9 = t10 = t11 = "";
 
