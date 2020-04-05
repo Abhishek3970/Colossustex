@@ -297,7 +297,7 @@ class HomePage : Fragment() {
         val item12 =
             Item("Colossus Hire", "ICE, MCX, NCDEX futures, crude and currencies")
         val mainlist =
-            mutableListOf<Item>(item0, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12)
+            mutableListOf<Item>(item0, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11)
         adapter = ItemAdapter(mainlist , context!!)
         recyclerView.adapter = adapter
         val toolbar = lay.findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
