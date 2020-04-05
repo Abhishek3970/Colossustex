@@ -25,8 +25,6 @@ import com.smarteist.autoimageslider.DefaultSliderView
 import com.smarteist.autoimageslider.IndicatorAnimations
 import com.smarteist.autoimageslider.SliderAnimations
 import com.smarteist.autoimageslider.SliderLayout
-import kotlinx.android.synthetic.main.allproducts_item.view.*
-import kotlinx.android.synthetic.main.home_page_items.view.*
 
 class ItemAdapter(var list: MutableList<Item>, val context: Context) :
     RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
@@ -39,6 +37,9 @@ class ItemAdapter(var list: MutableList<Item>, val context: Context) :
     private val mind = arrayOf(
         "Latest Textie News",
         "Live Cotton , Crude , Forex"
+    )
+    private val deal = arrayOf(
+        "Buy-Sell Textile Products"
     )
 
 
@@ -66,6 +67,8 @@ class ItemAdapter(var list: MutableList<Item>, val context: Context) :
                 6 -> R.drawable.post_yarn_req
                 7 -> R.drawable.textile_news
                 8 -> R.drawable.live_crude_currencies
+                10->R.drawable.weave
+                11->R.drawable.care
                 else -> R.drawable.yarn
             }
         )
@@ -159,7 +162,18 @@ class ItemAdapter(var list: MutableList<Item>, val context: Context) :
                     val dialog = builder.create()
                     dialog.show()
                 }
-                1 -> holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToBuySellTextileProducts())
+                1 -> {
+                    val builder = AlertDialog.Builder(context)
+                    builder.setItems(deal) { dialog, which ->
+                        when (which) {
+                            0 -> holder.constraintLayout.findNavController()
+                                .navigate(HomePageDirections.actionHomePageToBuySellTextileProducts())
+                        }
+                    }
+                    val dialog = builder.create()
+                    dialog.show()
+
+                }
                 2 -> {
                     var temp = 0L
                     val user = FirebaseAuth.getInstance().currentUser
@@ -173,7 +187,12 @@ class ItemAdapter(var list: MutableList<Item>, val context: Context) :
                                 temp = data.child("flag").value as Long
 
                                 if (temp == 1L) {
-                                    context.startActivity(Intent(it.context, yarn_requirements::class.java))
+                                    context.startActivity(
+                                        Intent(
+                                            it.context,
+                                            yarn_requirements::class.java
+                                        )
+                                    )
                                 } else {
                                     modifyProfile(it.context, to = 1)
                                 }
@@ -239,7 +258,7 @@ class ItemAdapter(var list: MutableList<Item>, val context: Context) :
             }
         }
 
-        if (position == itemCount-1) {
+        if (position == itemCount - 1) {
             holder.view2.visibility = View.INVISIBLE
         }
 
