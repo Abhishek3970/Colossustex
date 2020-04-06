@@ -69,9 +69,6 @@ class InfoActivity : AppCompatActivity() {
             binding.nameInfo.setText(user?.displayName)
         }
         binding.emailInfo.setText(user?.email)
-        if (category != null) {
-            binding.categoryInfo.setText(category)
-        }
         if (phone != null) {
             binding.mobileInfo.setText(phone)
         }
@@ -82,7 +79,7 @@ class InfoActivity : AppCompatActivity() {
         binding.procBtInfo.setOnClickListener {
             val mref = FirebaseDatabase.getInstance().getReference("User")
                 .child(user?.uid.toString()).child("userData")
-            if (binding.categoryInfo.text.isEmpty() || binding.cityInfo.text.isEmpty() || country=="" || binding.emailInfo.text.isEmpty() || binding.mobileInfo.text.isEmpty() || binding.nameInfo.text.isEmpty()) {
+            if (binding.cityInfo.text.isEmpty() || country=="" || binding.emailInfo.text.isEmpty() || binding.mobileInfo.text.isEmpty() || binding.nameInfo.text.isEmpty()) {
                 Toast.makeText(this, "Fill all fields", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
@@ -95,7 +92,7 @@ class InfoActivity : AppCompatActivity() {
                 country
                 ,
                 binding.cityInfo.text.toString(),
-                binding.categoryInfo.text.toString(),
+                category,
                 "",
                 "",
                 "",
