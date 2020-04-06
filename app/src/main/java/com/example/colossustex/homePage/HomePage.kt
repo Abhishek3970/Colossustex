@@ -291,7 +291,7 @@ class HomePage : Fragment() {
         val item9 =
             Item("Colossus Meet", "ICE, MCX, NCDEX futures, crude and currencies")
         val item10 =
-            Item("Colossus Wave", "ICE, MCX, NCDEX futures, crude and currencies")
+            Item("Colossus Weave", "ICE, MCX, NCDEX futures, crude and currencies")
         val item11 =
             Item("Colossus Care", "ICE, MCX, NCDEX futures, crude and currencies")
         val item12 =
