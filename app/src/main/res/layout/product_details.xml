@@ -519,20 +519,14 @@
             </LinearLayout>
 
         </LinearLayout>
+
         <RelativeLayout
-            android:layout_marginTop="20dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#22111111"
+            android:layout_height="20dp"
+            android:layout_marginTop="20dp"
             android:layout_marginBottom="5dp"
-            android:padding="7dp">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="View All products of Sri Ranga Vilas Mil..."
-                android:id="@+id/all_products"
-                android:gravity="center"/>
-        </RelativeLayout>
+            android:background="#22111111"
+            android:padding="7dp" />
     </LinearLayout>
 
 </ScrollView>
