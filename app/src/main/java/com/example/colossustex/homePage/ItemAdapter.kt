@@ -67,6 +67,7 @@ class ItemAdapter(var list: MutableList<Item>, val context: Context) :
                 6 -> R.drawable.post_yarn_req
                 7 -> R.drawable.textile_news
                 8 -> R.drawable.live_crude_currencies
+                9-> R.drawable.meet
                 10->R.drawable.weave
                 11->R.drawable.care
                 else -> R.drawable.yarn
