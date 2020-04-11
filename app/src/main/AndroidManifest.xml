@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SpinningMillOfIndia.Common.CompanyAdd"></activity>
+        <activity android:name=".ColossusCare.Allresumes"></activity>
+        <activity android:name=".SpinningMillOfIndia.Common.CompanyAdd" />
         <activity
             android:name=".EmailLogin.ForgotPassword"
             android:theme="@style/loginstatusbar" />
