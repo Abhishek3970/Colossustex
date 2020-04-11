@@ -13,11 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ColossusCare.Allresumes"></activity>
-        <activity android:name=".SpinningMillOfIndia.Common.CompanyAdd" />
-        android:theme="@style/AppTheme"
-        android:usesCleartextTraffic="true">
+        <activity android:name=".SpinningMillOfIndia.Common.CompanyAdd"
+            android:theme="@style/AppTheme"/>
         <activity android:name=".SG.brain" />
-        <activity android:name=".SpinningMillOfIndia.Common.CompanyAdd" />
         <activity
             android:name=".EmailLogin.ForgotPassword"
             android:theme="@style/loginstatusbar" />

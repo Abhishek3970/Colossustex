@@ -14,6 +14,7 @@ import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.example.colossustex.ColossusCare.Allresumes
 import com.example.colossustex.R
 import com.example.colossustex.SG.Textile_News
 import com.example.colossustex.SG.sensex_SG
@@ -256,6 +257,9 @@ class ItemAdapter(var list: MutableList<Item>, val context: Context) :
                     dialog.show()
                 }
                 5 -> context.startActivity(Intent(it.context, sensex_SG::class.java).putExtra("For","https://www.searates.com/"))
+                11->{
+                    context.startActivity(Intent(context,Allresumes::class.java))
+                }
             }
         }
 
