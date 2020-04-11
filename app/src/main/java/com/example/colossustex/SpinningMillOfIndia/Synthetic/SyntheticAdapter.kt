@@ -38,15 +38,26 @@ class SyntheticAdapter(var list: MutableList<SyntheticData>) :
                 val sliderView = DefaultSliderView(itemview.context)
 
                 when (i) {
-                    0 -> sliderView.imageUrl =
-                        "https://images.pexels.com/photos/547114/pexels-photo-547114.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-                    1 -> sliderView.imageUrl =
-                        "https://images.pexels.com/photos/218983/pexels-photo-218983.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-                    2 -> sliderView.imageUrl =
-                        "https://images.pexels.com/photos/747964/pexels-photo-747964.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
-                    3 -> sliderView.imageUrl =
-                        "https://images.pexels.com/photos/929778/pexels-photo-929778.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                    0 -> sliderView.setImageDrawable(R.drawable.banner1)
+
+                    1 ->sliderView.setImageDrawable(R.drawable.banner2)
+
+                    2 ->sliderView.setImageDrawable(R.drawable.banner3)
+
+                    3 -> sliderView.setImageDrawable(R.drawable.banner4)
+
                 }
+
+//                when (i) {
+//                    0 -> sliderView.imageUrl =
+//                        "https://images.pexels.com/photos/547114/pexels-photo-547114.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+//                    1 -> sliderView.imageUrl =
+//                        "https://images.pexels.com/photos/218983/pexels-photo-218983.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+//                    2 -> sliderView.imageUrl =
+//                        "https://images.pexels.com/photos/747964/pexels-photo-747964.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+//                    3 -> sliderView.imageUrl =
+//                        "https://images.pexels.com/photos/929778/pexels-photo-929778.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+//                }
                 sliderView.setImageScaleType(ImageView.ScaleType.CENTER_CROP)
                 //at last add this view in your layout :
                 sliderLayout.addSliderView(sliderView)
