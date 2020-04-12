@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".ColossusCare.PostResume">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:navigationIcon="@drawable/ic_arrow_back"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:title="Post Resume" />
+
+            <TextView
+                android:id="@+id/uploadResume"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:drawableEnd="@drawable/ic_attachment_black_24dp"
+                android:padding="4dp"
+                android:text="Upload CV    "
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+            <Spinner
+                android:id="@+id/category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/uploadResume" />
+
+            <EditText
+                android:id="@+id/locationReference"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/black_round_corners"
+                android:padding="8dp"
+                android:layout_marginTop="24dp"
+                android:hint="Location Reference*"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@+id/category"
+                app:layout_constraintStart_toStartOf="@+id/category"
+                app:layout_constraintTop_toBottomOf="@+id/category" />
+
+            <EditText
+                android:id="@+id/currentCTC"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:hint="Current CTC (in USD)*"
+                android:background="@drawable/black_round_corners"
+                android:padding="8dp"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@+id/locationReference"
+                app:layout_constraintStart_toStartOf="@+id/locationReference"
+                app:layout_constraintTop_toBottomOf="@+id/locationReference" />
+
+            <Spinner
+                android:id="@+id/time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:layout_constraintEnd_toEndOf="@+id/currentCTC"
+                app:layout_constraintStart_toStartOf="@+id/currentCTC"
+                app:layout_constraintTop_toBottomOf="@+id/currentCTC" />
+
+            <EditText
+                android:id="@+id/employDetails"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:hint="Add employer/assignment details"
+                android:background="@drawable/black_round_corners"
+                android:padding="8dp"
+                android:inputType="textMultiLine"
+                app:layout_constraintEnd_toStartOf="@+id/add"
+                app:layout_constraintStart_toStartOf="@+id/time"
+                app:layout_constraintTop_toBottomOf="@+id/time" />
+
+            <ImageView
+                android:id="@+id/add"
+                android:layout_width="35dp"
+                android:layout_height="0dp"
+                android:src="@drawable/ic_add_black_24dp"
+                android:background="@drawable/black_round_corners"
+                android:padding="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/employDetails"
+                app:layout_constraintEnd_toEndOf="@+id/time"
+                app:layout_constraintStart_toEndOf="@+id/employDetails"
+                app:layout_constraintTop_toTopOf="@+id/employDetails" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/black_round_corners"
+                android:padding="8dp"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="@+id/add"
+                app:layout_constraintStart_toStartOf="@+id/employDetails"
+                app:layout_constraintTop_toBottomOf="@+id/employDetails"
+                tools:visibility="visible" />
+
+            <EditText
+                android:id="@+id/academicDetails"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:hint="Academic Details*"
+                android:background="@drawable/black_round_corners"
+                android:padding="8dp"
+                android:inputType="textMultiLine"
+                app:layout_constraintEnd_toEndOf="@+id/recyclerView"
+                app:layout_constraintStart_toStartOf="@+id/recyclerView"
+                app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+
+            <EditText
+                android:id="@+id/notableAccomplishments"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:hint="Notable Accomplishments"
+                android:background="@drawable/black_round_corners"
+                android:padding="8dp"
+                android:inputType="textMultiLine"
+                app:layout_constraintEnd_toEndOf="@+id/academicDetails"
+                app:layout_constraintStart_toStartOf="@+id/academicDetails"
+                app:layout_constraintTop_toBottomOf="@+id/academicDetails" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="24dp"
+
+                android:text="Submit"
+                android:background="@drawable/blackstroke_accback"
+                android:padding="8dp"
+                android:textColor="@android:color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/notableAccomplishments"
+                app:layout_constraintStart_toStartOf="@+id/notableAccomplishments"
+                app:layout_constraintTop_toBottomOf="@+id/notableAccomplishments" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</layout>

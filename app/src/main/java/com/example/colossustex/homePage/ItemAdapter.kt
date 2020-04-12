@@ -258,7 +258,7 @@ class ItemAdapter(var list: MutableList<Item>, val context: Context) :
                 }
                 5 -> context.startActivity(Intent(it.context, sensex_SG::class.java).putExtra("For","https://www.searates.com/"))
                 11->{
-                    context.startActivity(Intent(context,Allresumes::class.java))
+                    holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToPostResume())
                 }
             }
         }
