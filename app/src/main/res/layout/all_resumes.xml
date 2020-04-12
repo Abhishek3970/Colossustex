@@ -19,7 +19,6 @@
         />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:padding="6dp"
         android:id="@+id/all_resumes_recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

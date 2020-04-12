@@ -1,3 +1,12 @@
 package com.example.colossustex.ColossusCare
 
-data class AllresumesData(val category:String="",val name:String="",val location:String="")
+data class AllresumesData(
+    val category: String = "",
+    val name: String = "",
+    val location: String = "",
+    val ctc: String = "",
+    val time: String = "",
+    val emp_details: String = "",
+    val academic_details: String = "",
+    val accomplishments: String = ""
+)

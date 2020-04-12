@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.colossustex.R
 
@@ -13,6 +14,7 @@ class AllresumesAdapter(val list: MutableList<AllresumesData>) :
         val category = itemview.findViewById<TextView>(R.id.category_txt)
         val name = itemview.findViewById<TextView>(R.id.name)
         val location = itemview.findViewById<TextView>(R.id.location)
+        val view=itemView.findViewById<TextView>(R.id.view)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -29,5 +31,8 @@ class AllresumesAdapter(val list: MutableList<AllresumesData>) :
         holder.category.text=list[position].category
         holder.name.text=list[position].name
         holder.location.text=list[position].location
+        holder.view.setOnClickListener {
+            holder.itemView.findNavController().navigate(R.id.action_allresumeFrag_to_resumeDetails)
+        }
     }
 }

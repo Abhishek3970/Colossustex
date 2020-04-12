@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/resume_nav_host"
+    app:startDestination="@id/allresumeFrag">
+
+    <fragment
+        android:id="@+id/resumeDetails"
+        android:name="com.example.colossustex.ColossusCare.ResumeDetails"
+        android:label="ResumeDetails" />
+    <fragment
+        android:id="@+id/allresumeFrag"
+        android:name="com.example.colossustex.ColossusCare.AllresumeFrag"
+        android:label="AllresumeFrag" >
+        <action
+            android:id="@+id/action_allresumeFrag_to_resumeDetails"
+            app:destination="@id/resumeDetails"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+</navigation>

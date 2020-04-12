@@ -2,8 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="wrap_content"
     android:layout_width="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+   >
 <RelativeLayout
+    android:background="#FBEFDF"
      android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="10dp">
@@ -14,7 +16,6 @@
         android:id="@+id/category_txt"
         android:text="Category"
         android:textStyle="bold"
-        android:layout_marginTop="5dp"
         android:textSize="18sp"
         android:layout_marginStart="20dp"/>
 
@@ -44,10 +45,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/view"
         android:text="View"
-        android:textSize="20sp"
+        android:textSize="19sp"
         android:textColor="#fff"
-        android:textStyle="bold"
-        android:padding="7dp"
+        android:padding="8.5dp"
         android:background="@drawable/view_resume_back"
         android:layout_alignParentEnd="true"
         android:layout_centerInParent="true"
