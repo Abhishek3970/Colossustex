@@ -50,71 +50,83 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="24dp"
-
+                android:gravity="center"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/uploadResume" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/locationReference"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:hint="Location Reference*"
-
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 app:layout_constraintEnd_toEndOf="@+id/category"
                 app:layout_constraintStart_toStartOf="@+id/category"
                 app:layout_constraintTop_toBottomOf="@+id/category">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <EditText
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/currentCTC"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+
                 android:layout_marginTop="24dp"
                 android:hint="Current CTC (in USD)*"
-                android:background="@drawable/black_round_corners"
-                android:padding="8dp"
-                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="@+id/locationReference"
                 app:layout_constraintStart_toStartOf="@+id/locationReference"
-                app:layout_constraintTop_toBottomOf="@+id/locationReference" />
+                app:layout_constraintTop_toBottomOf="@+id/locationReference">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
             <Spinner
                 android:id="@+id/time"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
+                android:gravity="center"
                 app:layout_constraintEnd_toEndOf="@+id/currentCTC"
                 app:layout_constraintStart_toStartOf="@+id/currentCTC"
                 app:layout_constraintTop_toBottomOf="@+id/currentCTC" />
 
-            <EditText
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/employDetails"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                android:hint="Add employer/assignment details"
-                android:background="@drawable/black_round_corners"
-                android:padding="8dp"
+                android:hint="Add Employer/Assignment details"
                 android:inputType="textMultiLine"
                 app:layout_constraintEnd_toStartOf="@+id/add"
                 app:layout_constraintStart_toStartOf="@+id/time"
-                app:layout_constraintTop_toBottomOf="@+id/time" />
+                app:layout_constraintTop_toBottomOf="@+id/time">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
             <ImageView
                 android:id="@+id/add"
                 android:layout_width="35dp"
                 android:layout_height="0dp"
-                android:src="@drawable/ic_add_black_24dp"
-                android:background="@drawable/black_round_corners"
                 android:padding="8dp"
+                android:src="@drawable/ic_add_black_24dp"
                 app:layout_constraintBottom_toBottomOf="@+id/employDetails"
                 app:layout_constraintEnd_toEndOf="@+id/time"
                 app:layout_constraintStart_toEndOf="@+id/employDetails"
@@ -133,43 +145,56 @@
                 app:layout_constraintTop_toBottomOf="@+id/employDetails"
                 tools:visibility="visible" />
 
-            <EditText
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/academicDetails"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:hint="Academic Details*"
-                android:background="@drawable/black_round_corners"
-                android:padding="8dp"
-                android:inputType="textMultiLine"
                 app:layout_constraintEnd_toEndOf="@+id/recyclerView"
                 app:layout_constraintStart_toStartOf="@+id/recyclerView"
-                app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+                app:layout_constraintTop_toBottomOf="@+id/recyclerView">
 
-            <EditText
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/notableAccomplishments"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:hint="Notable Accomplishments"
-                android:background="@drawable/black_round_corners"
-                android:padding="8dp"
-                android:inputType="textMultiLine"
+
                 app:layout_constraintEnd_toEndOf="@+id/academicDetails"
                 app:layout_constraintStart_toStartOf="@+id/academicDetails"
-                app:layout_constraintTop_toBottomOf="@+id/academicDetails" />
+                app:layout_constraintTop_toBottomOf="@+id/academicDetails">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
 
             <Button
+                android:id="@+id/submit"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="24dp"
-
-                android:text="Submit"
                 android:background="@drawable/blackstroke_accback"
                 android:padding="8dp"
+                android:text="Submit"
                 android:textColor="@android:color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/notableAccomplishments"

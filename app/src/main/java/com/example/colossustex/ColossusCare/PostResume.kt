@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import androidx.databinding.DataBindingUtil
 
 import com.example.colossustex.R
@@ -23,10 +24,23 @@ class PostResume : Fragment() {
         binding = DataBindingUtil.inflate(inflater , R.layout.post_resume_fragment  , container , false)
         viewModel = ViewModelProviders.of(this).get(PostResumeViewModel::class.java)
 
+        setUpAdapters()
+
+
 
         return binding.root
     }
 
+
+
+    private fun setUpAdapters() {
+        val categoryAdapter =
+            ArrayAdapter<String>(context!!, R.layout.spinner_post_resume, viewModel.category)
+        val timeAdapter =
+            ArrayAdapter<String>(context!!, R.layout.spinner_post_resume, viewModel.time)
+        binding.category.adapter = categoryAdapter
+        binding.time.adapter = timeAdapter
+    }
 
 
 }
