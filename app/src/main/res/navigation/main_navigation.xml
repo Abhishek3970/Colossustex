@@ -193,6 +193,6 @@
         android:label="ViscoseFragment" />
     <fragment
         android:id="@+id/postResume"
-        android:name="com.example.colossustex.ColossusCare.PostResume"
+        android:name="com.example.colossustex.colossusCare.PostResume"
         android:label="PostResume" />
 </navigation>

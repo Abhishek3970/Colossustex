@@ -1,4 +1,4 @@
-package com.example.colossustex.ColossusCare
+package com.example.colossustex.colossusCare
 
 import android.view.LayoutInflater
 import android.view.View

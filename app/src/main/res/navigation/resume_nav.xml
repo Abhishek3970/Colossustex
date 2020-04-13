@@ -5,11 +5,11 @@
 
     <fragment
         android:id="@+id/resumeDetails"
-        android:name="com.example.colossustex.ColossusCare.ResumeDetails"
+        android:name="com.example.colossustex.colossusCare.ResumeDetails"
         android:label="ResumeDetails" />
     <fragment
         android:id="@+id/allresumeFrag"
-        android:name="com.example.colossustex.ColossusCare.AllresumeFrag"
+        android:name="com.example.colossustex.colossusCare.AllresumeFrag"
         android:label="AllresumeFrag" >
         <action
             android:id="@+id/action_allresumeFrag_to_resumeDetails"

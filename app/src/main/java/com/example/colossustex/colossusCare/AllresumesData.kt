@@ -1,4 +1,4 @@
-package com.example.colossustex.ColossusCare
+package com.example.colossustex.colossusCare
 
 data class AllresumesData(
     val category: String = "",
