@@ -9,4 +9,5 @@ class Allresumes : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.allresume_activity)
     }
+
 }
