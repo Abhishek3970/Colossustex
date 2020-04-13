@@ -6,17 +6,32 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar_resumes"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="@color/colorPrimary"
-        android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:navigationIcon="@drawable/ic_arrow_back"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:title="Resume Detaills"
-        app:titleTextColor="#FAF6F6" />
+        android:layout_height="wrap_content"
+        android:background="#23EA6059"
+        app:cardBackgroundColor="#7EEA6059"
+        app:cardElevation="4dp">
+
+        <TextView
+            android:id="@+id/name_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:padding="10dp"
+            android:text="Anubhav Prasad"
+            android:textColor="#111"
+            android:textSize="29sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="right|center"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/resume_image"
+            />
+    </androidx.cardview.widget.CardView>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -27,32 +42,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardElevation="4dp">
-
-                <TextView
-                    android:id="@+id/name_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:padding="10dp"
-                    android:textStyle="bold"
-                    android:text="Anubhav Prasad"
-                    android:textColor="#111"
-                    android:textSize="29sp" />
-
-                <ImageView
-
-                    android:layout_width="40dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="right|center"
-
-                    android:src="@drawable/resume_image"/>
-            </androidx.cardview.widget.CardView>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -61,12 +50,16 @@
                 android:paddingBottom="5dp">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="3dp"
+                    android:background="#60100F0F"
+                    android:paddingStart="20dp"
+                    android:paddingTop="3dp"
+                    android:paddingBottom="3dp"
                     android:text="Category"
-                    android:textColor="#111"
+                    android:textColor="#fff"
                     android:textStyle="normal" />
 
                 <TextView
@@ -81,10 +74,6 @@
 
             </LinearLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="#65FF6E40"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -93,29 +82,29 @@
                 android:paddingBottom="5dp">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="3dp"
+                    android:background="#60100F0F"
+                    android:paddingStart="20dp"
+                    android:paddingTop="3dp"
+                    android:paddingBottom="3dp"
                     android:text="Location"
-                    android:textColor="#111"
+                    android:textColor="#fff"
                     android:textStyle="normal" />
 
                 <TextView
-
                     android:id="@+id/location_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="3dp"
                     android:layout_marginBottom="10dp"
-                    android:text="Location"
+                    android:text="Chandigarh"
                     android:textSize="20sp" />
             </LinearLayout>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="#65FF6E40"/>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -124,12 +113,16 @@
                 android:paddingBottom="5dp">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="3dp"
+                    android:background="#60100F0F"
+                    android:paddingStart="20dp"
+                    android:paddingTop="3dp"
+                    android:paddingBottom="3dp"
                     android:text="CTC"
-                    android:textColor="#111"
+                    android:textColor="#fff"
                     android:textStyle="normal" />
 
                 <TextView
@@ -139,13 +132,10 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="3dp"
                     android:layout_marginBottom="10dp"
-                    android:text="CTC"
+                    android:text="4 Lakhs"
                     android:textSize="20sp" />
             </LinearLayout>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="#65FF6E40"/>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -154,12 +144,16 @@
                 android:paddingBottom="5dp">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="3dp"
+                    android:background="#60100F0F"
+                    android:paddingStart="20dp"
+                    android:paddingTop="3dp"
+                    android:paddingBottom="3dp"
                     android:text="Full time/Part time"
-                    android:textColor="#111"
+                    android:textColor="#fff"
                     android:textStyle="normal" />
 
                 <TextView
@@ -169,13 +163,10 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="3dp"
                     android:layout_marginBottom="10dp"
-                    android:text="Time"
+                    android:text="Part-Time"
                     android:textSize="20sp" />
             </LinearLayout>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="#65FF6E40"/>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -184,12 +175,16 @@
                 android:paddingBottom="5dp">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="3dp"
+                    android:background="#60100F0F"
+                    android:paddingStart="20dp"
+                    android:paddingTop="3dp"
+                    android:paddingBottom="3dp"
                     android:text="Employer details"
-                    android:textColor="#111"
+                    android:textColor="#fff"
                     android:textStyle="normal" />
 
                 <TextView
@@ -202,10 +197,7 @@
                     android:text="Employer Details"
                     android:textSize="20sp" />
             </LinearLayout>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="#65FF6E40"/>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -214,16 +206,18 @@
                 android:paddingBottom="5dp">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="3dp"
+                    android:background="#60100F0F"
+                    android:paddingStart="20dp"
+                    android:paddingTop="3dp"
+                    android:paddingBottom="3dp"
                     android:text="Academic Details"
-                    android:textColor="#111"
+                    android:textColor="#fff"
                     android:textStyle="normal" />
-
                 <TextView
-
                     android:id="@+id/academic_details_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -233,41 +227,39 @@
                     android:text="Academic Details"
                     android:textSize="20sp" />
             </LinearLayout>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="#65FF6E40"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:paddingTop="5dp"
+                android:layout_marginBottom="10dp"
                 android:paddingBottom="5dp">
-
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="3dp"
+                    android:background="#60100F0F"
+                    android:paddingStart="20dp"
+                    android:paddingTop="3dp"
+                    android:paddingBottom="3dp"
                     android:text="Notable Accomplishments"
-                    android:textColor="#111"
+                    android:textColor="#fff"
                     android:textStyle="normal" />
-
                 <TextView
                     android:id="@+id/accomplishments_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="3dp"
+                    android:layout_marginBottom="10dp"
                     android:text="Notable Accomplishmnets"
-                    android:textSize="20sp"
-                    android:layout_marginBottom="10dp" />
-
+                    android:textSize="20sp" />
             </LinearLayout>
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
-                android:background="#65FF6E40"/>
+                android:background="#59111111" />
         </LinearLayout>
     </ScrollView>
 
