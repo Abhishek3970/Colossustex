@@ -18,7 +18,6 @@ import com.example.colossustex.R
 import com.example.colossustex.SG.Textile_News
 import com.example.colossustex.SG.sensex_SG
 import com.example.colossustex.SG.yarn_requirements
-import com.example.colossustex.colossusCare.Allresumes
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.smarteist.autoimageslider.DefaultSliderView
@@ -276,7 +275,7 @@ class ItemAdapter(var list: MutableList<Item>, val context: Context) :
                         when (which) {
                             0 ->  holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToPostResume())
 
-                            1 -> context.startActivity(Intent(context,Allresumes::class.java))
+                            1 -> holder.itemView.findNavController().navigate(R.id.action_homePage_to_allresumeFrag)
                         }
                     }
                     val dialog = builder.create()

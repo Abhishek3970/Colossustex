@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.colossustex.R
 import com.example.colossustex.databinding.AllResumesBinding
@@ -21,6 +22,9 @@ class AllresumeFrag : Fragment() {
         val data=AllresumesData("Student","Anubhav","Chandigarh")
         val list= mutableListOf(data,data,data)
         binding.allResumesRecycler.adapter=AllresumesAdapter(list)
+        binding.toolbarResumes.setNavigationOnClickListener {
+            findNavController().navigateUp()
+        }
         return binding.root
     }
 

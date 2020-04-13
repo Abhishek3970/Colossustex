@@ -49,6 +49,9 @@
         <action
             android:id="@+id/action_homePage_to_postResume"
             app:destination="@id/postResume" />
+        <action
+            android:id="@+id/action_homePage_to_allresumeFrag"
+            app:destination="@id/allresumeFrag" />
     </fragment>
     <fragment
         android:id="@+id/spinningMillOfIndia"
@@ -195,4 +198,16 @@
         android:id="@+id/postResume"
         android:name="com.example.colossustex.colossusCare.PostResume"
         android:label="PostResume" />
+    <fragment
+        android:id="@+id/resumeDetails"
+        android:name="com.example.colossustex.colossusCare.ResumeDetails"
+        android:label="ResumeDetails" />
+    <fragment
+        android:id="@+id/allresumeFrag"
+        android:name="com.example.colossustex.colossusCare.AllresumeFrag"
+        android:label="AllresumeFrag" >
+        <action
+            android:id="@+id/action_allresumeFrag_to_resumeDetails"
+            app:destination="@id/resumeDetails" />
+    </fragment>
 </navigation>
