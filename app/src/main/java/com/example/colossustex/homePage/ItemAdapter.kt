@@ -18,6 +18,7 @@ import com.example.colossustex.R
 import com.example.colossustex.SG.Textile_News
 import com.example.colossustex.SG.sensex_SG
 import com.example.colossustex.SG.yarn_requirements
+import com.example.colossustex.colossusCare.Allresumes
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.smarteist.autoimageslider.DefaultSliderView
@@ -40,6 +41,7 @@ class ItemAdapter(var list: MutableList<Item>, val context: Context) :
     private val deal = arrayOf(
         "Buy-Sell Textile Products"
     )
+    private val care = arrayOf("Post Resume", "View Resume")
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
@@ -66,9 +68,9 @@ class ItemAdapter(var list: MutableList<Item>, val context: Context) :
                 6 -> R.drawable.post_yarn_req
                 7 -> R.drawable.textile_news
                 8 -> R.drawable.live_crude_currencies
-                9-> R.drawable.meet
-                10->R.drawable.weave
-                11->R.drawable.care
+                9 -> R.drawable.meet
+                10 -> R.drawable.weave
+                11 -> R.drawable.care
                 else -> R.drawable.yarn
             }
         )
@@ -248,15 +250,38 @@ class ItemAdapter(var list: MutableList<Item>, val context: Context) :
                         when (which) {
                             0 -> context.startActivity(Intent(it.context, Textile_News::class.java))
 
-                            1 -> context.startActivity(Intent(it.context, sensex_SG::class.java).putExtra("For","https://ssltsw.forexprostools.com/?notChosenTab=%2312a13f&lang=1&forex=1,2,3,5,7,9,10&commodities=8830,8836,8831,8849,8833,8862,8832&indices=175,166,172,27,179,170,174&stocks=334,345,346,347,348,349,350&tabs=1,2,3,4"))
+                            1 -> context.startActivity(
+                                Intent(
+                                    it.context,
+                                    sensex_SG::class.java
+                                ).putExtra(
+                                    "For",
+                                    "https://ssltsw.forexprostools.com/?notChosenTab=%2312a13f&lang=1&forex=1,2,3,5,7,9,10&commodities=8830,8836,8831,8849,8833,8862,8832&indices=175,166,172,27,179,170,174&stocks=334,345,346,347,348,349,350&tabs=1,2,3,4"
+                                )
+                            )
                         }
                     }
                     val dialog = builder.create()
                     dialog.show()
                 }
-                5 -> context.startActivity(Intent(it.context, sensex_SG::class.java).putExtra("For","https://www.searates.com/"))
-                11->{
-                    holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToPostResume())
+                5 -> context.startActivity(
+                    Intent(it.context, sensex_SG::class.java).putExtra(
+                        "For",
+                        "https://www.searates.com/"
+                    )
+                )
+                11 -> {
+                    val builder = AlertDialog.Builder(context)
+                    builder.setItems(care) { dialog, which ->
+                        when (which) {
+                            0 ->  holder.constraintLayout.findNavController().navigate(HomePageDirections.actionHomePageToPostResume())
+
+                            1 -> context.startActivity(Intent(context,Allresumes::class.java))
+                        }
+                    }
+                    val dialog = builder.create()
+                    dialog.show()
+//
                 }
             }
         }
@@ -303,9 +328,9 @@ class ItemAdapter(var list: MutableList<Item>, val context: Context) :
                 when (i) {
                     0 -> sliderView.setImageDrawable(R.drawable.banner1)
 
-                    1 ->sliderView.setImageDrawable(R.drawable.banner2)
+                    1 -> sliderView.setImageDrawable(R.drawable.banner2)
 
-                    2 ->sliderView.setImageDrawable(R.drawable.banner3)
+                    2 -> sliderView.setImageDrawable(R.drawable.banner3)
 
                     3 -> sliderView.setImageDrawable(R.drawable.banner4)
 
