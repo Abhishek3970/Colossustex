@@ -51,7 +51,11 @@
             app:destination="@id/postResume" />
         <action
             android:id="@+id/action_homePage_to_allresumeFrag"
-            app:destination="@id/allresumeFrag" />
+            app:destination="@id/allresumeFrag"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/spinningMillOfIndia"
@@ -208,6 +212,10 @@
         android:label="AllresumeFrag" >
         <action
             android:id="@+id/action_allresumeFrag_to_resumeDetails"
-            app:destination="@id/resumeDetails" />
+            app:destination="@id/resumeDetails"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
 </navigation>
