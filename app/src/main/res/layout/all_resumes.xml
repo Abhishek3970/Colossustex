@@ -1,26 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar_resumes"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        android:elevation="4dp"
-        app:navigationIcon="@drawable/ic_arrow_back"
-        app:title="All Resumes"
-        app:titleTextColor="#FAF6F6"
-        android:background="@color/colorPrimary"
-        />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/all_resumes_recycler"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-</LinearLayout>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_resumes"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/colorPrimary"
+            android:elevation="4dp"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:navigationIcon="@drawable/ic_arrow_back"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:title="All Resumes"
+            app:titleTextColor="#FAF6F6" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ProgressBar
+                android:id="@+id/progress_resume"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/all_resumes_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </RelativeLayout>
+    </LinearLayout>
 </layout>
