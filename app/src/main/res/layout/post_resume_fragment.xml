@@ -38,10 +38,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:background="#555555"
                 android:drawableEnd="@drawable/ic_attachment_black_24dp"
+                android:drawableTint="@android:color/white"
                 android:padding="4dp"
+                android:paddingStart="8dp"
                 android:text="Upload CV    "
-                android:textColor="@android:color/black"
+                android:onClick="@{()->viewModel.uploadCV()}"
+                android:textColor="@android:color/white"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -92,7 +96,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text" />
+                    android:inputType="number" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -129,8 +133,8 @@
                 android:id="@+id/add"
                 android:layout_width="35dp"
                 android:layout_height="0dp"
-                android:padding="8dp"
                 android:onClick="@{()->viewModel.more()}"
+                android:padding="8dp"
                 android:src="@drawable/ic_add_black_24dp"
                 app:layout_constraintBottom_toBottomOf="@+id/employDetails"
                 app:layout_constraintEnd_toEndOf="@+id/time"
@@ -197,6 +201,7 @@
                 android:background="@drawable/blackstroke_accback"
                 android:padding="8dp"
                 android:text="Submit"
+                android:onClick="@{()->viewModel.submit()}"
                 android:textColor="@android:color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/notableAccomplishments"

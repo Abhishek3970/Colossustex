@@ -8,5 +8,6 @@ data class AllresumesData(
     val time: String = "",
     val emp_details: String ="",
     val academic_details: String = "",
-    val accomplishments: String = ""
+    val accomplishments: String = "",
+    val resumeLink: String = ""
 )
