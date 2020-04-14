@@ -137,7 +137,7 @@ class PostResumeViewModel : ViewModel() {
 
                 Toast.makeText(
                     context,
-                    "File Uploaded successfully",
+                    "Uploaded successfully",
                     Toast.LENGTH_SHORT
                 ).show()
             }
@@ -147,6 +147,8 @@ class PostResumeViewModel : ViewModel() {
                     "File Not Uploaded Due to some error. Please Try Again",
                     Toast.LENGTH_SHORT
                 ).show()
+                _showProgress.value = false
+                progress = 0
             }
             .addOnProgressListener { task ->
                 _showProgress.value = true
