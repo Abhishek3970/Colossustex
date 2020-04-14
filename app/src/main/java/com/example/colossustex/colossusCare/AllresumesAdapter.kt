@@ -32,7 +32,7 @@ class AllresumesAdapter(val list: MutableList<AllresumesData>) :
         holder.name.text=list[position].name
         holder.location.text=list[position].location
         holder.view.setOnClickListener {
-            holder.itemView.findNavController().navigate(AllresumeFragDirections.actionAllresumeFragToResumeDetails(list[position].name,list[position].category,list[position].location,list[position].ctc,list[position].time,list[position].emp_details,list[position].academic_details,list[position].accomplishments))
+            holder.itemView.findNavController().navigate(AllresumeFragDirections.actionAllresumeFragToResumeDetails(list[position].name,list[position].category,list[position].location,list[position].ctc,list[position].time,list[position].emp_details,list[position].academic_details,list[position].accomplishments,list[position].id))
         }
     }
 }

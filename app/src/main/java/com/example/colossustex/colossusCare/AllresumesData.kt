@@ -1,6 +1,7 @@
 package com.example.colossustex.colossusCare
 
 data class AllresumesData(
+    val id:String="",
     val category: String = "",
     val name: String = "",
     val location: String = "",

@@ -17,7 +17,7 @@ class PostResumeViewModel : ViewModel() {
     private val storage = FirebaseStorage.getInstance()
 
     val category = arrayListOf(
-        "Catagory",
+        "Category",
         "Sales",
         "Advertising",
         "Marketing",
@@ -120,6 +120,7 @@ class PostResumeViewModel : ViewModel() {
                 val url = uri.result
 
                 val data = AllresumesData(
+                    id =fileName,
                     category = category,
                     location = locationRef,
                     ctc = ctc,

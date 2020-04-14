@@ -230,6 +230,9 @@
         <argument
             android:name="accomplishments"
             app:argType="string" />
+        <argument
+            android:name="id"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/allresumeFrag"

@@ -6,12 +6,12 @@
     android:layout_margin="5dp"
    >
 <RelativeLayout
-    android:background="#FBEFDF"
      android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="10dp">
 
     <TextView
+        android:textColor="#111"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/category_txt"
@@ -21,6 +21,7 @@
         android:layout_marginStart="20dp"/>
 
     <TextView
+        android:textColor="#111"
         android:layout_marginTop="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -41,15 +42,13 @@
         android:drawablePadding="4dp"
         android:layout_marginStart="20dp"/>
 
-    <TextView
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/view"
         android:text="View"
-        android:textSize="19sp"
+        android:textSize="16sp"
         android:textColor="#fff"
-        android:padding="8.5dp"
-        android:background="@drawable/view_resume_back"
         android:layout_alignParentEnd="true"
         android:layout_centerInParent="true"
         android:layout_marginEnd="20dp"/>
