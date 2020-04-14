@@ -42,6 +42,7 @@
                 android:drawableEnd="@drawable/ic_attachment_black_24dp"
                 android:drawableTint="@android:color/white"
                 android:padding="4dp"
+                android:paddingStart="8dp"
                 android:text="Upload CV    "
                 android:onClick="@{()->viewModel.uploadCV()}"
                 android:textColor="@android:color/white"

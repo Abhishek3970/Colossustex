@@ -1,7 +1,10 @@
 package com.example.colossustex.colossusCare
 
 
+import android.content.Context
 import android.net.Uri
+import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -10,7 +13,7 @@ import com.google.firebase.storage.FirebaseStorage
 
 class PostResumeViewModel : ViewModel() {
 
-    private val database = FirebaseDatabase.getInstance()
+    private val database = FirebaseDatabase.getInstance().reference
     private val storage = FirebaseStorage.getInstance()
 
     val category = arrayListOf(
@@ -53,10 +56,18 @@ class PostResumeViewModel : ViewModel() {
     val submit: LiveData<Boolean>?
         get() = _submit
 
+    private val _showProgress = MutableLiveData<Boolean>()
+    val showProgress: LiveData<Boolean>?
+        get() = _showProgress
+
+    var progress = 0
+
     init {
         _uploadCV.value = false
         _addMore.value = false
         _submit.value = false
+        _showProgress.value = false
+
     }
 
     fun uploadCV() {
@@ -88,23 +99,61 @@ class PostResumeViewModel : ViewModel() {
         employeeDetail: String,
         academicDetails: String,
         notableAccomplishments: String,
-        pdfUri: Uri
+        pdfUri: Uri,
+        context: Context
     ) {
 
         val fileName = System.currentTimeMillis().toString()
 
         val storageRef = storage.reference
 
-        storageRef.child("CV").child(fileName).putFile(pdfUri)
+        val filePath = storageRef.child("CV/$fileName.pdf")
+
+        Log.i("uri", "$pdfUri")
+
+        filePath.putFile(pdfUri)
             .addOnSuccessListener { task ->
 
-            }
-            .addOnFailureListener { task->
+                val uri = task.storage.downloadUrl
+                while (!uri.isComplete) {
+                }
+                val url = uri.result
 
-            }
-            .addOnProgressListener { task->
+                val data = AllresumesData(
+                    category = category,
+                    location = locationRef,
+                    ctc = ctc,
+                    time = time,
+                    emp_details = employeeDetail,
+                    academic_details = academicDetails,
+                    accomplishments = notableAccomplishments,
+                    resumeLink = url.toString()
+                )
 
+                database.child("ResumeData").child(fileName).setValue(data)
+
+                _showProgress.value = false
+                progress = 0
+
+                Toast.makeText(
+                    context,
+                    "File Uploaded successfully",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
+            .addOnFailureListener { task ->
+                Toast.makeText(
+                    context,
+                    "File Not Uploaded Due to some error. Please Try Again",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+            .addOnProgressListener { task ->
+                _showProgress.value = true
+                progress = (100 * task.bytesTransferred / task.totalByteCount).toInt()
+            }
+
+
     }
 
 

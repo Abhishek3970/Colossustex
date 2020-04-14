@@ -2,6 +2,7 @@ package com.example.colossustex.colossusCare
 
 import android.Manifest
 import android.app.Activity
+import android.app.ProgressDialog
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -28,6 +29,7 @@ class PostResume : Fragment() {
     private lateinit var adapter: EmployeeAdapter
     private lateinit var list: MutableList<String>
     private lateinit var manager: LinearLayoutManager
+    private lateinit var progress: ProgressDialog
     private val PERMISSION_CODE = 10
     private val INTENT_CODE = 9
     private var pdfUri: Uri? = null
@@ -42,6 +44,8 @@ class PostResume : Fragment() {
         setUpAdaptersSpinner()
 
         setUpRecyclerView()
+
+        setUpProgressDialog()
 
         viewModel.addMore?.observe(viewLifecycleOwner, Observer { add ->
             if (add) {
@@ -100,7 +104,8 @@ class PostResume : Fragment() {
                             employeeDetail,
                             academicDetails,
                             notableAccomplishments,
-                            pdfUri!!
+                            pdfUri!!,
+                            context!!
                         )
                     }
                 } else {
@@ -115,7 +120,25 @@ class PostResume : Fragment() {
 
         })
 
+        viewModel.showProgress?.observe(viewLifecycleOwner, Observer { show ->
+
+            if (show) {
+                progress.show()
+                progress.progress = viewModel.progress
+            } else {
+                progress.dismiss()
+                progress.progress = 0
+            }
+        })
+
         return binding.root
+    }
+
+    private fun setUpProgressDialog() {
+        progress = ProgressDialog(context!!)
+        progress.setTitle("Uploading Data...")
+        progress.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL)
+        progress.progress = 0
     }
 
     private fun setUpDataBindingAndViewModel(
@@ -191,6 +214,7 @@ class PostResume : Fragment() {
 
         if (requestCode == INTENT_CODE && resultCode == Activity.RESULT_OK && data != null) {
             pdfUri = data.data!!
+            binding.uploadResume.isEnabled = false
             Toast.makeText(
                 context,
                 "File Selected",
