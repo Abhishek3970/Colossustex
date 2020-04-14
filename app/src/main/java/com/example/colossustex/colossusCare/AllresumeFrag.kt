@@ -23,7 +23,7 @@ class AllresumeFrag : Fragment() {
     ): View? {
         binding=DataBindingUtil.inflate(inflater,R.layout.all_resumes,container,false)
         binding.allResumesRecycler.layoutManager= LinearLayoutManager(context!!)
-
+        binding.progressResume.visibility=View.VISIBLE
         binding.toolbarResumes.setNavigationOnClickListener {
             findNavController().navigateUp()
         }
@@ -40,6 +40,7 @@ class AllresumeFrag : Fragment() {
                         val resdata=i.getValue(AllresumesData::class.java)
                         resumelist.add(resdata!!)
                     }
+                    binding.progressResume.visibility=View.GONE
                     binding.allResumesRecycler.adapter=AllresumesAdapter(resumelist)
                 }
             }
