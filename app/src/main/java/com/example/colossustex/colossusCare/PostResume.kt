@@ -128,6 +128,13 @@ class PostResume : Fragment() {
             } else {
                 progress.dismiss()
                 progress.progress = 0
+                binding.locationReference.editText?.text?.clear()
+                binding.locationReference.editText?.text?.clear()
+                binding.employDetails.editText?.text?.clear()
+                binding.academicDetails.editText?.text?.clear()
+                binding.notableAccomplishments.editText?.text?.clear()
+                list.clear()
+                binding.uploadResume.isEnabled = true
             }
         })
 
