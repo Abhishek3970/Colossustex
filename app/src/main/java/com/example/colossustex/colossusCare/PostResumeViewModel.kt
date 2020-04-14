@@ -1,10 +1,15 @@
 package com.example.colossustex.colossusCare
 
+import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.google.firebase.database.FirebaseDatabase
 
 class PostResumeViewModel : ViewModel() {
+
+    private val database = FirebaseDatabase.getInstance()
+//    private val storge = Firebase
 
     val category = arrayListOf(
         "Catagory",
@@ -38,8 +43,17 @@ class PostResumeViewModel : ViewModel() {
     val addMore: LiveData<Boolean>?
         get() = _addMore
 
+    private val _uploadCV = MutableLiveData<Boolean>()
+    val uploadCV: LiveData<Boolean>?
+        get() = _uploadCV
+
     init {
+        _uploadCV.value = false
         _addMore.value = false
+    }
+
+    fun uploadCV(){
+        _uploadCV.value = true
     }
 
 
@@ -49,6 +63,11 @@ class PostResumeViewModel : ViewModel() {
 
     fun done(){
         _addMore.value = false
+        _uploadCV.value = false
+    }
+
+    fun uploadCV(context: Context){
+
     }
 
 

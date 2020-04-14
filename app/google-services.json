@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "212705087290-g9amn3q70bc44amjc518cq2jlssbrds1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.colossustex",
+            "certificate_hash": "f0b6c8b4a5c9ddf7bb412bf42988f73a91bb65bf"
+          }
+        },
+        {
           "client_id": "212705087290-noi4n1nh2ov27bejrufpjke5ntqa2hkb.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

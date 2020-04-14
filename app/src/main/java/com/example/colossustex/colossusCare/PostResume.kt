@@ -10,7 +10,6 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
-import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.example.colossustex.R
@@ -28,20 +27,12 @@ class PostResume : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater , R.layout.post_resume_fragment  , container , false)
-        viewModel = ViewModelProviders.of(this).get(PostResumeViewModel::class.java)
-        binding.lifecycleOwner = this
-        binding.viewModel = viewModel
 
-        setUpAdapters()
+        setUpDataBindingAndViewModel(inflater, container)
 
-        list = mutableListOf()
-        manager  = LinearLayoutManager(context!! , LinearLayoutManager.HORIZONTAL , false)
-        adapter = EmployeeAdapter(list)
-        binding.recyclerView.layoutManager = manager
-        binding.recyclerView.adapter = adapter
-//        binding.recyclerView.itemAnimator = DefaultItemAnimator()
+        setUpAdaptersSpinner()
 
+        setUpRecyclerView()
 
         viewModel.addMore?.observe(viewLifecycleOwner , Observer {add->
             if(add){
@@ -61,24 +52,43 @@ class PostResume : Fragment() {
         })
 
 
-
-
-
-
-
+        viewModel.uploadCV?.observe(viewLifecycleOwner , Observer {uploadCV->
+            if(uploadCV){
+                viewModel.uploadCV(context!!)
+                viewModel.done()
+            }
+        })
 
         return binding.root
     }
 
+    private fun setUpDataBindingAndViewModel(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ) {
+        binding = DataBindingUtil.inflate(inflater, R.layout.post_resume_fragment, container, false)
+        viewModel = ViewModelProviders.of(this).get(PostResumeViewModel::class.java)
+        binding.lifecycleOwner = this
+        binding.viewModel = viewModel
+    }
+
+    private fun setUpRecyclerView() {
+        list = mutableListOf()
+        manager = LinearLayoutManager(context!!, LinearLayoutManager.HORIZONTAL, false)
+        adapter = EmployeeAdapter(list)
+        binding.recyclerView.layoutManager = manager
+        binding.recyclerView.adapter = adapter
+    }
 
 
-    private fun setUpAdapters() {
+    private fun setUpAdaptersSpinner() {
         val categoryAdapter =
             ArrayAdapter<String>(context!!, R.layout.spinner_post_resume, viewModel.category)
         val timeAdapter =
             ArrayAdapter<String>(context!!, R.layout.spinner_post_resume, viewModel.time)
         binding.category.adapter = categoryAdapter
         binding.time.adapter = timeAdapter
+        //        binding.recyclerView.itemAnimator = DefaultItemAnimator()
     }
 
 
