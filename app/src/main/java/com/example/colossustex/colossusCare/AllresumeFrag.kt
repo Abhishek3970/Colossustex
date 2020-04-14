@@ -10,6 +10,10 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.colossustex.R
 import com.example.colossustex.databinding.AllResumesBinding
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class AllresumeFrag : Fragment() {
     lateinit var binding: AllResumesBinding
@@ -19,12 +23,28 @@ class AllresumeFrag : Fragment() {
     ): View? {
         binding=DataBindingUtil.inflate(inflater,R.layout.all_resumes,container,false)
         binding.allResumesRecycler.layoutManager= LinearLayoutManager(context!!)
-        val data=AllresumesData("Student","Anubhav","Chandigarh")
-        val list= mutableListOf(data,data,data)
-        binding.allResumesRecycler.adapter=AllresumesAdapter(list)
+
         binding.toolbarResumes.setNavigationOnClickListener {
             findNavController().navigateUp()
         }
+        val ref=FirebaseDatabase.getInstance().getReference("ResumeData")
+        ref.addListenerForSingleValueEvent(object :ValueEventListener{
+            override fun onCancelled(p0: DatabaseError) {
+
+            }
+
+            override fun onDataChange(p0: DataSnapshot) {
+                val resumelist= mutableListOf<AllresumesData>()
+                if(p0.exists()){
+                    for(i in p0.children){
+                        val resdata=i.getValue(AllresumesData::class.java)
+                        resumelist.add(resdata!!)
+                    }
+                    binding.allResumesRecycler.adapter=AllresumesAdapter(resumelist)
+                }
+            }
+
+        })
         return binding.root
     }
 

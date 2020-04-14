@@ -16,6 +16,15 @@ class ResumeDetails : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding=DataBindingUtil.inflate(inflater,R.layout.resume_details,container,false)
+        val args=ResumeDetailsArgs.fromBundle(arguments!!)
+        binding.nameView.setText(args.name)
+        binding.categoryView.setText(args.category)
+        binding.locationView.setText(args.location)
+        binding.ctcView.setText(args.ctc)
+        binding.timeView.setText(args.time)
+        binding.employerdetailsView.setText(args.employerDetails)
+        binding.academicDetailsView.setText(args.academicDet)
+        binding.accomplishmentsView.setText(args.accomplishments)
         return binding.root
     }
 

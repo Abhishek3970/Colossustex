@@ -205,7 +205,32 @@
     <fragment
         android:id="@+id/resumeDetails"
         android:name="com.example.colossustex.colossusCare.ResumeDetails"
-        android:label="ResumeDetails" />
+        android:label="ResumeDetails" >
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="category"
+            app:argType="string" />
+        <argument
+            android:name="location"
+            app:argType="string" />
+        <argument
+            android:name="ctc"
+            app:argType="string" />
+        <argument
+            android:name="time"
+            app:argType="string" />
+        <argument
+            android:name="employer_details"
+            app:argType="string" />
+        <argument
+            android:name="academic_det"
+            app:argType="string" />
+        <argument
+            android:name="accomplishments"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/allresumeFrag"
         android:name="com.example.colossustex.colossusCare.AllresumeFrag"
