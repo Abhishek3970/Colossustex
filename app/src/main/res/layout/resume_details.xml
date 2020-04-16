@@ -260,15 +260,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
                 android:background="#59111111" />
+
             <Button
                 android:id="@+id/view_resume"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="View Resume"
                 android:layout_marginStart="40dp"
-                android:layout_marginEnd="40dp"
                 android:layout_marginTop="20dp"
-                />
+                android:layout_marginEnd="40dp"
+                android:text="Download Resume" />
         </LinearLayout>
 
 
